@@ -1,0 +1,135 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: def9f4e0e6b05c84bb89b353289ed8ac, type: 3}
+  m_Name: PeopleScriptable
+  m_EditorClassIdentifier: 
+  peopleDataList:
+  - name: "\u7A0B\u5B87\u840C"
+    gender: 1
+  - name: "\u9648\u82CF\u9633"
+    gender: 1
+  - name: "\u6D82\u7A57"
+    gender: 2
+  - name: "\u6BDB\u9E4F\u7A0B"
+    gender: 1
+  - name: "\u9648\u5DE7"
+    gender: 2
+  - name: "\u5218\u7267"
+    gender: 1
+  - name: "\u4F55\u83B9"
+    gender: 2
+  - name: "\u8D3A\u864E"
+    gender: 1
+  - name: "\u848B\u741B"
+    gender: 1
+  - name: "\u90CE\u4F73\u9896"
+    gender: 2
+  - name: "\u674E\u6797\u8FDC"
+    gender: 2
+  - name: "\u5218\u674F"
+    gender: 2
+  - name: "\u5218\u54F2"
+    gender: 1
+  - name: "\u5F6D\u6CE2\u6DF3"
+    gender: 1
+  - name: "\u7DA6\u6B22"
+    gender: 1
+  - name: "\u674E\u777F"
+    gender: 2
+  - name: "\u5510\u5B87"
+    gender: 1
+  - name: "\u6C6A\u6615"
+    gender: 1
+  - name: "\u6613\u51CC\u5FD7"
+    gender: 1
+  - name: "\u4F59\u8D5B"
+    gender: 2
+  - name: "\u674E\u54F2\u6B66"
+    gender: 1
+  - name: "\u6731\u6CCA\u9716"
+    gender: 1
+  - name: "\u90B9\u54F2"
+    gender: 1
+  - name: "\u9AD8\u723D"
+    gender: 2
+  - name: "\u5F90\u683C\u683C"
+    gender: 2
+  - name: "\u4F55\u6D69"
+    gender: 2
+  - name: "\u80E1\u7FD4"
+    gender: 1
+  - name: "\u674E\u4E39"
+    gender: 2
+  - name: "\u674E\u541F\u6708"
+    gender: 2
+  - name: "\u5218\u4EAE"
+    gender: 1
+  - name: "\u5218\u5A9A"
+    gender: 2
+  - name: "\u5218\u601D\u73CA"
+    gender: 2
+  - name: "\u9F99\u8D85"
+    gender: 1
+  - name: "\u7F57\u8FEA"
+    gender: 1
+  - name: "\u5415\u5955\u6C9B"
+    gender: 1
+  - name: "\u9EBB\u51EF"
+    gender: 1
+  - name: "\u4EFB\u9759"
+    gender: 2
+  - name: "\u738B\u671D\u65ED"
+    gender: 1
+  - name: "\u738B\u5947"
+    gender: 1
+  - name: "\u738B\u6D01"
+    gender: 2
+  - name: "\u674E\u5B89\u742A"
+    gender: 2
+  - name: "\u6587\u96C5"
+    gender: 2
+  - name: "\u65B9\u53F6\u9752"
+    gender: 1
+  - name: "\u4F59\u878D"
+    gender: 2
+  - name: "\u8C22\u52F0"
+    gender: 2
+  - name: "\u865E\u610F"
+    gender: 2
+  - name: "\u6731\u5764\u7433"
+    gender: 2
+  - name: "\u8D75\u6960"
+    gender: 2
+  - name: "\u8D75\u59A4"
+    gender: 2
+  - name: "\u5468\u9E4F"
+    gender: 1
+  - name: "\u6731\u53F6\u76DB"
+    gender: 1
+  - name: "\u5F6D\u53F6\u96E8"
+    gender: 2
+  - name: "\u5218\u747E"
+    gender: 2
+  - name: "\u5434\u67EF\u6BC5"
+    gender: 1
+  - name: "\u8521\u6F14\u5B58"
+    gender: 1
+  - name: "\u90D1\u6BC5"
+    gender: 1
+  - name: "\u674E\u831C"
+    gender: 2
+  - name: "\u5B5F\u4E39"
+    gender: 2
+  - name: "\u5F6D\u81FB"
+    gender: 2
+  - name: "\u5F20\u5FF5"
+    gender: 1

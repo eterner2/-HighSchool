@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c98487b6e80aadf49a633c79977abfba, type: 3}
+  m_Name: MaoScriptable
+  m_EditorClassIdentifier: 
+  actionSettingList:
+  - id: 10001
+    theName: "\u73A9\u684C\u6E38"
+    type: 1
+    propertyChange: 4|-20$5|-20$3|20$6|5
+    socializationProperty: 3
+    costTime: 5
+  - id: 10002
+    theName: "\u5531\u5361\u62C9OK"
+    type: 2
+    propertyChange: 4|-20$5|-30
+    socializationProperty: 2
+    costTime: 5
+  - id: 10003
+    theName: "\u540E\u5C71\u95F2\u901B"
+    type: 3
+    propertyChange: 4|-10$3|5
+    socializationProperty: 2
+    costTime: 1
+  - id: 10004
+    theName: "\u901B\u8857"
+    type: 4
+    propertyChange: 4|-10$5|-10$3|10
+    socializationProperty: 2
+    costTime: 3
+  - id: 10005
+    theName: "\u53BB\u56FE\u4E66\u9986\u5B66\u4E60"
+    type: 5
+    propertyChange: 4|-40$1|20$6|2$7|2
+    socializationProperty: 2
+    costTime: 3
+  - id: 10006
+    theName: "\u7761\u89C9"
+    type: 6
+    propertyChange: 4|10$3|5
+    socializationProperty: 1
+    costTime: 1
+  - id: 10007
+    theName: "\u56FE\u4E66\u9986\u5F53\u5FD7\u613F\u8005"
+    type: 7
+    propertyChange: 4|-20$5|20$3|-3
+    socializationProperty: 1
+    costTime: 3
+  - id: 10008
+    theName: "\u53D1\u4F20\u5355"
+    type: 8
+    propertyChange: 4|-30$5|40$3|-6
+    socializationProperty: 1
+    costTime: 3
+  - id: 10009
+    theName: "\u6253\u6E38\u620F"
+    type: 9
+    propertyChange: 4|-15$3|10
+    socializationProperty: 0
+    costTime: 1

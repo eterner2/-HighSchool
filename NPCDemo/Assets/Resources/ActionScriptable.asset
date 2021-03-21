@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 047911295e2f1874989f12ef0184eb9b, type: 3}
+  m_Name: ActionScriptable
+  m_EditorClassIdentifier: 
+  singleActionList:
+  - name: "\u53BB\u7F51\u5427\u5F00\u9ED1"
+    placeName: "\u7F51\u5427"
+    sprt: {fileID: 21300000, guid: bdbead1f62350a042a230a4503c773fd, type: 3}
+  - name: "\u53BB\u56FE\u4E66\u9986\u5B66\u4E60"
+    placeName: "\u56FE\u4E66\u9986"
+    sprt: {fileID: 21300000, guid: 5f749ba4eefe06a4cae3dff18eed8d0f, type: 3}
+  - name: "\u6253\u7FBD\u6BDB\u7403"
+    placeName: "\u4F53\u80B2\u9986"
+    sprt: {fileID: 21300000, guid: 8ef8bb76670b010469b587353f61c33a, type: 3}
+  - name: "\u6563\u6B65"
+    placeName: "\u64CD\u573A"
+    sprt: {fileID: 21300000, guid: c8e28d20c6c6de44d9d5794ac5a507f8, type: 3}
+  - name: "\u901B\u8857"
+    placeName: "\u6B65\u884C\u8857"
+    sprt: {fileID: 21300000, guid: 91e1925b19581864c91d201c7dad99db, type: 3}
+  - name: "\u53BB\u5E02\u533A\u73A9\u5BC6\u5BA4\u9003\u8131"
+    placeName: "\u5BC6\u5BA4\u9003\u8131\u9986"
+    sprt: {fileID: 21300000, guid: 3662866b087b1d944b7f29425bbbaaf8, type: 3}
+  - name: "\u901B\u8D85\u5E02"
+    placeName: "\u8D85\u5E02"
+    sprt: {fileID: 21300000, guid: dc3dc9699dfca2d4f985050fb7d452fa, type: 3}
+  - name: "\u53BB\u5403\u81EA\u52A9\u9910"
+    placeName: "\u9910\u5385"
+    sprt: {fileID: 21300000, guid: 8f17c2850b7246b45b0c966d0418bb12, type: 3}
