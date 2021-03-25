@@ -1,0 +1,40 @@
+syntax = "proto3";
+package RoleData;
+
+
+//游戏基本信息
+message GameInfo
+{
+	PeopleProtoData playerPeople=1;//玩家
+	repeated PeopleProtoData allPeopleList=2;//所有角色
+}
+//属性 
+message PropertyData
+{
+repeated int32 propertyIdList=1;
+repeated int32 propertyNumList=2;
+
+}
+
+//角色数据
+message PeopleProtoData
+{
+uint64 onlyId=1;//唯一id
+PropertyData propertyData=2;//属性
+repeated uint64 sensedOtherPeopleIdList=3;//感受到的其他人
+repeated int32 friendlinessToSensedOtherPeopleList=4;//对感受到的人的好感度
+
+}
+//别人邀请我的数据
+message OtherInviteMeData
+{
+PeopleProtoData people=1;
+}
+
+//我邀请别人的数据
+message MeInviteOtherProtoData
+{
+PeopleProtoData people=1;
+bool refused=2;
+
+}
