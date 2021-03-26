@@ -573,6 +573,8 @@ public class NewBehaviourScript : MonoBehaviour
     public Entity GenerateEntity(ObjectPoolSingle single)
     {
        GameObject obj= ObjectPoolManager.Instance.GetObjcectFromPool(single, single.ToString(), true);
+        Entity entity = obj.GetComponent<Entity>();
+        entity.obj = obj;
        return obj.GetComponent<Entity>();
     }
 
@@ -582,7 +584,7 @@ public class NewBehaviourScript : MonoBehaviour
         for(int i = count - 1; i >= 0; i--)
         {
             Entity entity = trans.GetChild(i).GetComponent<Entity>();
-            ObjectPoolManager.Instance.DisappearObjectToPool(entity.objType, entity.gameObject, entity.isTmpObj);
+            ObjectPoolManager.Instance.DisappearObjectToPool(entity.objType, entity.obj, entity.isTmpObj);
         }
     }
 

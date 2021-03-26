@@ -1,0 +1,2 @@
+res/DataTable/actionSetting.json:C6AEA79CD09A93ED5CCD798D66411738
+res/DataTable/propertySetting.json:0334955D3E848BBA2F941D3AACF7405A

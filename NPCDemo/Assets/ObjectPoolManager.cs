@@ -14,6 +14,8 @@ using UnityEngine;
     SingleGroup,//一组人
     Text_singleRecord,//单个记录
     SingleRecordPanel,//记录面板
+    BlackMaskPanel,//黑幕
+    FlyTxtView,
 }
 
 public class TempItem

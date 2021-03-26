@@ -2,8 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Entity : MonoBehaviour
+public interface Entity //: MonoBehaviour
 {
-    public ObjectPoolSingle objType;
-    public bool isTmpObj;
+     ObjectPoolSingle objType { get; set; }
+     bool isTmpObj { get; set; }
+     GameObject obj { get; set; }
+
+    void Init(params object[] args);
+
+
+    void OnClose();
 }

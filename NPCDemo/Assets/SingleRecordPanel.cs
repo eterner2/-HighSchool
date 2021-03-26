@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SingleRecordPanel : Entity
+public class SingleRecordPanel :TestPanel, Entity
 {
     public UnityEngine.UI.Text txt_name;
     public Transform trans_grid;
     public UnityEngine.UI.Button btn_close;
 
-    public void Init(People people)
+    public override void Init(params object[] args )
     {
+        People people = args[0] as People;
         txt_name.text = people.name+"的记录";
         NewBehaviourScript.Instance.ClearAllChildEntity(trans_grid);
 

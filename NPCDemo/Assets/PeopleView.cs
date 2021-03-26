@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PeopleView : Entity
+public class PeopleView : TestPanel
 {
     public Sprite sprt_female;
     public Sprite sprt_male;
@@ -11,8 +11,9 @@ public class PeopleView : Entity
     public Image img;
     public Text txt_name;
     public Button btn;
-    public void Init(People people)
+    public override void Init(params object[] args)
     {
+        People people = args[0] as People;
         if (people.gender==Gender.Female)
             img.sprite = sprt_female;
         else

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class OutsidePanel : Entity
+public class OutsidePanel : TestPanel
 {
     public Image img; 
     public string actionName;//行为
@@ -11,10 +11,10 @@ public class OutsidePanel : Entity
     public Transform trans_grid;//格子
     public Button btn_backClassRoom;
 
-    public void Init(string outsideName)
+    public void Init(params object[] args)
     {
         Clear();
-        
+        string outsideName = (string)args[0];
         SingleAction action= NewBehaviourScript.Instance.actionScriptable.FindActionByOutSideName(outsideName);
         img.sprite = action.sprt;
         GenerateActionListPeople(action.name);
