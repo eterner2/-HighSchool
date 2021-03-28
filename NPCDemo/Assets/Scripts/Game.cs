@@ -27,7 +27,9 @@ public class Game : MonoBehaviour
     public void TableOK()
     {
         DataTable.LoadTableData();
-
+        RoleManager.Instance.Init(-1);
+        PanelManager.Instance.Init();
+        GameTimeManager.Instance.Init();
     }
 
 
@@ -43,7 +45,6 @@ public class Game : MonoBehaviour
 
 
 
-        string s = "";
 
         //FileInfo fileInfo = new FileInfo(PathConstant.GetVersionPersistentPath());
         //持久化目录里面没有，需要复制 

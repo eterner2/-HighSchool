@@ -184,7 +184,7 @@ public class NewBehaviourScript : MonoBehaviour
                     else
                     {
                         //迁就谁
-                        string actionName = "";
+                        //string actionName = "";
                         int theIndex = RandomManager.Next(0, 2);
                         if (theIndex == 0)
                         {

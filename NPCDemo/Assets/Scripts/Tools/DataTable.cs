@@ -56,6 +56,18 @@ namespace Framework.Data
             }
         }
 
+
+        public static PropertySetting FindPropertySetting(int id)
+        {
+            if (propertyDic.ContainsKey(id))
+                return propertyDic[id];
+            else
+            {
+                Debug.Log("寻找一个不存在的PropertySetting，id为" + id);
+                return null;
+            }
+        }
+
     }
 
 }

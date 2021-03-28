@@ -14,6 +14,13 @@ public class PanelManager : MonoInstance<PanelManager>
     {
         base.Init();
         trans_commonPanelParent = GameObject.Find("Canvas/Panel").transform;
+
+        //后续根据当前是什么场景
+        OpenPanel<WorkDayPanel>(trans_commonPanelParent);
+        OpenPanel<PropertyPanel>(trans_commonPanelParent);
+
+        OpenPanel<DeskPanel>(trans_commonPanelParent);
+
     }
 
 
@@ -159,5 +166,19 @@ public class PanelManager : MonoInstance<PanelManager>
         singleViewBase.Clear();
         singleViewBase.RemoveBtnClick();
         EntityManager.Instance.CloseEntity(singleViewBase);
+    }
+
+    /// <summary>
+    /// 关闭某个父物体所有小面板
+    /// </summary>
+    /// <param name="trans"></param>
+    public void CloseAllSingle(Transform trans)
+    {
+        int count = trans.childCount;
+        for(int i = count-1; i >= 0; i--)
+        {
+            SingleViewBase view = trans.GetChild(i).GetComponent<SingleViewBase>();
+            CloseSingle(view);
+        }
     }
 }

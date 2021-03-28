@@ -72,3 +72,17 @@ public class ConstantVal
 #endif
     }
 }
+
+/// <summary>
+/// 属性id
+/// </summary>
+public enum PropertyIdType
+{
+    Study=10001,//学习
+    Art=10002,//艺术
+    Physical=10003,//体育
+    Money=10004,//钱
+    TiLi=10005,//体力
+    Mood=10006,//心情
+    SelfControl=10007,//自制
+}

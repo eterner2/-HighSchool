@@ -24,22 +24,26 @@ namespace RoleData {
     static RoleInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Cg5Sb2xlSW5mby5wcm90bxIIUm9sZURhdGEibQoIR2FtZUluZm8SLwoMcGxh",
-            "eWVyUGVvcGxlGAEgASgLMhkuUm9sZURhdGEuUGVvcGxlUHJvdG9EYXRhEjAK",
-            "DWFsbFBlb3BsZUxpc3QYAiADKAsyGS5Sb2xlRGF0YS5QZW9wbGVQcm90b0Rh",
-            "dGEiPwoMUHJvcGVydHlEYXRhEhYKDnByb3BlcnR5SWRMaXN0GAEgAygFEhcK",
-            "D3Byb3BlcnR5TnVtTGlzdBgCIAMoBSKdAQoPUGVvcGxlUHJvdG9EYXRhEg4K",
-            "Bm9ubHlJZBgBIAEoBBIsCgxwcm9wZXJ0eURhdGEYAiABKAsyFi5Sb2xlRGF0",
-            "YS5Qcm9wZXJ0eURhdGESHwoXc2Vuc2VkT3RoZXJQZW9wbGVJZExpc3QYAyAD",
-            "KAQSKwojZnJpZW5kbGluZXNzVG9TZW5zZWRPdGhlclBlb3BsZUxpc3QYBCAD",
-            "KAUiPgoRT3RoZXJJbnZpdGVNZURhdGESKQoGcGVvcGxlGAEgASgLMhkuUm9s",
-            "ZURhdGEuUGVvcGxlUHJvdG9EYXRhIlQKFk1lSW52aXRlT3RoZXJQcm90b0Rh",
-            "dGESKQoGcGVvcGxlGAEgASgLMhkuUm9sZURhdGEuUGVvcGxlUHJvdG9EYXRh",
-            "Eg8KB3JlZnVzZWQYAiABKAhiBnByb3RvMw=="));
+            "Cg5Sb2xlSW5mby5wcm90bxIIUm9sZURhdGEikwEKCEdhbWVJbmZvEi8KDHBs",
+            "YXllclBlb3BsZRgBIAEoCzIZLlJvbGVEYXRhLlBlb3BsZVByb3RvRGF0YRIw",
+            "Cg1hbGxQZW9wbGVMaXN0GAIgAygLMhkuUm9sZURhdGEuUGVvcGxlUHJvdG9E",
+            "YXRhEiQKCHRpbWVEYXRhGAMgASgLMhIuUm9sZURhdGEuVGltZURhdGEiXAoI",
+            "VGltZURhdGESDAoEeWVhchgBIAEoBRINCgVtb250aBgCIAEoBRILCgNkYXkY",
+            "AyABKAUSEgoKdGhlV2Vla0RheRgEIAEoBRISCgpkYXlQcm9jZXNzGAUgASgF",
+            "Ij8KDFByb3BlcnR5RGF0YRIWCg5wcm9wZXJ0eUlkTGlzdBgBIAMoBRIXCg9w",
+            "cm9wZXJ0eU51bUxpc3QYAiADKAUinQEKD1Blb3BsZVByb3RvRGF0YRIOCgZv",
+            "bmx5SWQYASABKAQSLAoMcHJvcGVydHlEYXRhGAIgASgLMhYuUm9sZURhdGEu",
+            "UHJvcGVydHlEYXRhEh8KF3NlbnNlZE90aGVyUGVvcGxlSWRMaXN0GAMgAygE",
+            "EisKI2ZyaWVuZGxpbmVzc1RvU2Vuc2VkT3RoZXJQZW9wbGVMaXN0GAQgAygF",
+            "Ij4KEU90aGVySW52aXRlTWVEYXRhEikKBnBlb3BsZRgBIAEoCzIZLlJvbGVE",
+            "YXRhLlBlb3BsZVByb3RvRGF0YSJUChZNZUludml0ZU90aGVyUHJvdG9EYXRh",
+            "EikKBnBlb3BsZRgBIAEoCzIZLlJvbGVEYXRhLlBlb3BsZVByb3RvRGF0YRIP",
+            "CgdyZWZ1c2VkGAIgASgIYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.GameInfo), global::RoleData.GameInfo.Parser, new[]{ "PlayerPeople", "AllPeopleList" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.GameInfo), global::RoleData.GameInfo.Parser, new[]{ "PlayerPeople", "AllPeopleList", "TimeData" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.TimeData), global::RoleData.TimeData.Parser, new[]{ "Year", "Month", "Day", "TheWeekDay", "DayProcess" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.PropertyData), global::RoleData.PropertyData.Parser, new[]{ "PropertyIdList", "PropertyNumList" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.PeopleProtoData), global::RoleData.PeopleProtoData.Parser, new[]{ "OnlyId", "PropertyData", "SensedOtherPeopleIdList", "FriendlinessToSensedOtherPeopleList" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.OtherInviteMeData), global::RoleData.OtherInviteMeData.Parser, new[]{ "People" }, null, null, null),
@@ -80,6 +84,7 @@ namespace RoleData {
     public GameInfo(GameInfo other) : this() {
       PlayerPeople = other.playerPeople_ != null ? other.PlayerPeople.Clone() : null;
       allPeopleList_ = other.allPeopleList_.Clone();
+      TimeData = other.timeData_ != null ? other.TimeData.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -115,6 +120,20 @@ namespace RoleData {
       get { return allPeopleList_; }
     }
 
+    /// <summary>Field number for the "timeData" field.</summary>
+    public const int TimeDataFieldNumber = 3;
+    private global::RoleData.TimeData timeData_;
+    /// <summary>
+    ///日期
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::RoleData.TimeData TimeData {
+      get { return timeData_; }
+      set {
+        timeData_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as GameInfo);
@@ -130,6 +149,7 @@ namespace RoleData {
       }
       if (!object.Equals(PlayerPeople, other.PlayerPeople)) return false;
       if(!allPeopleList_.Equals(other.allPeopleList_)) return false;
+      if (!object.Equals(TimeData, other.TimeData)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -138,6 +158,7 @@ namespace RoleData {
       int hash = 1;
       if (playerPeople_ != null) hash ^= PlayerPeople.GetHashCode();
       hash ^= allPeopleList_.GetHashCode();
+      if (timeData_ != null) hash ^= TimeData.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -156,6 +177,10 @@ namespace RoleData {
         output.WriteMessage(PlayerPeople);
       }
       allPeopleList_.WriteTo(output, _repeated_allPeopleList_codec);
+      if (timeData_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(TimeData);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -168,6 +193,9 @@ namespace RoleData {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(PlayerPeople);
       }
       size += allPeopleList_.CalculateSize(_repeated_allPeopleList_codec);
+      if (timeData_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(TimeData);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -186,6 +214,12 @@ namespace RoleData {
         PlayerPeople.MergeFrom(other.PlayerPeople);
       }
       allPeopleList_.Add(other.allPeopleList_);
+      if (other.timeData_ != null) {
+        if (timeData_ == null) {
+          timeData_ = new global::RoleData.TimeData();
+        }
+        TimeData.MergeFrom(other.TimeData);
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -208,6 +242,272 @@ namespace RoleData {
             allPeopleList_.AddEntriesFrom(input, _repeated_allPeopleList_codec);
             break;
           }
+          case 26: {
+            if (timeData_ == null) {
+              timeData_ = new global::RoleData.TimeData();
+            }
+            input.ReadMessage(timeData_);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
+  ///日期
+  /// </summary>
+  public sealed partial class TimeData : pb::IMessage<TimeData> {
+    private static readonly pb::MessageParser<TimeData> _parser = new pb::MessageParser<TimeData>(() => new TimeData());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<TimeData> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::RoleData.RoleInfoReflection.Descriptor.MessageTypes[1]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public TimeData() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public TimeData(TimeData other) : this() {
+      year_ = other.year_;
+      month_ = other.month_;
+      day_ = other.day_;
+      theWeekDay_ = other.theWeekDay_;
+      dayProcess_ = other.dayProcess_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public TimeData Clone() {
+      return new TimeData(this);
+    }
+
+    /// <summary>Field number for the "year" field.</summary>
+    public const int YearFieldNumber = 1;
+    private int year_;
+    /// <summary>
+    ///哪一年
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Year {
+      get { return year_; }
+      set {
+        year_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "month" field.</summary>
+    public const int MonthFieldNumber = 2;
+    private int month_;
+    /// <summary>
+    ///哪一月
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Month {
+      get { return month_; }
+      set {
+        month_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "day" field.</summary>
+    public const int DayFieldNumber = 3;
+    private int day_;
+    /// <summary>
+    ///哪一天
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Day {
+      get { return day_; }
+      set {
+        day_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "theWeekDay" field.</summary>
+    public const int TheWeekDayFieldNumber = 4;
+    private int theWeekDay_;
+    /// <summary>
+    ///周几
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int TheWeekDay {
+      get { return theWeekDay_; }
+      set {
+        theWeekDay_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "dayProcess" field.</summary>
+    public const int DayProcessFieldNumber = 5;
+    private int dayProcess_;
+    /// <summary>
+    ///今天进行到百分之多少了
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int DayProcess {
+      get { return dayProcess_; }
+      set {
+        dayProcess_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as TimeData);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(TimeData other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Year != other.Year) return false;
+      if (Month != other.Month) return false;
+      if (Day != other.Day) return false;
+      if (TheWeekDay != other.TheWeekDay) return false;
+      if (DayProcess != other.DayProcess) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Year != 0) hash ^= Year.GetHashCode();
+      if (Month != 0) hash ^= Month.GetHashCode();
+      if (Day != 0) hash ^= Day.GetHashCode();
+      if (TheWeekDay != 0) hash ^= TheWeekDay.GetHashCode();
+      if (DayProcess != 0) hash ^= DayProcess.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Year != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Year);
+      }
+      if (Month != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(Month);
+      }
+      if (Day != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(Day);
+      }
+      if (TheWeekDay != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(TheWeekDay);
+      }
+      if (DayProcess != 0) {
+        output.WriteRawTag(40);
+        output.WriteInt32(DayProcess);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Year != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Year);
+      }
+      if (Month != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Month);
+      }
+      if (Day != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Day);
+      }
+      if (TheWeekDay != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(TheWeekDay);
+      }
+      if (DayProcess != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(DayProcess);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(TimeData other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Year != 0) {
+        Year = other.Year;
+      }
+      if (other.Month != 0) {
+        Month = other.Month;
+      }
+      if (other.Day != 0) {
+        Day = other.Day;
+      }
+      if (other.TheWeekDay != 0) {
+        TheWeekDay = other.TheWeekDay;
+      }
+      if (other.DayProcess != 0) {
+        DayProcess = other.DayProcess;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            Year = input.ReadInt32();
+            break;
+          }
+          case 16: {
+            Month = input.ReadInt32();
+            break;
+          }
+          case 24: {
+            Day = input.ReadInt32();
+            break;
+          }
+          case 32: {
+            TheWeekDay = input.ReadInt32();
+            break;
+          }
+          case 40: {
+            DayProcess = input.ReadInt32();
+            break;
+          }
         }
       }
     }
@@ -225,7 +525,7 @@ namespace RoleData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::RoleData.RoleInfoReflection.Descriptor.MessageTypes[1]; }
+      get { return global::RoleData.RoleInfoReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -371,7 +671,7 @@ namespace RoleData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::RoleData.RoleInfoReflection.Descriptor.MessageTypes[2]; }
+      get { return global::RoleData.RoleInfoReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -591,7 +891,7 @@ namespace RoleData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::RoleData.RoleInfoReflection.Descriptor.MessageTypes[3]; }
+      get { return global::RoleData.RoleInfoReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -729,7 +1029,7 @@ namespace RoleData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::RoleData.RoleInfoReflection.Descriptor.MessageTypes[4]; }
+      get { return global::RoleData.RoleInfoReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

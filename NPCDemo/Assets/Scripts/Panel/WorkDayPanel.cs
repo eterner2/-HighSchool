@@ -19,6 +19,22 @@ public class WorkDayPanel : PanelBase
     public int curWeekDay = 1;            //后续从gametime取
     //public float init
     // Start is called before the first frame update
+
+
+    public override void Init(params object[] args)
+    {
+        base.Init(args);
+
+        EventCenter.Register(TheEventType.DayTimeProcess,OnDayTimeProcess);
+
+    }
+
+    public override void OnOpenIng()
+    {
+        base.OnOpenIng();
+    }
+
+
     void Start()
     {
         startMove = true;
@@ -26,32 +42,43 @@ public class WorkDayPanel : PanelBase
         singleCourseTime = totalTime / 9;
     }
 
+    /// <summary>
+    /// 一天的时间变化
+    /// </summary>
+    void OnDayTimeProcess(object obj)
+    {
+        float process = (int)obj;
+        img_processBar.fillAmount = process / (float)100;
+
+
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if (startMove)
-        {
-            img_processBar.fillAmount += Time.deltaTime / (float)5;
+        //if (startMove)
+        //{
+        //    img_processBar.fillAmount += Time.deltaTime / (float)5;
 
-            if (img_processBar.fillAmount < 1)
-            {
-                singleCourseTimer += Time.deltaTime;
-                if (singleCourseTimer >= singleCourseTime)
-                {
-                    singleCourseTimer = 0;
-                    //得到分数
-                    RoleManager.Instance.GetStudyScore();
-                }
+        //    if (img_processBar.fillAmount < 1)
+        //    {
+        //        singleCourseTimer += Time.deltaTime;
+        //        if (singleCourseTimer >= singleCourseTime)
+        //        {
+        //            singleCourseTimer = 0;
+        //            //得到分数
+        //            RoleManager.Instance.GetStudyScore();
+        //        }
 
-            }
-            else
-            {
-                //新的一天
-                startMove = false;
-                GameTimeManager.Instance.EndDay();
-            }
+        //    }
+        //    else
+        //    {
+        //        //新的一天
+        //        startMove = false;
+        //        GameTimeManager.Instance.EndDay();
+        //    }
 
-        }   
+        //}   
     }
 
     public void RefreshShow()
@@ -73,5 +100,12 @@ public class WorkDayPanel : PanelBase
         singleCourseTimer = 0;
         img_processBar.fillAmount = 0;
         RefreshShow();
+    }
+
+    public override void Clear()
+    {
+        EventCenter.Remove(TheEventType.DayTimeProcess, (x) => OnDayTimeProcess(x));
+
+        base.Clear();
     }
 }

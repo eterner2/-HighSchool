@@ -16,6 +16,10 @@ using UnityEngine;
     SingleRecordPanel,//记录面板
     BlackMaskPanel,//黑幕
     FlyTxtView,
+    SinglePropertyView,//单个属性
+    WorkDayPanel,//工作日主面板
+    PropertyPanel,//属性面板
+    DeskPanel,//桌面面板（放动画的）
 }
 
 public class TempItem
@@ -155,7 +159,7 @@ public class TempItem
         float ticker = 0;
 
         
-        float clearTempTicker = 0;
+        //float clearTempTicker = 0;
 
         private void LateUpdate()
         {
