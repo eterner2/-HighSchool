@@ -16,10 +16,23 @@ public class PanelManager : MonoInstance<PanelManager>
         trans_commonPanelParent = GameObject.Find("Canvas/Panel").transform;
 
         //后续根据当前是什么场景
-        OpenPanel<WorkDayPanel>(trans_commonPanelParent);
-        OpenPanel<PropertyPanel>(trans_commonPanelParent);
+        switch (RoleManager.Instance._CurGameInfo.CurGameModule)
+        {
+            case (int)GameModuleType.WeekDay:
+                OpenPanel<WorkDayPanel>(trans_commonPanelParent);
+                OpenPanel<PropertyPanel>(trans_commonPanelParent);
+                OpenPanel<DeskPanel>(trans_commonPanelParent);
+                break;
+            case (int)GameModuleType.Battle:
+                break;
 
-        OpenPanel<DeskPanel>(trans_commonPanelParent);
+        }
+        if (RoleManager.Instance._CurGameInfo.CurGameModule == (int)GameModuleType.WeekDay)
+        {
+          
+        }
+
+     
 
     }
 
@@ -179,6 +192,19 @@ public class PanelManager : MonoInstance<PanelManager>
         {
             SingleViewBase view = trans.GetChild(i).GetComponent<SingleViewBase>();
             CloseSingle(view);
+        }
+    }
+
+    /// <summary>
+    /// 黑幕降临
+    /// </summary>
+    public void BlackMask(BlackMaskType blackMaskType,Action finishCallBack)
+    {
+        BlackMaskPanel blackMaskPanel = GetPanel<BlackMaskPanel>();
+        if (blackMaskPanel == null)
+        {
+            blackMaskPanel= PanelManager.Instance.OpenPanel<BlackMaskPanel>(PanelManager.Instance.trans_commonPanelParent, blackMaskType,finishCallBack);
+
         }
     }
 }

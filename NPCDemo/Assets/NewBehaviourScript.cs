@@ -564,10 +564,10 @@ public class NewBehaviourScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.W))
-        {
-            StartNewDay();
-        }
+        //if (Input.GetKeyUp(KeyCode.W))
+        //{
+        //    StartNewDay();
+        //}
     }
 
     public Entity GenerateEntity(ObjectPoolSingle single)

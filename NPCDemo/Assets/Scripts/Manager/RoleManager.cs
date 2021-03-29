@@ -45,7 +45,7 @@ public class RoleManager
         CreateNewTimeData(gameInfo);
         CreateNewPlayer(gameInfo);
         //CreateNewPropertyData(gameInfo);
-
+        gameInfo.CurGameModule = (int)GameModuleType.Battle;
         _CurGameInfo = gameInfo;
     }
 
@@ -58,6 +58,7 @@ public class RoleManager
         timeData.Year = 1;
         timeData.Month = 9;
         timeData.TheWeekDay = 3;
+        timeData.DayBeforeExam = 300;
         gameInfo.TimeData = timeData;
     }
     /// <summary>

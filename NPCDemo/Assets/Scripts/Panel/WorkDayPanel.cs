@@ -10,13 +10,13 @@ public class WorkDayPanel : PanelBase
     public Text txt_weekDay;
 
     public float totalTime = 5;//5秒走完
-    public float moveSpeed = 1;
-    bool startMove = false;
+    //public float moveSpeed = 1;
+   // bool startMove = false;
 
-    public float singleCourseTime;//单节课时间
-    public float singleCourseTimer;//单节课获得知识计时器
-    public int initDayBeforeExam = 300;//后续从gametime取
-    public int curWeekDay = 1;            //后续从gametime取
+    //public float singleCourseTime;//单节课时间
+    //public float singleCourseTimer;//单节课获得知识计时器
+    //public int initDayBeforeExam = 300;//后续从gametime取
+    //public int curWeekDay = 1;            //后续从gametime取
     //public float init
     // Start is called before the first frame update
 
@@ -26,7 +26,7 @@ public class WorkDayPanel : PanelBase
         base.Init(args);
 
         EventCenter.Register(TheEventType.DayTimeProcess,OnDayTimeProcess);
-
+        EventCenter.Register(TheEventType.OnNewDayStart, OnNewDayStart);
     }
 
     public override void OnOpenIng()
@@ -37,18 +37,18 @@ public class WorkDayPanel : PanelBase
 
     void Start()
     {
-        startMove = true;
+        //startMove = true;
         RefreshShow();
-        singleCourseTime = totalTime / 9;
+        //singleCourseTime = totalTime / 9;
     }
 
     /// <summary>
     /// 一天的时间变化
     /// </summary>
-    void OnDayTimeProcess(object obj)
+    void OnDayTimeProcess(object[] obj)
     {
-        float process = (int)obj;
-        img_processBar.fillAmount = process / (float)100;
+        //int process = (int)obj[0];
+        img_processBar.fillAmount = GameTimeManager.Instance._CurTimeData.DayProcess / (float)100;
 
 
     }
@@ -83,8 +83,8 @@ public class WorkDayPanel : PanelBase
 
     public void RefreshShow()
     {
-        txt_dayBeforeExam.SetText("距离高考还有" + initDayBeforeExam + "天");
-        txt_weekDay.SetText("星期" + UIUtil.ChangeArabicToChinese(curWeekDay));
+        txt_dayBeforeExam.SetText("距离高考还有" + GameTimeManager.Instance._CurTimeData.DayBeforeExam + "天");
+        txt_weekDay.SetText("星期" + UIUtil.ChangeArabicToChinese(GameTimeManager.Instance._CurTimeData.TheWeekDay));
     }
 
     public void FinishDay()
@@ -94,17 +94,18 @@ public class WorkDayPanel : PanelBase
 
     public void OnNewDayStart()
     {
-        startMove = true;
-        initDayBeforeExam--;
-        curWeekDay++;
-        singleCourseTimer = 0;
+        //startMove = true;
+        //initDayBeforeExam--;
+        //curWeekDay++;
+        //singleCourseTimer = 0;
         img_processBar.fillAmount = 0;
         RefreshShow();
     }
 
     public override void Clear()
     {
-        EventCenter.Remove(TheEventType.DayTimeProcess, (x) => OnDayTimeProcess(x));
+        EventCenter.Remove(TheEventType.DayTimeProcess,  OnDayTimeProcess);
+        EventCenter.Remove(TheEventType.OnNewDayStart, OnNewDayStart);
 
         base.Clear();
     }

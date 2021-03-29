@@ -7,6 +7,7 @@ using UnityEngine;
 
 public class Game : MonoBehaviour
 {
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,20 +15,21 @@ public class Game : MonoBehaviour
 
 
     }
-
+    //public float test;
     // Update is called once per frame
     void Update()
     {
-        
+        //test +=20*Time.deltaTime;
     }
 
     /// <summary>
-    /// tableok了
+    /// tableok了 这里是初始化总入口
     /// </summary>
     public void TableOK()
     {
         DataTable.LoadTableData();
         RoleManager.Instance.Init(-1);
+        GameModuleManager.Instance.Init();
         PanelManager.Instance.Init();
         GameTimeManager.Instance.Init();
     }

@@ -19,7 +19,7 @@ public class BlackMaskPanel : PanelBase
         if (args.Length > 0)
         {
             blackMaskType = (BlackMaskType)args[0];
-            //finishCB = args[1];
+            finishCB = args[1] as Action;
         }
     }
 
@@ -51,12 +51,12 @@ public class BlackMaskPanel : PanelBase
         {
             if (finishCB != null)
                 finishCB();
-            if (blackMaskType == BlackMaskType.Close)
-                GameTimeManager.Instance.StartNewDay();
-            else
-            {
-                PanelManager.Instance.ClosePanel(this);
-            }
+            //if (blackMaskType == BlackMaskType.Close)
+            //    GameTimeManager.Instance.StartNewDay();
+            //else
+            //{
+            //    PanelManager.Instance.ClosePanel(this);
+            //}
         });
     }
 

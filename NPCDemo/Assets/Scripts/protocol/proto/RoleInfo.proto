@@ -8,6 +8,7 @@ message GameInfo
 	PeopleProtoData playerPeople=1;//玩家
 	repeated PeopleProtoData allPeopleList=2;//所有角色
 	TimeData timeData=3;//日期
+	int32 curGameModule=4;//当前是哪个游戏模块
 }
 //日期
 message TimeData
@@ -16,7 +17,8 @@ int32 year=1;//哪一年
 int32 month=2;//哪一月
 int32 day=3;//哪一天
 int32 theWeekDay=4;//周几
-int32 dayProcess=5;//今天进行到百分之多少了
+float dayProcess=5;//今天进行到百分之多少了
+int32 dayBeforeExam=6;//距离高考还有xx天
 }
 
 //属性 

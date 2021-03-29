@@ -164,5 +164,5 @@ public enum TheEventType
     None=0,
     DayTimeProcess,//一天时间流动
     GetStudyScore,//得到学习分
-    
+    OnNewDayStart,//新的一天开始
 }

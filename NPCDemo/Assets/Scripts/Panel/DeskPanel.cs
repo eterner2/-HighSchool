@@ -25,11 +25,16 @@ public class DeskPanel : PanelBase
     /// <summary>
     /// 分数增加
     /// </summary>
-    public void OnScoreAdd(object param)
+    public void OnScoreAdd(object[] param)
     {
-        PanelManager.Instance.OpenSingle<FlyTxtView>(trans_animParent, (string)param);
+        PanelManager.Instance.OpenSingle<FlyTxtView>(trans_animParent, (string)param[0]);
         
     }
+  
+    private void Update()
+    {
+        //processTest = _CurTimeData.DayProcess;
 
-    
+    }
+
 }

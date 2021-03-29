@@ -24,7 +24,7 @@ public class GameTimeManager:MonoInstance<GameTimeManager>
     //}
 
     public TimeData _CurTimeData;
-
+    public int processTest;
     public override void Init()
     {
         _CurTimeData = RoleManager.Instance._CurGameInfo.TimeData;
@@ -39,7 +39,11 @@ public class GameTimeManager:MonoInstance<GameTimeManager>
             left += singlePhase;
         }
         dayPhaseRangeArr[8] = new Vector2Int(left, 100);
-        lastDayPhaseIndex = GetPhaseIndex(_CurTimeData.DayProcess);
+        lastDayPhaseIndex = GetPhaseIndex((int)_CurTimeData.DayProcess);
+
+        //时间开始走暂时放在这里
+        if(RoleManager.Instance._CurGameInfo.CurGameModule==(int)GameModuleType.WeekDay)
+            startMove = true;
     }
 
     //public int curYear;//第几年
@@ -55,10 +59,18 @@ public class GameTimeManager:MonoInstance<GameTimeManager>
     /// </summary>
     public void EndDay()
     {
-        Action newDay = StartNewDay;
+        //Action endDayMask = delegate 
+        //{
+        //    PanelManager.Instance.ClosePanel(PanelManager.Instance.GetPanel<BlackMaskPanel>());
 
-        PanelManager.Instance.OpenPanel<BlackMaskPanel>(PanelManager.Instance.trans_commonPanelParent, BlackMaskType.Close, newDay);
+        //};
 
+        //PanelManager.Instance.OpenPanel<BlackMaskPanel>(PanelManager.Instance.trans_commonPanelParent, BlackMaskType.Close);
+        PanelManager.Instance.BlackMask(BlackMaskType.Close,()=> 
+        {
+            PanelManager.Instance.ClosePanel(PanelManager.Instance.GetPanel<BlackMaskPanel>());
+            DayPlus();
+        });
 
     }
     /// <summary>
@@ -66,21 +78,27 @@ public class GameTimeManager:MonoInstance<GameTimeManager>
     /// </summary>
     public void StartNewDay()
     {
-        PanelManager.Instance.ClosePanel(PanelManager.Instance.GetPanel<BlackMaskPanel>());
 
         Action finishMask = delegate ()
         {
             PanelManager.Instance.ClosePanel(PanelManager.Instance.GetPanel<BlackMaskPanel>());
+            lastDayPhaseIndex = 0;
+            startMove = true;
+            EventCenter.Broadcast(TheEventType.OnNewDayStart);
+
         };
-        GameObject.Find("WorkDayPanel").GetComponent<WorkDayPanel>().OnNewDayStart();
+        //GameObject.Find("WorkDayPanel").GetComponent<WorkDayPanel>().OnNewDayStart();
         PanelManager.Instance.OpenPanel<BlackMaskPanel>(PanelManager.Instance.trans_commonPanelParent, BlackMaskType.Open, finishMask);
 
     }
 
     private void Update()
     {
+   
         if (startMove)
         {
+        
+            //return;
             DayProcess(Time.deltaTime);
         }
     }
@@ -91,7 +109,8 @@ public class GameTimeManager:MonoInstance<GameTimeManager>
     void DayProcess(float deltaTime)
     {
 
-        _CurTimeData.DayProcess += (int)(deltaTime / (dayProcessSpeed / 100));
+        float theProcessAdd = (100 / dayProcessSpeed) * deltaTime;
+        _CurTimeData.DayProcess += (theProcessAdd);
         EventCenter.Broadcast(TheEventType.DayTimeProcess, _CurTimeData.DayProcess);
 
         //一天过去了
@@ -100,11 +119,11 @@ public class GameTimeManager:MonoInstance<GameTimeManager>
             _CurTimeData.DayProcess = 100;
             startMove = false;
             EndDay();
-            DayPlus();
+            //DayPlus();
         }
         else
         {
-            int curDayPhaseIndex = GetPhaseIndex(_CurTimeData.DayProcess);
+            int curDayPhaseIndex = GetPhaseIndex((int)_CurTimeData.DayProcess);
             if (curDayPhaseIndex > 0)
             {
                 if (curDayPhaseIndex > lastDayPhaseIndex)
@@ -116,26 +135,7 @@ public class GameTimeManager:MonoInstance<GameTimeManager>
                 }
             }
         }
-        //img_processBar.fillAmount += Time.deltaTime / (float)5;
 
-        //if (img_processBar.fillAmount < 1)
-        //{
-        //    singleCourseTimer += Time.deltaTime;
-        //    if (singleCourseTimer >= singleCourseTime)
-        //    {
-        //        singleCourseTimer = 0;
-        //        //得到分数
-        //        RoleManager.Instance.GetStudyScore();
-        //    }
-
-        //}
-        //else
-        //{
-        //    //新的一天
-        //    startMove = false;
-        //    GameTimeManager.Instance.EndDay();
-        //    DayPlus();
-        //}
 
 
     }
@@ -150,6 +150,7 @@ public class GameTimeManager:MonoInstance<GameTimeManager>
 
         _CurTimeData.Day++;
         _CurTimeData.TheWeekDay++;
+        _CurTimeData.DayBeforeExam--;
         if (_CurTimeData.Day >= 31)
         {
             MoonPlus();
@@ -158,8 +159,23 @@ public class GameTimeManager:MonoInstance<GameTimeManager>
         {
             WeekPlus();
         }
+        EventCenter.Broadcast(TheEventType.OnNewDayStart);
 
-        //_CurTimeData.Day
+        PanelManager.Instance.BlackMask(BlackMaskType.Open, () =>
+        {
+            PanelManager.Instance.ClosePanel(PanelManager.Instance.GetPanel<BlackMaskPanel>());
+            startMove = true;
+        });
+        //Action finishMask = delegate ()
+        //{
+        //    PanelManager.Instance.ClosePanel(PanelManager.Instance.GetPanel<BlackMaskPanel>());
+        //    EventCenter.Broadcast(TheEventType.OnNewDayStart);
+        //    startMove = true;
+
+        //};
+        //GameObject.Find("WorkDayPanel").GetComponent<WorkDayPanel>().OnNewDayStart();
+        //PanelManager.Instance.OpenPanel<BlackMaskPanel>(PanelManager.Instance.trans_commonPanelParent, BlackMaskType.Open, finishMask);
+
     }
 
     /// <summary>

@@ -24,26 +24,27 @@ namespace RoleData {
     static RoleInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Cg5Sb2xlSW5mby5wcm90bxIIUm9sZURhdGEikwEKCEdhbWVJbmZvEi8KDHBs",
+            "Cg5Sb2xlSW5mby5wcm90bxIIUm9sZURhdGEiqgEKCEdhbWVJbmZvEi8KDHBs",
             "YXllclBlb3BsZRgBIAEoCzIZLlJvbGVEYXRhLlBlb3BsZVByb3RvRGF0YRIw",
             "Cg1hbGxQZW9wbGVMaXN0GAIgAygLMhkuUm9sZURhdGEuUGVvcGxlUHJvdG9E",
-            "YXRhEiQKCHRpbWVEYXRhGAMgASgLMhIuUm9sZURhdGEuVGltZURhdGEiXAoI",
-            "VGltZURhdGESDAoEeWVhchgBIAEoBRINCgVtb250aBgCIAEoBRILCgNkYXkY",
-            "AyABKAUSEgoKdGhlV2Vla0RheRgEIAEoBRISCgpkYXlQcm9jZXNzGAUgASgF",
-            "Ij8KDFByb3BlcnR5RGF0YRIWCg5wcm9wZXJ0eUlkTGlzdBgBIAMoBRIXCg9w",
-            "cm9wZXJ0eU51bUxpc3QYAiADKAUinQEKD1Blb3BsZVByb3RvRGF0YRIOCgZv",
-            "bmx5SWQYASABKAQSLAoMcHJvcGVydHlEYXRhGAIgASgLMhYuUm9sZURhdGEu",
-            "UHJvcGVydHlEYXRhEh8KF3NlbnNlZE90aGVyUGVvcGxlSWRMaXN0GAMgAygE",
-            "EisKI2ZyaWVuZGxpbmVzc1RvU2Vuc2VkT3RoZXJQZW9wbGVMaXN0GAQgAygF",
-            "Ij4KEU90aGVySW52aXRlTWVEYXRhEikKBnBlb3BsZRgBIAEoCzIZLlJvbGVE",
-            "YXRhLlBlb3BsZVByb3RvRGF0YSJUChZNZUludml0ZU90aGVyUHJvdG9EYXRh",
-            "EikKBnBlb3BsZRgBIAEoCzIZLlJvbGVEYXRhLlBlb3BsZVByb3RvRGF0YRIP",
-            "CgdyZWZ1c2VkGAIgASgIYgZwcm90bzM="));
+            "YXRhEiQKCHRpbWVEYXRhGAMgASgLMhIuUm9sZURhdGEuVGltZURhdGESFQoN",
+            "Y3VyR2FtZU1vZHVsZRgEIAEoBSJzCghUaW1lRGF0YRIMCgR5ZWFyGAEgASgF",
+            "Eg0KBW1vbnRoGAIgASgFEgsKA2RheRgDIAEoBRISCgp0aGVXZWVrRGF5GAQg",
+            "ASgFEhIKCmRheVByb2Nlc3MYBSABKAISFQoNZGF5QmVmb3JlRXhhbRgGIAEo",
+            "BSI/CgxQcm9wZXJ0eURhdGESFgoOcHJvcGVydHlJZExpc3QYASADKAUSFwoP",
+            "cHJvcGVydHlOdW1MaXN0GAIgAygFIp0BCg9QZW9wbGVQcm90b0RhdGESDgoG",
+            "b25seUlkGAEgASgEEiwKDHByb3BlcnR5RGF0YRgCIAEoCzIWLlJvbGVEYXRh",
+            "LlByb3BlcnR5RGF0YRIfChdzZW5zZWRPdGhlclBlb3BsZUlkTGlzdBgDIAMo",
+            "BBIrCiNmcmllbmRsaW5lc3NUb1NlbnNlZE90aGVyUGVvcGxlTGlzdBgEIAMo",
+            "BSI+ChFPdGhlckludml0ZU1lRGF0YRIpCgZwZW9wbGUYASABKAsyGS5Sb2xl",
+            "RGF0YS5QZW9wbGVQcm90b0RhdGEiVAoWTWVJbnZpdGVPdGhlclByb3RvRGF0",
+            "YRIpCgZwZW9wbGUYASABKAsyGS5Sb2xlRGF0YS5QZW9wbGVQcm90b0RhdGES",
+            "DwoHcmVmdXNlZBgCIAEoCGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.GameInfo), global::RoleData.GameInfo.Parser, new[]{ "PlayerPeople", "AllPeopleList", "TimeData" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.TimeData), global::RoleData.TimeData.Parser, new[]{ "Year", "Month", "Day", "TheWeekDay", "DayProcess" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.GameInfo), global::RoleData.GameInfo.Parser, new[]{ "PlayerPeople", "AllPeopleList", "TimeData", "CurGameModule" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.TimeData), global::RoleData.TimeData.Parser, new[]{ "Year", "Month", "Day", "TheWeekDay", "DayProcess", "DayBeforeExam" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.PropertyData), global::RoleData.PropertyData.Parser, new[]{ "PropertyIdList", "PropertyNumList" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.PeopleProtoData), global::RoleData.PeopleProtoData.Parser, new[]{ "OnlyId", "PropertyData", "SensedOtherPeopleIdList", "FriendlinessToSensedOtherPeopleList" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.OtherInviteMeData), global::RoleData.OtherInviteMeData.Parser, new[]{ "People" }, null, null, null),
@@ -85,6 +86,7 @@ namespace RoleData {
       PlayerPeople = other.playerPeople_ != null ? other.PlayerPeople.Clone() : null;
       allPeopleList_ = other.allPeopleList_.Clone();
       TimeData = other.timeData_ != null ? other.TimeData.Clone() : null;
+      curGameModule_ = other.curGameModule_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -134,6 +136,20 @@ namespace RoleData {
       }
     }
 
+    /// <summary>Field number for the "curGameModule" field.</summary>
+    public const int CurGameModuleFieldNumber = 4;
+    private int curGameModule_;
+    /// <summary>
+    ///当前是哪个游戏模块
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CurGameModule {
+      get { return curGameModule_; }
+      set {
+        curGameModule_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as GameInfo);
@@ -150,6 +166,7 @@ namespace RoleData {
       if (!object.Equals(PlayerPeople, other.PlayerPeople)) return false;
       if(!allPeopleList_.Equals(other.allPeopleList_)) return false;
       if (!object.Equals(TimeData, other.TimeData)) return false;
+      if (CurGameModule != other.CurGameModule) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -159,6 +176,7 @@ namespace RoleData {
       if (playerPeople_ != null) hash ^= PlayerPeople.GetHashCode();
       hash ^= allPeopleList_.GetHashCode();
       if (timeData_ != null) hash ^= TimeData.GetHashCode();
+      if (CurGameModule != 0) hash ^= CurGameModule.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -181,6 +199,10 @@ namespace RoleData {
         output.WriteRawTag(26);
         output.WriteMessage(TimeData);
       }
+      if (CurGameModule != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(CurGameModule);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -195,6 +217,9 @@ namespace RoleData {
       size += allPeopleList_.CalculateSize(_repeated_allPeopleList_codec);
       if (timeData_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(TimeData);
+      }
+      if (CurGameModule != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(CurGameModule);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -219,6 +244,9 @@ namespace RoleData {
           timeData_ = new global::RoleData.TimeData();
         }
         TimeData.MergeFrom(other.TimeData);
+      }
+      if (other.CurGameModule != 0) {
+        CurGameModule = other.CurGameModule;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -247,6 +275,10 @@ namespace RoleData {
               timeData_ = new global::RoleData.TimeData();
             }
             input.ReadMessage(timeData_);
+            break;
+          }
+          case 32: {
+            CurGameModule = input.ReadInt32();
             break;
           }
         }
@@ -288,6 +320,7 @@ namespace RoleData {
       day_ = other.day_;
       theWeekDay_ = other.theWeekDay_;
       dayProcess_ = other.dayProcess_;
+      dayBeforeExam_ = other.dayBeforeExam_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -354,15 +387,29 @@ namespace RoleData {
 
     /// <summary>Field number for the "dayProcess" field.</summary>
     public const int DayProcessFieldNumber = 5;
-    private int dayProcess_;
+    private float dayProcess_;
     /// <summary>
     ///今天进行到百分之多少了
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int DayProcess {
+    public float DayProcess {
       get { return dayProcess_; }
       set {
         dayProcess_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "dayBeforeExam" field.</summary>
+    public const int DayBeforeExamFieldNumber = 6;
+    private int dayBeforeExam_;
+    /// <summary>
+    ///距离高考还有xx天
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int DayBeforeExam {
+      get { return dayBeforeExam_; }
+      set {
+        dayBeforeExam_ = value;
       }
     }
 
@@ -383,7 +430,8 @@ namespace RoleData {
       if (Month != other.Month) return false;
       if (Day != other.Day) return false;
       if (TheWeekDay != other.TheWeekDay) return false;
-      if (DayProcess != other.DayProcess) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(DayProcess, other.DayProcess)) return false;
+      if (DayBeforeExam != other.DayBeforeExam) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -394,7 +442,8 @@ namespace RoleData {
       if (Month != 0) hash ^= Month.GetHashCode();
       if (Day != 0) hash ^= Day.GetHashCode();
       if (TheWeekDay != 0) hash ^= TheWeekDay.GetHashCode();
-      if (DayProcess != 0) hash ^= DayProcess.GetHashCode();
+      if (DayProcess != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(DayProcess);
+      if (DayBeforeExam != 0) hash ^= DayBeforeExam.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -424,9 +473,13 @@ namespace RoleData {
         output.WriteRawTag(32);
         output.WriteInt32(TheWeekDay);
       }
-      if (DayProcess != 0) {
-        output.WriteRawTag(40);
-        output.WriteInt32(DayProcess);
+      if (DayProcess != 0F) {
+        output.WriteRawTag(45);
+        output.WriteFloat(DayProcess);
+      }
+      if (DayBeforeExam != 0) {
+        output.WriteRawTag(48);
+        output.WriteInt32(DayBeforeExam);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -448,8 +501,11 @@ namespace RoleData {
       if (TheWeekDay != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(TheWeekDay);
       }
-      if (DayProcess != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(DayProcess);
+      if (DayProcess != 0F) {
+        size += 1 + 4;
+      }
+      if (DayBeforeExam != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(DayBeforeExam);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -474,8 +530,11 @@ namespace RoleData {
       if (other.TheWeekDay != 0) {
         TheWeekDay = other.TheWeekDay;
       }
-      if (other.DayProcess != 0) {
+      if (other.DayProcess != 0F) {
         DayProcess = other.DayProcess;
+      }
+      if (other.DayBeforeExam != 0) {
+        DayBeforeExam = other.DayBeforeExam;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -504,8 +563,12 @@ namespace RoleData {
             TheWeekDay = input.ReadInt32();
             break;
           }
-          case 40: {
-            DayProcess = input.ReadInt32();
+          case 45: {
+            DayProcess = input.ReadFloat();
+            break;
+          }
+          case 48: {
+            DayBeforeExam = input.ReadInt32();
             break;
           }
         }
