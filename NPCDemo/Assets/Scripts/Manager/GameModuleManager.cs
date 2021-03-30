@@ -14,6 +14,28 @@ public class GameModuleManager : CommonInstance<GameModuleManager>
         base.Init();
 
     }
+
+
+    /// <summary>
+    /// 换模块
+    /// </summary>
+    /// <param name="gameModuleType"></param>
+    public void ChangeGameModule(GameModuleType gameModuleType)
+    {
+        PanelManager.Instance.BlackMask(BlackMaskType.PingPong, () => 
+        {
+
+
+            RoleManager.Instance._CurGameInfo.CurGameModule = (int)gameModuleType;
+            curGameModule = gameModuleType; //(GameModuleType)RoleManager.Instance._CurGameInfo.CurGameModule;
+
+            PanelManager.Instance.InitPanel(curGameModule);
+
+        }
+        
+        );
+
+    }
 }
 
 /// <summary>
@@ -23,6 +45,8 @@ public enum GameModuleType
 {
     None=0,
     WeekDay=1,//教室工作日模块
-    WeekEnd=2,//周末模块
+    Home=2,//家模块
     Battle=3,//战斗模块
+    BigMap=4,//大地图
+    SingleOutsideScene,//单个外面场景
 }

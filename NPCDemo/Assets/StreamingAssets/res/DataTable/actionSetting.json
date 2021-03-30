@@ -2,61 +2,71 @@
   {
     "id": "10001",
     "name": "玩桌游",
-    "sicializationType": "1",
-    "proChange": "10005|-20$10004|-20$10006|20"
+    "socializationType": "1",
+    "proChange": "10005|-20$10004|-20$10006|20",
+    "bigMapId": "10001"
   },
   {
     "id": "10002",
     "name": "唱卡拉OK",
-    "sicializationType": "2",
-    "proChange": "10005|-20$10004|-30$10006|15"
+    "socializationType": "2",
+    "proChange": "10005|-20$10004|-30$10006|15",
+    "bigMapId": "10001"
   },
   {
     "id": "10003",
     "name": "后山闲逛",
-    "sicializationType": "2",
-    "proChange": "10005|-10$10006|5"
+    "socializationType": "2",
+    "proChange": "10005|-10$10006|5",
+    "bigMapId": "-1"
   },
   {
     "id": "10004",
     "name": "逛街",
-    "sicializationType": "2",
-    "proChange": "10005|-10$10004|-10"
+    "socializationType": "2",
+    "proChange": "10005|-10$10004|-10",
+    "bigMapId": "10001"
   },
   {
     "id": "10005",
     "name": "学习",
-    "sicializationType": "2",
-    "proChange": "10005|-40$10006|-3$10001|20"
+    "socializationType": "2",
+    "proChange": "10005|-40$10006|-3$10001|20",
+    "bigMapId": "10002"
   },
   {
     "id": "10006",
     "name": "睡觉",
-    "sicializationType": "3",
-    "proChange": "10005|10$10006|2"
+    "socializationType": "3",
+    "proChange": "10005|10$10006|2",
+    "bigMapId": "-1"
   },
   {
     "id": "10007",
     "name": "图书馆当志愿者",
-    "sicializationType": "3",
-    "proChange": "10005|-30$10004|40$10006|-6"
+    "socializationType": "3",
+    "proChange": "10005|-30$10004|40$10006|-6",
+    "bigMapId": "10002"
   },
   {
     "id": "10008",
     "name": "打游戏",
-    "sicializationType": "3",
-    "proChange": "10005|-15$10006|4"
+    "socializationType": "3",
+    "proChange": "10005|-15$10006|4",
+    "bigMapId": "10003"
   },
   {
     "id": "10009",
     "name": "练习乐器",
-    "sicializationType": "2",
-    "proChange": "10005|-30$10002|15$10006|-3$10002|20"
+    "socializationType": "2",
+    "proChange": "10005|-30$10002|15$10006|-3$10002|20",
+    "bigMapId": "10004"
   },
   {
     "id": "10010",
     "name": "打篮球",
-    "sicializationType": "2",
-    "proChange": "10005|-30$10003|15$10006|3$10003|20"
+    "socializationType": "2",
+    "proChange": "10005|-30$10003|15$10006|3$10003|20",
+    "bigMapId": "10005"
   }
 ]

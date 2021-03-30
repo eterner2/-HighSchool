@@ -31,21 +31,25 @@ namespace RoleData {
             "Y3VyR2FtZU1vZHVsZRgEIAEoBSJzCghUaW1lRGF0YRIMCgR5ZWFyGAEgASgF",
             "Eg0KBW1vbnRoGAIgASgFEgsKA2RheRgDIAEoBRISCgp0aGVXZWVrRGF5GAQg",
             "ASgFEhIKCmRheVByb2Nlc3MYBSABKAISFQoNZGF5QmVmb3JlRXhhbRgGIAEo",
-            "BSI/CgxQcm9wZXJ0eURhdGESFgoOcHJvcGVydHlJZExpc3QYASADKAUSFwoP",
-            "cHJvcGVydHlOdW1MaXN0GAIgAygFIp0BCg9QZW9wbGVQcm90b0RhdGESDgoG",
-            "b25seUlkGAEgASgEEiwKDHByb3BlcnR5RGF0YRgCIAEoCzIWLlJvbGVEYXRh",
-            "LlByb3BlcnR5RGF0YRIfChdzZW5zZWRPdGhlclBlb3BsZUlkTGlzdBgDIAMo",
-            "BBIrCiNmcmllbmRsaW5lc3NUb1NlbnNlZE90aGVyUGVvcGxlTGlzdBgEIAMo",
-            "BSI+ChFPdGhlckludml0ZU1lRGF0YRIpCgZwZW9wbGUYASABKAsyGS5Sb2xl",
-            "RGF0YS5QZW9wbGVQcm90b0RhdGEiVAoWTWVJbnZpdGVPdGhlclByb3RvRGF0",
-            "YRIpCgZwZW9wbGUYASABKAsyGS5Sb2xlRGF0YS5QZW9wbGVQcm90b0RhdGES",
-            "DwoHcmVmdXNlZBgCIAEoCGIGcHJvdG8z"));
+            "BSJeCgxQcm9wZXJ0eURhdGESFgoOcHJvcGVydHlJZExpc3QYASADKAUSNgoQ",
+            "cHJvcGVydHlEYXRhTGlzdBgCIAMoCzIcLlJvbGVEYXRhLlNpbmdsZVByb3Bl",
+            "cnR5RGF0YSJUChJTaW5nbGVQcm9wZXJ0eURhdGESEgoKcHJvcGVydHlJZBgB",
+            "IAEoBRITCgtwcm9wZXJ0eU51bRgCIAEoBRIVCg1wcm9wZXJ0eUxpbWl0GAMg",
+            "ASgFIp0BCg9QZW9wbGVQcm90b0RhdGESDgoGb25seUlkGAEgASgEEiwKDHBy",
+            "b3BlcnR5RGF0YRgCIAEoCzIWLlJvbGVEYXRhLlByb3BlcnR5RGF0YRIfChdz",
+            "ZW5zZWRPdGhlclBlb3BsZUlkTGlzdBgDIAMoBBIrCiNmcmllbmRsaW5lc3NU",
+            "b1NlbnNlZE90aGVyUGVvcGxlTGlzdBgEIAMoBSI+ChFPdGhlckludml0ZU1l",
+            "RGF0YRIpCgZwZW9wbGUYASABKAsyGS5Sb2xlRGF0YS5QZW9wbGVQcm90b0Rh",
+            "dGEiVAoWTWVJbnZpdGVPdGhlclByb3RvRGF0YRIpCgZwZW9wbGUYASABKAsy",
+            "GS5Sb2xlRGF0YS5QZW9wbGVQcm90b0RhdGESDwoHcmVmdXNlZBgCIAEoCGIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.GameInfo), global::RoleData.GameInfo.Parser, new[]{ "PlayerPeople", "AllPeopleList", "TimeData", "CurGameModule" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.TimeData), global::RoleData.TimeData.Parser, new[]{ "Year", "Month", "Day", "TheWeekDay", "DayProcess", "DayBeforeExam" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.PropertyData), global::RoleData.PropertyData.Parser, new[]{ "PropertyIdList", "PropertyNumList" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.PropertyData), global::RoleData.PropertyData.Parser, new[]{ "PropertyIdList", "PropertyDataList" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.SinglePropertyData), global::RoleData.SinglePropertyData.Parser, new[]{ "PropertyId", "PropertyNum", "PropertyLimit" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.PeopleProtoData), global::RoleData.PeopleProtoData.Parser, new[]{ "OnlyId", "PropertyData", "SensedOtherPeopleIdList", "FriendlinessToSensedOtherPeopleList" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.OtherInviteMeData), global::RoleData.OtherInviteMeData.Parser, new[]{ "People" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.MeInviteOtherProtoData), global::RoleData.MeInviteOtherProtoData.Parser, new[]{ "People", "Refused" }, null, null, null)
@@ -606,7 +610,7 @@ namespace RoleData {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public PropertyData(PropertyData other) : this() {
       propertyIdList_ = other.propertyIdList_.Clone();
-      propertyNumList_ = other.propertyNumList_.Clone();
+      propertyDataList_ = other.propertyDataList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -625,14 +629,14 @@ namespace RoleData {
       get { return propertyIdList_; }
     }
 
-    /// <summary>Field number for the "propertyNumList" field.</summary>
-    public const int PropertyNumListFieldNumber = 2;
-    private static readonly pb::FieldCodec<int> _repeated_propertyNumList_codec
-        = pb::FieldCodec.ForInt32(18);
-    private readonly pbc::RepeatedField<int> propertyNumList_ = new pbc::RepeatedField<int>();
+    /// <summary>Field number for the "propertyDataList" field.</summary>
+    public const int PropertyDataListFieldNumber = 2;
+    private static readonly pb::FieldCodec<global::RoleData.SinglePropertyData> _repeated_propertyDataList_codec
+        = pb::FieldCodec.ForMessage(18, global::RoleData.SinglePropertyData.Parser);
+    private readonly pbc::RepeatedField<global::RoleData.SinglePropertyData> propertyDataList_ = new pbc::RepeatedField<global::RoleData.SinglePropertyData>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<int> PropertyNumList {
-      get { return propertyNumList_; }
+    public pbc::RepeatedField<global::RoleData.SinglePropertyData> PropertyDataList {
+      get { return propertyDataList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -649,7 +653,7 @@ namespace RoleData {
         return true;
       }
       if(!propertyIdList_.Equals(other.propertyIdList_)) return false;
-      if(!propertyNumList_.Equals(other.propertyNumList_)) return false;
+      if(!propertyDataList_.Equals(other.propertyDataList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -657,7 +661,7 @@ namespace RoleData {
     public override int GetHashCode() {
       int hash = 1;
       hash ^= propertyIdList_.GetHashCode();
-      hash ^= propertyNumList_.GetHashCode();
+      hash ^= propertyDataList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -672,7 +676,7 @@ namespace RoleData {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       propertyIdList_.WriteTo(output, _repeated_propertyIdList_codec);
-      propertyNumList_.WriteTo(output, _repeated_propertyNumList_codec);
+      propertyDataList_.WriteTo(output, _repeated_propertyDataList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -682,7 +686,7 @@ namespace RoleData {
     public int CalculateSize() {
       int size = 0;
       size += propertyIdList_.CalculateSize(_repeated_propertyIdList_codec);
-      size += propertyNumList_.CalculateSize(_repeated_propertyNumList_codec);
+      size += propertyDataList_.CalculateSize(_repeated_propertyDataList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -695,7 +699,7 @@ namespace RoleData {
         return;
       }
       propertyIdList_.Add(other.propertyIdList_);
-      propertyNumList_.Add(other.propertyNumList_);
+      propertyDataList_.Add(other.propertyDataList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -712,9 +716,199 @@ namespace RoleData {
             propertyIdList_.AddEntriesFrom(input, _repeated_propertyIdList_codec);
             break;
           }
-          case 18:
+          case 18: {
+            propertyDataList_.AddEntriesFrom(input, _repeated_propertyDataList_codec);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
+  ///单个属性
+  /// </summary>
+  public sealed partial class SinglePropertyData : pb::IMessage<SinglePropertyData> {
+    private static readonly pb::MessageParser<SinglePropertyData> _parser = new pb::MessageParser<SinglePropertyData>(() => new SinglePropertyData());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<SinglePropertyData> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::RoleData.RoleInfoReflection.Descriptor.MessageTypes[3]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SinglePropertyData() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SinglePropertyData(SinglePropertyData other) : this() {
+      propertyId_ = other.propertyId_;
+      propertyNum_ = other.propertyNum_;
+      propertyLimit_ = other.propertyLimit_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SinglePropertyData Clone() {
+      return new SinglePropertyData(this);
+    }
+
+    /// <summary>Field number for the "propertyId" field.</summary>
+    public const int PropertyIdFieldNumber = 1;
+    private int propertyId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int PropertyId {
+      get { return propertyId_; }
+      set {
+        propertyId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "propertyNum" field.</summary>
+    public const int PropertyNumFieldNumber = 2;
+    private int propertyNum_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int PropertyNum {
+      get { return propertyNum_; }
+      set {
+        propertyNum_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "propertyLimit" field.</summary>
+    public const int PropertyLimitFieldNumber = 3;
+    private int propertyLimit_;
+    /// <summary>
+    ///上限
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int PropertyLimit {
+      get { return propertyLimit_; }
+      set {
+        propertyLimit_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as SinglePropertyData);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(SinglePropertyData other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (PropertyId != other.PropertyId) return false;
+      if (PropertyNum != other.PropertyNum) return false;
+      if (PropertyLimit != other.PropertyLimit) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (PropertyId != 0) hash ^= PropertyId.GetHashCode();
+      if (PropertyNum != 0) hash ^= PropertyNum.GetHashCode();
+      if (PropertyLimit != 0) hash ^= PropertyLimit.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (PropertyId != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(PropertyId);
+      }
+      if (PropertyNum != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(PropertyNum);
+      }
+      if (PropertyLimit != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(PropertyLimit);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (PropertyId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(PropertyId);
+      }
+      if (PropertyNum != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(PropertyNum);
+      }
+      if (PropertyLimit != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(PropertyLimit);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(SinglePropertyData other) {
+      if (other == null) {
+        return;
+      }
+      if (other.PropertyId != 0) {
+        PropertyId = other.PropertyId;
+      }
+      if (other.PropertyNum != 0) {
+        PropertyNum = other.PropertyNum;
+      }
+      if (other.PropertyLimit != 0) {
+        PropertyLimit = other.PropertyLimit;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            PropertyId = input.ReadInt32();
+            break;
+          }
           case 16: {
-            propertyNumList_.AddEntriesFrom(input, _repeated_propertyNumList_codec);
+            PropertyNum = input.ReadInt32();
+            break;
+          }
+          case 24: {
+            PropertyLimit = input.ReadInt32();
             break;
           }
         }
@@ -734,7 +928,7 @@ namespace RoleData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::RoleData.RoleInfoReflection.Descriptor.MessageTypes[3]; }
+      get { return global::RoleData.RoleInfoReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -954,7 +1148,7 @@ namespace RoleData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::RoleData.RoleInfoReflection.Descriptor.MessageTypes[4]; }
+      get { return global::RoleData.RoleInfoReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1092,7 +1286,7 @@ namespace RoleData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::RoleData.RoleInfoReflection.Descriptor.MessageTypes[5]; }
+      get { return global::RoleData.RoleInfoReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

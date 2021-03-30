@@ -9,6 +9,8 @@ public class ConstantVal
     /// 所有panel暂时放该文件夹
     /// </summary>
     public const string PanelPath = "UIPanel";
+    public const string propertyIconFolderPath = "TestRes/Common/Property/";//属性icon文件夹
+    public const string bigMapFolderPath = "TestRes/BigMap/";//大地图icon文件夹
 
     /// <summary>
     /// 通过Panel名字获取路径

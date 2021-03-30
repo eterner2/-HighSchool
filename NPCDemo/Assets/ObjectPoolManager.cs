@@ -20,6 +20,10 @@ using UnityEngine;
     WorkDayPanel,//工作日主面板
     PropertyPanel,//属性面板
     DeskPanel,//桌面面板（放动画的）
+    StatusPanel,//状态栏面板
+    StatusPropertyView,//单个状态
+    HomePanel,//在家的面板
+    BigMapPanel,//大地图
 }
 
 public class TempItem

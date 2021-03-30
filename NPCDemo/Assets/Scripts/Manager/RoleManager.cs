@@ -45,7 +45,7 @@ public class RoleManager
         CreateNewTimeData(gameInfo);
         CreateNewPlayer(gameInfo);
         //CreateNewPropertyData(gameInfo);
-        gameInfo.CurGameModule = (int)GameModuleType.Battle;
+        gameInfo.CurGameModule = (int)GameModuleType.WeekDay;
         _CurGameInfo = gameInfo;
     }
 
@@ -57,7 +57,7 @@ public class RoleManager
         TimeData timeData = new TimeData();
         timeData.Year = 1;
         timeData.Month = 9;
-        timeData.TheWeekDay = 3;
+        timeData.TheWeekDay = 5;
         timeData.DayBeforeExam = 300;
         gameInfo.TimeData = timeData;
     }
@@ -79,8 +79,18 @@ public class RoleManager
     void CreateNewPropertyData(PeopleProtoData peopleProtoData)
     {
         PropertyData propertyData = new PropertyData();
+        PropertySetting setting = DataTable.FindPropertySetting((int)PropertyIdType.Study);
+
         propertyData.PropertyIdList.Add((int)PropertyIdType.Study);
-        propertyData.PropertyNumList.Add(0);
+
+        SinglePropertyData singlePropertyData = new SinglePropertyData();
+        singlePropertyData.PropertyId = (int)PropertyIdType.Study;
+        singlePropertyData.PropertyNum = 0;
+        singlePropertyData.PropertyLimit = setting.haveLimit.ToInt32();
+
+        propertyData.PropertyDataList.Add(singlePropertyData);
+
+
         peopleProtoData.PropertyData = propertyData;
     }
 
@@ -108,7 +118,7 @@ public class RoleManager
         if (_CurGameInfo.PlayerPeople.PropertyData.PropertyIdList.Contains((int)propertyIdType))
         {
             int index= _CurGameInfo.PlayerPeople.PropertyData.PropertyIdList.IndexOf((int)propertyIdType);
-            return _CurGameInfo.PlayerPeople.PropertyData.PropertyNumList[index];
+            return _CurGameInfo.PlayerPeople.PropertyData.PropertyDataList[index].PropertyNum;
         }
         return 0;
     }
@@ -123,7 +133,19 @@ public class RoleManager
         if (_CurGameInfo.PlayerPeople.PropertyData.PropertyIdList.Contains((int)propertyIdType))
         {
             int index = _CurGameInfo.PlayerPeople.PropertyData.PropertyIdList.IndexOf((int)propertyIdType);
-            _CurGameInfo.PlayerPeople.PropertyData.PropertyNumList[index] += num;
+            SinglePropertyData singleData = _CurGameInfo.PlayerPeople.PropertyData.PropertyDataList[index];
+            int limit = singleData.PropertyLimit;
+            singleData.PropertyNum += num;
+            //如果该属性存在最大限制
+            if (limit >= 0)
+            {
+                if (singleData.PropertyLimit>= limit)
+                {
+                    singleData.PropertyNum = limit;
+                }
+            }
+          
+
         }
     }
 }

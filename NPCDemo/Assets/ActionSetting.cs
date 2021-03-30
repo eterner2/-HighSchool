@@ -1,16 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[System.Serializable]
-public class ActionSetting
-{
-    public int id;//id
-    public string theName;
-    public ActionType type;
-    public string propertyChange;//该行为对某属性的影响 用|和$隔开
-    public ActionSocializationProperty socializationProperty;//社交属性
-    public int costTime;//耗费时间
-}
+//[System.Serializable]
+//public class ActionSetting
+//{
+//    public int id;//id
+//    public string theName;
+//    public ActionType type;
+//    public string propertyChange;//该行为对某属性的影响 用|和$隔开
+//    public ActionSocializationProperty socializationProperty;//社交属性
+//    public int costTime;//耗费时间
+//}
 /// <summary>
 /// 每日选择类型
 /// </summary>

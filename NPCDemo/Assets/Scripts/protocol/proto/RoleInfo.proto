@@ -25,8 +25,15 @@ int32 dayBeforeExam=6;//距离高考还有xx天
 message PropertyData
 {
 repeated int32 propertyIdList=1;
-repeated int32 propertyNumList=2;
+repeated SinglePropertyData propertyDataList=2;
 
+}
+//单个属性
+message SinglePropertyData
+{
+int32 propertyId=1;
+int32 propertyNum=2;
+int32 propertyLimit=3;//上限
 }
 
 //角色数据

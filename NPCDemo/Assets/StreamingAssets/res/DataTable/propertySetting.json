@@ -1,30 +1,51 @@
 ﻿[
   {
     "id": "10001",
-    "name": "学习"
+    "name": "知识",
+    "showInStatusPanel": "0",
+    "haveLimit": "-1",
+    "iconName": "property_knowledge"
   },
   {
     "id": "10002",
-    "name": "艺术"
+    "name": "艺术",
+    "showInStatusPanel": "0",
+    "haveLimit": "-1",
+    "iconName": "property_music"
   },
   {
     "id": "10003",
-    "name": "体育"
+    "name": "体育",
+    "showInStatusPanel": "0",
+    "haveLimit": "-1",
+    "iconName": "property_physical"
   },
   {
     "id": "10004",
-    "name": "钱"
+    "name": "钱",
+    "showInStatusPanel": "1",
+    "haveLimit": "-1",
+    "iconName": "property_money"
   },
   {
     "id": "10005",
-    "name": "体力"
+    "name": "体力",
+    "showInStatusPanel": "1",
+    "haveLimit": "100",
+    "iconName": "property_power"
   },
   {
     "id": "10006",
-    "name": "心情"
+    "name": "心情",
+    "showInStatusPanel": "1",
+    "haveLimit": "100",
+    "iconName": "property_mood"
   },
   {
     "id": "10007",
-    "name": "自持"
+    "name": "自持",
+    "showInStatusPanel": "0",
+    "haveLimit": "-1",
+    "iconName": "property_selfControl"
   }
 ]

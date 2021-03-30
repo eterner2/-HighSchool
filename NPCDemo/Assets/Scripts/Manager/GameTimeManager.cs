@@ -66,11 +66,22 @@ public class GameTimeManager:MonoInstance<GameTimeManager>
         //};
 
         //PanelManager.Instance.OpenPanel<BlackMaskPanel>(PanelManager.Instance.trans_commonPanelParent, BlackMaskType.Close);
-        PanelManager.Instance.BlackMask(BlackMaskType.Close,()=> 
+
+        //如果到了周五晚上 则进入到周六模式
+        if (_CurTimeData.TheWeekDay >=5)
         {
-            PanelManager.Instance.ClosePanel(PanelManager.Instance.GetPanel<BlackMaskPanel>());
-            DayPlus();
-        });
+            GameModuleManager.Instance.ChangeGameModule(GameModuleType.Home);
+
+        }
+        else
+        {
+            PanelManager.Instance.BlackMask(BlackMaskType.Close, () =>
+            {
+                PanelManager.Instance.ClosePanel(PanelManager.Instance.GetPanel<BlackMaskPanel>());
+                DayPlus();
+            });
+
+        }
 
     }
     /// <summary>
@@ -161,23 +172,29 @@ public class GameTimeManager:MonoInstance<GameTimeManager>
         }
         EventCenter.Broadcast(TheEventType.OnNewDayStart);
 
-        PanelManager.Instance.BlackMask(BlackMaskType.Open, () =>
-        {
-            PanelManager.Instance.ClosePanel(PanelManager.Instance.GetPanel<BlackMaskPanel>());
-            startMove = true;
-        });
-        //Action finishMask = delegate ()
-        //{
-        //    PanelManager.Instance.ClosePanel(PanelManager.Instance.GetPanel<BlackMaskPanel>());
-        //    EventCenter.Broadcast(TheEventType.OnNewDayStart);
-        //    startMove = true;
+       
 
-        //};
-        //GameObject.Find("WorkDayPanel").GetComponent<WorkDayPanel>().OnNewDayStart();
-        //PanelManager.Instance.OpenPanel<BlackMaskPanel>(PanelManager.Instance.trans_commonPanelParent, BlackMaskType.Open, finishMask);
+            PanelManager.Instance.BlackMask(BlackMaskType.Open, () =>
+            {
+                PanelManager.Instance.ClosePanel(PanelManager.Instance.GetPanel<BlackMaskPanel>());
+
+               
+                    startMove = true;
+
+                
+            });
+        
+
+
 
     }
-
+    /// <summary>
+    /// 进入周六
+    /// </summary>
+    void EnterWeekend()
+    {
+        GameModuleManager.Instance.ChangeGameModule(GameModuleType.BigMap);
+    }
     /// <summary>
     /// 一周过去
     /// </summary>

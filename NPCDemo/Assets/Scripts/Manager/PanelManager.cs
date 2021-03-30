@@ -8,31 +8,55 @@ public class PanelManager : MonoInstance<PanelManager>
     Dictionary<ObjectPoolSingle, PanelBase> panelDic = new Dictionary<ObjectPoolSingle, PanelBase>();
     List<PanelBase> panelList = new List<PanelBase>();
 
-    public Transform trans_commonPanelParent;
+    public Transform trans_commonPanelParent;//场景等适用于当前游戏模块的
+    public Transform trans_layer2;//状态栏 菜单栏等即使切换场景也常显的
+    public Transform trans_layer3;//提示框等需要置顶的
 
     public override void Init()
     {
         base.Init();
-        trans_commonPanelParent = GameObject.Find("Canvas/Panel").transform;
+        trans_commonPanelParent = GameObject.Find("Canvas/Panel/Layer1").transform;
+        trans_layer2 = GameObject.Find("Canvas/Panel/Layer2").transform;
 
+        InitPanel((GameModuleType)RoleManager.Instance._CurGameInfo.CurGameModule);
+
+    }
+
+    /// <summary>
+    /// 切换游戏模块
+    /// </summary>
+    /// <param name="gameModuleType"></param>
+    public void InitPanel(GameModuleType gameModuleType)
+    {
+        CloseAllPanel(trans_commonPanelParent);
+        CloseAllPanel(trans_layer2);
+        //CloseAllPanel(trans_layer3);
         //后续根据当前是什么场景
-        switch (RoleManager.Instance._CurGameInfo.CurGameModule)
+        switch (gameModuleType)
         {
-            case (int)GameModuleType.WeekDay:
+            case GameModuleType.WeekDay:
                 OpenPanel<WorkDayPanel>(trans_commonPanelParent);
                 OpenPanel<PropertyPanel>(trans_commonPanelParent);
                 OpenPanel<DeskPanel>(trans_commonPanelParent);
-                break;
-            case (int)GameModuleType.Battle:
-                break;
+                OpenPanel<StatusPanel>(trans_layer2);
 
+                break;
+            case GameModuleType.Battle:
+                break;
+            case GameModuleType.Home:
+                OpenPanel<HomePanel>(trans_commonPanelParent);
+                OpenPanel<StatusPanel>(trans_layer2);
+                break;
+            case GameModuleType.BigMap:
+                OpenPanel<BigMapPanel>(trans_commonPanelParent);
+                OpenPanel<StatusPanel>(trans_layer2);
+
+                break;
         }
         if (RoleManager.Instance._CurGameInfo.CurGameModule == (int)GameModuleType.WeekDay)
         {
-          
-        }
 
-     
+        }
 
     }
 
@@ -168,6 +192,18 @@ public class PanelManager : MonoInstance<PanelManager>
         EntityManager.Instance.CloseEntity(panelBase);
     }
 
+    /// <summary>
+    /// 关闭某个父物体的所有面板
+    /// </summary>
+    public void CloseAllPanel(Transform trans)
+    {
+        int count = trans.childCount;
+        for (int i = count - 1; i >= 0; i--)
+        {
+            PanelBase panel = trans.GetChild(i).GetComponent<PanelBase>();
+            ClosePanel(panel);
+        }
+    }
 
     /// <summary>
     /// 关闭小面板
