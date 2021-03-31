@@ -17,6 +17,7 @@ public class PanelManager : MonoInstance<PanelManager>
         base.Init();
         trans_commonPanelParent = GameObject.Find("Canvas/Panel/Layer1").transform;
         trans_layer2 = GameObject.Find("Canvas/Panel/Layer2").transform;
+        trans_layer3 = GameObject.Find("Canvas/Panel/Layer3").transform;
 
         InitPanel((GameModuleType)RoleManager.Instance._CurGameInfo.CurGameModule);
 
@@ -239,7 +240,7 @@ public class PanelManager : MonoInstance<PanelManager>
         BlackMaskPanel blackMaskPanel = GetPanel<BlackMaskPanel>();
         if (blackMaskPanel == null)
         {
-            blackMaskPanel= PanelManager.Instance.OpenPanel<BlackMaskPanel>(PanelManager.Instance.trans_commonPanelParent, blackMaskType,finishCallBack);
+            blackMaskPanel= PanelManager.Instance.OpenPanel<BlackMaskPanel>(PanelManager.Instance.trans_layer3, blackMaskType,finishCallBack);
 
         }
     }

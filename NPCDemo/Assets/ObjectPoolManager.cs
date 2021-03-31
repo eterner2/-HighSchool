@@ -24,6 +24,8 @@ using UnityEngine;
     StatusPropertyView,//单个状态
     HomePanel,//在家的面板
     BigMapPanel,//大地图
+    ChooseActionPanel,//选择行动面板
+    ChooseActionBtnView,//选择行动按钮
 }
 
 public class TempItem

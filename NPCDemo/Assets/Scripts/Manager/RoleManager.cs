@@ -78,20 +78,36 @@ public class RoleManager
     /// <param name="gameInfo"></param>
     void CreateNewPropertyData(PeopleProtoData peopleProtoData)
     {
-        PropertyData propertyData = new PropertyData();
-        PropertySetting setting = DataTable.FindPropertySetting((int)PropertyIdType.Study);
 
-        propertyData.PropertyIdList.Add((int)PropertyIdType.Study);
+        PropertyData propertyData = new PropertyData();
+
+        InitSingleProperty(propertyData, PropertyIdType.Study, 15);
+        InitSingleProperty(propertyData, PropertyIdType.Art, 8);
+        InitSingleProperty(propertyData, PropertyIdType.Physical, 4);
+        InitSingleProperty(propertyData, PropertyIdType.Money, 1500);
+        InitSingleProperty(propertyData, PropertyIdType.TiLi, 100);
+        InitSingleProperty(propertyData, PropertyIdType.Mood, 100);
+        InitSingleProperty(propertyData, PropertyIdType.SelfControl, 20);
+
+
+        peopleProtoData.PropertyData = propertyData;
+    }
+
+    public void InitSingleProperty(PropertyData propertyData, PropertyIdType idType,int initNum)
+    {
+        //PropertyData propertyData = new PropertyData();
+        PropertySetting setting = DataTable.FindPropertySetting((int)idType);
+
+        propertyData.PropertyIdList.Add((int)idType);
 
         SinglePropertyData singlePropertyData = new SinglePropertyData();
-        singlePropertyData.PropertyId = (int)PropertyIdType.Study;
-        singlePropertyData.PropertyNum = 0;
+        singlePropertyData.PropertyId = (int)idType;
+        singlePropertyData.PropertyNum = initNum;
         singlePropertyData.PropertyLimit = setting.haveLimit.ToInt32();
 
         propertyData.PropertyDataList.Add(singlePropertyData);
 
-
-        peopleProtoData.PropertyData = propertyData;
+        //return singlePropertyData;
     }
 
     /// <summary>

@@ -12,6 +12,8 @@ public class PanelBase : MonoBehaviour,Entity
     public Button btn_emptyClose;//空白关闭
     public Dictionary<Button, UnityEngine.Events.UnityAction> btnListenerDic = new Dictionary<Button, UnityEngine.Events.UnityAction>();
 
+    public Transform trans_content;//内容，会缩放的
+
     public virtual void Init(params object[] args)
     {
         Clear();
@@ -44,6 +46,12 @@ public class PanelBase : MonoBehaviour,Entity
     /// <param name="listener"></param>
     public virtual void addBtnListener(Button btn, UnityEngine.Events.UnityAction listener, bool changeScale = true)
     {
+        if (btn == null)
+        {
+            Debug.LogError("按钮没赋值");
+
+            return;
+        }
         if (!btnListenerDic.ContainsKey(btn))
         {
             btn.onClick.AddListener(listener);

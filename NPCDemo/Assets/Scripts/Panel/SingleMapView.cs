@@ -11,6 +11,7 @@ public class SingleMapView : SingleViewBase
     public Text txt_name;
 
     public BigMapSetting bigMapSetting;
+    public Button btn;
     public override void Init(params object[] args)
     {
         base.Init(args);
@@ -23,6 +24,13 @@ public class SingleMapView : SingleViewBase
         base.OnOpenIng();
         img_icon.sprite = ResourceManager.Instance.GetObj<Sprite>(ConstantVal.bigMapFolderPath+ bigMapSetting.iconName);
         txt_name.SetText(bigMapSetting.name);
+
+        addBtnListener(btn, () =>
+        {
+            PanelManager.Instance.OpenPanel<ChooseActionPanel>(PanelManager.Instance.trans_layer2, 
+                transform.position,
+                bigMapSetting);
+        });
     }
 
 

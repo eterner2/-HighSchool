@@ -86,6 +86,8 @@
     <Compile Include="Assets\Scripts\Panel\BattlePanel.cs" />
     <Compile Include="Assets\Scripts\Panel\BigMapPanel.cs" />
     <Compile Include="Assets\Scripts\Panel\BlackMaskPanel.cs" />
+    <Compile Include="Assets\Scripts\Panel\ChooseActionBtnView.cs" />
+    <Compile Include="Assets\Scripts\Panel\ChooseActionPanel.cs" />
     <Compile Include="Assets\Scripts\Panel\DeskPanel.cs" />
     <Compile Include="Assets\Scripts\Panel\FlyTxtView.cs" />
     <Compile Include="Assets\Scripts\Panel\HomePanel.cs" />

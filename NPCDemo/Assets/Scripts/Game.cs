@@ -13,13 +13,17 @@ public class Game : MonoBehaviour
     {
         StartCoroutine(CopyFromStreamToPersist(TableOK));
 
-
+        //GameObject o = GameObject.Find(":sd ");
+        //Debug.Log(o.transform);
     }
     //public float test;
     // Update is called once per frame
     void Update()
     {
-        //test +=20*Time.deltaTime;
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            PanelManager.Instance.OpenPanel<ChooseActionPanel>(PanelManager.Instance.trans_layer3);
+        }
     }
 
     /// <summary>
