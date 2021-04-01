@@ -43,7 +43,14 @@ uint64 onlyId=1;//唯一id
 PropertyData propertyData=2;//属性
 repeated uint64 sensedOtherPeopleIdList=3;//感受到的其他人
 repeated int32 friendlinessToSensedOtherPeopleList=4;//对感受到的人的好感度
-
+int32 gender=5;//性别
+string name=6;//姓名
+int32 actionId=7;//想做什么
+bool finishInviteProcess=8;//结束邀约进程
+repeated PeopleProtoData meInviteOtherList=9;//我邀请的人
+repeated PeopleProtoData otherInviteMeList=10;//邀请我的人
+repeated string recordList=11;//记录
+repeated PeopleProtoData chatFriends=12;//通讯录
 }
 //别人邀请我的数据
 message OtherInviteMeData

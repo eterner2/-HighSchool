@@ -244,4 +244,11 @@ public class PanelManager : MonoInstance<PanelManager>
 
         }
     }
+
+    public void OpenFloatWindow(string str)
+    {
+        OpenPanel<FloatWindowPanel>(trans_layer3, str);
+    }
+
+
 }

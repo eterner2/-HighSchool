@@ -38,7 +38,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -130.99994, y: 45.00003}
-  m_SizeDelta: {x: 0, y: 50}
+  m_SizeDelta: {x: 0, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8000768948772902618
 CanvasRenderer:
@@ -120,7 +120,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -130.9, y: 45.00004}
-  m_SizeDelta: {x: 100, y: 23}
+  m_SizeDelta: {x: 50, y: 11.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8000768948792787245
 CanvasRenderer:
@@ -226,6 +226,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8000768948772902617}
     m_Modifications:
+    - target: {fileID: 8239798461410980162, guid: ab80b94d964a47f4abfdd7ead0a89a71,
+        type: 3}
+      propertyPath: m_Name
+      value: PeopleView
+      objectReference: {fileID: 0}
     - target: {fileID: 8239798461410980163, guid: ab80b94d964a47f4abfdd7ead0a89a71,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -330,11 +335,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8239798461410980162, guid: ab80b94d964a47f4abfdd7ead0a89a71,
-        type: 3}
-      propertyPath: m_Name
-      value: PeopleView
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab80b94d964a47f4abfdd7ead0a89a71, type: 3}
@@ -363,6 +363,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8000768948772902617}
     m_Modifications:
+    - target: {fileID: 8239798461410980162, guid: ab80b94d964a47f4abfdd7ead0a89a71,
+        type: 3}
+      propertyPath: m_Name
+      value: PeopleView (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 8239798461410980163, guid: ab80b94d964a47f4abfdd7ead0a89a71,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -467,11 +472,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8239798461410980162, guid: ab80b94d964a47f4abfdd7ead0a89a71,
-        type: 3}
-      propertyPath: m_Name
-      value: PeopleView (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab80b94d964a47f4abfdd7ead0a89a71, type: 3}

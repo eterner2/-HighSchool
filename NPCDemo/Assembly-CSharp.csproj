@@ -88,11 +88,16 @@
     <Compile Include="Assets\Scripts\Panel\BlackMaskPanel.cs" />
     <Compile Include="Assets\Scripts\Panel\ChooseActionBtnView.cs" />
     <Compile Include="Assets\Scripts\Panel\ChooseActionPanel.cs" />
+    <Compile Include="Assets\Scripts\Panel\ChoosePeopleOptionPanel.cs" />
     <Compile Include="Assets\Scripts\Panel\DeskPanel.cs" />
+    <Compile Include="Assets\Scripts\Panel\FloatWindowPanel.cs" />
     <Compile Include="Assets\Scripts\Panel\FlyTxtView.cs" />
     <Compile Include="Assets\Scripts\Panel\HomePanel.cs" />
     <Compile Include="Assets\Scripts\Panel\PanelBase.cs" />
     <Compile Include="Assets\Scripts\Panel\PropertyPanel.cs" />
+    <Compile Include="Assets\Scripts\Panel\SelfAdaptionChooseBtnView.cs" />
+    <Compile Include="Assets\Scripts\Panel\SelfAdaptionChoosePanel.cs" />
+    <Compile Include="Assets\Scripts\Panel\SingleChatItemView.cs" />
     <Compile Include="Assets\Scripts\Panel\SingleMapView.cs" />
     <Compile Include="Assets\Scripts\Panel\SinglePropertyView.cs" />
     <Compile Include="Assets\Scripts\Panel\SingleViewBase.cs" />

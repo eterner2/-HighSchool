@@ -113,7 +113,7 @@ public class GameTimeManager:MonoInstance<GameTimeManager>
             DayProcess(Time.deltaTime);
         }
     }
-
+    int addScoreTime = 0;
     /// <summary>
     /// 日期过程
     /// </summary>
@@ -141,8 +141,9 @@ public class GameTimeManager:MonoInstance<GameTimeManager>
                 {
                     lastDayPhaseIndex = curDayPhaseIndex;
                     //得到分数
+                    addScoreTime++;
                     RoleManager.Instance.GetStudyScore();
-
+                    Debug.Log("加了" + addScoreTime + "次数据");
                 }
             }
         }
@@ -231,7 +232,7 @@ public class GameTimeManager:MonoInstance<GameTimeManager>
     /// <returns></returns>
     public int GetPhaseIndex(int process)
     {
-        for(int i = 0; i < dayPhaseRangeArr.Length-1; i++)
+        for(int i = 0; i < dayPhaseRangeArr.Length; i++)
         {
             if (process >= dayPhaseRangeArr[i].x && process < dayPhaseRangeArr[i].y)
             {

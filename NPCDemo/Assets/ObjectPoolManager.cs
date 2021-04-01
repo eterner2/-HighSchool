@@ -26,6 +26,7 @@ using UnityEngine;
     BigMapPanel,//大地图
     ChooseActionPanel,//选择行动面板
     ChooseActionBtnView,//选择行动按钮
+    FloatWindowPanel,//飘窗
 }
 
 public class TempItem
