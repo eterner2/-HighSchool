@@ -87,4 +87,5 @@ public enum PropertyIdType
     TiLi=10005,//体力
     Mood=10006,//心情
     SelfControl=10007,//自制
+    Charm=10008,//魅力
 }

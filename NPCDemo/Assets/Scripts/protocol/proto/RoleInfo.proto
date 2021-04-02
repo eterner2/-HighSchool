@@ -51,6 +51,8 @@ repeated PeopleProtoData meInviteOtherList=9;//我邀请的人
 repeated PeopleProtoData otherInviteMeList=10;//邀请我的人
 repeated string recordList=11;//记录
 repeated PeopleProtoData chatFriends=12;//通讯录
+bool isPlayer=13;//是玩家
+
 }
 //别人邀请我的数据
 message OtherInviteMeData

@@ -24,7 +24,8 @@ public class RoleManager
 
     public GameInfo _CurGameInfo;
     //public int CurScore = 0;
-
+    public List<People> allPeopleList;//所有人
+    public People playerPeople;//玩家
 
     public void Init(int index)
     {
@@ -43,7 +44,8 @@ public class RoleManager
     {
         GameInfo gameInfo = new GameInfo();
         CreateNewTimeData(gameInfo);
-        CreateNewPlayer(gameInfo);
+       // CreateNewPlayer(gameInfo);
+        CreateNewPeople(gameInfo);
         //CreateNewPropertyData(gameInfo);
         gameInfo.CurGameModule = (int)GameModuleType.WeekDay;
         _CurGameInfo = gameInfo;
@@ -61,54 +63,76 @@ public class RoleManager
         timeData.DayBeforeExam = 300;
         gameInfo.TimeData = timeData;
     }
-    /// <summary>
-    /// 创建新的玩家
-    /// </summary>
-    void CreateNewPlayer(GameInfo gameInfo)
-    {
-        PeopleProtoData peopleProtoData = new PeopleProtoData();
-        CreateNewPropertyData(peopleProtoData);
-        gameInfo.PlayerPeople = peopleProtoData;
-        gameInfo.AllPeopleList.Add(peopleProtoData);
-    }
+    ///// <summary>
+    ///// 创建新的玩家
+    ///// </summary>
+    //void CreateNewPlayer(GameInfo gameInfo)
+    //{
+    //    PeopleProtoData peopleProtoData = new PeopleProtoData();
+    //    CreateNewPropertyData(peopleProtoData);
+    //    gameInfo.PlayerPeople = peopleProtoData;
+    //    gameInfo.AllPeopleList.Add(peopleProtoData);
+    //}
 
     /// <summary>
-    /// 创建新的属性数据
+    /// 创建新的所有人
     /// </summary>
     /// <param name="gameInfo"></param>
-    void CreateNewPropertyData(PeopleProtoData peopleProtoData)
+    void CreateNewPeople(GameInfo gameInfo)
     {
-
-        PropertyData propertyData = new PropertyData();
-
-        InitSingleProperty(propertyData, PropertyIdType.Study, 15);
-        InitSingleProperty(propertyData, PropertyIdType.Art, 8);
-        InitSingleProperty(propertyData, PropertyIdType.Physical, 4);
-        InitSingleProperty(propertyData, PropertyIdType.Money, 1500);
-        InitSingleProperty(propertyData, PropertyIdType.TiLi, 100);
-        InitSingleProperty(propertyData, PropertyIdType.Mood, 100);
-        InitSingleProperty(propertyData, PropertyIdType.SelfControl, 20);
-
-
-        peopleProtoData.PropertyData = propertyData;
+        allPeopleList = new List<People>();
+        //暂时用这个scriptable TODO改成读表
+        PeopleScriptable peopleScriptable = NewBehaviourScript.Instance.peopleScriptable;
+        for(int i = 0; i < peopleScriptable.peopleDataList.Count; i++)
+        {
+          
+            People p = new People(peopleScriptable.peopleDataList[i]);
+            if (p.isPlayer)
+                playerPeople = p;
+            allPeopleList.Add(p);
+        }
+    
     }
 
-    public void InitSingleProperty(PropertyData propertyData, PropertyIdType idType,int initNum)
-    {
-        //PropertyData propertyData = new PropertyData();
-        PropertySetting setting = DataTable.FindPropertySetting((int)idType);
+    ///// <summary>
+    ///// 创建新的属性数据
+    ///// </summary>
+    ///// <param name="gameInfo"></param>
+    //void CreateNewPropertyData(PeopleScriptable peopleScriptable,PeopleProtoData peopleProtoData)
+    //{
 
-        propertyData.PropertyIdList.Add((int)idType);
+    //    PropertyData propertyData = new PropertyData();
 
-        SinglePropertyData singlePropertyData = new SinglePropertyData();
-        singlePropertyData.PropertyId = (int)idType;
-        singlePropertyData.PropertyNum = initNum;
-        singlePropertyData.PropertyLimit = setting.haveLimit.ToInt32();
 
-        propertyData.PropertyDataList.Add(singlePropertyData);
 
-        //return singlePropertyData;
-    }
+    //    InitSingleProperty(propertyData, PropertyIdType.Study, 15);
+    //    InitSingleProperty(propertyData, PropertyIdType.Art, 8);
+    //    InitSingleProperty(propertyData, PropertyIdType.Physical, 4);
+    //    InitSingleProperty(propertyData, PropertyIdType.Money, 1500);
+    //    InitSingleProperty(propertyData, PropertyIdType.TiLi, 100);
+    //    InitSingleProperty(propertyData, PropertyIdType.Mood, 100);
+    //    InitSingleProperty(propertyData, PropertyIdType.SelfControl, 20);
+
+
+    //    peopleProtoData.PropertyData = propertyData;
+    //}
+
+    //public void InitSingleProperty(PropertyData propertyData, PropertyIdType idType,int initNum)
+    //{
+    //    //PropertyData propertyData = new PropertyData();
+    //    PropertySetting setting = DataTable.FindPropertySetting((int)idType);
+
+    //    propertyData.PropertyIdList.Add((int)idType);
+
+    //    SinglePropertyData singlePropertyData = new SinglePropertyData();
+    //    singlePropertyData.PropertyId = (int)idType;
+    //    singlePropertyData.PropertyNum = initNum;
+    //    singlePropertyData.PropertyLimit = setting.haveLimit.ToInt32();
+
+    //    propertyData.PropertyDataList.Add(singlePropertyData);
+
+    //    //return singlePropertyData;
+    //}
 
     /// <summary>
     /// 得到学习分数

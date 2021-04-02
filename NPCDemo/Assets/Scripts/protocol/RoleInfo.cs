@@ -35,7 +35,7 @@ namespace RoleData {
             "cHJvcGVydHlEYXRhTGlzdBgCIAMoCzIcLlJvbGVEYXRhLlNpbmdsZVByb3Bl",
             "cnR5RGF0YSJUChJTaW5nbGVQcm9wZXJ0eURhdGESEgoKcHJvcGVydHlJZBgB",
             "IAEoBRITCgtwcm9wZXJ0eU51bRgCIAEoBRIVCg1wcm9wZXJ0eUxpbWl0GAMg",
-            "ASgFIuoCCg9QZW9wbGVQcm90b0RhdGESDgoGb25seUlkGAEgASgEEiwKDHBy",
+            "ASgFIqwDCg9QZW9wbGVQcm90b0RhdGESDgoGb25seUlkGAEgASgEEiwKDHBy",
             "b3BlcnR5RGF0YRgCIAEoCzIWLlJvbGVEYXRhLlByb3BlcnR5RGF0YRIfChdz",
             "ZW5zZWRPdGhlclBlb3BsZUlkTGlzdBgDIAMoBBIrCiNmcmllbmRsaW5lc3NU",
             "b1NlbnNlZE90aGVyUGVvcGxlTGlzdBgEIAMoBRIOCgZnZW5kZXIYBSABKAUS",
@@ -43,10 +43,12 @@ namespace RoleData {
             "dGVQcm9jZXNzGAggASgIEjQKEW1lSW52aXRlT3RoZXJMaXN0GAkgAygLMhku",
             "Um9sZURhdGEuUGVvcGxlUHJvdG9EYXRhEjQKEW90aGVySW52aXRlTWVMaXN0",
             "GAogAygLMhkuUm9sZURhdGEuUGVvcGxlUHJvdG9EYXRhEhIKCnJlY29yZExp",
-            "c3QYCyADKAkiPgoRT3RoZXJJbnZpdGVNZURhdGESKQoGcGVvcGxlGAEgASgL",
-            "MhkuUm9sZURhdGEuUGVvcGxlUHJvdG9EYXRhIlQKFk1lSW52aXRlT3RoZXJQ",
-            "cm90b0RhdGESKQoGcGVvcGxlGAEgASgLMhkuUm9sZURhdGEuUGVvcGxlUHJv",
-            "dG9EYXRhEg8KB3JlZnVzZWQYAiABKAhiBnByb3RvMw=="));
+            "c3QYCyADKAkSLgoLY2hhdEZyaWVuZHMYDCADKAsyGS5Sb2xlRGF0YS5QZW9w",
+            "bGVQcm90b0RhdGESEAoIaXNQbGF5ZXIYDSABKAgiPgoRT3RoZXJJbnZpdGVN",
+            "ZURhdGESKQoGcGVvcGxlGAEgASgLMhkuUm9sZURhdGEuUGVvcGxlUHJvdG9E",
+            "YXRhIlQKFk1lSW52aXRlT3RoZXJQcm90b0RhdGESKQoGcGVvcGxlGAEgASgL",
+            "MhkuUm9sZURhdGEuUGVvcGxlUHJvdG9EYXRhEg8KB3JlZnVzZWQYAiABKAhi",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
@@ -54,7 +56,7 @@ namespace RoleData {
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.TimeData), global::RoleData.TimeData.Parser, new[]{ "Year", "Month", "Day", "TheWeekDay", "DayProcess", "DayBeforeExam" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.PropertyData), global::RoleData.PropertyData.Parser, new[]{ "PropertyIdList", "PropertyDataList" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.SinglePropertyData), global::RoleData.SinglePropertyData.Parser, new[]{ "PropertyId", "PropertyNum", "PropertyLimit" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.PeopleProtoData), global::RoleData.PeopleProtoData.Parser, new[]{ "OnlyId", "PropertyData", "SensedOtherPeopleIdList", "FriendlinessToSensedOtherPeopleList", "Gender", "Name", "ActionId", "FinishInviteProcess", "MeInviteOtherList", "OtherInviteMeList", "RecordList" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.PeopleProtoData), global::RoleData.PeopleProtoData.Parser, new[]{ "OnlyId", "PropertyData", "SensedOtherPeopleIdList", "FriendlinessToSensedOtherPeopleList", "Gender", "Name", "ActionId", "FinishInviteProcess", "MeInviteOtherList", "OtherInviteMeList", "RecordList", "ChatFriends", "IsPlayer" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.OtherInviteMeData), global::RoleData.OtherInviteMeData.Parser, new[]{ "People" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.MeInviteOtherProtoData), global::RoleData.MeInviteOtherProtoData.Parser, new[]{ "People", "Refused" }, null, null, null)
           }));
@@ -960,6 +962,8 @@ namespace RoleData {
       meInviteOtherList_ = other.meInviteOtherList_.Clone();
       otherInviteMeList_ = other.otherInviteMeList_.Clone();
       recordList_ = other.recordList_.Clone();
+      chatFriends_ = other.chatFriends_.Clone();
+      isPlayer_ = other.isPlayer_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1117,6 +1121,33 @@ namespace RoleData {
       get { return recordList_; }
     }
 
+    /// <summary>Field number for the "chatFriends" field.</summary>
+    public const int ChatFriendsFieldNumber = 12;
+    private static readonly pb::FieldCodec<global::RoleData.PeopleProtoData> _repeated_chatFriends_codec
+        = pb::FieldCodec.ForMessage(98, global::RoleData.PeopleProtoData.Parser);
+    private readonly pbc::RepeatedField<global::RoleData.PeopleProtoData> chatFriends_ = new pbc::RepeatedField<global::RoleData.PeopleProtoData>();
+    /// <summary>
+    ///通讯录
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::RoleData.PeopleProtoData> ChatFriends {
+      get { return chatFriends_; }
+    }
+
+    /// <summary>Field number for the "isPlayer" field.</summary>
+    public const int IsPlayerFieldNumber = 13;
+    private bool isPlayer_;
+    /// <summary>
+    ///是玩家
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsPlayer {
+      get { return isPlayer_; }
+      set {
+        isPlayer_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as PeopleProtoData);
@@ -1141,6 +1172,8 @@ namespace RoleData {
       if(!meInviteOtherList_.Equals(other.meInviteOtherList_)) return false;
       if(!otherInviteMeList_.Equals(other.otherInviteMeList_)) return false;
       if(!recordList_.Equals(other.recordList_)) return false;
+      if(!chatFriends_.Equals(other.chatFriends_)) return false;
+      if (IsPlayer != other.IsPlayer) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1158,6 +1191,8 @@ namespace RoleData {
       hash ^= meInviteOtherList_.GetHashCode();
       hash ^= otherInviteMeList_.GetHashCode();
       hash ^= recordList_.GetHashCode();
+      hash ^= chatFriends_.GetHashCode();
+      if (IsPlayer != false) hash ^= IsPlayer.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1200,6 +1235,11 @@ namespace RoleData {
       meInviteOtherList_.WriteTo(output, _repeated_meInviteOtherList_codec);
       otherInviteMeList_.WriteTo(output, _repeated_otherInviteMeList_codec);
       recordList_.WriteTo(output, _repeated_recordList_codec);
+      chatFriends_.WriteTo(output, _repeated_chatFriends_codec);
+      if (IsPlayer != false) {
+        output.WriteRawTag(104);
+        output.WriteBool(IsPlayer);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1231,6 +1271,10 @@ namespace RoleData {
       size += meInviteOtherList_.CalculateSize(_repeated_meInviteOtherList_codec);
       size += otherInviteMeList_.CalculateSize(_repeated_otherInviteMeList_codec);
       size += recordList_.CalculateSize(_repeated_recordList_codec);
+      size += chatFriends_.CalculateSize(_repeated_chatFriends_codec);
+      if (IsPlayer != false) {
+        size += 1 + 1;
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -1268,6 +1312,10 @@ namespace RoleData {
       meInviteOtherList_.Add(other.meInviteOtherList_);
       otherInviteMeList_.Add(other.otherInviteMeList_);
       recordList_.Add(other.recordList_);
+      chatFriends_.Add(other.chatFriends_);
+      if (other.IsPlayer != false) {
+        IsPlayer = other.IsPlayer;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -1326,6 +1374,14 @@ namespace RoleData {
           }
           case 90: {
             recordList_.AddEntriesFrom(input, _repeated_recordList_codec);
+            break;
+          }
+          case 98: {
+            chatFriends_.AddEntriesFrom(input, _repeated_chatFriends_codec);
+            break;
+          }
+          case 104: {
+            IsPlayer = input.ReadBool();
             break;
           }
         }

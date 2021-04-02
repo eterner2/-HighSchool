@@ -29,6 +29,9 @@ public class GameModuleManager : CommonInstance<GameModuleManager>
             RoleManager.Instance._CurGameInfo.CurGameModule = (int)gameModuleType;
             curGameModule = gameModuleType; //(GameModuleType)RoleManager.Instance._CurGameInfo.CurGameModule;
 
+            
+
+
             PanelManager.Instance.InitPanel(curGameModule);
 
         }
@@ -36,6 +39,16 @@ public class GameModuleManager : CommonInstance<GameModuleManager>
         );
 
     }
+
+    /// <summary>
+    /// 初始化模块的系统
+    /// </summary>
+    public void InitGameModuleManager(GameModuleType gameModuleType)
+    {
+
+    }
+
+
 }
 
 /// <summary>

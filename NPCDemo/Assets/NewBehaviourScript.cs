@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using RoleData;
+using Framework.Data;
+
 public class NewBehaviourScript : MonoBehaviour
 {
     public List<People> allPeopleList = new List<People>();
@@ -56,9 +59,9 @@ public class NewBehaviourScript : MonoBehaviour
     {
         for(int i = 0; i <60; i++)
         {
-            People p = new People(peopleScriptable.peopleDataList[i].name, peopleScriptable.peopleDataList[i].gender);
-            allPeopleList.Add(p);
-            GeneratePeople(p);
+            //People p = new People(peopleScriptable.peopleDataList[i].name, peopleScriptable.peopleDataList[i].gender);
+            //allPeopleList.Add(p);
+            //GeneratePeople(p);
         }
 
         //for (int i = 0; i < 100; i++)
@@ -631,21 +634,89 @@ public class Plan
 [System.Serializable]
 public class People
 {
+    public PeopleProtoData protoData;//保存的时候把数据保存在此 载入的时候把这个载入
+
     public string actionName;//想做什么
     public string name;
     public bool finishInviteProcess;//结束邀约进程
-    public Gender gender=Gender.None;//是男
-
-    public People(string name, Gender gender)
-    {
-        this.name = name;
-        this.gender = gender;
-    }
-
+    public Gender gender = Gender.None;//是男
     public List<MeInviteOtherData> meInviteOtherList = new List<MeInviteOtherData>();//我邀请的人
     public List<OtherInviteMeData> otherInviteMeList = new List<OtherInviteMeData>();//邀请我的人
 
     public List<string> recordList = new List<string>();
+    public bool isPlayer = false;
+
+    /// <summary>
+    /// TODO通过配表的Setting创建新People（PeopleData后续要改成PeopleSetting）
+    /// </summary>
+    /// <param name="peopleData"></param>
+    public People(PeopleData peopleData)
+    {
+        this.name = peopleData.name;
+        this.gender = peopleData.gender;
+        if (this.name == "毛鹏程")
+        {
+            isPlayer = true;
+        }
+        PeopleProtoData peopleProtoData = new PeopleProtoData();
+        CreateNewPropertyData(peopleProtoData);
+        this.protoData = peopleProtoData;
+    }
+    /// <summary>
+    /// TODO通过存档的Protocol来创建People（DEMO开发阶段为了可读性 另外存一份 后续全部采用Protocol数据）
+    /// </summary>
+    /// <param name="peopleProtoData"></param>
+    public People(PeopleProtoData peopleProtoData)
+    {
+
+    }
+
+   
+
+    /// <summary>
+    /// 创建新的属性数据
+    /// </summary>
+    /// <param name="gameInfo"></param>
+    void CreateNewPropertyData(PeopleProtoData peopleProtoData)
+    {
+
+        PropertyData propertyData = new PropertyData();
+
+
+
+        InitSingleProperty(propertyData, PropertyIdType.Study);
+        InitSingleProperty(propertyData, PropertyIdType.Art);
+        InitSingleProperty(propertyData, PropertyIdType.Physical);
+        InitSingleProperty(propertyData, PropertyIdType.Money);
+        InitSingleProperty(propertyData, PropertyIdType.TiLi);
+        InitSingleProperty(propertyData, PropertyIdType.Mood);
+        InitSingleProperty(propertyData, PropertyIdType.SelfControl);
+        InitSingleProperty(propertyData, PropertyIdType.Charm);
+
+
+        peopleProtoData.PropertyData = propertyData;
+    }
+
+
+    public void InitSingleProperty(PropertyData propertyData, PropertyIdType idType)
+    {
+        //PropertyData propertyData = new PropertyData();
+        PropertySetting setting = DataTable.FindPropertySetting((int)idType);
+
+        string[] rdmRange = setting.newRdmRange.Split('|');
+        int val = RandomManager.Next(rdmRange[0].ToInt32(), rdmRange[1].ToInt32());
+
+        propertyData.PropertyIdList.Add((int)idType);
+
+        SinglePropertyData singlePropertyData = new SinglePropertyData();
+        singlePropertyData.PropertyId = (int)idType;
+        singlePropertyData.PropertyNum = val;
+        singlePropertyData.PropertyLimit = setting.haveLimit.ToInt32();
+
+        propertyData.PropertyDataList.Add(singlePropertyData);
+
+        //return singlePropertyData;
+    }
 
     /// <summary>
     /// 邀请
