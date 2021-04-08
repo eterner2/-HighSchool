@@ -285,32 +285,6 @@ public class NewBehaviourScript : MonoBehaviour
                 {
                     nextHandleList.Add(p);
 
-                    ////等待回应
-                    //int index = RandomManager.Next(0, candidateMeInviteOtherList.Count);
-                    //People choosed = candidateMeInviteOtherList[index];
-
-                    ////如果选择了我邀请的人，则拒绝所有邀请我的人 然后进入下一轮
-                    //if (p.ifMeInvitePeople(choosed))
-                    //{
-                    //    //有人邀请我 选他然后拒绝别人
-                    //    if (candidateInviteMeList.Count > 0)
-                    //    {
-                    //        string content = "";
-                    //        content = "还是想和" + choosed.name + "一起" + p.actionName + ",所以拒绝了";
-
-                    //        for (int j = 0; j < candidateInviteMeList.Count; j++)
-                    //        {
-                    //            content += candidateInviteMeList[j].name + "，";
-                    //            candidateInviteMeList[j].Record("由于"
-                    //                + p.name + "还是想和" + choosed.name + "一起" + p.actionName
-                    //                + ",拒绝了你的邀请");
-
-                    //            p.Refuse(candidateInviteMeList[j]);
-                    //        }
-
-                    //        p.Record(content);
-                    //    }
-                    //}
                 }
                 //如果两者都有
                 else if (candidateInviteMeList.Count > 0 && candidateMeInviteOtherList.Count > 0)
@@ -610,17 +584,22 @@ public class NewBehaviourScript : MonoBehaviour
     }
 }
 
+/// <summary>
+/// 后续这个也要做成protocol数据
+/// </summary>
 public class Plan
 {
+    public int actionId;
     public string actionName;
     public List<People> peopleList = new List<People>();
+
     public Plan(string actionName, People p1,People p2=null)
     {
         this.actionName = actionName;
         peopleList.Add(p1);
         p1.actionName = actionName;
         p1.FinishInviteProcess();
-
+        
         if (p2 != null)
         {
             peopleList.Add(p2);
@@ -636,8 +615,8 @@ public class People
 {
     public PeopleProtoData protoData;//保存的时候把数据保存在此 载入的时候把这个载入
 
-    public string actionName;//想做什么
-    public string name;
+    public string actionName;//想做什么 该参数是为了debug的时候好看 后续删掉
+    public string name;//该参数是为了debug的时候好看 后续删掉
     public bool finishInviteProcess;//结束邀约进程
     public Gender gender = Gender.None;//是男
     public List<MeInviteOtherData> meInviteOtherList = new List<MeInviteOtherData>();//我邀请的人
@@ -646,6 +625,7 @@ public class People
     public List<string> recordList = new List<string>();
     public bool isPlayer = false;
 
+    public List<People> weTalkFriends = new List<People>();//wetalk的朋友
     /// <summary>
     /// TODO通过配表的Setting创建新People（PeopleData后续要改成PeopleSetting）
     /// </summary>
@@ -654,11 +634,13 @@ public class People
     {
         this.name = peopleData.name;
         this.gender = peopleData.gender;
-        if (this.name == "毛鹏程")
+        if (peopleData.name == "毛鹏程")
         {
             isPlayer = true;
         }
         PeopleProtoData peopleProtoData = new PeopleProtoData();
+        peopleProtoData.Name = peopleData.name;
+        peopleProtoData.Gender = (int)peopleData.gender;
         CreateNewPropertyData(peopleProtoData);
         this.protoData = peopleProtoData;
     }
@@ -745,7 +727,6 @@ public class People
             Debug.LogError("你不能被自己邀请！！！");
             return;
         }
-
         otherInviteMeList.Add(new OtherInviteMeData(people));
         
     }

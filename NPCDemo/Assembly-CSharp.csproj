@@ -90,6 +90,7 @@
     <Compile Include="Assets\Scripts\Panel\ChooseActionBtnView.cs" />
     <Compile Include="Assets\Scripts\Panel\ChooseActionPanel.cs" />
     <Compile Include="Assets\Scripts\Panel\ChoosePeopleOptionPanel.cs" />
+    <Compile Include="Assets\Scripts\Panel\CommonHintPanel.cs" />
     <Compile Include="Assets\Scripts\Panel\DeskPanel.cs" />
     <Compile Include="Assets\Scripts\Panel\FloatWindowPanel.cs" />
     <Compile Include="Assets\Scripts\Panel\FlyTxtView.cs" />
@@ -119,7 +120,7 @@
     <Compile Include="Assets\Scripts\Tools\LanguageUtil.cs" />
     <Compile Include="Assets\Scripts\Tools\MonoInstance.cs" />
     <Compile Include="Assets\Scripts\Tools\UIUtil.cs" />
-    <Compile Include="Assets\SingleGroup.cs" />
+    <Compile Include="Assets\SingleGroupView.cs" />
     <Compile Include="Assets\SingleRecordPanel.cs" />
     <Compile Include="Assets\Text_singleRecord.cs" />
     <None Include="Assets\StreamingAssets\theVersion.txt" />

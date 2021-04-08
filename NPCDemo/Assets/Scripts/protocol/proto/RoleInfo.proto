@@ -53,7 +53,17 @@ repeated string recordList=11;//记录
 repeated PeopleProtoData chatFriends=12;//通讯录
 bool isPlayer=13;//是玩家
 
+int32 choosedActionId=14;//确定选择了的活动
 }
+
+//计划
+message PlanProtoData
+{
+PeopleProtoData p1=1;
+PeopleProtoData p2=2;
+int32 actionId=3;
+}
+
 //别人邀请我的数据
 message OtherInviteMeData
 {

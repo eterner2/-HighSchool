@@ -4,21 +4,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 /// <summary>
-/// 自适应选择按钮
+///选择行为按钮
 /// </summary>
 public class ChooseActionBtnView : SelfAdaptionChooseBtnView
 {
-    //public Text txt;
-    //public RectTransform rect;
-    //public RectTransform rect_bg;
-
-    //public float rectXOffsetContent_BG=10;//x补偿 bg距离content大小
-    //public float rectYOffsetContent_BG =5;//y补偿 bg距离content大小
-
-    //public float rectXOffsetBg_TXT = 10;//bg x补偿 txt距离bg的大小
-    //public float rectYOffsetBg_TXT = 5;//bg y补偿 txt距离bg的大小
-
-    //public ActionSetting actionSetting;
+    ActionSetting actionSetting;
+    public Button btn_choose;
     public override void Init(params object[] args)
     {
         base.Init(args);
@@ -29,14 +20,20 @@ public class ChooseActionBtnView : SelfAdaptionChooseBtnView
 
     public override void OnOpenIng()
     {
-        //int theId = (int)args[0];
-        //actionSetting = DataTable.FindActionSetting(theId);
-        //txt.SetText(actionSetting.name);
         base.OnOpenIng();
-        //txt.preferredHeight;
-        //rect_bg.sizeDelta = new Vector2(txt.preferredWidth, rect_bg.sizeDelta.y);
-        //rect.sizeDelta = rect_bg.sizeDelta;
-        //SetSize(new Vector2(txt.preferredWidth+ rectXOffsetBg_TXT + rectXOffsetContent_BG, rect_bg.sizeDelta.y+ rectYOffsetBg_TXT + rectYOffsetContent_BG));
+        addBtnListener(btn_choose, () =>
+        {
+            PanelManager.Instance.OpenCommonHint("是否要去" + actionSetting.name, () =>
+              {
+                  //GameModuleManager.Instance.curEnterActionId = actionSetting.id.ToInt32();
+                  //暂定独自去
+                  RoleManager.Instance.playerPeople.Record("决定独自去" + actionSetting.name);
+                  SocializationManager.Instance.AddPlan(actionSetting.name, actionSetting.id.ToInt32(), RoleManager.Instance.playerPeople);
+                  //这里执行其它npc的邀约
+                  SocializationManager.Instance.HandleInvite(RoleManager.Instance.allPeopleList);
+                  GameModuleManager.Instance.InitGameModule(GameModuleType.SingleOutsideScene);
+              },null);
+        });
     }
 
 

@@ -16,7 +16,7 @@ public class SelfAdaptionChooseBtnView : SingleViewBase
     public float rectXOffsetBg_TXT = 10;//bg x补偿 txt距离bg的大小
     public float rectYOffsetBg_TXT = 5;//bg y补偿 txt距离bg的大小
 
-    public ActionSetting actionSetting;
+    //public ActionSetting actionSetting;
     public override void Init(params object[] args)
     {
         base.Init(args);

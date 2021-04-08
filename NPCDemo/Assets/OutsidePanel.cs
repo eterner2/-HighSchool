@@ -1,9 +1,10 @@
-﻿using System.Collections;
+﻿using Framework.Data;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class OutsidePanel : TestPanel
+public class OutsidePanel : PanelBase
 {
     public Image img; 
     public string actionName;//行为
@@ -11,43 +12,58 @@ public class OutsidePanel : TestPanel
     public Transform trans_grid;//格子
     public Button btn_backClassRoom;
 
-    public void Init(params object[] args)
+    public List<Plan> curActionPlanList;//当前行为的计划
+    public BigMapSetting bigMapSetting;//大地图
+
+    public override void Init(params object[] args)
     {
         Clear();
-        string outsideName = (string)args[0];
-        SingleAction action= NewBehaviourScript.Instance.actionScriptable.FindActionByOutSideName(outsideName);
-        img.sprite = action.sprt;
-        GenerateActionListPeople(action.name);
-        btn_backClassRoom.onClick.RemoveAllListeners();
-        btn_backClassRoom.onClick.AddListener(() =>
-        {
-            NewBehaviourScript.Instance.BackClassRoom();
-        });
+        curActionPlanList = args[0] as List<Plan>;
+       
+        int actionId = curActionPlanList[0].actionId;
+
+        ActionSetting actionSetting = DataTable.FindActionSetting(actionId);
+        BigMapSetting bigMapSetting = DataTable.FindBigMapSetting(actionSetting.bigMapId.ToInt32());
+
+        //string outsideName = (string)args[0];
+        //SingleAction action= NewBehaviourScript.Instance.actionScriptable.FindActionByOutSideName(outsideName);
+        img.sprite = ResourceManager.Instance.GetObj<Sprite>(ConstantVal.bigMapFolderPath + bigMapSetting.iconName);//  action.sprt;
+        GenerateActionListPeople(curActionPlanList);
+        //btn_backClassRoom.onClick.RemoveAllListeners();
+        //btn_backClassRoom.onClick.AddListener(() =>
+        //{
+        //    NewBehaviourScript.Instance.BackClassRoom();
+        //});
+
+        addBtnListener(btn_backClassRoom, ()=>GameModuleManager.Instance.ChangeGameModule(GameModuleType.BigMap));
     }
 
     /// <summary>
     /// 生成正在进行某个行为的人
     /// </summary>
     /// <param name="actionName"></param>
-    public void GenerateActionListPeople(string actionName)
+    public void GenerateActionListPeople(List<Plan> curPlanList)
     {
-        for(int i = 0; i < NewBehaviourScript.Instance.planList.Count; i++)
+        for(int i = 0; i < curPlanList.Count; i++)
         {
-            Plan plan = NewBehaviourScript.Instance.planList[i];
-            if (plan.actionName == actionName)
-            {
-                SingleGroup singleGroup = NewBehaviourScript.Instance.GenerateEntity(ObjectPoolSingle.SingleGroup) as SingleGroup;
-                singleGroup.transform.SetParent(trans_grid, false);
-                singleGroup.Init(plan);
-            }
+            Plan plan = curPlanList[i];
+
+
+            SingleGroupView singleGroup = PanelManager.Instance.OpenSingle<SingleGroupView>(trans_grid, plan);
+
+            
         }
 
 
 
     }
 
-    public void Clear()
+    public override void Clear()
     {
-      NewBehaviourScript.Instance.ClearAllChildEntity(trans_grid);
+        base.Clear();
+        PanelManager.Instance.CloseAllSingle(trans_grid);
     }
+    //{
+    //  NewBehaviourScript.Instance.ClearAllChildEntity(trans_grid);
+    //}
 }

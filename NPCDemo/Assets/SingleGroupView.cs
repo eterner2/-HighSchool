@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SingleGroup : TestPanel
+public class SingleGroupView : SingleViewBase
 {
     public PeopleView p1;
     public GameObject obj_line;

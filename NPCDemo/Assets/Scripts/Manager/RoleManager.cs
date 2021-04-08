@@ -25,6 +25,7 @@ public class RoleManager
     public GameInfo _CurGameInfo;
     //public int CurScore = 0;
     public List<People> allPeopleList;//所有人
+    public List<People> NPCPeopleList;//所有npc（除了玩家之外的所有人）
     public People playerPeople;//玩家
 
     public void Init(int index)
@@ -43,12 +44,13 @@ public class RoleManager
     void CreateNew()
     {
         GameInfo gameInfo = new GameInfo();
+        _CurGameInfo = gameInfo;
+
         CreateNewTimeData(gameInfo);
        // CreateNewPlayer(gameInfo);
         CreateNewPeople(gameInfo);
         //CreateNewPropertyData(gameInfo);
         gameInfo.CurGameModule = (int)GameModuleType.WeekDay;
-        _CurGameInfo = gameInfo;
     }
 
     /// <summary>
@@ -81,14 +83,26 @@ public class RoleManager
     void CreateNewPeople(GameInfo gameInfo)
     {
         allPeopleList = new List<People>();
+        NPCPeopleList = new List<People>();
         //暂时用这个scriptable TODO改成读表
         PeopleScriptable peopleScriptable = NewBehaviourScript.Instance.peopleScriptable;
         for(int i = 0; i < peopleScriptable.peopleDataList.Count; i++)
         {
           
             People p = new People(peopleScriptable.peopleDataList[i]);
+            //if (p.name == "毛鹏程")
+            //    p.isPlayer = true;
+
             if (p.isPlayer)
+            {
                 playerPeople = p;
+                gameInfo.PlayerPeople = p.protoData;
+            }
+            else
+            {
+                NPCPeopleList.Add(p);
+
+            }
             allPeopleList.Add(p);
         }
     

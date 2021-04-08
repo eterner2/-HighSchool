@@ -4,48 +4,63 @@
     "name": "知识",
     "showInStatusPanel": "0",
     "haveLimit": "-1",
-    "iconName": "property_knowledge"
+    "iconName": "property_knowledge",
+    "newRdmRange": "10|20"
   },
   {
     "id": "10002",
     "name": "艺术",
     "showInStatusPanel": "0",
     "haveLimit": "-1",
-    "iconName": "property_music"
+    "iconName": "property_music",
+    "newRdmRange": "5|12"
   },
   {
     "id": "10003",
     "name": "体育",
     "showInStatusPanel": "0",
     "haveLimit": "-1",
-    "iconName": "property_physical"
+    "iconName": "property_physical",
+    "newRdmRange": "4|10"
   },
   {
     "id": "10004",
     "name": "钱",
     "showInStatusPanel": "1",
     "haveLimit": "-1",
-    "iconName": "property_money"
+    "iconName": "property_money",
+    "newRdmRange": "800|3000"
   },
   {
     "id": "10005",
     "name": "体力",
     "showInStatusPanel": "1",
     "haveLimit": "100",
-    "iconName": "property_power"
+    "iconName": "property_power",
+    "newRdmRange": "100|100"
   },
   {
     "id": "10006",
     "name": "心情",
     "showInStatusPanel": "1",
     "haveLimit": "100",
-    "iconName": "property_mood"
+    "iconName": "property_mood",
+    "newRdmRange": "100|100"
   },
   {
     "id": "10007",
     "name": "自持",
     "showInStatusPanel": "0",
     "haveLimit": "-1",
-    "iconName": "property_selfControl"
+    "iconName": "property_selfControl",
+    "newRdmRange": "10|30"
+  },
+  {
+    "id": "10008",
+    "name": "魅力",
+    "showInStatusPanel": "0",
+    "haveLimit": "-1",
+    "iconName": "property_charm",
+    "newRdmRange": "10|30"
   }
 ]

@@ -53,13 +53,17 @@ public class PanelManager : MonoInstance<PanelManager>
                 OpenPanel<StatusPanel>(trans_layer2);
 
                 break;
-        }
-        if (RoleManager.Instance._CurGameInfo.CurGameModule == (int)GameModuleType.WeekDay)
-        {
+            case GameModuleType.SingleOutsideScene:
 
-        }
+                OpenPanel<OutsidePanel>(trans_commonPanelParent, SocializationManager.Instance.action_planDic[RoleManager.Instance.playerPeople.protoData.ChoosedActionId]);
+                //OpenPanel<BigMapPanel>(trans_commonPanelParent);
+                OpenPanel<StatusPanel>(trans_layer2);
 
-    }
+                break;
+        }
+       
+
+    } 
 
 
     /// <summary>
@@ -111,8 +115,11 @@ public class PanelManager : MonoInstance<PanelManager>
 
         string path = ConstantVal.GetPanelPath(typeName);//mao 获取panel路径
         // GameObject plobj = GameObject.Instantiate<GameObject>(Resources.Load<GameObject>(path), parent);
-        ObjectPoolSingle singleType = (ObjectPoolSingle)Enum.Parse(typeof(ObjectPoolSingle), typeName);
-
+        bool available = Enum.TryParse<ObjectPoolSingle>(typeName, out ObjectPoolSingle singleType);
+        if (!available)
+        {
+            Debug.LogError("没有定义该类型的对象池枚举" + typeName);
+        }
         GameObject plobj = ObjectPoolManager.Instance.GetObjcectFromPool(singleType, path, false);
         plobj.transform.SetParent(parent, false);
         plobj.name = typeName;
@@ -143,8 +150,14 @@ public class PanelManager : MonoInstance<PanelManager>
 
         string path = ConstantVal.GetPanelPath(typeName);//mao 获取panel路径
         // GameObject plobj = GameObject.Instantiate<GameObject>(Resources.Load<GameObject>(path), parent);
-        ObjectPoolSingle singleType = (ObjectPoolSingle)Enum.Parse(typeof(ObjectPoolSingle), typeName);
-
+        //ObjectPoolSingle res=ObjectPoolSingle.None;
+        bool available = Enum.TryParse<ObjectPoolSingle>( typeName,out ObjectPoolSingle singleType);
+        //res
+        //ObjectPoolSingle singleType = (ObjectPoolSingle)Enum.Parse(typeof(ObjectPoolSingle), typeName);
+        if (!available)
+        {
+            Debug.LogError("没有定义该类型的对象池枚举" + typeName);
+        }
         GameObject plobj = ObjectPoolManager.Instance.GetObjcectFromPool(singleType, path, false);
         plobj.transform.SetParent(parent, false);
         plobj.name = typeName;
@@ -250,5 +263,17 @@ public class PanelManager : MonoInstance<PanelManager>
         OpenPanel<FloatWindowPanel>(trans_layer3, str);
     }
 
-
+    /// <summary>
+    /// 打开普通弹窗
+    /// </summary>
+    public void OpenCommonHint(string content, Action okCb, Action cancelCb, string okBtnTxt = "", string cancelBtnTxt = "")
+    {
+        HintData hintData = new HintData();
+        hintData.content = content;
+        hintData.okCallBack = okCb;
+        hintData.cancelCallBack = cancelCb;
+        hintData.str_okBtn = okBtnTxt;
+        hintData.str_cancelBtn = cancelBtnTxt;
+        OpenPanel<CommonHintPanel>(PanelManager.Instance.trans_layer2, hintData);
+    }
 }

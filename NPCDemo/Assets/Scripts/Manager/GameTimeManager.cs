@@ -70,7 +70,7 @@ public class GameTimeManager:MonoInstance<GameTimeManager>
         //如果到了周五晚上 则进入到周六模式
         if (_CurTimeData.TheWeekDay >=5)
         {
-            GameModuleManager.Instance.ChangeGameModule(GameModuleType.Home);
+            GameModuleManager.Instance.InitGameModule(GameModuleType.Home);
 
         }
         else
@@ -143,7 +143,7 @@ public class GameTimeManager:MonoInstance<GameTimeManager>
                     //得到分数
                     addScoreTime++;
                     RoleManager.Instance.GetStudyScore();
-                    Debug.Log("加了" + addScoreTime + "次数据");
+
                 }
             }
         }
@@ -189,13 +189,7 @@ public class GameTimeManager:MonoInstance<GameTimeManager>
 
 
     }
-    /// <summary>
-    /// 进入周六
-    /// </summary>
-    void EnterWeekend()
-    {
-        GameModuleManager.Instance.ChangeGameModule(GameModuleType.BigMap);
-    }
+
     /// <summary>
     /// 一周过去
     /// </summary>

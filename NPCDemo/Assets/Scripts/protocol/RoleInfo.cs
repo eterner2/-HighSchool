@@ -35,7 +35,7 @@ namespace RoleData {
             "cHJvcGVydHlEYXRhTGlzdBgCIAMoCzIcLlJvbGVEYXRhLlNpbmdsZVByb3Bl",
             "cnR5RGF0YSJUChJTaW5nbGVQcm9wZXJ0eURhdGESEgoKcHJvcGVydHlJZBgB",
             "IAEoBRITCgtwcm9wZXJ0eU51bRgCIAEoBRIVCg1wcm9wZXJ0eUxpbWl0GAMg",
-            "ASgFIqwDCg9QZW9wbGVQcm90b0RhdGESDgoGb25seUlkGAEgASgEEiwKDHBy",
+            "ASgFIsUDCg9QZW9wbGVQcm90b0RhdGESDgoGb25seUlkGAEgASgEEiwKDHBy",
             "b3BlcnR5RGF0YRgCIAEoCzIWLlJvbGVEYXRhLlByb3BlcnR5RGF0YRIfChdz",
             "ZW5zZWRPdGhlclBlb3BsZUlkTGlzdBgDIAMoBBIrCiNmcmllbmRsaW5lc3NU",
             "b1NlbnNlZE90aGVyUGVvcGxlTGlzdBgEIAMoBRIOCgZnZW5kZXIYBSABKAUS",
@@ -44,11 +44,14 @@ namespace RoleData {
             "Um9sZURhdGEuUGVvcGxlUHJvdG9EYXRhEjQKEW90aGVySW52aXRlTWVMaXN0",
             "GAogAygLMhkuUm9sZURhdGEuUGVvcGxlUHJvdG9EYXRhEhIKCnJlY29yZExp",
             "c3QYCyADKAkSLgoLY2hhdEZyaWVuZHMYDCADKAsyGS5Sb2xlRGF0YS5QZW9w",
-            "bGVQcm90b0RhdGESEAoIaXNQbGF5ZXIYDSABKAgiPgoRT3RoZXJJbnZpdGVN",
-            "ZURhdGESKQoGcGVvcGxlGAEgASgLMhkuUm9sZURhdGEuUGVvcGxlUHJvdG9E",
-            "YXRhIlQKFk1lSW52aXRlT3RoZXJQcm90b0RhdGESKQoGcGVvcGxlGAEgASgL",
-            "MhkuUm9sZURhdGEuUGVvcGxlUHJvdG9EYXRhEg8KB3JlZnVzZWQYAiABKAhi",
-            "BnByb3RvMw=="));
+            "bGVQcm90b0RhdGESEAoIaXNQbGF5ZXIYDSABKAgSFwoPY2hvb3NlZEFjdGlv",
+            "bklkGA4gASgFIm8KDVBsYW5Qcm90b0RhdGESJQoCcDEYASABKAsyGS5Sb2xl",
+            "RGF0YS5QZW9wbGVQcm90b0RhdGESJQoCcDIYAiABKAsyGS5Sb2xlRGF0YS5Q",
+            "ZW9wbGVQcm90b0RhdGESEAoIYWN0aW9uSWQYAyABKAUiPgoRT3RoZXJJbnZp",
+            "dGVNZURhdGESKQoGcGVvcGxlGAEgASgLMhkuUm9sZURhdGEuUGVvcGxlUHJv",
+            "dG9EYXRhIlQKFk1lSW52aXRlT3RoZXJQcm90b0RhdGESKQoGcGVvcGxlGAEg",
+            "ASgLMhkuUm9sZURhdGEuUGVvcGxlUHJvdG9EYXRhEg8KB3JlZnVzZWQYAiAB",
+            "KAhiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
@@ -56,7 +59,8 @@ namespace RoleData {
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.TimeData), global::RoleData.TimeData.Parser, new[]{ "Year", "Month", "Day", "TheWeekDay", "DayProcess", "DayBeforeExam" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.PropertyData), global::RoleData.PropertyData.Parser, new[]{ "PropertyIdList", "PropertyDataList" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.SinglePropertyData), global::RoleData.SinglePropertyData.Parser, new[]{ "PropertyId", "PropertyNum", "PropertyLimit" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.PeopleProtoData), global::RoleData.PeopleProtoData.Parser, new[]{ "OnlyId", "PropertyData", "SensedOtherPeopleIdList", "FriendlinessToSensedOtherPeopleList", "Gender", "Name", "ActionId", "FinishInviteProcess", "MeInviteOtherList", "OtherInviteMeList", "RecordList", "ChatFriends", "IsPlayer" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.PeopleProtoData), global::RoleData.PeopleProtoData.Parser, new[]{ "OnlyId", "PropertyData", "SensedOtherPeopleIdList", "FriendlinessToSensedOtherPeopleList", "Gender", "Name", "ActionId", "FinishInviteProcess", "MeInviteOtherList", "OtherInviteMeList", "RecordList", "ChatFriends", "IsPlayer", "ChoosedActionId" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.PlanProtoData), global::RoleData.PlanProtoData.Parser, new[]{ "P1", "P2", "ActionId" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.OtherInviteMeData), global::RoleData.OtherInviteMeData.Parser, new[]{ "People" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.MeInviteOtherProtoData), global::RoleData.MeInviteOtherProtoData.Parser, new[]{ "People", "Refused" }, null, null, null)
           }));
@@ -964,6 +968,7 @@ namespace RoleData {
       recordList_ = other.recordList_.Clone();
       chatFriends_ = other.chatFriends_.Clone();
       isPlayer_ = other.isPlayer_;
+      choosedActionId_ = other.choosedActionId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1148,6 +1153,20 @@ namespace RoleData {
       }
     }
 
+    /// <summary>Field number for the "choosedActionId" field.</summary>
+    public const int ChoosedActionIdFieldNumber = 14;
+    private int choosedActionId_;
+    /// <summary>
+    ///确定选择了的活动
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ChoosedActionId {
+      get { return choosedActionId_; }
+      set {
+        choosedActionId_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as PeopleProtoData);
@@ -1174,6 +1193,7 @@ namespace RoleData {
       if(!recordList_.Equals(other.recordList_)) return false;
       if(!chatFriends_.Equals(other.chatFriends_)) return false;
       if (IsPlayer != other.IsPlayer) return false;
+      if (ChoosedActionId != other.ChoosedActionId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1193,6 +1213,7 @@ namespace RoleData {
       hash ^= recordList_.GetHashCode();
       hash ^= chatFriends_.GetHashCode();
       if (IsPlayer != false) hash ^= IsPlayer.GetHashCode();
+      if (ChoosedActionId != 0) hash ^= ChoosedActionId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1240,6 +1261,10 @@ namespace RoleData {
         output.WriteRawTag(104);
         output.WriteBool(IsPlayer);
       }
+      if (ChoosedActionId != 0) {
+        output.WriteRawTag(112);
+        output.WriteInt32(ChoosedActionId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1274,6 +1299,9 @@ namespace RoleData {
       size += chatFriends_.CalculateSize(_repeated_chatFriends_codec);
       if (IsPlayer != false) {
         size += 1 + 1;
+      }
+      if (ChoosedActionId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ChoosedActionId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1315,6 +1343,9 @@ namespace RoleData {
       chatFriends_.Add(other.chatFriends_);
       if (other.IsPlayer != false) {
         IsPlayer = other.IsPlayer;
+      }
+      if (other.ChoosedActionId != 0) {
+        ChoosedActionId = other.ChoosedActionId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1384,6 +1415,210 @@ namespace RoleData {
             IsPlayer = input.ReadBool();
             break;
           }
+          case 112: {
+            ChoosedActionId = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
+  ///计划
+  /// </summary>
+  public sealed partial class PlanProtoData : pb::IMessage<PlanProtoData> {
+    private static readonly pb::MessageParser<PlanProtoData> _parser = new pb::MessageParser<PlanProtoData>(() => new PlanProtoData());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<PlanProtoData> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::RoleData.RoleInfoReflection.Descriptor.MessageTypes[5]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public PlanProtoData() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public PlanProtoData(PlanProtoData other) : this() {
+      P1 = other.p1_ != null ? other.P1.Clone() : null;
+      P2 = other.p2_ != null ? other.P2.Clone() : null;
+      actionId_ = other.actionId_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public PlanProtoData Clone() {
+      return new PlanProtoData(this);
+    }
+
+    /// <summary>Field number for the "p1" field.</summary>
+    public const int P1FieldNumber = 1;
+    private global::RoleData.PeopleProtoData p1_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::RoleData.PeopleProtoData P1 {
+      get { return p1_; }
+      set {
+        p1_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "p2" field.</summary>
+    public const int P2FieldNumber = 2;
+    private global::RoleData.PeopleProtoData p2_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::RoleData.PeopleProtoData P2 {
+      get { return p2_; }
+      set {
+        p2_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "actionId" field.</summary>
+    public const int ActionIdFieldNumber = 3;
+    private int actionId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ActionId {
+      get { return actionId_; }
+      set {
+        actionId_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as PlanProtoData);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(PlanProtoData other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(P1, other.P1)) return false;
+      if (!object.Equals(P2, other.P2)) return false;
+      if (ActionId != other.ActionId) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (p1_ != null) hash ^= P1.GetHashCode();
+      if (p2_ != null) hash ^= P2.GetHashCode();
+      if (ActionId != 0) hash ^= ActionId.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (p1_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(P1);
+      }
+      if (p2_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(P2);
+      }
+      if (ActionId != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(ActionId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (p1_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(P1);
+      }
+      if (p2_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(P2);
+      }
+      if (ActionId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ActionId);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(PlanProtoData other) {
+      if (other == null) {
+        return;
+      }
+      if (other.p1_ != null) {
+        if (p1_ == null) {
+          p1_ = new global::RoleData.PeopleProtoData();
+        }
+        P1.MergeFrom(other.P1);
+      }
+      if (other.p2_ != null) {
+        if (p2_ == null) {
+          p2_ = new global::RoleData.PeopleProtoData();
+        }
+        P2.MergeFrom(other.P2);
+      }
+      if (other.ActionId != 0) {
+        ActionId = other.ActionId;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (p1_ == null) {
+              p1_ = new global::RoleData.PeopleProtoData();
+            }
+            input.ReadMessage(p1_);
+            break;
+          }
+          case 18: {
+            if (p2_ == null) {
+              p2_ = new global::RoleData.PeopleProtoData();
+            }
+            input.ReadMessage(p2_);
+            break;
+          }
+          case 24: {
+            ActionId = input.ReadInt32();
+            break;
+          }
         }
       }
     }
@@ -1401,7 +1636,7 @@ namespace RoleData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::RoleData.RoleInfoReflection.Descriptor.MessageTypes[5]; }
+      get { return global::RoleData.RoleInfoReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1539,7 +1774,7 @@ namespace RoleData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::RoleData.RoleInfoReflection.Descriptor.MessageTypes[6]; }
+      get { return global::RoleData.RoleInfoReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

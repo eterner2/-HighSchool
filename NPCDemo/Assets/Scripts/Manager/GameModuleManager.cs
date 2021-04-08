@@ -7,6 +7,7 @@ using UnityEngine;
 public class GameModuleManager : CommonInstance<GameModuleManager>
 {
     public GameModuleType curGameModule;
+    //public int curEnterActionId;//当前进入的活动场景
 
     public override void Init()
     {
@@ -14,7 +15,15 @@ public class GameModuleManager : CommonInstance<GameModuleManager>
         base.Init();
 
     }
-
+    /// <summary>
+    /// 进入该模块 要初始化
+    /// </summary>
+    /// <param name="gameModuleType"></param>
+    public void InitGameModule(GameModuleType gameModuleType)
+    {
+        InitGameModuleManager(gameModuleType);
+        ChangeGameModule(gameModuleType);
+    }
 
     /// <summary>
     /// 换模块
@@ -29,9 +38,9 @@ public class GameModuleManager : CommonInstance<GameModuleManager>
             RoleManager.Instance._CurGameInfo.CurGameModule = (int)gameModuleType;
             curGameModule = gameModuleType; //(GameModuleType)RoleManager.Instance._CurGameInfo.CurGameModule;
 
-            
 
 
+            //初始化模块的panel
             PanelManager.Instance.InitPanel(curGameModule);
 
         }
@@ -45,7 +54,26 @@ public class GameModuleManager : CommonInstance<GameModuleManager>
     /// </summary>
     public void InitGameModuleManager(GameModuleType gameModuleType)
     {
+        switch (gameModuleType)
+        {
 
+            case GameModuleType.Home:
+                //邀约
+                SocializationManager.Instance.StartNewInvite();
+                break;
+            //case GameModuleType.BigMap:
+            //    OpenPanel<BigMapPanel>(trans_commonPanelParent);
+            //    OpenPanel<StatusPanel>(trans_layer2);
+
+            //    break;
+            //case GameModuleType.SingleOutsideScene:
+
+            //    OpenPanel<OutsidePanel>(trans_commonPanelParent, SocializationManager.Instance.action_planDic[GameModuleManager.Instance.curEnterActionId]);
+            //    //OpenPanel<BigMapPanel>(trans_commonPanelParent);
+            //    OpenPanel<StatusPanel>(trans_layer2);
+
+            //    break;
+        }
     }
 
 

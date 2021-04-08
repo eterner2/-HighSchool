@@ -27,6 +27,9 @@ using UnityEngine;
     ChooseActionPanel,//选择行动面板
     ChooseActionBtnView,//选择行动按钮
     FloatWindowPanel,//飘窗
+    SingleGroupView,//单个组合
+    CommonHintPanel,//弹窗
+    OutsidePanel,//外出场景
 }
 
 public class TempItem
