@@ -3,30 +3,35 @@
     "id": "10001",
     "name": "商场",
     "actions": "10001|10002|10004",
-    "iconName": "img_mall"
+    "iconName": "img_mall",
+    "sceneImgName": "buxingjie"
   },
   {
     "id": "10002",
     "name": "图书馆",
     "actions": "10005|10007",
-    "iconName": "img_library"
+    "iconName": "img_library",
+    "sceneImgName": "library"
   },
   {
     "id": "10003",
     "name": "网吧",
     "actions": "10008",
-    "iconName": "img_commonBuild"
+    "iconName": "img_commonBuild",
+    "sceneImgName": "netBar"
   },
   {
     "id": "10004",
     "name": "艺术街",
     "actions": "10009",
-    "iconName": "img_artStreet"
+    "iconName": "img_artStreet",
+    "sceneImgName": "artHome"
   },
   {
     "id": "10005",
     "name": "体育馆",
     "actions": "10010",
-    "iconName": "img_park"
+    "iconName": "img_park",
+    "sceneImgName": "caoChang"
   }
 ]

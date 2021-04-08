@@ -27,7 +27,7 @@ public class OutsidePanel : PanelBase
 
         //string outsideName = (string)args[0];
         //SingleAction action= NewBehaviourScript.Instance.actionScriptable.FindActionByOutSideName(outsideName);
-        img.sprite = ResourceManager.Instance.GetObj<Sprite>(ConstantVal.bigMapFolderPath + bigMapSetting.iconName);//  action.sprt;
+        img.sprite = ResourceManager.Instance.GetObj<Sprite>(ConstantVal.actionSceneFolderPath + bigMapSetting.sceneImgName);//  action.sprt;
         GenerateActionListPeople(curActionPlanList);
         //btn_backClassRoom.onClick.RemoveAllListeners();
         //btn_backClassRoom.onClick.AddListener(() =>

@@ -6,4 +6,5 @@ public class BigMapSetting
     public string name;
     public string actions;
     public string iconName;
+    public string sceneImgName;
 }
