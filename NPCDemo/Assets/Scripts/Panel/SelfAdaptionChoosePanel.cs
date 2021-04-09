@@ -72,7 +72,7 @@ public class SelfAdaptionChoosePanel : PanelBase
         }
         for (int i = 0; i < count; i++)
         {
-            ChooseActionBtnView view = grid.GetChild(i).GetComponent<ChooseActionBtnView>();
+            SelfAdaptionChooseBtnView view = grid.GetChild(i).GetComponent<SelfAdaptionChooseBtnView>();
 
             view.SetSize(new Vector2(maxRtX, view.rect.sizeDelta.y));
         }

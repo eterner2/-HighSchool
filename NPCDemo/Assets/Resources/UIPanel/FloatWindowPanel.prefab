@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4702109548190698429}
-  - component: {fileID: 2792957487201814318}
+  - component: {fileID: 4987601169116179840}
   m_Layer: 5
   m_Name: FloatWindowPanel
   m_TagString: Untagged
@@ -38,7 +38,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2792957487201814318
+--- !u!114 &4987601169116179840
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -47,10 +47,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 919029837268218899}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 103144446962c9b45bf90d042a82247d, type: 3}
+  m_Script: {fileID: 11500000, guid: b2d726d18d666e14c8c230fb05192408, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObjectType: 0
+  btn_emptyClose: {fileID: 0}
+  trans_content: {fileID: 0}
   str_content: 
   txt_content: {fileID: 9045590881481345079}
   img_bg: {fileID: 4368852706928690426}
@@ -118,7 +119,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 811b0baa7ba620a44a50099425c44013, type: 3}
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0

@@ -107,7 +107,10 @@ public class PanelManager : MonoInstance<PanelManager>
     public T OpenSingle<T>(Transform parent, params object[] args) where T : SingleViewBase
     {
         if (parent == null)
-            return null;
+        {
+            Debug.Log("在无父物体的位置创建single！！！"+ typeof(T).ToString());
+        }
+            //return null;
 
        
 
@@ -120,7 +123,7 @@ public class PanelManager : MonoInstance<PanelManager>
         {
             Debug.LogError("没有定义该类型的对象池枚举" + typeName);
         }
-        GameObject plobj = ObjectPoolManager.Instance.GetObjcectFromPool(singleType, path, false);
+        GameObject plobj = ObjectPoolManager.Instance.GetObjcectFromPool(singleType, path, true);
         plobj.transform.SetParent(parent, false);
         plobj.name = typeName;
         T t = plobj.GetComponent<T>();
@@ -158,7 +161,7 @@ public class PanelManager : MonoInstance<PanelManager>
         {
             Debug.LogError("没有定义该类型的对象池枚举" + typeName);
         }
-        GameObject plobj = ObjectPoolManager.Instance.GetObjcectFromPool(singleType, path, false);
+        GameObject plobj = ObjectPoolManager.Instance.GetObjcectFromPool(singleType, path, true);
         plobj.transform.SetParent(parent, false);
         plobj.name = typeName;
         T t = plobj.GetComponent<T>();

@@ -17,7 +17,7 @@ public class FlyTxtView : SingleViewBase
     {
         base.OnOpenIng();
         transform.DOKill();
-        //txt.transform.position = trans_txtInitPos;
+        transform.localPosition = Vector2.zero;
         transform.DOLocalMoveY(100, 1f).OnComplete(() =>
         {
             PanelManager.Instance.CloseSingle(this);

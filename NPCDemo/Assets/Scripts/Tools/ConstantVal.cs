@@ -1,10 +1,23 @@
 ﻿
 
+using System;
 using UnityEngine;
 
 public class ConstantVal
 {
+    static UInt64 onlyId { get; set; }
 
+    static UInt16 growId;//自增长
+
+    public static UInt64 SetId
+    {
+        get
+        {
+            growId++;
+            onlyId = (UInt64)(CGameTime.Instance.GetTimeStamp() * 100000000 + growId * 1000 + UnityEngine.Random.Range(0, 1000));
+            return onlyId;
+        }
+    }
     /// <summary>
     /// 所有panel暂时放该文件夹
     /// </summary>
@@ -12,6 +25,7 @@ public class ConstantVal
     public const string propertyIconFolderPath = "TestRes/Common/Property/";//属性icon文件夹
     public const string bigMapFolderPath = "TestRes/BigMap/";//大地图icon文件夹
     public const string actionSceneFolderPath = "TestRes/ActionScene/";//行动场景文件夹
+    public const string verticalDrawFolderPath = "TestRes/Common/PeopleVerticalDraw/";//人物立绘文件夹
 
     /// <summary>
     /// 通过Panel名字获取路径

@@ -626,6 +626,7 @@ public class People
     public bool isPlayer = false;
 
     public List<People> weTalkFriends = new List<People>();//wetalk的朋友
+    public string verticalDrawName;//立绘图片 TODO后续改成配表
     /// <summary>
     /// TODO通过配表的Setting创建新People（PeopleData后续要改成PeopleSetting）
     /// </summary>
@@ -638,7 +639,20 @@ public class People
         {
             isPlayer = true;
         }
+
+        if (gender == Gender.Male)
+        {
+            int val = RandomManager.Next(1, 4);
+            verticalDrawName = "boy" + val;
+        }
+        else
+        {
+            int val = RandomManager.Next(1, 8);
+            verticalDrawName = "girl" + val;
+        }
+        
         PeopleProtoData peopleProtoData = new PeopleProtoData();
+        peopleProtoData.OnlyId = ConstantVal.SetId;
         peopleProtoData.Name = peopleData.name;
         peopleProtoData.Gender = (int)peopleData.gender;
         CreateNewPropertyData(peopleProtoData);
@@ -809,6 +823,9 @@ public class People
         otherInviteMeList.Clear();
         finishInviteProcess = false;
     }
+
+
+
 }
 
 /// <summary>

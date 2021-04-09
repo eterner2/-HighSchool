@@ -12,6 +12,11 @@ public class BlackMaskPanel : PanelBase
     public Action finishCB;
     public Image img;
     public BlackMaskType blackMaskType;
+    bool startMove = false;
+    bool callBackCalled;//调用了回调
+    float moveTimer;
+    float moveTime1;
+    float moveTime2;
     //Newtonsoft.Json.Serialization.Action
     public override void Init(params object[] args)
     {
@@ -30,11 +35,12 @@ public class BlackMaskPanel : PanelBase
         img.gameObject.SetActive(true);
         img.DOKill();
 
-   
-
-
+        moveTimer = 0;
+        startMove = true;
+        callBackCalled = false;
         if (blackMaskType != BlackMaskType.PingPong)
         {
+            moveTime1 = changeTime;
             float startA = 0;
             float endA = 0;
             //关闭
@@ -52,8 +58,8 @@ public class BlackMaskPanel : PanelBase
 
             img.DOFade(endA, changeTime).OnComplete(() =>
             {
-                if (finishCB != null)
-                    finishCB();
+                //if (finishCB != null)
+                //    finishCB();
             });
 
 
@@ -61,25 +67,61 @@ public class BlackMaskPanel : PanelBase
         //变黑-action-变亮
         else
         {
+            moveTime1 = changeTime / 2;
+            moveTime2 = changeTime;
+
             img.color = new Color(0, 0, 0, 0);
 
             img.DOFade(1, changeTime/2).OnComplete(() =>
             {
-                if (finishCB != null)
-                    finishCB();
+                //if (finishCB != null)
+                //    finishCB();
 
                 img.DOFade(0, changeTime / 2).OnComplete(() =>
                 {
-                    PanelManager.Instance.ClosePanel(this);
+                    //PanelManager.Instance.ClosePanel(this);
                 });
             });
         }
       
     }
 
+    //不要写在DOTWEEN里面 而是update控制 否则报错会被dotween捕捉成警告 影响调试（坑！）
     private void Update()
     {
-        
+        if (startMove)
+        {
+            moveTimer += Time.deltaTime;
+            if (blackMaskType != BlackMaskType.PingPong)
+            {
+                if (moveTimer >= moveTime1)
+                {
+                    if (finishCB != null)
+                        finishCB();
+                    startMove = false;
+                }
+
+            }
+            //变黑-action-变亮
+            else
+            {
+                if (moveTimer >= moveTime1
+                    &&moveTimer<moveTime2 && !callBackCalled)
+                {
+                    if (finishCB != null)
+                    {
+                        finishCB();
+                        callBackCalled = true;
+                    }
+                }
+                else if (moveTimer >= moveTime2)
+                {
+                    PanelManager.Instance.ClosePanel(this);
+
+                }
+   
+            }
+        }
     }
 
     /// <summary>

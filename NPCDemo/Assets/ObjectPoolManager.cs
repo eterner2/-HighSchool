@@ -30,6 +30,9 @@ using UnityEngine;
     SingleGroupView,//单个组合
     CommonHintPanel,//弹窗
     OutsidePanel,//外出场景
+    ChoosePeopleInteractionBtnView,//选择和NPC交互的按钮
+    ChoosePeopleInteractPanel,//选择和NPC交互的面板
+    DialogPanel,//对话
 }
 
 public class TempItem

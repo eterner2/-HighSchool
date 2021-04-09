@@ -202,4 +202,22 @@ public class RoleManager
 
         }
     }
+
+    /// <summary>
+    /// 这人是不是我的好友
+    /// </summary>
+    /// <param name="people"></param>
+    /// <returns></returns>
+    public bool CheckIfMyWetalkFriend(People other, People me)
+    {
+        for (int i = 0; i < me.weTalkFriends.Count; i++)
+        {
+            People theFriend = me.weTalkFriends[i];
+            if (theFriend.protoData.OnlyId == other.protoData.OnlyId)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 }
