@@ -12,13 +12,15 @@ public class PanelManager : MonoInstance<PanelManager>
     public Transform trans_layer2;//状态栏 菜单栏等即使切换场景也常显的
     public Transform trans_layer3;//提示框等需要置顶的
 
+    public Material mat_grey;
+
     public override void Init()
     {
         base.Init();
         trans_commonPanelParent = GameObject.Find("Canvas/Panel/Layer1").transform;
         trans_layer2 = GameObject.Find("Canvas/Panel/Layer2").transform;
         trans_layer3 = GameObject.Find("Canvas/Panel/Layer3").transform;
-
+        mat_grey = ResourceManager.Instance.GetObj<Material>("Material/UI_ImageGreyShader");
         InitPanel((GameModuleType)RoleManager.Instance._CurGameInfo.CurGameModule);
 
     }
@@ -40,6 +42,7 @@ public class PanelManager : MonoInstance<PanelManager>
                 OpenPanel<PropertyPanel>(trans_commonPanelParent);
                 OpenPanel<DeskPanel>(trans_commonPanelParent);
                 OpenPanel<StatusPanel>(trans_layer2);
+                OpenPanel<MainPanel>(trans_layer2);
 
                 break;
             case GameModuleType.Battle:
@@ -47,10 +50,13 @@ public class PanelManager : MonoInstance<PanelManager>
             case GameModuleType.Home:
                 OpenPanel<HomePanel>(trans_commonPanelParent);
                 OpenPanel<StatusPanel>(trans_layer2);
+                OpenPanel<MainPanel>(trans_layer2);
+
                 break;
             case GameModuleType.BigMap:
                 OpenPanel<BigMapPanel>(trans_commonPanelParent);
                 OpenPanel<StatusPanel>(trans_layer2);
+                OpenPanel<MainPanel>(trans_layer2);
 
                 break;
             case GameModuleType.SingleOutsideScene:
@@ -58,6 +64,7 @@ public class PanelManager : MonoInstance<PanelManager>
                 OpenPanel<OutsidePanel>(trans_commonPanelParent, SocializationManager.Instance.action_planDic[RoleManager.Instance.playerPeople.protoData.ChoosedActionId]);
                 //OpenPanel<BigMapPanel>(trans_commonPanelParent);
                 OpenPanel<StatusPanel>(trans_layer2);
+                OpenPanel<MainPanel>(trans_layer2);
 
                 break;
         }

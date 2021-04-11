@@ -13,9 +13,11 @@ public class ConstantVal
     {
         get
         {
-            growId++;
-            onlyId = (UInt64)(CGameTime.Instance.GetTimeStamp() * 100000000 + growId * 1000 + UnityEngine.Random.Range(0, 1000));
-            return onlyId;
+            RoleManager.Instance._CurGameInfo.TheId++;
+            return RoleManager.Instance._CurGameInfo.TheId;
+            //growId++;
+            //onlyId = (UInt64)(CGameTime.Instance.GetTimeStamp() * 100000000 + growId * 1000 + UnityEngine.Random.Range(0, 1000));
+            //return onlyId;
         }
     }
     /// <summary>
@@ -26,7 +28,8 @@ public class ConstantVal
     public const string bigMapFolderPath = "TestRes/BigMap/";//大地图icon文件夹
     public const string actionSceneFolderPath = "TestRes/ActionScene/";//行动场景文件夹
     public const string verticalDrawFolderPath = "TestRes/Common/PeopleVerticalDraw/";//人物立绘文件夹
-
+    public const string maleIcon = "icon_man";//男头像
+    public const string femaleIcon = "icon_girl";//女头像
     /// <summary>
     /// 通过Panel名字获取路径
     /// </summary>

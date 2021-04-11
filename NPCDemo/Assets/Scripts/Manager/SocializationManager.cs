@@ -1,4 +1,6 @@
 ﻿using Framework.Data;
+using RoleData;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,7 +10,13 @@ public class SocializationManager : CommonInstance<SocializationManager>
     public List<Plan> planList = new List<Plan>();
     public Dictionary<int, List<Plan>> action_planDic=new Dictionary<int, List<Plan>>();//某个行为的计划列表字典 
 
-
+    public override void Init()
+    {
+        base.Init();
+        RedPoint son = RedPointManager.Instance.GetRedPointFromDic(RedPointType.AllChatMsg, 0);
+        RedPoint parent = RedPointManager.Instance.GetRedPointFromDic(RedPointType.CellPhone, 0);
+        RedPointManager.Instance.BindRedPoint(parent, son);
+    }
     /// <summary>
     /// 开始新邀约事件
     /// </summary>
@@ -64,7 +72,7 @@ public class SocializationManager : CommonInstance<SocializationManager>
                         tmpList.Add(choosed);
                         if (choosed.isPlayer)
                         {
-                            SendMsgToPlayer(me, choosed, actionSetting);
+                            //SendMsgToPlayer(me, choosed, actionSetting);TODO
                         }
                         me.Invite(choosed);
                         me.Record("邀请" + choosed.protoData.Name + me.actionName);
@@ -334,13 +342,7 @@ public class SocializationManager : CommonInstance<SocializationManager>
         action_planDic[actionId].Add(newPlan);
     }
 
-    /// <summary>
-    /// 发信给玩家
-    /// </summary>
-    void SendMsgToPlayer(People from,People to,ActionSetting actionSetting)
-    {
 
-    }
 
     /// <summary>
     /// 拒绝 可以让人心情不那么快下降
@@ -453,4 +455,123 @@ public class SocializationManager : CommonInstance<SocializationManager>
         main.Record(recordStr);
     }
 
+    /// <summary>
+    /// 发信给玩家
+    /// </summary>
+    public void SendMsgToPlayer(People from, People to, WetalkMsgData wetalkMsgData)
+    {
+        SinglePeopleChatData singlePeopleChatData = null;
+        //红点
+        for (int i = 0; i < to.protoData.AllSinglePeopleChatDataList.Count; i++)
+        {
+            if (to.protoData.AllSinglePeopleChatDataList[i].Belong == from.protoData.OnlyId)
+            {
+                singlePeopleChatData = to.protoData.AllSinglePeopleChatDataList[i];
+                //置顶
+                var tmp= to.protoData.AllSinglePeopleChatDataList[0];
+                to.protoData.AllSinglePeopleChatDataList[0] = singlePeopleChatData;
+                to.protoData.AllSinglePeopleChatDataList[i] = tmp;
+                break;
+            }
+        }
+        //如果没有聊过天，则插到第一位
+        if (singlePeopleChatData == null)
+        {
+            singlePeopleChatData = new SinglePeopleChatData();
+            singlePeopleChatData.Belong = from.protoData.OnlyId;
+            to.protoData.AllSinglePeopleChatDataList.Insert(0, singlePeopleChatData);
+
+        }
+        OneChatData oneChatData = new OneChatData();
+        oneChatData.Belong = from.protoData.OnlyId;
+        oneChatData.Content = wetalkMsgData.content;
+        if (from.protoData.IsPlayer)
+            oneChatData.Checked = true;
+        oneChatData.IsPlayer = from.protoData.IsPlayer;
+        singlePeopleChatData.ChatDataList.Add(oneChatData);
+        //后续可能只保留20条的聊天记录
+        //其它人发给玩家的 则有红点
+        if (!from.protoData.IsPlayer)
+        {
+            RedPoint son = RedPointManager.Instance.GetRedPointFromDic(RedPointType.SinglePeopleChatMsg, from.protoData.OnlyId);
+            RedPoint parent = RedPointManager.Instance.GetRedPointFromDic(RedPointType.AllChatMsg, 0);
+            RedPointManager.Instance.BindRedPoint(parent, son);
+            RedPointManager.Instance.ChangeRedPointStatus(RedPointType.SinglePeopleChatMsg, from.protoData.OnlyId, true);
+            //发消息给手机ui显示
+            EventCenter.Broadcast(TheEventType.SendWetalkMessage, wetalkMsgData);
+            EventCenter.Broadcast(TheEventType.ShowMainPanelRedPoint);
+
+        }
+
+        //若此时在聊天界面，则调用已读方法
+    }
+
+    /// <summary>
+    /// 已读
+    /// </summary>
+    public void CheckedChat(SinglePeopleChatData singlePeopleChatData)
+    {
+        for(int i = 0; i < singlePeopleChatData.ChatDataList.Count; i++)
+        {
+            singlePeopleChatData.ChatDataList[i].Checked = true;
+
+        }
+        RedPoint son = RedPointManager.Instance.GetRedPointFromDic(RedPointType.SinglePeopleChatMsg, singlePeopleChatData.Belong);
+        RedPointManager.Instance.ChangeRedPointStatus(RedPointType.SinglePeopleChatMsg, singlePeopleChatData.Belong, false);
+        //发消息给手机ui显示
+        EventCenter.Broadcast(TheEventType.CheckedWetalkMessage, singlePeopleChatData);
+
+    }
+
+    /// <summary>
+    /// 获取未读消息记录
+    /// </summary>
+    public int GetUnCheckChatNum(UInt64 onlyId)
+    {
+        int res = 0;
+
+        for (int i = 0; i < RoleManager.Instance.playerPeople.protoData.AllSinglePeopleChatDataList.Count; i++)
+        {
+            SinglePeopleChatData data = RoleManager.Instance.playerPeople.protoData.AllSinglePeopleChatDataList[i];
+            if (data.Belong == onlyId)
+            {
+                for(int j = 0; j < data.ChatDataList.Count; j++)
+                {
+                    OneChatData oneData = data.ChatDataList[i];
+                    if (!oneData.Checked)
+                        res++;
+                }
+                break;
+            }
+        }
+        return res;
+    }
+}
+
+/// <summary>
+/// 人和人发消息数据
+/// </summary>
+public class WetalkMsgData
+{
+    public WetalkMsgType wetalkMsgType;
+    public string content;
+    public People from;
+    public People to;
+    public WetalkMsgData(WetalkMsgType type,string content,People from,People to)
+    {
+        this.wetalkMsgType = type;
+        this.content = content;
+        this.from = from;
+        this.to = to;
+    }
+}
+
+/// <summary>
+/// 人与人消息类型
+/// </summary>
+public enum WetalkMsgType
+{
+    None=0,
+    InviteAction=1,//邀请行为
+    Nonsense=2,//废话（不需要回复）
 }

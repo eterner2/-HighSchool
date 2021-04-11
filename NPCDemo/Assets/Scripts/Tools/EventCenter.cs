@@ -165,4 +165,7 @@ public enum TheEventType
     DayTimeProcess,//一天时间流动
     GetStudyScore,//得到学习分
     OnNewDayStart,//新的一天开始
+    SendWetalkMessage,//发消息
+    CheckedWetalkMessage,//已读
+    ShowMainPanelRedPoint,//显示主面板红点
 }

@@ -1,5 +1,6 @@
 ﻿using Framework.Data;
 using RoleData;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -220,4 +221,22 @@ public class RoleManager
         }
         return false;
     }
+
+    /// <summary>
+    /// 根据onlyid找人
+    /// </summary>
+    /// <returns></returns>
+    public People FindPeopleWithOnlyId(UInt64 onlyId)
+    {
+        for(int i=0;i< allPeopleList.Count; i++)
+        {
+            People people = allPeopleList[i];
+            if (people.protoData.OnlyId == onlyId)
+                return people;
+        }
+        return null;
+    }
+
+
+    
 }

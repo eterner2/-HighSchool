@@ -33,6 +33,12 @@ using UnityEngine;
     ChoosePeopleInteractionBtnView,//选择和NPC交互的按钮
     ChoosePeopleInteractPanel,//选择和NPC交互的面板
     DialogPanel,//对话
+    SingleWetalkFriendView,//微信单个消息
+    FriendListLabelView,//好友标签
+    SingleWetalkFriendInFriendListView,//通讯录的好友
+    CellPhonePanel,//手机
+    MainPanel,//主面板TODO和statuspanel做成同一个panel
+    SingleChatItemView,//聊天面板
 }
 
 public class TempItem

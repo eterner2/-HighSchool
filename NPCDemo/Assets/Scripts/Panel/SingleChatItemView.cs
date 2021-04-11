@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using RoleData;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -24,34 +25,27 @@ public class SingleChatItemView : SingleViewBase
     public Transform trans_myHeadPos;
 
     public Button btn_head;
+    OneChatData oneChatData;
     public override void Init(object[] args)
     {
         base.Init(args);
 
-        //peopleData = args[0] as SinglePeopleData;
-        //speakData = args[1] as SpeakData;
+        oneChatData = args[0] as OneChatData;
+        //bool isPlayer = false;
 
-        bool isPlayer = false;
-
-        //img_icon.sprite = Resources.Load<Sprite>(peopleData.iconName);
-        //txt_content.text = speakData.content;
-        //txt_name.text = speakData.belong.name;
-        //是普通评论还是图片评论
-     
-            //trans_pictureRoot.gameObject.SetActive(false);
-            //trans_wordRoot.gameObject.SetActive(true);
+        txt_content.SetText(oneChatData.Content);
         
         SetHeight();
-        if (!isPlayer)
+        if (!oneChatData.IsPlayer)
         {
-            txt_name.gameObject.SetActive(true);
+            //txt_name.gameObject.SetActive(true);
             img_icon.transform.SetParent(trans_enemyHeadPos, false);
             img_icon.transform.localPosition = Vector2.zero;
 
         }
         else
         {
-            txt_name.gameObject.SetActive(false);
+           // txt_name.gameObject.SetActive(false);
             img_icon.transform.SetParent(trans_myHeadPos,false);
 
             img_icon.transform.localPosition = Vector2.zero;
@@ -61,7 +55,17 @@ public class SingleChatItemView : SingleViewBase
     public override void OnOpenIng()
     {
         base.OnOpenIng();
-        addBtnListener(btn_head, OnClickIcon);
+        People people = RoleManager.Instance.FindPeopleWithOnlyId(oneChatData.Belong);
+        if (people.protoData.Gender == (int)Gender.Male)
+        {
+            img_icon.sprite = ResourceManager.Instance.GetObj<Sprite>(ConstantVal.maleIcon);
+
+        }
+        else
+        {
+            img_icon.sprite = ResourceManager.Instance.GetObj<Sprite>(ConstantVal.femaleIcon);
+
+        }
     }
 
     public void SetHeight() 
@@ -71,17 +75,6 @@ public class SingleChatItemView : SingleViewBase
     }
 
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
 
     /// <summary>

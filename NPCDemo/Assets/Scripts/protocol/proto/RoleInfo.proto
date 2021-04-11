@@ -9,6 +9,7 @@ message GameInfo
 	repeated PeopleProtoData allPeopleList=2;//所有角色
 	TimeData timeData=3;//日期
 	int32 curGameModule=4;//当前是哪个游戏模块
+	uint64 theId=5;//setid用的
 }
 //日期
 message TimeData
@@ -20,7 +21,23 @@ int32 theWeekDay=4;//周几
 float dayProcess=5;//今天进行到百分之多少了
 int32 dayBeforeExam=6;//距离高考还有xx天
 }
-
+//单条聊天数据
+message OneChatData
+{
+int32 year=1;//年
+int32 month=2;//月
+int32 day=3;//日
+string content=4;//内容
+bool isPlayer=5;//是玩家的聊天
+bool checked=6;//已读
+uint64 belong=7;//谁的
+}
+//和单个人的聊天数据
+message SinglePeopleChatData
+{
+uint64 belong=1;//和谁聊
+repeated OneChatData chatDataList=2;//1条聊天内容
+}
 //属性 
 message PropertyData
 {
@@ -54,6 +71,7 @@ repeated PeopleProtoData chatFriends=12;//通讯录
 bool isPlayer=13;//是玩家
 
 int32 choosedActionId=14;//确定选择了的活动
+repeated SinglePeopleChatData AllSinglePeopleChatDataList=15;//和别人聊天记录
 }
 
 //计划

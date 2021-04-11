@@ -22,7 +22,7 @@ public class ChoosePeopleInteractPanel : SelfAdaptionChoosePanel
         //}
         if (!RoleManager.Instance.CheckIfMyWetalkFriend(people, RoleManager.Instance.playerPeople))
         {
-            selfAdaptionChooseBtnViewList.Add(PanelManager.Instance.OpenSingle<ChoosePeopleInteractionBtnView>(grid,people, PeopleInteractType.AddWeTalk));
+            selfAdaptionChooseBtnViewList.Add(PanelManager.Instance.OpenSingle<ChoosePeopleInteractionBtnView>(grid,this, people, PeopleInteractType.AddWeTalk));
         }
 
     }
@@ -30,8 +30,8 @@ public class ChoosePeopleInteractPanel : SelfAdaptionChoosePanel
     public override void Clear()
     {
         base.Clear();
-        PanelManager.Instance.CloseAllSingle(grid);
-        selfAdaptionChooseBtnViewList.Clear();
+        //PanelManager.Instance.CloseAllSingle(grid);
+        //selfAdaptionChooseBtnViewList.Clear();
     }
 
 }

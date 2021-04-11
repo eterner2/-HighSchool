@@ -12,8 +12,8 @@ public class ChoosePeopleInteractionBtnView : SelfAdaptionChooseBtnView
     {
         base.Init(args);
 
-        people = args[0] as People;
-        interactType = (PeopleInteractType)args[1];
+        people = args[1] as People;
+        interactType = (PeopleInteractType)args[2];
 
         switch (interactType)
         {
@@ -22,6 +22,7 @@ public class ChoosePeopleInteractionBtnView : SelfAdaptionChooseBtnView
                 addBtnListener(btn, () =>
                 {
                     PeopleInteractManager.Instance.AskForWetalkNum(RoleManager.Instance.playerPeople, people);
+                    PanelManager.Instance.ClosePanel(parentPanel);
                 });
                 break;
         }

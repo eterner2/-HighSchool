@@ -13,6 +13,8 @@ public class Game : MonoBehaviour
     {
         StartCoroutine(CopyFromStreamToPersist(TableOK));
 
+        //List<int> test = new List<int>();
+        //test.Insert(0, 111);
         //GameObject o = GameObject.Find(":sd ");
         //Debug.Log(o.transform);
     }
@@ -32,7 +34,9 @@ public class Game : MonoBehaviour
     public void TableOK()
     {
         DataTable.LoadTableData();
+        RedPointManager.Instance.Init();
         RoleManager.Instance.Init(-1);
+        SocializationManager.Instance.Init();
         GameModuleManager.Instance.Init();
         PanelManager.Instance.Init();
         GameTimeManager.Instance.Init();

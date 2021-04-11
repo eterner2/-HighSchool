@@ -19,7 +19,8 @@ public class PeopleInteractManager : CommonInstance<PeopleInteractManager>
             DialogManager.Instance.CreateDialog(dialogList,()=> 
             {
                 //加微信逻辑
-                PanelManager.Instance.OpenFloatWindow(beAsked.protoData.Name + "你已经成功添加"+beAsked.protoData.Name+"的微信");
+                AddedWetalk(main,beAsked);
+                PanelManager.Instance.OpenFloatWindow("你已经成功添加"+beAsked.protoData.Name+"的微信");
 
             });
         }
@@ -35,7 +36,7 @@ public class PeopleInteractManager : CommonInstance<PeopleInteractManager>
     }
 
     /// <summary>
-    /// 加微信
+    /// 加微信 2+1的微信
     /// </summary>
     /// <param name="p1"></param>
     /// <param name="p2"></param>
@@ -46,7 +47,8 @@ public class PeopleInteractManager : CommonInstance<PeopleInteractManager>
         //有人和玩家加了微信 发信息到手机ui上
         if (p1.isPlayer)
         {
-            
+            WetalkMsgData wetalkMsgData = new WetalkMsgData(WetalkMsgType.Nonsense, "我们已经是好友了，以后请多多指教",p2,p1);
+            SocializationManager.Instance.SendMsgToPlayer(p2,p1, wetalkMsgData);
         }
     }
 }

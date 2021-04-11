@@ -116,32 +116,39 @@ public class SelfAdaptionChoosePanel : PanelBase
 
         if (leftUpVec.y >= topBorder)
         {
-            Debug.Log("到达上边界");
+           // Debug.Log("到达上边界");
             trans_content.position = new Vector3(trans_content.position.x, topBorder, 0);
         }
         //下
         if (leftDownVec.y <= downBorder)
         {
-            Debug.Log("到达下边界");
-            Debug.Log("原来的pos是" + trans_content.position.y);
+           // Debug.Log("到达下边界");
+           // Debug.Log("原来的pos是" + trans_content.position.y);
             trans_content.position = new Vector3(trans_content.position.x, downBorder + myHeight, 0);
-            Debug.Log("新的pos是" + trans_content.position.y);
+            //Debug.Log("新的pos是" + trans_content.position.y);
 
         }
         //左
         if (leftDownVec.x <= leftBorder)
         {
-            Debug.Log("到达左边界");
+           // Debug.Log("到达左边界");
 
             trans_content.position = new Vector3(leftBorder + myWidth / 2, trans_content.position.y, 0);
         }
         //右
         if (rightDownVec.x >= rightBorder)
         {
-            Debug.Log("到达右边界");
+           // Debug.Log("到达右边界");
             trans_content.position = new Vector3(rightBorder - myWidth / 2, trans_content.position.y, 0);
 
         }
     }
 
+
+    public override void Clear()
+    {
+        base.Clear();
+        PanelManager.Instance.CloseAllSingle(grid);
+        selfAdaptionChooseBtnViewList.Clear();
+    }
 }

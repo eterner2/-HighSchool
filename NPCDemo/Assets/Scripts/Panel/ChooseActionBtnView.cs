@@ -13,7 +13,7 @@ public class ChooseActionBtnView : SelfAdaptionChooseBtnView
     public override void Init(params object[] args)
     {
         base.Init(args);
-        int theId = (int)args[0];
+        int theId = (int)args[1];
         actionSetting = DataTable.FindActionSetting(theId);
         txt.SetText(actionSetting.name);
     }
