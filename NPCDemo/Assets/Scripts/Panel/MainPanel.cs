@@ -15,7 +15,7 @@ public class MainPanel : PanelBase
 
         addBtnListener(btn_cellPhone, () =>
         {
-            PanelManager.Instance.OpenPanel<CellPhonePanel>(PanelManager.Instance.trans_layer2);
+            PanelManager.Instance.OpenPanel<CellPhonePanel>(PanelManager.Instance.trans_layer2,CellphoneHandleType.Common);
         });
     }
 

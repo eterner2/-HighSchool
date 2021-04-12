@@ -31,6 +31,9 @@ string content=4;//内容
 bool isPlayer=5;//是玩家的聊天
 bool checked=6;//已读
 uint64 belong=7;//谁的
+int32 chatType=8;//聊天类型
+int32 inviteActionId=9;//邀请干啥
+bool valid=10;//有效（可以回复等操作，下一句说出来以后就失效）
 }
 //和单个人的聊天数据
 message SinglePeopleChatData
@@ -72,6 +75,7 @@ bool isPlayer=13;//是玩家
 
 int32 choosedActionId=14;//确定选择了的活动
 repeated SinglePeopleChatData AllSinglePeopleChatDataList=15;//和别人聊天记录
+uint64 appliedInvitePeople=16;//答应了谁的请求
 }
 
 //计划

@@ -13,6 +13,7 @@ public class CellPhonePanel : PanelBase
     public Transform trans_friendListGrid;//通讯录页面格子
     public Transform trans_chat;//聊天页面
     public Transform trans_chatGrid;//聊天页面格子
+    public List<SingleChatItemView> allChatItemViewList = new List<SingleChatItemView>();//所有聊天页面
     public RectTransform rectTrans_chatScroll;//聊天界面滑动条
     public Text txt_chatLabel;//聊天标题
 
@@ -20,7 +21,7 @@ public class CellPhonePanel : PanelBase
 
 
     public List<SingleWetalkFriendView> messageFriendViewList = new List<SingleWetalkFriendView>();//消息页面
-
+    
     public SinglePeopleChatData curSinglePeopleChatData;
 
     public CellPhoneShowType curShowType;
@@ -30,11 +31,27 @@ public class CellPhonePanel : PanelBase
     public Button btn_friendListPage;//联系人页面
     public GameObject obj_messageBtnRedPoint;//聊天页面红点
     public Image img_friendListBtn;//联系人页面
+
+    public float chatReactTime = 3;//聊天反应延迟时间1秒
+    public float chatReactTimer = 0;//聊天反应延迟时间
+    public bool startWaitChatInput = false;//开始等待聊天输入
+    public WetalkMsgData waitToShowChatMsg;//等待完将显示的
+
+    public CellphoneHandleType curHandleType;//当前操作类型
     public override void Init(params object[] args)
     {
         base.Init(args);
+        curHandleType = (CellphoneHandleType)args[0];
         EventCenter.Register(TheEventType.SendWetalkMessage, OnSendMessage);
-        Show(CellPhoneShowType.Message);
+        switch (curHandleType)
+        {
+            case CellphoneHandleType.Common:
+                Show(CellPhoneShowType.Message);
+                break;
+            case CellphoneHandleType.Invite:
+                Show(CellPhoneShowType.FriendList);
+                break;
+        }
         RedPointShow();
     }
 
@@ -61,6 +78,9 @@ public class CellPhonePanel : PanelBase
             case CellPhoneShowType.Chat:
                 ShowChat(curSinglePeopleChatData);
                 break;
+            //case CellPhoneShowType.Invite:
+            //    ShowFriendList();
+            //    break;
         }
 
     }
@@ -70,13 +90,14 @@ public class CellPhonePanel : PanelBase
     /// </summary>
     public void ShowChat(SinglePeopleChatData singlePeopleChatData)
     {
+        curShowType = CellPhoneShowType.Chat;
         ClearChatGrid();
         trans_chat.gameObject.SetActive(true);
         People people = RoleManager.Instance.FindPeopleWithOnlyId(singlePeopleChatData.Belong);
         txt_chatLabel.SetText(people.protoData.Name);
         for(int i=0;i< singlePeopleChatData.ChatDataList.Count; i++)
         {
-            PanelManager.Instance.OpenSingle<SingleChatItemView>(trans_chatGrid, singlePeopleChatData.ChatDataList[0]);
+           allChatItemViewList.Add(PanelManager.Instance.OpenSingle<SingleChatItemView>(trans_chatGrid, singlePeopleChatData.ChatDataList[i]));
 
         }
         curSinglePeopleChatData = singlePeopleChatData;
@@ -107,7 +128,7 @@ public class CellPhonePanel : PanelBase
         for (int i = 0; i < RoleManager.Instance.playerPeople.protoData.AllSinglePeopleChatDataList.Count; i++)
         {
             SinglePeopleChatData singlePeopleChatData = RoleManager.Instance.playerPeople.protoData.AllSinglePeopleChatDataList[i];
-            PanelManager.Instance.OpenSingle<SingleWetalkFriendInFriendListView>(trans_friendListGrid, singlePeopleChatData);
+            PanelManager.Instance.OpenSingle<SingleWetalkFriendInFriendListView>(trans_friendListGrid, singlePeopleChatData,this);
         }
     }
 
@@ -163,9 +184,11 @@ public class CellPhonePanel : PanelBase
     /// <summary>
     /// 发消息
     /// </summary>
-    void OnSendMessage(object param)
+    void OnSendMessage(object[] param)
     {
-        WetalkMsgData wetalkMsgData = param as WetalkMsgData;
+        WetalkMsgData wetalkMsgData = param[0] as WetalkMsgData;
+
+        Debug.Log(wetalkMsgData);
         //红点
         for(int i=0;i< messageFriendViewList.Count; i++)
         {
@@ -176,16 +199,74 @@ public class CellPhonePanel : PanelBase
         }
 
         RedPointShow();
-
-        //如果是在聊天页面，且正在和他聊天 则已读
-        if (curShowType == CellPhoneShowType.Chat)
+        //重新赋值chatdata，并且上一条失效
+        if (curSinglePeopleChatData.ChatDataList.Count > 1)
         {
+            for(int i=0;i< allChatItemViewList.Count; i++)
+            {
+                allChatItemViewList[i].oneChatData = curSinglePeopleChatData.ChatDataList[i];
+                allChatItemViewList[i].ValidShow();
+            }
+            //allChatItemViewList[curSinglePeopleChatData.ChatDataList.Count - 2].ValidShow();
+            //curSinglePeopleChatData.ChatDataList.Count
+        }
+
+        //如果是在聊天页面，且正在和他聊天 则已读 并且这里做一个延迟显示的动画（仅显示
+        if (curShowType == CellPhoneShowType.Chat)
+        {      
+            //如果是在聊天页面，且正在和他聊天 则已读 并且这里做一个延迟显示的动画（仅显示
             if (curSinglePeopleChatData.Belong == wetalkMsgData.from.protoData.OnlyId)
             {
                 SocializationManager.Instance.CheckedChat(curSinglePeopleChatData);
+
+                chatReactTimer = 0;
+                startWaitChatInput = true;
+                waitToShowChatMsg = wetalkMsgData;
+                txt_chatLabel.SetText("对方正在输入中……");
+
+            }
+            //如果是玩家发的 则直接显示聊天内容
+            if (curSinglePeopleChatData.Belong==wetalkMsgData.to.protoData.OnlyId
+                &&wetalkMsgData.from.protoData.OnlyId == RoleManager.Instance.playerPeople.protoData.OnlyId)
+            {
+                AddAChat(wetalkMsgData);
+
+            }
+
+        }
+
+    }
+    /// <summary>
+    /// 添加一项聊天
+    /// </summary>
+    void AddAChat(WetalkMsgData wetalkMsgData)
+    {
+        People people = RoleManager.Instance.FindPeopleWithOnlyId(curSinglePeopleChatData.Belong);
+
+        txt_chatLabel.SetText(people.protoData.Name);
+
+        PanelManager.Instance.OpenSingle<SingleChatItemView>(trans_chatGrid, curSinglePeopleChatData.ChatDataList[curSinglePeopleChatData.ChatDataList.Count-1]);
+   
+        //自动定位
+        if (rectTrans_chatScroll.sizeDelta.y < trans_chatGrid.GetComponent<RectTransform>().sizeDelta.y)
+        {
+            float offset = trans_chatGrid.GetComponent<RectTransform>().sizeDelta.y - rectTrans_chatScroll.sizeDelta.y;
+            trans_chatGrid.GetComponent<RectTransform>().anchoredPosition = new Vector2(trans_chatGrid.localPosition.x, offset);
+        }
+        OnCheckedRedPoint(curSinglePeopleChatData);
+    }
+
+    private void Update()
+    {
+        if (startWaitChatInput)
+        {
+            chatReactTimer += Time.deltaTime;
+            if (chatReactTimer >= chatReactTime)
+            {
+                startWaitChatInput = false;
+                AddAChat(waitToShowChatMsg);
             }
         }
-        
     }
 
     /// <summary>
@@ -206,6 +287,9 @@ public class CellPhonePanel : PanelBase
     }
     void ClearChatGrid()
     {
+        startWaitChatInput = false;
+        waitToShowChatMsg = null;
+        allChatItemViewList.Clear();
         PanelManager.Instance.CloseAllSingle(trans_chatGrid);
 
     }
@@ -234,4 +318,14 @@ public enum CellPhoneShowType
     Message,
     FriendList,
     Chat,
+}
+
+/// <summary>
+/// 操作类型
+/// </summary>
+public enum CellphoneHandleType
+{
+    None=0,
+    Common,
+    Invite,
 }

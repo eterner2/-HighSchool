@@ -655,6 +655,7 @@ public class People
         peopleProtoData.OnlyId = ConstantVal.SetId;
         peopleProtoData.Name = peopleData.name;
         peopleProtoData.Gender = (int)peopleData.gender;
+        peopleProtoData.IsPlayer = isPlayer;
         CreateNewPropertyData(peopleProtoData);
         this.protoData = peopleProtoData;
     }
@@ -822,6 +823,8 @@ public class People
         meInviteOtherList.Clear();
         otherInviteMeList.Clear();
         finishInviteProcess = false;
+        protoData.AppliedInvitePeople = 0;
+
     }
 
 

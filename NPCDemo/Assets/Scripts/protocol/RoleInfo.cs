@@ -31,43 +31,45 @@ namespace RoleData {
             "Y3VyR2FtZU1vZHVsZRgEIAEoBRINCgV0aGVJZBgFIAEoBCJzCghUaW1lRGF0",
             "YRIMCgR5ZWFyGAEgASgFEg0KBW1vbnRoGAIgASgFEgsKA2RheRgDIAEoBRIS",
             "Cgp0aGVXZWVrRGF5GAQgASgFEhIKCmRheVByb2Nlc3MYBSABKAISFQoNZGF5",
-            "QmVmb3JlRXhhbRgGIAEoBSJ7CgtPbmVDaGF0RGF0YRIMCgR5ZWFyGAEgASgF",
-            "Eg0KBW1vbnRoGAIgASgFEgsKA2RheRgDIAEoBRIPCgdjb250ZW50GAQgASgJ",
-            "EhAKCGlzUGxheWVyGAUgASgIEg8KB2NoZWNrZWQYBiABKAgSDgoGYmVsb25n",
-            "GAcgASgEIlMKFFNpbmdsZVBlb3BsZUNoYXREYXRhEg4KBmJlbG9uZxgBIAEo",
-            "BBIrCgxjaGF0RGF0YUxpc3QYAiADKAsyFS5Sb2xlRGF0YS5PbmVDaGF0RGF0",
-            "YSJeCgxQcm9wZXJ0eURhdGESFgoOcHJvcGVydHlJZExpc3QYASADKAUSNgoQ",
-            "cHJvcGVydHlEYXRhTGlzdBgCIAMoCzIcLlJvbGVEYXRhLlNpbmdsZVByb3Bl",
-            "cnR5RGF0YSJUChJTaW5nbGVQcm9wZXJ0eURhdGESEgoKcHJvcGVydHlJZBgB",
-            "IAEoBRITCgtwcm9wZXJ0eU51bRgCIAEoBRIVCg1wcm9wZXJ0eUxpbWl0GAMg",
-            "ASgFIooECg9QZW9wbGVQcm90b0RhdGESDgoGb25seUlkGAEgASgEEiwKDHBy",
-            "b3BlcnR5RGF0YRgCIAEoCzIWLlJvbGVEYXRhLlByb3BlcnR5RGF0YRIfChdz",
-            "ZW5zZWRPdGhlclBlb3BsZUlkTGlzdBgDIAMoBBIrCiNmcmllbmRsaW5lc3NU",
-            "b1NlbnNlZE90aGVyUGVvcGxlTGlzdBgEIAMoBRIOCgZnZW5kZXIYBSABKAUS",
-            "DAoEbmFtZRgGIAEoCRIQCghhY3Rpb25JZBgHIAEoBRIbChNmaW5pc2hJbnZp",
-            "dGVQcm9jZXNzGAggASgIEjQKEW1lSW52aXRlT3RoZXJMaXN0GAkgAygLMhku",
-            "Um9sZURhdGEuUGVvcGxlUHJvdG9EYXRhEjQKEW90aGVySW52aXRlTWVMaXN0",
-            "GAogAygLMhkuUm9sZURhdGEuUGVvcGxlUHJvdG9EYXRhEhIKCnJlY29yZExp",
-            "c3QYCyADKAkSLgoLY2hhdEZyaWVuZHMYDCADKAsyGS5Sb2xlRGF0YS5QZW9w",
-            "bGVQcm90b0RhdGESEAoIaXNQbGF5ZXIYDSABKAgSFwoPY2hvb3NlZEFjdGlv",
-            "bklkGA4gASgFEkMKG0FsbFNpbmdsZVBlb3BsZUNoYXREYXRhTGlzdBgPIAMo",
-            "CzIeLlJvbGVEYXRhLlNpbmdsZVBlb3BsZUNoYXREYXRhIm8KDVBsYW5Qcm90",
-            "b0RhdGESJQoCcDEYASABKAsyGS5Sb2xlRGF0YS5QZW9wbGVQcm90b0RhdGES",
-            "JQoCcDIYAiABKAsyGS5Sb2xlRGF0YS5QZW9wbGVQcm90b0RhdGESEAoIYWN0",
-            "aW9uSWQYAyABKAUiPgoRT3RoZXJJbnZpdGVNZURhdGESKQoGcGVvcGxlGAEg",
-            "ASgLMhkuUm9sZURhdGEuUGVvcGxlUHJvdG9EYXRhIlQKFk1lSW52aXRlT3Ro",
-            "ZXJQcm90b0RhdGESKQoGcGVvcGxlGAEgASgLMhkuUm9sZURhdGEuUGVvcGxl",
-            "UHJvdG9EYXRhEg8KB3JlZnVzZWQYAiABKAhiBnByb3RvMw=="));
+            "QmVmb3JlRXhhbRgGIAEoBSK0AQoLT25lQ2hhdERhdGESDAoEeWVhchgBIAEo",
+            "BRINCgVtb250aBgCIAEoBRILCgNkYXkYAyABKAUSDwoHY29udGVudBgEIAEo",
+            "CRIQCghpc1BsYXllchgFIAEoCBIPCgdjaGVja2VkGAYgASgIEg4KBmJlbG9u",
+            "ZxgHIAEoBBIQCghjaGF0VHlwZRgIIAEoBRIWCg5pbnZpdGVBY3Rpb25JZBgJ",
+            "IAEoBRINCgV2YWxpZBgKIAEoCCJTChRTaW5nbGVQZW9wbGVDaGF0RGF0YRIO",
+            "CgZiZWxvbmcYASABKAQSKwoMY2hhdERhdGFMaXN0GAIgAygLMhUuUm9sZURh",
+            "dGEuT25lQ2hhdERhdGEiXgoMUHJvcGVydHlEYXRhEhYKDnByb3BlcnR5SWRM",
+            "aXN0GAEgAygFEjYKEHByb3BlcnR5RGF0YUxpc3QYAiADKAsyHC5Sb2xlRGF0",
+            "YS5TaW5nbGVQcm9wZXJ0eURhdGEiVAoSU2luZ2xlUHJvcGVydHlEYXRhEhIK",
+            "CnByb3BlcnR5SWQYASABKAUSEwoLcHJvcGVydHlOdW0YAiABKAUSFQoNcHJv",
+            "cGVydHlMaW1pdBgDIAEoBSKnBAoPUGVvcGxlUHJvdG9EYXRhEg4KBm9ubHlJ",
+            "ZBgBIAEoBBIsCgxwcm9wZXJ0eURhdGEYAiABKAsyFi5Sb2xlRGF0YS5Qcm9w",
+            "ZXJ0eURhdGESHwoXc2Vuc2VkT3RoZXJQZW9wbGVJZExpc3QYAyADKAQSKwoj",
+            "ZnJpZW5kbGluZXNzVG9TZW5zZWRPdGhlclBlb3BsZUxpc3QYBCADKAUSDgoG",
+            "Z2VuZGVyGAUgASgFEgwKBG5hbWUYBiABKAkSEAoIYWN0aW9uSWQYByABKAUS",
+            "GwoTZmluaXNoSW52aXRlUHJvY2VzcxgIIAEoCBI0ChFtZUludml0ZU90aGVy",
+            "TGlzdBgJIAMoCzIZLlJvbGVEYXRhLlBlb3BsZVByb3RvRGF0YRI0ChFvdGhl",
+            "ckludml0ZU1lTGlzdBgKIAMoCzIZLlJvbGVEYXRhLlBlb3BsZVByb3RvRGF0",
+            "YRISCgpyZWNvcmRMaXN0GAsgAygJEi4KC2NoYXRGcmllbmRzGAwgAygLMhku",
+            "Um9sZURhdGEuUGVvcGxlUHJvdG9EYXRhEhAKCGlzUGxheWVyGA0gASgIEhcK",
+            "D2Nob29zZWRBY3Rpb25JZBgOIAEoBRJDChtBbGxTaW5nbGVQZW9wbGVDaGF0",
+            "RGF0YUxpc3QYDyADKAsyHi5Sb2xlRGF0YS5TaW5nbGVQZW9wbGVDaGF0RGF0",
+            "YRIbChNhcHBsaWVkSW52aXRlUGVvcGxlGBAgASgEIm8KDVBsYW5Qcm90b0Rh",
+            "dGESJQoCcDEYASABKAsyGS5Sb2xlRGF0YS5QZW9wbGVQcm90b0RhdGESJQoC",
+            "cDIYAiABKAsyGS5Sb2xlRGF0YS5QZW9wbGVQcm90b0RhdGESEAoIYWN0aW9u",
+            "SWQYAyABKAUiPgoRT3RoZXJJbnZpdGVNZURhdGESKQoGcGVvcGxlGAEgASgL",
+            "MhkuUm9sZURhdGEuUGVvcGxlUHJvdG9EYXRhIlQKFk1lSW52aXRlT3RoZXJQ",
+            "cm90b0RhdGESKQoGcGVvcGxlGAEgASgLMhkuUm9sZURhdGEuUGVvcGxlUHJv",
+            "dG9EYXRhEg8KB3JlZnVzZWQYAiABKAhiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.GameInfo), global::RoleData.GameInfo.Parser, new[]{ "PlayerPeople", "AllPeopleList", "TimeData", "CurGameModule", "TheId" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.TimeData), global::RoleData.TimeData.Parser, new[]{ "Year", "Month", "Day", "TheWeekDay", "DayProcess", "DayBeforeExam" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.OneChatData), global::RoleData.OneChatData.Parser, new[]{ "Year", "Month", "Day", "Content", "IsPlayer", "Checked", "Belong" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.OneChatData), global::RoleData.OneChatData.Parser, new[]{ "Year", "Month", "Day", "Content", "IsPlayer", "Checked", "Belong", "ChatType", "InviteActionId", "Valid" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.SinglePeopleChatData), global::RoleData.SinglePeopleChatData.Parser, new[]{ "Belong", "ChatDataList" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.PropertyData), global::RoleData.PropertyData.Parser, new[]{ "PropertyIdList", "PropertyDataList" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.SinglePropertyData), global::RoleData.SinglePropertyData.Parser, new[]{ "PropertyId", "PropertyNum", "PropertyLimit" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.PeopleProtoData), global::RoleData.PeopleProtoData.Parser, new[]{ "OnlyId", "PropertyData", "SensedOtherPeopleIdList", "FriendlinessToSensedOtherPeopleList", "Gender", "Name", "ActionId", "FinishInviteProcess", "MeInviteOtherList", "OtherInviteMeList", "RecordList", "ChatFriends", "IsPlayer", "ChoosedActionId", "AllSinglePeopleChatDataList" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.PeopleProtoData), global::RoleData.PeopleProtoData.Parser, new[]{ "OnlyId", "PropertyData", "SensedOtherPeopleIdList", "FriendlinessToSensedOtherPeopleList", "Gender", "Name", "ActionId", "FinishInviteProcess", "MeInviteOtherList", "OtherInviteMeList", "RecordList", "ChatFriends", "IsPlayer", "ChoosedActionId", "AllSinglePeopleChatDataList", "AppliedInvitePeople" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.PlanProtoData), global::RoleData.PlanProtoData.Parser, new[]{ "P1", "P2", "ActionId" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.OtherInviteMeData), global::RoleData.OtherInviteMeData.Parser, new[]{ "People" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.MeInviteOtherProtoData), global::RoleData.MeInviteOtherProtoData.Parser, new[]{ "People", "Refused" }, null, null, null)
@@ -665,6 +667,9 @@ namespace RoleData {
       isPlayer_ = other.isPlayer_;
       checked_ = other.checked_;
       belong_ = other.belong_;
+      chatType_ = other.chatType_;
+      inviteActionId_ = other.inviteActionId_;
+      valid_ = other.valid_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -771,6 +776,48 @@ namespace RoleData {
       }
     }
 
+    /// <summary>Field number for the "chatType" field.</summary>
+    public const int ChatTypeFieldNumber = 8;
+    private int chatType_;
+    /// <summary>
+    ///聊天类型
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ChatType {
+      get { return chatType_; }
+      set {
+        chatType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "inviteActionId" field.</summary>
+    public const int InviteActionIdFieldNumber = 9;
+    private int inviteActionId_;
+    /// <summary>
+    ///邀请干啥
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int InviteActionId {
+      get { return inviteActionId_; }
+      set {
+        inviteActionId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "valid" field.</summary>
+    public const int ValidFieldNumber = 10;
+    private bool valid_;
+    /// <summary>
+    ///有效（可以回复等操作，下一句说出来以后就失效）
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Valid {
+      get { return valid_; }
+      set {
+        valid_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as OneChatData);
@@ -791,6 +838,9 @@ namespace RoleData {
       if (IsPlayer != other.IsPlayer) return false;
       if (Checked != other.Checked) return false;
       if (Belong != other.Belong) return false;
+      if (ChatType != other.ChatType) return false;
+      if (InviteActionId != other.InviteActionId) return false;
+      if (Valid != other.Valid) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -804,6 +854,9 @@ namespace RoleData {
       if (IsPlayer != false) hash ^= IsPlayer.GetHashCode();
       if (Checked != false) hash ^= Checked.GetHashCode();
       if (Belong != 0UL) hash ^= Belong.GetHashCode();
+      if (ChatType != 0) hash ^= ChatType.GetHashCode();
+      if (InviteActionId != 0) hash ^= InviteActionId.GetHashCode();
+      if (Valid != false) hash ^= Valid.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -845,6 +898,18 @@ namespace RoleData {
         output.WriteRawTag(56);
         output.WriteUInt64(Belong);
       }
+      if (ChatType != 0) {
+        output.WriteRawTag(64);
+        output.WriteInt32(ChatType);
+      }
+      if (InviteActionId != 0) {
+        output.WriteRawTag(72);
+        output.WriteInt32(InviteActionId);
+      }
+      if (Valid != false) {
+        output.WriteRawTag(80);
+        output.WriteBool(Valid);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -873,6 +938,15 @@ namespace RoleData {
       }
       if (Belong != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(Belong);
+      }
+      if (ChatType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ChatType);
+      }
+      if (InviteActionId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(InviteActionId);
+      }
+      if (Valid != false) {
+        size += 1 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -905,6 +979,15 @@ namespace RoleData {
       }
       if (other.Belong != 0UL) {
         Belong = other.Belong;
+      }
+      if (other.ChatType != 0) {
+        ChatType = other.ChatType;
+      }
+      if (other.InviteActionId != 0) {
+        InviteActionId = other.InviteActionId;
+      }
+      if (other.Valid != false) {
+        Valid = other.Valid;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -943,6 +1026,18 @@ namespace RoleData {
           }
           case 56: {
             Belong = input.ReadUInt64();
+            break;
+          }
+          case 64: {
+            ChatType = input.ReadInt32();
+            break;
+          }
+          case 72: {
+            InviteActionId = input.ReadInt32();
+            break;
+          }
+          case 80: {
+            Valid = input.ReadBool();
             break;
           }
         }
@@ -1488,6 +1583,7 @@ namespace RoleData {
       isPlayer_ = other.isPlayer_;
       choosedActionId_ = other.choosedActionId_;
       allSinglePeopleChatDataList_ = other.allSinglePeopleChatDataList_.Clone();
+      appliedInvitePeople_ = other.appliedInvitePeople_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1699,6 +1795,20 @@ namespace RoleData {
       get { return allSinglePeopleChatDataList_; }
     }
 
+    /// <summary>Field number for the "appliedInvitePeople" field.</summary>
+    public const int AppliedInvitePeopleFieldNumber = 16;
+    private ulong appliedInvitePeople_;
+    /// <summary>
+    ///答应了谁的请求
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ulong AppliedInvitePeople {
+      get { return appliedInvitePeople_; }
+      set {
+        appliedInvitePeople_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as PeopleProtoData);
@@ -1727,6 +1837,7 @@ namespace RoleData {
       if (IsPlayer != other.IsPlayer) return false;
       if (ChoosedActionId != other.ChoosedActionId) return false;
       if(!allSinglePeopleChatDataList_.Equals(other.allSinglePeopleChatDataList_)) return false;
+      if (AppliedInvitePeople != other.AppliedInvitePeople) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1748,6 +1859,7 @@ namespace RoleData {
       if (IsPlayer != false) hash ^= IsPlayer.GetHashCode();
       if (ChoosedActionId != 0) hash ^= ChoosedActionId.GetHashCode();
       hash ^= allSinglePeopleChatDataList_.GetHashCode();
+      if (AppliedInvitePeople != 0UL) hash ^= AppliedInvitePeople.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1800,6 +1912,10 @@ namespace RoleData {
         output.WriteInt32(ChoosedActionId);
       }
       allSinglePeopleChatDataList_.WriteTo(output, _repeated_allSinglePeopleChatDataList_codec);
+      if (AppliedInvitePeople != 0UL) {
+        output.WriteRawTag(128, 1);
+        output.WriteUInt64(AppliedInvitePeople);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1839,6 +1955,9 @@ namespace RoleData {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(ChoosedActionId);
       }
       size += allSinglePeopleChatDataList_.CalculateSize(_repeated_allSinglePeopleChatDataList_codec);
+      if (AppliedInvitePeople != 0UL) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt64Size(AppliedInvitePeople);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -1884,6 +2003,9 @@ namespace RoleData {
         ChoosedActionId = other.ChoosedActionId;
       }
       allSinglePeopleChatDataList_.Add(other.allSinglePeopleChatDataList_);
+      if (other.AppliedInvitePeople != 0UL) {
+        AppliedInvitePeople = other.AppliedInvitePeople;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -1958,6 +2080,10 @@ namespace RoleData {
           }
           case 122: {
             allSinglePeopleChatDataList_.AddEntriesFrom(input, _repeated_allSinglePeopleChatDataList_codec);
+            break;
+          }
+          case 128: {
+            AppliedInvitePeople = input.ReadUInt64();
             break;
           }
         }

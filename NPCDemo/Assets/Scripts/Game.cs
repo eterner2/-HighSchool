@@ -40,8 +40,13 @@ public class Game : MonoBehaviour
         GameModuleManager.Instance.Init();
         PanelManager.Instance.Init();
         GameTimeManager.Instance.Init();
+        Test();
     }
 
+    void Test()
+    {
+        PeopleInteractManager.Instance.AddedWetalk(RoleManager.Instance.playerPeople, RoleManager.Instance.allPeopleList[0]);
+    }
 
     /// <summary>
     /// 判断持久化目录有没有version，如果没有说明还没复制过， 把streamingasset的文件放到持久化目录

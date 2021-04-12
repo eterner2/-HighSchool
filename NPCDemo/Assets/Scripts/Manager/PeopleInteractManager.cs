@@ -47,7 +47,7 @@ public class PeopleInteractManager : CommonInstance<PeopleInteractManager>
         //有人和玩家加了微信 发信息到手机ui上
         if (p1.isPlayer)
         {
-            WetalkMsgData wetalkMsgData = new WetalkMsgData(WetalkMsgType.Nonsense, "我们已经是好友了，以后请多多指教",p2,p1);
+            WetalkMsgData wetalkMsgData = new WetalkMsgData(WetalkMsgType.Nonsense, "我们已经是好友了，以后请多多指教",p2,p1,0);
             SocializationManager.Instance.SendMsgToPlayer(p2,p1, wetalkMsgData);
         }
     }

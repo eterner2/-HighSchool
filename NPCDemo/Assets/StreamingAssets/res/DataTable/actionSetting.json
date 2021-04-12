@@ -2,7 +2,7 @@
   {
     "id": "10001",
     "name": "玩桌游",
-    "socializationType": "1",
+    "socializationType": "3",
     "proChange": "10005|-20$10004|-20$10006|20",
     "bigMapId": "10001"
   },
@@ -37,14 +37,14 @@
   {
     "id": "10006",
     "name": "睡觉",
-    "socializationType": "3",
+    "socializationType": "1",
     "proChange": "10005|10$10006|2",
     "bigMapId": "-1"
   },
   {
     "id": "10007",
     "name": "图书馆当志愿者",
-    "socializationType": "3",
+    "socializationType": "1",
     "proChange": "10005|-30$10004|40$10006|-6",
     "bigMapId": "10002"
   },
