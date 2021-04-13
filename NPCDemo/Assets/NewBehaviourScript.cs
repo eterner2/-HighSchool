@@ -77,7 +77,7 @@ public class NewBehaviourScript : MonoBehaviour
     /// </summary>
     void GeneratePeople(People people)
     {
-        PeopleView peopleView = GenerateEntity(ObjectPoolSingle.PeopleView) as PeopleView;
+        PeopleView peopleView = GenerateEntity(ObjectPoolSingle.PeopleView) as ActionModulePeopleView;
         peopleView.transform.SetParent(trans_peopleGrid, false);
         peopleView.Init(people);
     }
@@ -823,8 +823,8 @@ public class People
         meInviteOtherList.Clear();
         otherInviteMeList.Clear();
         finishInviteProcess = false;
-        protoData.AppliedInvitePeople = 0;
-
+        //protoData.AppliedInvitePeople = 0;
+        protoData.ValidWithPeople.Clear();
     }
 
 

@@ -39,6 +39,9 @@ using UnityEngine;
     CellPhonePanel,//手机
     MainPanel,//主面板TODO和statuspanel做成同一个panel
     SingleChatItemView,//聊天面板
+    ActionModulePeopleView,//行动模块的人
+    ActionReadyPanelPeopleView,//行动准备模块的人
+    ActionReadyPanel,//行动准备界面
 }
 
 public class TempItem

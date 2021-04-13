@@ -59,7 +59,7 @@ public class SocializationManager : MonoInstance<SocializationManager>
             if (me.weTalkFriends.Count > 0&&actionSetting.socializationType.ToInt32()!=(int)ActionSocializationProperty.MustAlone)
             {
                 //暂时一定邀请 这里改成1
-                int num = RandomManager.Next(1, me.weTalkFriends.Count+1);
+                int num = RandomManager.Next(0, me.weTalkFriends.Count+1);
                 if (num > 0)
                 {
                     for (int j = 0; j < num; j++)
@@ -353,13 +353,14 @@ public class SocializationManager : MonoInstance<SocializationManager>
     /// </summary>
     public void InviteNPC(People people)
     {
-        bool finishMatch = false;
-        if (people.finishInviteProcess)
-            return;
 
+     
+
+        ActionSetting actionSetting = DataTable.FindActionSetting(RoleManager.Instance.playerPeople.protoData.ActionId);
+     
+        WetalkMsgData wetalkMsgData = new WetalkMsgData(WetalkMsgType.Nonsense, "一起" + actionSetting.name+"吗？", RoleManager.Instance.playerPeople, people, 0);
+        SendMsgToPlayer(RoleManager.Instance.playerPeople,people, wetalkMsgData);
         //NPC把玩家和邀请自己的人和自己邀请的人一起比较，然后酌情拒绝玩家
-
-
         List<People> candidateList = new List<People>();//所有可能配对的人的列表
         //List<People> candidateInviteMeList = new List<People>();//邀请我的人的列表
         //List<People> candidateMeInviteOtherList = new List<People>();//我邀请的人的列表
@@ -379,232 +380,28 @@ public class SocializationManager : MonoInstance<SocializationManager>
         //我邀请玩家 玩家也邀请我 则直接答应 并迁就玩家
         if (candidateList.Contains(RoleManager.Instance.playerPeople))
         {
-
+            //这里执行NPC答应玩家的行为
+            NPCApplyPlayerInvite(people, actionSetting);
         }
         //没有互相邀请的情况 则随机拒绝或答应
         else
         {
             int val = RandomManager.Next(0, 101);
             //答应
-            if (val < 50)
+            if (val < 30)
             {
-
+                //这里执行NPC答应玩家的行为
+                NPCApplyPlayerInvite(people,actionSetting);
             }
             //拒绝
             else
             {
-
+                //这里执行NPC拒绝玩家的行为
+                NPCRefusePlayerInvite(people);
             }
 
         }
-        //如果我邀请的人也邀请我
-        for (int j = 0; j < people.otherInviteMeList.Count; j++)
-        {
-            People other = people.otherInviteMeList[j].people;
-            if (!other.finishInviteProcess)
-            {
 
-                candidateList.Add(other);
-            }
-        }
-
-        for (int j = 0; j < people.otherInviteMeList.Count; j++)
-        {
-            //邀请我的其中一个
-            People other = people.otherInviteMeList[j].people;
-            if (other.finishInviteProcess)
-                return;
-
-
-            List<People> meInviteOtherPeopleList = new List<People>();
-            for (int m = 0; m < people.meInviteOtherList.Count; m++)
-            {
-                meInviteOtherPeopleList.Add(people.meInviteOtherList[m].people);
-            }
-            //如果我邀请的人也邀请我做同样的事 并且他没配对成功 则拒绝主角
-            if (meInviteOtherPeopleList.Contains(other) && !other.finishInviteProcess)
-            {
-                if (people.actionName == other.actionName)
-                {
-                    people.Record("在我的回合发现" + other.name + "也邀请我" + people.actionName + ",感到十分高兴，于是一起" + people.actionName);
-                    other.Record("在" + people.name + "的回合" + "发现" + people.name + "也邀请我" + other.actionName + ",感到十分高兴，于是一起" + other.actionName);
-                  //这里调用拒绝玩家的逻辑
-                }
-                else
-                {
-        
-                    int theIndex = RandomManager.Next(0, 2);
-                    if (theIndex == 0)
-                    {
-                        p.Record("在我的回合发现" + other.name + "邀请我" + other.actionName + ",商量后决定听自己的，一起" + p.actionName);
-                        other.Record("在" + p.name + "的回合" + "发现" + p.name + "邀请我" + p.actionName + ",商量后决定听对方的，于是一起" + p.actionName);
-                        //planList.Add(new Plan(p.actionName, p, other));
-                        AddPlan(p.actionName, p.protoData.ActionId, p, other);
-                        //分别拒绝掉各自的鱼
-                        RefusePeopleWhoInviteMe(p, other, p.actionName);
-                        ForgivePeopleWhoIInvite(p, other, p.actionName);
-
-                        RefusePeopleWhoInviteMe(other, p, p.actionName);
-                        ForgivePeopleWhoIInvite(other, p, p.actionName);
-                    }
-                    else
-                    {
-                        p.Record("在我的回合发现" + other.name + "邀请我" + other.actionName + ",商量后决定听对方的，于是一起" + other.actionName);
-                        other.Record("在" + p.name + "的回合" + "发现" + p.name + "邀请我" + p.actionName + ",商量后决定听自己的，一起" + other.actionName);
-                        //planList.Add(new Plan(other.actionName, p, other));
-                        AddPlan(other.actionName, other.protoData.ActionId, p, other);
-                        //分别拒绝掉各自的鱼
-                        RefusePeopleWhoInviteMe(p, other, other.actionName);
-                        ForgivePeopleWhoIInvite(p, other, other.actionName);
-
-                        RefusePeopleWhoInviteMe(other, p, other.actionName);
-                        ForgivePeopleWhoIInvite(other, p, other.actionName);
-                    }
-
-                }
-                finishMatch = true;
-                break;
-            }
-            //否则 把邀请我的其中一个加入列表
-            candidateList.Add(other);
-            candidateInviteMeList.Add(other);
-        }
-        if (!finishMatch)
-        {
-            //从我邀请的人和邀请我的人里面选一个，若选择了我邀请的人，则把邀请我的人全部拒绝掉 若选择了邀请我的人，则配对成功 当不存在我邀请的人，或我邀请的人全部拒绝了我，或邀请我的人已和别人配对成功 则我一个人活动
-
-            //我邀请的人(没拒绝我的）加入候选列表
-            for (int m = 0; m < p.meInviteOtherList.Count; m++)
-            {
-                People meInvitedOther = p.meInviteOtherList[m].people;
-                if (!meInvitedOther.finishInviteProcess && !p.meInviteOtherList[m].refused)
-                {
-                    candidateMeInviteOtherList.Add(meInvitedOther);
-                    candidateList.Add(meInvitedOther);
-                }
-            }
-
-            //既没有邀请我的，也没有我邀请的
-            if (candidateList.Count == 0)
-            {
-                p.Record("决定独自去" + p.actionName);
-                //planList.Add(new Plan(p.actionName, p, null));
-                AddPlan(p.actionName, p.protoData.ActionId, p);
-                continue;
-            }
-            //如果没有我邀请的人 但有邀请我的人
-            else if (candidateMeInviteOtherList.Count == 0 && candidateInviteMeList.Count > 0)
-            {
-                string content = "";
-                int rdmIndex = RandomManager.Next(0, candidateInviteMeList.Count);
-                AddPlan(candidateInviteMeList[rdmIndex].actionName, candidateInviteMeList[rdmIndex].protoData.ActionId, p, candidateInviteMeList[rdmIndex]);
-                //planList.Add(new Plan(candidateInviteMeList[rdmIndex].actionName, p, candidateInviteMeList[rdmIndex]));
-                content = "决定和" + candidateInviteMeList[rdmIndex].name + "一起" + candidateInviteMeList[rdmIndex].actionName;
-                //不止一个人邀请
-                if (candidateInviteMeList.Count > 1)
-                {
-                    content += ",并拒绝了";
-                }
-                for (int j = 0; j < candidateInviteMeList.Count; j++)
-                {
-                    if (j != rdmIndex)
-                    {
-                        content += candidateInviteMeList[j].name + "，";
-                        candidateInviteMeList[j].Record("由于" + candidateInviteMeList[rdmIndex].name + "也邀请了" + p.name + ","
-                            + p.name + "选择和" + candidateInviteMeList[rdmIndex].name + "一起" + candidateInviteMeList[rdmIndex].actionName
-                            + ",拒绝了你的邀请");
-                        p.Refuse(candidateInviteMeList[j]);
-                    }
-
-                }
-
-                p.Record(content);
-                //ForgivePeopleWhoIInvite(p,)
-                candidateInviteMeList[rdmIndex].Record(p.name + "答应了邀请," + "一起" + candidateInviteMeList[rdmIndex].actionName);
-                //我选的这个人还要拒绝掉其它邀请了他的人
-                RefusePeopleWhoInviteMe(candidateInviteMeList[rdmIndex], p, candidateInviteMeList[rdmIndex].actionName);
-                //我选的这个人还要对他邀请的人说不去了
-                ForgivePeopleWhoIInvite(candidateInviteMeList[rdmIndex], p, candidateInviteMeList[rdmIndex].actionName);
-            }
-            //如果没有邀请我的人 但有我邀请的人
-            else if (candidateInviteMeList.Count == 0 && candidateMeInviteOtherList.Count > 0)
-            {
-                nextHandleList.Add(p);
-
-            }
-            //如果两者都有
-            else if (candidateInviteMeList.Count > 0 && candidateMeInviteOtherList.Count > 0)
-            {
-                int index = RandomManager.Next(0, candidateList.Count);
-                People choosed = candidateList[index];
-                //如果选择了我邀请的人，则拒绝所有邀请我的人 然后进入下一轮
-                if (p.ifMeInvitePeople(choosed))
-                {
-                    //如果有人邀请我 则婉拒他
-                    if (candidateInviteMeList.Count > 0)
-                    {
-                        string content = "";
-                        content = "还是想和" + choosed.name + "一起" + p.actionName + ",所以拒绝了";
-
-                        for (int j = 0; j < candidateInviteMeList.Count; j++)
-                        {
-                            content += candidateInviteMeList[j].name + "，";
-                            candidateInviteMeList[j].Record("由于"
-                                + p.name + "还是想和" + choosed.name + "一起" + p.actionName
-                                + ",拒绝了你的邀请");
-
-                            p.Refuse(candidateInviteMeList[j]);
-                        }
-
-                        p.Record(content);
-                    }
-                    nextHandleList.Add(p);
-                }
-                //如果选择了邀请我的人，则直接答应 并拒绝其他邀请我的人
-                else
-                {
-                    AddPlan(choosed.actionName, choosed.protoData.ActionId, p, choosed);
-                    //planList.Add(new Plan(choosed.actionName, p, choosed));
-                    //有人邀请我 则婉拒他
-                    if (candidateInviteMeList.Count > 0)
-                    {
-                        string content = "";
-
-                        content = "决定和" + choosed.name + "一起" + choosed.actionName;
-                        //不止一个人邀请
-                        if (candidateInviteMeList.Count > 1)
-                        {
-                            content += ",并拒绝了";
-                        }
-                        for (int j = 0; j < candidateInviteMeList.Count; j++)
-                        {
-                            if (candidateInviteMeList[j] != choosed)
-                            {
-                                content += candidateInviteMeList[j].name + "，";
-                                candidateInviteMeList[j].Record("由于" + choosed.name + "也邀请了" + p.name + ","
-                                    + p.name + "选择和" + choosed.name + "一起" + choosed.actionName
-                                    + ",拒绝了你的邀请");
-                                p.Refuse(candidateInviteMeList[j]);
-                            }
-
-                        }
-
-                        p.Record(content);
-                        //对我邀请的人说不去了
-                        ForgivePeopleWhoIInvite(p, choosed, choosed.actionName);
-
-                        choosed.Record(p.name + "答应了邀请," + "一起" + choosed.actionName);
-                        //邀请我的人要拒绝掉其它邀请他的人
-                        RefusePeopleWhoInviteMe(choosed, p, choosed.actionName);
-                        //邀请我的人要对其它邀请他的人说不去了
-                        ForgivePeopleWhoIInvite(choosed, p, choosed.actionName);
-
-                    }
-
-                }
-            }
-
-        }
     }
 
     /// <summary>
@@ -686,7 +483,7 @@ public class SocializationManager : MonoInstance<SocializationManager>
         for (int i = 0; i < count; i++)
         {
             People theInvite = main.otherInviteMeList[i].people;
-            if (!theInvite.finishInviteProcess && theInvite != choosed)
+            if (!theInvite.finishInviteProcess && theInvite.protoData.OnlyId != choosed.protoData.OnlyId)
             {
                 recordStr += "拒绝了" + theInvite.name + ",";
                 main.Refuse(theInvite);
@@ -707,7 +504,7 @@ public class SocializationManager : MonoInstance<SocializationManager>
         for (int i = 0; i < count; i++)
         {
             People theOtherInvite = main.meInviteOtherList[i].people;
-            if (!theOtherInvite.finishInviteProcess && theOtherInvite != choosed && !main.meInviteOtherList[i].refused)
+            if (!theOtherInvite.finishInviteProcess && theOtherInvite.protoData.OnlyId != choosed.protoData.OnlyId && !main.meInviteOtherList[i].refused)
             {
                 recordStr += "对" + theOtherInvite.name + "说改计划了";
                 //main.Refuse(theInvite);
@@ -813,7 +610,7 @@ public class SocializationManager : MonoInstance<SocializationManager>
             {
                 for(int j = 0; j < data.ChatDataList.Count; j++)
                 {
-                    OneChatData oneData = data.ChatDataList[i];
+                    OneChatData oneData = data.ChatDataList[j];
                     if (!oneData.Checked)
                         res++;
                 }
@@ -829,7 +626,7 @@ public class SocializationManager : MonoInstance<SocializationManager>
     /// <param name="people"></param>
     public void ApplyInvite(People people)
     {
-        RoleManager.Instance.playerPeople.protoData.AppliedInvitePeople = people.protoData.OnlyId;
+        RoleManager.Instance.playerPeople.protoData.ValidWithPeople.Add(people.protoData.OnlyId);
         //发消息
         WetalkMsgData wetalkMsgData = new WetalkMsgData(WetalkMsgType.Nonsense, "好呀。", RoleManager.Instance.playerPeople, people , 0);
         SendMsgToPlayer(RoleManager.Instance.playerPeople, people, wetalkMsgData);
@@ -837,6 +634,63 @@ public class SocializationManager : MonoInstance<SocializationManager>
         WetalkMsgData wetalkMsgData2= new WetalkMsgData(WetalkMsgType.Nonsense, "嗯！那不见不散。", people, RoleManager.Instance.playerPeople, 0);
         SendMsgToPlayer(people,RoleManager.Instance.playerPeople, wetalkMsgData2);
 
+    }
+
+    /// <summary>
+    /// NPC答应玩家邀请
+    /// </summary>
+    /// <param name="people"></param>
+    public void NPCApplyPlayerInvite(People people,ActionSetting actionSetting)
+    {
+        bool doubleAsked = false;
+        for(int i = 0; i < people.meInviteOtherList.Count; i++)
+        {
+            //如果npc也邀请了玩家，则顺从玩家
+            if (people.meInviteOtherList[i].people.protoData.OnlyId == RoleManager.Instance.playerPeople.protoData.OnlyId)
+            {
+                doubleAsked = true;
+                break;
+            }
+            //这里应该直接进入了
+            //GameModuleManager.Instance.curGameModule = GameModuleType.SingleOutsideScene;
+        }
+        WetalkMsgData wetalkMsgData;// = new WetalkMsgData(WetalkMsgType.Nonsense, "嗯，那听你的吧。", people, RoleManager.Instance.playerPeople, 0);
+
+        if (doubleAsked)
+        {
+            wetalkMsgData = new WetalkMsgData(WetalkMsgType.Nonsense, "嗯，那听你的吧。", people, RoleManager.Instance.playerPeople, 0);
+        }
+        else
+        {
+            wetalkMsgData = new WetalkMsgData(WetalkMsgType.Nonsense, "虽然对" + actionSetting.name + "不太感冒，不过和你一起去倒还不错。", people, RoleManager.Instance.playerPeople, 0);
+        }
+        SendMsgToPlayer(people, RoleManager.Instance.playerPeople, wetalkMsgData);
+        RoleManager.Instance.playerPeople.protoData.ValidWithPeople.Add(people.protoData.OnlyId);
+        //该NPC把鱼拒绝掉（这个不一定 看后续需不需要这样做TODO
+        RefusePeopleWhoInviteMe(people, RoleManager.Instance.playerPeople, RoleManager.Instance.playerPeople.actionName);
+        ForgivePeopleWhoIInvite(people, RoleManager.Instance.playerPeople, RoleManager.Instance.playerPeople.actionName);
+        //刷新面板显示
+        EventCenter.Broadcast(TheEventType.NPCAppliedInvite);
+    }
+
+    /// <summary>
+    /// NPC拒绝玩家
+    /// </summary>
+    public void NPCRefusePlayerInvite(People people)
+    {
+        WetalkMsgData wetalkMsgData = new WetalkMsgData(WetalkMsgType.Nonsense, "不是很想去……", people, RoleManager.Instance.playerPeople, 0);
+        SendMsgToPlayer(people, RoleManager.Instance.playerPeople, wetalkMsgData);
+
+        people.Refuse(RoleManager.Instance.playerPeople);
+    }
+
+    /// <summary>
+    /// 供手机面板调用 玩家想邀请人去干啥
+    /// </summary>
+    /// <param name="id"></param>
+    public void SetTmpPreferedActionId(int id)
+    {
+        tmpPreferedActionId = id;
     }
 }
 

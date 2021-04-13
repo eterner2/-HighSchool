@@ -75,7 +75,7 @@ bool isPlayer=13;//是玩家
 
 int32 choosedActionId=14;//确定选择了的活动
 repeated SinglePeopleChatData AllSinglePeopleChatDataList=15;//和别人聊天记录
-uint64 appliedInvitePeople=16;//答应了谁的请求
+repeated uint64 validWithPeople=16;//可以和谁一起去（答应过自己和邀请自己的）
 }
 
 //计划

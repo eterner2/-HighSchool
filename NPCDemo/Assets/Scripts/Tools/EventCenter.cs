@@ -168,4 +168,6 @@ public enum TheEventType
     SendWetalkMessage,//发消息
     CheckedWetalkMessage,//已读
     ShowMainPanelRedPoint,//显示主面板红点
+    ChoosedPeopleInActionReadyPanel,//在准备界面选了人
+    NPCAppliedInvite,//NPC答应了邀请
 }

@@ -29,13 +29,16 @@ public class SingleWetalkFriendInFriendListView : SingleViewBase
             //如果是邀请 TODO如果已邀请自己的人也做同样的事情 需要过滤掉
             if (parentPanel.curHandleType == CellphoneHandleType.Invite)
             {
+                RoleManager.Instance.playerPeople.protoData.ActionId = SocializationManager.Instance.tmpPreferedActionId;
                 People people = RoleManager.Instance.FindPeopleWithOnlyId(singlePeopleChatData.Belong);
                 ActionSetting actionSetting = Framework.Data.DataTable.FindActionSetting(SocializationManager.Instance.tmpPreferedActionId);
-                PanelManager.Instance.OpenCommonHint("确定邀请"+people.protoData.Name+ actionSetting.name+"吗？",()=> 
-                { 
-
-                },
-                null)
+                PanelManager.Instance.OpenCommonHint("确定邀请" + people.protoData.Name + actionSetting.name + "吗？", () =>
+                      {
+                          //打开聊天面板
+                          parentPanel.ShowChat(singlePeopleChatData);
+                          SocializationManager.Instance.InviteNPC(people);
+                      },
+                null);
             }
         });
     }

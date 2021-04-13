@@ -30,18 +30,12 @@ public class ChooseActionPanel : SelfAdaptionChoosePanel
         string[] actionIdArr = bigMapSetting.actions.Split('|');
 
         //如果答应了和谁一起做事
-        int appliedPeopleActionId = 0;
-        if (RoleManager.Instance.playerPeople.protoData.AppliedInvitePeople != 0)
-        {
-            appliedPeopleActionId = RoleManager.Instance.FindPeopleWithOnlyId(RoleManager.Instance.playerPeople.protoData.AppliedInvitePeople).protoData.ActionId;
-        }
+
         for(int i = 0; i < actionIdArr.Length; i++)
         {
             int theId = actionIdArr[i].ToInt32();
-            if(appliedPeopleActionId==theId)  
-                selfAdaptionChooseBtnViewList.Add(PanelManager.Instance.OpenSingle<ChooseActionBtnView>(grid,this, theId, RoleManager.Instance.playerPeople.protoData.AppliedInvitePeople));
-            else
-                selfAdaptionChooseBtnViewList.Add(PanelManager.Instance.OpenSingle<ChooseActionBtnView>(grid, this, theId, 0));
+       
+                selfAdaptionChooseBtnViewList.Add(PanelManager.Instance.OpenSingle<ChooseActionBtnView>(grid, this, theId));
 
         }
 

@@ -16,7 +16,7 @@ public class SingleGroupView : SingleViewBase
         //peopleView.transform.SetParent(trans_peopleGrid, false);
         for(int i = 0; i < plan.peopleList.Count; i++)
         {
-            PeopleView peopleView = PanelManager.Instance.OpenSingle<PeopleView>(trans_grid, plan.peopleList[i]);
+            PeopleView peopleView = PanelManager.Instance.OpenSingle<ActionModulePeopleView>(trans_grid, plan.peopleList[i]);
         }
         if (plan.peopleList.Count == 2)
         {

@@ -7,4 +7,5 @@ public class ActionSetting
     public string socializationType;
     public string proChange;
     public string bigMapId;
+    public string des;
 }

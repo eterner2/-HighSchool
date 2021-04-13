@@ -41,7 +41,7 @@ namespace RoleData {
             "aXN0GAEgAygFEjYKEHByb3BlcnR5RGF0YUxpc3QYAiADKAsyHC5Sb2xlRGF0",
             "YS5TaW5nbGVQcm9wZXJ0eURhdGEiVAoSU2luZ2xlUHJvcGVydHlEYXRhEhIK",
             "CnByb3BlcnR5SWQYASABKAUSEwoLcHJvcGVydHlOdW0YAiABKAUSFQoNcHJv",
-            "cGVydHlMaW1pdBgDIAEoBSKnBAoPUGVvcGxlUHJvdG9EYXRhEg4KBm9ubHlJ",
+            "cGVydHlMaW1pdBgDIAEoBSKjBAoPUGVvcGxlUHJvdG9EYXRhEg4KBm9ubHlJ",
             "ZBgBIAEoBBIsCgxwcm9wZXJ0eURhdGEYAiABKAsyFi5Sb2xlRGF0YS5Qcm9w",
             "ZXJ0eURhdGESHwoXc2Vuc2VkT3RoZXJQZW9wbGVJZExpc3QYAyADKAQSKwoj",
             "ZnJpZW5kbGluZXNzVG9TZW5zZWRPdGhlclBlb3BsZUxpc3QYBCADKAUSDgoG",
@@ -53,13 +53,13 @@ namespace RoleData {
             "Um9sZURhdGEuUGVvcGxlUHJvdG9EYXRhEhAKCGlzUGxheWVyGA0gASgIEhcK",
             "D2Nob29zZWRBY3Rpb25JZBgOIAEoBRJDChtBbGxTaW5nbGVQZW9wbGVDaGF0",
             "RGF0YUxpc3QYDyADKAsyHi5Sb2xlRGF0YS5TaW5nbGVQZW9wbGVDaGF0RGF0",
-            "YRIbChNhcHBsaWVkSW52aXRlUGVvcGxlGBAgASgEIm8KDVBsYW5Qcm90b0Rh",
-            "dGESJQoCcDEYASABKAsyGS5Sb2xlRGF0YS5QZW9wbGVQcm90b0RhdGESJQoC",
-            "cDIYAiABKAsyGS5Sb2xlRGF0YS5QZW9wbGVQcm90b0RhdGESEAoIYWN0aW9u",
-            "SWQYAyABKAUiPgoRT3RoZXJJbnZpdGVNZURhdGESKQoGcGVvcGxlGAEgASgL",
-            "MhkuUm9sZURhdGEuUGVvcGxlUHJvdG9EYXRhIlQKFk1lSW52aXRlT3RoZXJQ",
-            "cm90b0RhdGESKQoGcGVvcGxlGAEgASgLMhkuUm9sZURhdGEuUGVvcGxlUHJv",
-            "dG9EYXRhEg8KB3JlZnVzZWQYAiABKAhiBnByb3RvMw=="));
+            "YRIXCg92YWxpZFdpdGhQZW9wbGUYECADKAQibwoNUGxhblByb3RvRGF0YRIl",
+            "CgJwMRgBIAEoCzIZLlJvbGVEYXRhLlBlb3BsZVByb3RvRGF0YRIlCgJwMhgC",
+            "IAEoCzIZLlJvbGVEYXRhLlBlb3BsZVByb3RvRGF0YRIQCghhY3Rpb25JZBgD",
+            "IAEoBSI+ChFPdGhlckludml0ZU1lRGF0YRIpCgZwZW9wbGUYASABKAsyGS5S",
+            "b2xlRGF0YS5QZW9wbGVQcm90b0RhdGEiVAoWTWVJbnZpdGVPdGhlclByb3Rv",
+            "RGF0YRIpCgZwZW9wbGUYASABKAsyGS5Sb2xlRGF0YS5QZW9wbGVQcm90b0Rh",
+            "dGESDwoHcmVmdXNlZBgCIAEoCGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
@@ -69,7 +69,7 @@ namespace RoleData {
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.SinglePeopleChatData), global::RoleData.SinglePeopleChatData.Parser, new[]{ "Belong", "ChatDataList" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.PropertyData), global::RoleData.PropertyData.Parser, new[]{ "PropertyIdList", "PropertyDataList" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.SinglePropertyData), global::RoleData.SinglePropertyData.Parser, new[]{ "PropertyId", "PropertyNum", "PropertyLimit" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.PeopleProtoData), global::RoleData.PeopleProtoData.Parser, new[]{ "OnlyId", "PropertyData", "SensedOtherPeopleIdList", "FriendlinessToSensedOtherPeopleList", "Gender", "Name", "ActionId", "FinishInviteProcess", "MeInviteOtherList", "OtherInviteMeList", "RecordList", "ChatFriends", "IsPlayer", "ChoosedActionId", "AllSinglePeopleChatDataList", "AppliedInvitePeople" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.PeopleProtoData), global::RoleData.PeopleProtoData.Parser, new[]{ "OnlyId", "PropertyData", "SensedOtherPeopleIdList", "FriendlinessToSensedOtherPeopleList", "Gender", "Name", "ActionId", "FinishInviteProcess", "MeInviteOtherList", "OtherInviteMeList", "RecordList", "ChatFriends", "IsPlayer", "ChoosedActionId", "AllSinglePeopleChatDataList", "ValidWithPeople" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.PlanProtoData), global::RoleData.PlanProtoData.Parser, new[]{ "P1", "P2", "ActionId" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.OtherInviteMeData), global::RoleData.OtherInviteMeData.Parser, new[]{ "People" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.MeInviteOtherProtoData), global::RoleData.MeInviteOtherProtoData.Parser, new[]{ "People", "Refused" }, null, null, null)
@@ -1583,7 +1583,7 @@ namespace RoleData {
       isPlayer_ = other.isPlayer_;
       choosedActionId_ = other.choosedActionId_;
       allSinglePeopleChatDataList_ = other.allSinglePeopleChatDataList_.Clone();
-      appliedInvitePeople_ = other.appliedInvitePeople_;
+      validWithPeople_ = other.validWithPeople_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1795,18 +1795,17 @@ namespace RoleData {
       get { return allSinglePeopleChatDataList_; }
     }
 
-    /// <summary>Field number for the "appliedInvitePeople" field.</summary>
-    public const int AppliedInvitePeopleFieldNumber = 16;
-    private ulong appliedInvitePeople_;
+    /// <summary>Field number for the "validWithPeople" field.</summary>
+    public const int ValidWithPeopleFieldNumber = 16;
+    private static readonly pb::FieldCodec<ulong> _repeated_validWithPeople_codec
+        = pb::FieldCodec.ForUInt64(130);
+    private readonly pbc::RepeatedField<ulong> validWithPeople_ = new pbc::RepeatedField<ulong>();
     /// <summary>
-    ///答应了谁的请求
+    ///可以和谁一起去（答应过自己和邀请自己的）
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ulong AppliedInvitePeople {
-      get { return appliedInvitePeople_; }
-      set {
-        appliedInvitePeople_ = value;
-      }
+    public pbc::RepeatedField<ulong> ValidWithPeople {
+      get { return validWithPeople_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1837,7 +1836,7 @@ namespace RoleData {
       if (IsPlayer != other.IsPlayer) return false;
       if (ChoosedActionId != other.ChoosedActionId) return false;
       if(!allSinglePeopleChatDataList_.Equals(other.allSinglePeopleChatDataList_)) return false;
-      if (AppliedInvitePeople != other.AppliedInvitePeople) return false;
+      if(!validWithPeople_.Equals(other.validWithPeople_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1859,7 +1858,7 @@ namespace RoleData {
       if (IsPlayer != false) hash ^= IsPlayer.GetHashCode();
       if (ChoosedActionId != 0) hash ^= ChoosedActionId.GetHashCode();
       hash ^= allSinglePeopleChatDataList_.GetHashCode();
-      if (AppliedInvitePeople != 0UL) hash ^= AppliedInvitePeople.GetHashCode();
+      hash ^= validWithPeople_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1912,10 +1911,7 @@ namespace RoleData {
         output.WriteInt32(ChoosedActionId);
       }
       allSinglePeopleChatDataList_.WriteTo(output, _repeated_allSinglePeopleChatDataList_codec);
-      if (AppliedInvitePeople != 0UL) {
-        output.WriteRawTag(128, 1);
-        output.WriteUInt64(AppliedInvitePeople);
-      }
+      validWithPeople_.WriteTo(output, _repeated_validWithPeople_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1955,9 +1951,7 @@ namespace RoleData {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(ChoosedActionId);
       }
       size += allSinglePeopleChatDataList_.CalculateSize(_repeated_allSinglePeopleChatDataList_codec);
-      if (AppliedInvitePeople != 0UL) {
-        size += 2 + pb::CodedOutputStream.ComputeUInt64Size(AppliedInvitePeople);
-      }
+      size += validWithPeople_.CalculateSize(_repeated_validWithPeople_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -2003,9 +1997,7 @@ namespace RoleData {
         ChoosedActionId = other.ChoosedActionId;
       }
       allSinglePeopleChatDataList_.Add(other.allSinglePeopleChatDataList_);
-      if (other.AppliedInvitePeople != 0UL) {
-        AppliedInvitePeople = other.AppliedInvitePeople;
-      }
+      validWithPeople_.Add(other.validWithPeople_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -2082,8 +2074,9 @@ namespace RoleData {
             allSinglePeopleChatDataList_.AddEntriesFrom(input, _repeated_allSinglePeopleChatDataList_codec);
             break;
           }
+          case 130:
           case 128: {
-            AppliedInvitePeople = input.ReadUInt64();
+            validWithPeople_.AddEntriesFrom(input, _repeated_validWithPeople_codec);
             break;
           }
         }

@@ -87,6 +87,9 @@
     <Compile Include="Assets\Scripts\Manager\ResourceManager.cs" />
     <Compile Include="Assets\Scripts\Manager\RoleManager.cs" />
     <Compile Include="Assets\Scripts\Manager\SocializationManager.cs" />
+    <Compile Include="Assets\Scripts\Panel\ActionModulePeopleView.cs" />
+    <Compile Include="Assets\Scripts\Panel\ActionReadyPanel.cs" />
+    <Compile Include="Assets\Scripts\Panel\ActionReadyPanelPeopleView.cs" />
     <Compile Include="Assets\Scripts\Panel\BattlePanel.cs" />
     <Compile Include="Assets\Scripts\Panel\BigMapPanel.cs" />
     <Compile Include="Assets\Scripts\Panel\BlackMaskPanel.cs" />

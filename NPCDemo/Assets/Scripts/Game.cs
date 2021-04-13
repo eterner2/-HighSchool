@@ -46,6 +46,11 @@ public class Game : MonoBehaviour
     void Test()
     {
         PeopleInteractManager.Instance.AddedWetalk(RoleManager.Instance.playerPeople, RoleManager.Instance.allPeopleList[0]);
+        PeopleInteractManager.Instance.AddedWetalk(RoleManager.Instance.playerPeople, RoleManager.Instance.allPeopleList[4]);
+        PeopleInteractManager.Instance.AddedWetalk(RoleManager.Instance.playerPeople, RoleManager.Instance.allPeopleList[6]);
+        PeopleInteractManager.Instance.AddedWetalk(RoleManager.Instance.playerPeople, RoleManager.Instance.allPeopleList[11]);
+        PeopleInteractManager.Instance.AddedWetalk(RoleManager.Instance.playerPeople, RoleManager.Instance.allPeopleList[15]);
+
     }
 
     /// <summary>
