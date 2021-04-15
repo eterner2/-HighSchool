@@ -79,6 +79,7 @@
     <Compile Include="Assets\Scripts\Game.cs" />
     <Compile Include="Assets\Scripts\Manager\DialogManager.cs" />
     <Compile Include="Assets\Scripts\Manager\EntityManager.cs" />
+    <Compile Include="Assets\Scripts\Manager\GameActionManager.cs" />
     <Compile Include="Assets\Scripts\Manager\GameModuleManager.cs" />
     <Compile Include="Assets\Scripts\Manager\GameTimeManager.cs" />
     <Compile Include="Assets\Scripts\Manager\PanelManager.cs" />
@@ -104,6 +105,7 @@
     <Compile Include="Assets\Scripts\Panel\FloatWindowPanel.cs" />
     <Compile Include="Assets\Scripts\Panel\FlyTxtView.cs" />
     <Compile Include="Assets\Scripts\Panel\FriendListLabelView.cs" />
+    <Compile Include="Assets\Scripts\Panel\GetAwardPanel.cs" />
     <Compile Include="Assets\Scripts\Panel\HomePanel.cs" />
     <Compile Include="Assets\Scripts\Panel\MainPanel.cs" />
     <Compile Include="Assets\Scripts\Panel\PanelBase.cs" />

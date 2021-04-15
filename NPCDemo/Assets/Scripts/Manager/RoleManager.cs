@@ -165,42 +165,83 @@ public class RoleManager
     }
 
     /// <summary>
-    /// 获取能力值
+    /// 获取能力
     /// </summary>
-    public int FindPropertyNum(PropertyIdType propertyIdType)
+    public SinglePropertyData FindSinglePropertyData(PropertyIdType propertyIdType,PeopleProtoData peopleProto=null)
     {
         //int studyId=ConstantVal
-        if (_CurGameInfo.PlayerPeople.PropertyData.PropertyIdList.Contains((int)propertyIdType))
-        {
-            int index= _CurGameInfo.PlayerPeople.PropertyData.PropertyIdList.IndexOf((int)propertyIdType);
-            return _CurGameInfo.PlayerPeople.PropertyData.PropertyDataList[index].PropertyNum;
-        }
-        return 0;
-    }
-
-    /// <summary>
-    /// 增加能力值
-    /// </summary>
-    /// <param name="propertyIdType"></param>
-    /// <param name="num"></param>
-    public void AddProperty(PropertyIdType propertyIdType, int num)
-    {
+        if (peopleProto == null)
+            peopleProto = _CurGameInfo.PlayerPeople;
         if (_CurGameInfo.PlayerPeople.PropertyData.PropertyIdList.Contains((int)propertyIdType))
         {
             int index = _CurGameInfo.PlayerPeople.PropertyData.PropertyIdList.IndexOf((int)propertyIdType);
-            SinglePropertyData singleData = _CurGameInfo.PlayerPeople.PropertyData.PropertyDataList[index];
+            return _CurGameInfo.PlayerPeople.PropertyData.PropertyDataList[index];
+        }
+        return null;
+    }
+    ///// <summary>
+    ///// 获取能力值
+    ///// </summary>
+    //public int FindPropertyNum(PropertyIdType propertyIdType)
+    //{
+    //    //int studyId=ConstantVal
+    //    if (_CurGameInfo.PlayerPeople.PropertyData.PropertyIdList.Contains((int)propertyIdType))
+    //    {
+    //        int index= _CurGameInfo.PlayerPeople.PropertyData.PropertyIdList.IndexOf((int)propertyIdType);
+    //        return _CurGameInfo.PlayerPeople.PropertyData.PropertyDataList[index].PropertyNum;
+    //    }
+    //    return 0;
+    //}
+
+    /// <summary>
+    /// 增加能力值 传了人就是给人加
+    /// </summary>
+    /// <param name="propertyIdType"></param>
+    /// <param name="num"></param>
+    public void AddProperty(PropertyIdType propertyIdType, int num,PeopleProtoData peopleProto=null)
+    {
+        if (peopleProto == null)
+        {
+            peopleProto = _CurGameInfo.PlayerPeople;
+        }
+        if (peopleProto.PropertyData.PropertyIdList.Contains((int)propertyIdType))
+        {
+            int index = peopleProto.PropertyData.PropertyIdList.IndexOf((int)propertyIdType);
+            SinglePropertyData singleData = peopleProto.PropertyData.PropertyDataList[index];
             int limit = singleData.PropertyLimit;
             singleData.PropertyNum += num;
             //如果该属性存在最大限制
             if (limit >= 0)
             {
-                if (singleData.PropertyLimit>= limit)
+                if (singleData.PropertyLimit >= limit)
                 {
                     singleData.PropertyNum = limit;
                 }
             }
-          
+        }
+    }
 
+    /// <summary>
+    /// 减少能力值
+    /// </summary>
+    /// <param name="propertyIdType"></param>
+    /// <param name="num"></param>
+    public void DeProperty(PropertyIdType propertyIdType, int num,PeopleProtoData peopleProto=null)
+    {
+        if (peopleProto == null)
+        {
+            peopleProto = _CurGameInfo.PlayerPeople;
+        }
+        if (peopleProto.PropertyData.PropertyIdList.Contains((int)propertyIdType))
+        {
+            int index = peopleProto.PropertyData.PropertyIdList.IndexOf((int)propertyIdType);
+            SinglePropertyData singleData = peopleProto.PropertyData.PropertyDataList[index];
+            singleData.PropertyNum += num;
+            //如果该属性小于0 则等于0
+            if (singleData.PropertyNum <= 0)
+            {
+                singleData.PropertyNum = 0;
+            }
         }
     }
 

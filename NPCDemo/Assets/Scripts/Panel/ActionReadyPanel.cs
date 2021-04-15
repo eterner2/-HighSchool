@@ -42,7 +42,7 @@ public class ActionReadyPanel : PanelBase
                  choosedWithPeople.Record("和" + RoleManager.Instance.playerPeople + "一起" + actionSetting.name);
                  SocializationManager.Instance.AddPlan(actionSetting.name, actionSetting.id.ToInt32(), RoleManager.Instance.playerPeople, choosedWithPeople);
                 //分别拒绝掉各自的鱼
-                SocializationManager.Instance.RefusePeopleWhoInviteMe(RoleManager.Instance.playerPeople, choosedWithPeople, actionSetting.name);
+                 SocializationManager.Instance.RefusePeopleWhoInviteMe(RoleManager.Instance.playerPeople, choosedWithPeople, actionSetting.name);
                  SocializationManager.Instance.ForgivePeopleWhoIInvite(RoleManager.Instance.playerPeople, choosedWithPeople, actionSetting.name);
 
                  SocializationManager.Instance.RefusePeopleWhoInviteMe(choosedWithPeople, RoleManager.Instance.playerPeople, actionSetting.name);
@@ -51,6 +51,61 @@ public class ActionReadyPanel : PanelBase
                 //这里执行其它npc的邀约
                 SocializationManager.Instance.HandleInvite(RoleManager.Instance.allPeopleList);
                  GameModuleManager.Instance.InitGameModule(GameModuleType.SingleOutsideScene);
+
+                 //其它NPC执行邀约完毕以后，要给玩家发个信息
+                 SocializationManager.Instance.NPCReactionAfterPeopleChoosePlan(choosedWithPeople);
+                 //for (int i = 0; i < RoleManager.Instance.playerPeople.otherInviteMeList.Count; i++)
+                 //{
+                 //    People people = RoleManager.Instance.playerPeople.otherInviteMeList[i].people;
+                 //    if (people.protoData.OnlyId != choosedWithPeople.protoData.OnlyId
+                 //    &&!people.protoData.PlayerVocalRefusedMe)
+                 //    {
+                 //        string theStr = "";
+                 //        if (!people.protoData.PlayerVocalRefusedMe)
+                 //        {
+                 //            if (people.protoData.CurPlanWithPeople != 0)
+                 //            {
+                 //                People otherWithPeople = RoleManager.Instance.FindPeopleWithOnlyId(people.protoData.CurPlanWithPeople);
+                 //                theStr = "没收到你的回复，我就和"+otherWithPeople.protoData.Name+"一起"+DataTable.FindActionSetting(people.protoData.ChoosedActionId).name+"了";
+                 //            }
+                 //            else
+                 //            {
+                 //                theStr = "没收到你的回复，我就自己" + DataTable.FindActionSetting(people.protoData.ChoosedActionId).name + "了";
+
+                 //            }
+                 //            WetalkMsgData wetalkMsgData = new WetalkMsgData(WetalkMsgType.Nonsense, theStr, people, RoleManager.Instance.playerPeople,0);
+                 //            SocializationManager.Instance.SendMsgToPlayer(people, RoleManager.Instance.playerPeople, wetalkMsgData);
+
+                 //        }
+                 //    }
+              
+                 //}
+                 //for (int i = 0; i < RoleManager.Instance.playerPeople.meInviteOtherList.Count; i++)
+                 //{
+                 //    People people = RoleManager.Instance.playerPeople.meInviteOtherList[i].people;
+                 //    if (people.protoData.OnlyId != choosedWithPeople.protoData.OnlyId
+                 //    && !people.protoData.PlayerVocalRefusedMe)
+                 //    {
+                 //        string theStr = "";
+                 //        if (!people.protoData.PlayerVocalRefusedMe)
+                 //        {
+                 //            if (people.protoData.CurPlanWithPeople != 0)
+                 //            {
+                 //                People otherWithPeople = RoleManager.Instance.FindPeopleWithOnlyId(people.protoData.CurPlanWithPeople);
+                 //                theStr = "没等到你，我就和" + otherWithPeople.protoData.Name + "一起" + DataTable.FindActionSetting(people.protoData.ChoosedActionId).name + "了";
+                 //            }
+                 //            else
+                 //            {
+                 //                theStr = "没等到你，我就自己" + DataTable.FindActionSetting(people.protoData.ChoosedActionId).name + "了";
+
+                 //            }
+                 //            WetalkMsgData wetalkMsgData = new WetalkMsgData(WetalkMsgType.Nonsense, theStr, people, RoleManager.Instance.playerPeople, 0);
+                 //            SocializationManager.Instance.SendMsgToPlayer(people, RoleManager.Instance.playerPeople, wetalkMsgData);
+
+                 //        }
+                 //    }
+
+                 //}
 
              }
              else
@@ -61,7 +116,11 @@ public class ActionReadyPanel : PanelBase
                  {
                      RoleManager.Instance.playerPeople.Record("决定独自去" + actionSetting.name);
                      SocializationManager.Instance.AddPlan(actionSetting.name, actionSetting.id.ToInt32(), RoleManager.Instance.playerPeople);
+                     //拒绝掉我的鱼
+
                      SocializationManager.Instance.HandleInvite(RoleManager.Instance.allPeopleList);
+                     SocializationManager.Instance.NPCReactionAfterPeopleChoosePlan(choosedWithPeople);
+
                      GameModuleManager.Instance.InitGameModule(GameModuleType.SingleOutsideScene);
                  },
                       null);
@@ -75,6 +134,8 @@ public class ActionReadyPanel : PanelBase
         });
   
     }
+
+    
 
     public override void OnOpenIng()
     {

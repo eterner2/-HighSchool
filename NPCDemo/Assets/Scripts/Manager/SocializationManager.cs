@@ -338,8 +338,15 @@ public class SocializationManager : MonoInstance<SocializationManager>
         Plan newPlan = new Plan(actionName, p1, p2);
         newPlan.actionId = actionId;
         p1.protoData.ChoosedActionId = actionId;
-        if(p2!=null)
-        p2.protoData.ChoosedActionId = actionId;
+
+        if (p2 != null)
+        {
+            p2.protoData.ChoosedActionId = actionId;
+            p1.protoData.CurPlanWithPeople = p2.protoData.OnlyId;
+            p2.protoData.CurPlanWithPeople = p1.protoData.OnlyId;
+        }
+
+
         planList.Add(newPlan);
         if (!action_planDic.ContainsKey(actionId))
         {
@@ -691,6 +698,67 @@ public class SocializationManager : MonoInstance<SocializationManager>
     public void SetTmpPreferedActionId(int id)
     {
         tmpPreferedActionId = id;
+    }
+
+    /// <summary>
+    /// 玩家选择完计划以后NPC的反应
+    /// </summary>
+    public void NPCReactionAfterPeopleChoosePlan(People choosedWithPeople)
+    {
+        //其它NPC执行邀约完毕以后，要给玩家发个信息
+        for (int i = 0; i < RoleManager.Instance.playerPeople.otherInviteMeList.Count; i++)
+        {
+            People people = RoleManager.Instance.playerPeople.otherInviteMeList[i].people;
+            if (choosedWithPeople==null
+                ||(people.protoData.OnlyId != choosedWithPeople.protoData.OnlyId
+            && !people.protoData.PlayerVocalRefusedMe))
+            {
+                string theStr = "";
+                if (!people.protoData.PlayerVocalRefusedMe)
+                {
+                    if (people.protoData.CurPlanWithPeople != 0)
+                    {
+                        People otherWithPeople = RoleManager.Instance.FindPeopleWithOnlyId(people.protoData.CurPlanWithPeople);
+                        theStr = "没收到你的回复，我就和" + otherWithPeople.protoData.Name + "一起" + DataTable.FindActionSetting(people.protoData.ChoosedActionId).name + "了";
+                    }
+                    else
+                    {
+                        theStr = "没收到你的回复，我就自己" + DataTable.FindActionSetting(people.protoData.ChoosedActionId).name + "了";
+
+                    }
+                    WetalkMsgData wetalkMsgData = new WetalkMsgData(WetalkMsgType.Nonsense, theStr, people, RoleManager.Instance.playerPeople, 0);
+                    SocializationManager.Instance.SendMsgToPlayer(people, RoleManager.Instance.playerPeople, wetalkMsgData);
+
+                }
+            }
+
+        }
+        for (int i = 0; i < RoleManager.Instance.playerPeople.meInviteOtherList.Count; i++)
+        {
+            People people = RoleManager.Instance.playerPeople.meInviteOtherList[i].people;
+            if (people.protoData.OnlyId != choosedWithPeople.protoData.OnlyId
+            && !people.protoData.PlayerVocalRefusedMe)
+            {
+                string theStr = "";
+                if (!people.protoData.PlayerVocalRefusedMe)
+                {
+                    if (people.protoData.CurPlanWithPeople != 0)
+                    {
+                        People otherWithPeople = RoleManager.Instance.FindPeopleWithOnlyId(people.protoData.CurPlanWithPeople);
+                        theStr = "没等到你，我就和" + otherWithPeople.protoData.Name + "一起" + DataTable.FindActionSetting(people.protoData.ChoosedActionId).name + "了";
+                    }
+                    else
+                    {
+                        theStr = "没等到你，我就自己" + DataTable.FindActionSetting(people.protoData.ChoosedActionId).name + "了";
+
+                    }
+                    WetalkMsgData wetalkMsgData = new WetalkMsgData(WetalkMsgType.Nonsense, theStr, people, RoleManager.Instance.playerPeople, 0);
+                    SocializationManager.Instance.SendMsgToPlayer(people, RoleManager.Instance.playerPeople, wetalkMsgData);
+
+                }
+            }
+
+        }
     }
 }
 

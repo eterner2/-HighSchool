@@ -66,8 +66,18 @@ public class DialogPanel : PanelBase
     {
         curSpeekPeople= dialogList[curIndex].belong;
 
-        img_verticalDraw.sprite = ResourceManager.Instance.GetObj<Sprite>(ConstantVal.verticalDrawFolderPath + curSpeekPeople.verticalDrawName);
+        if (curSpeekPeople != null)
+        {
+            img_verticalDraw.sprite = ResourceManager.Instance.GetObj<Sprite>(ConstantVal.verticalDrawFolderPath + curSpeekPeople.verticalDrawName);
+            img_verticalDraw.gameObject.SetActive(true);
 
+        }
+        else
+        {
+            img_verticalDraw.gameObject.SetActive(false);
+            txt.transform.position = trans_txtRightPeople.position;
+
+        }
         if (left)
         {
             img_verticalDraw.transform.position = trans_imgLeftPeople.transform.position;

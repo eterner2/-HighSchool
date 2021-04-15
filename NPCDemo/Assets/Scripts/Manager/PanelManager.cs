@@ -267,6 +267,18 @@ public class PanelManager : MonoInstance<PanelManager>
 
         }
     }
+    /// <summary>
+    /// 黑幕暗-亮
+    /// </summary>
+    public void PingPongBlackMask( Action finishCallBack,Action closePanelCallBack)
+    {
+        BlackMaskPanel blackMaskPanel = GetPanel<BlackMaskPanel>();
+        if (blackMaskPanel == null)
+        {
+            blackMaskPanel = PanelManager.Instance.OpenPanel<BlackMaskPanel>(PanelManager.Instance.trans_layer3, BlackMaskType.PingPong, finishCallBack, closePanelCallBack);
+
+        }
+    }
 
     public void OpenFloatWindow(string str)
     {

@@ -368,4 +368,22 @@ public static class CommonUtil
     }
 
 
+    /// <summary>
+    /// 当前是哪个阶段
+    /// </summary>
+    /// <param name="process"></param>
+    /// <returns></returns>
+    public static int GetPhaseIndex(int process, Vector2Int[] arr)
+    {
+        for (int i = 0; i < arr.Length; i++)
+        {
+            if (process >= arr[i].x && process < arr[i].y)
+            {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+
 }

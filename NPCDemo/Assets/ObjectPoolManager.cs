@@ -42,6 +42,7 @@ using UnityEngine;
     ActionModulePeopleView,//行动模块的人
     ActionReadyPanelPeopleView,//行动准备模块的人
     ActionReadyPanel,//行动准备界面
+    GetAwardPanel,//得奖
 }
 
 public class TempItem

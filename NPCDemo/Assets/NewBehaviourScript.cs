@@ -825,6 +825,8 @@ public class People
         finishInviteProcess = false;
         //protoData.AppliedInvitePeople = 0;
         protoData.ValidWithPeople.Clear();
+        protoData.PlayerVocalRefusedMe = false;
+        protoData.CurPlanWithPeople = 0;
     }
 
 

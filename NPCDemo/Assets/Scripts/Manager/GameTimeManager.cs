@@ -39,7 +39,7 @@ public class GameTimeManager:MonoInstance<GameTimeManager>
             left += singlePhase;
         }
         dayPhaseRangeArr[8] = new Vector2Int(left, 100);
-        lastDayPhaseIndex = GetPhaseIndex((int)_CurTimeData.DayProcess);
+        lastDayPhaseIndex =CommonUtil.GetPhaseIndex((int)_CurTimeData.DayProcess, dayPhaseRangeArr);
 
         //时间开始走暂时放在这里
         if(RoleManager.Instance._CurGameInfo.CurGameModule==(int)GameModuleType.WeekDay)
@@ -134,7 +134,7 @@ public class GameTimeManager:MonoInstance<GameTimeManager>
         }
         else
         {
-            int curDayPhaseIndex = GetPhaseIndex((int)_CurTimeData.DayProcess);
+            int curDayPhaseIndex = CommonUtil.GetPhaseIndex((int)_CurTimeData.DayProcess,dayPhaseRangeArr);
             if (curDayPhaseIndex > 0)
             {
                 if (curDayPhaseIndex > lastDayPhaseIndex)
@@ -219,20 +219,5 @@ public class GameTimeManager:MonoInstance<GameTimeManager>
         _CurTimeData.Month = 1;
     }
 
-    /// <summary>
-    /// 当前是哪个阶段
-    /// </summary>
-    /// <param name="process"></param>
-    /// <returns></returns>
-    public int GetPhaseIndex(int process)
-    {
-        for(int i = 0; i < dayPhaseRangeArr.Length; i++)
-        {
-            if (process >= dayPhaseRangeArr[i].x && process < dayPhaseRangeArr[i].y)
-            {
-                return i;
-            }
-        }
-        return -1;
-    }
+
 }

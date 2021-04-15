@@ -24,52 +24,56 @@ namespace RoleData {
     static RoleInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Cg5Sb2xlSW5mby5wcm90bxIIUm9sZURhdGEiuQEKCEdhbWVJbmZvEi8KDHBs",
+            "Cg5Sb2xlSW5mby5wcm90bxIIUm9sZURhdGEi5gEKCEdhbWVJbmZvEi8KDHBs",
             "YXllclBlb3BsZRgBIAEoCzIZLlJvbGVEYXRhLlBlb3BsZVByb3RvRGF0YRIw",
             "Cg1hbGxQZW9wbGVMaXN0GAIgAygLMhkuUm9sZURhdGEuUGVvcGxlUHJvdG9E",
             "YXRhEiQKCHRpbWVEYXRhGAMgASgLMhIuUm9sZURhdGEuVGltZURhdGESFQoN",
-            "Y3VyR2FtZU1vZHVsZRgEIAEoBRINCgV0aGVJZBgFIAEoBCJzCghUaW1lRGF0",
+            "Y3VyR2FtZU1vZHVsZRgEIAEoBRINCgV0aGVJZBgFIAEoBBIrCg1jdXJBY3Rp",
+            "b25EYXRhGAYgASgLMhQuUm9sZURhdGEuQWN0aW9uRGF0YSJzCghUaW1lRGF0",
             "YRIMCgR5ZWFyGAEgASgFEg0KBW1vbnRoGAIgASgFEgsKA2RheRgDIAEoBRIS",
             "Cgp0aGVXZWVrRGF5GAQgASgFEhIKCmRheVByb2Nlc3MYBSABKAISFQoNZGF5",
             "QmVmb3JlRXhhbRgGIAEoBSK0AQoLT25lQ2hhdERhdGESDAoEeWVhchgBIAEo",
             "BRINCgVtb250aBgCIAEoBRILCgNkYXkYAyABKAUSDwoHY29udGVudBgEIAEo",
             "CRIQCghpc1BsYXllchgFIAEoCBIPCgdjaGVja2VkGAYgASgIEg4KBmJlbG9u",
             "ZxgHIAEoBBIQCghjaGF0VHlwZRgIIAEoBRIWCg5pbnZpdGVBY3Rpb25JZBgJ",
-            "IAEoBRINCgV2YWxpZBgKIAEoCCJTChRTaW5nbGVQZW9wbGVDaGF0RGF0YRIO",
-            "CgZiZWxvbmcYASABKAQSKwoMY2hhdERhdGFMaXN0GAIgAygLMhUuUm9sZURh",
-            "dGEuT25lQ2hhdERhdGEiXgoMUHJvcGVydHlEYXRhEhYKDnByb3BlcnR5SWRM",
-            "aXN0GAEgAygFEjYKEHByb3BlcnR5RGF0YUxpc3QYAiADKAsyHC5Sb2xlRGF0",
-            "YS5TaW5nbGVQcm9wZXJ0eURhdGEiVAoSU2luZ2xlUHJvcGVydHlEYXRhEhIK",
-            "CnByb3BlcnR5SWQYASABKAUSEwoLcHJvcGVydHlOdW0YAiABKAUSFQoNcHJv",
-            "cGVydHlMaW1pdBgDIAEoBSKjBAoPUGVvcGxlUHJvdG9EYXRhEg4KBm9ubHlJ",
-            "ZBgBIAEoBBIsCgxwcm9wZXJ0eURhdGEYAiABKAsyFi5Sb2xlRGF0YS5Qcm9w",
-            "ZXJ0eURhdGESHwoXc2Vuc2VkT3RoZXJQZW9wbGVJZExpc3QYAyADKAQSKwoj",
-            "ZnJpZW5kbGluZXNzVG9TZW5zZWRPdGhlclBlb3BsZUxpc3QYBCADKAUSDgoG",
-            "Z2VuZGVyGAUgASgFEgwKBG5hbWUYBiABKAkSEAoIYWN0aW9uSWQYByABKAUS",
-            "GwoTZmluaXNoSW52aXRlUHJvY2VzcxgIIAEoCBI0ChFtZUludml0ZU90aGVy",
-            "TGlzdBgJIAMoCzIZLlJvbGVEYXRhLlBlb3BsZVByb3RvRGF0YRI0ChFvdGhl",
-            "ckludml0ZU1lTGlzdBgKIAMoCzIZLlJvbGVEYXRhLlBlb3BsZVByb3RvRGF0",
-            "YRISCgpyZWNvcmRMaXN0GAsgAygJEi4KC2NoYXRGcmllbmRzGAwgAygLMhku",
-            "Um9sZURhdGEuUGVvcGxlUHJvdG9EYXRhEhAKCGlzUGxheWVyGA0gASgIEhcK",
-            "D2Nob29zZWRBY3Rpb25JZBgOIAEoBRJDChtBbGxTaW5nbGVQZW9wbGVDaGF0",
-            "RGF0YUxpc3QYDyADKAsyHi5Sb2xlRGF0YS5TaW5nbGVQZW9wbGVDaGF0RGF0",
-            "YRIXCg92YWxpZFdpdGhQZW9wbGUYECADKAQibwoNUGxhblByb3RvRGF0YRIl",
-            "CgJwMRgBIAEoCzIZLlJvbGVEYXRhLlBlb3BsZVByb3RvRGF0YRIlCgJwMhgC",
-            "IAEoCzIZLlJvbGVEYXRhLlBlb3BsZVByb3RvRGF0YRIQCghhY3Rpb25JZBgD",
-            "IAEoBSI+ChFPdGhlckludml0ZU1lRGF0YRIpCgZwZW9wbGUYASABKAsyGS5S",
-            "b2xlRGF0YS5QZW9wbGVQcm90b0RhdGEiVAoWTWVJbnZpdGVPdGhlclByb3Rv",
-            "RGF0YRIpCgZwZW9wbGUYASABKAsyGS5Sb2xlRGF0YS5QZW9wbGVQcm90b0Rh",
-            "dGESDwoHcmVmdXNlZBgCIAEoCGIGcHJvdG8z"));
+            "IAEoBRINCgV2YWxpZBgKIAEoCCIdCgpBY3Rpb25EYXRhEg8KB3Byb2Nlc3MY",
+            "ASABKAIiUwoUU2luZ2xlUGVvcGxlQ2hhdERhdGESDgoGYmVsb25nGAEgASgE",
+            "EisKDGNoYXREYXRhTGlzdBgCIAMoCzIVLlJvbGVEYXRhLk9uZUNoYXREYXRh",
+            "Il4KDFByb3BlcnR5RGF0YRIWCg5wcm9wZXJ0eUlkTGlzdBgBIAMoBRI2ChBw",
+            "cm9wZXJ0eURhdGFMaXN0GAIgAygLMhwuUm9sZURhdGEuU2luZ2xlUHJvcGVy",
+            "dHlEYXRhIlQKElNpbmdsZVByb3BlcnR5RGF0YRISCgpwcm9wZXJ0eUlkGAEg",
+            "ASgFEhMKC3Byb3BlcnR5TnVtGAIgASgFEhUKDXByb3BlcnR5TGltaXQYAyAB",
+            "KAUi3AQKD1Blb3BsZVByb3RvRGF0YRIOCgZvbmx5SWQYASABKAQSLAoMcHJv",
+            "cGVydHlEYXRhGAIgASgLMhYuUm9sZURhdGEuUHJvcGVydHlEYXRhEh8KF3Nl",
+            "bnNlZE90aGVyUGVvcGxlSWRMaXN0GAMgAygEEisKI2ZyaWVuZGxpbmVzc1Rv",
+            "U2Vuc2VkT3RoZXJQZW9wbGVMaXN0GAQgAygFEg4KBmdlbmRlchgFIAEoBRIM",
+            "CgRuYW1lGAYgASgJEhAKCGFjdGlvbklkGAcgASgFEhsKE2ZpbmlzaEludml0",
+            "ZVByb2Nlc3MYCCABKAgSNAoRbWVJbnZpdGVPdGhlckxpc3QYCSADKAsyGS5S",
+            "b2xlRGF0YS5QZW9wbGVQcm90b0RhdGESNAoRb3RoZXJJbnZpdGVNZUxpc3QY",
+            "CiADKAsyGS5Sb2xlRGF0YS5QZW9wbGVQcm90b0RhdGESEgoKcmVjb3JkTGlz",
+            "dBgLIAMoCRIuCgtjaGF0RnJpZW5kcxgMIAMoCzIZLlJvbGVEYXRhLlBlb3Bs",
+            "ZVByb3RvRGF0YRIQCghpc1BsYXllchgNIAEoCBIXCg9jaG9vc2VkQWN0aW9u",
+            "SWQYDiABKAUSQwobQWxsU2luZ2xlUGVvcGxlQ2hhdERhdGFMaXN0GA8gAygL",
+            "Mh4uUm9sZURhdGEuU2luZ2xlUGVvcGxlQ2hhdERhdGESFwoPdmFsaWRXaXRo",
+            "UGVvcGxlGBAgAygEEhwKFHBsYXllclZvY2FsUmVmdXNlZE1lGBEgASgIEhkK",
+            "EWN1clBsYW5XaXRoUGVvcGxlGBIgASgEIm8KDVBsYW5Qcm90b0RhdGESJQoC",
+            "cDEYASABKAsyGS5Sb2xlRGF0YS5QZW9wbGVQcm90b0RhdGESJQoCcDIYAiAB",
+            "KAsyGS5Sb2xlRGF0YS5QZW9wbGVQcm90b0RhdGESEAoIYWN0aW9uSWQYAyAB",
+            "KAUiPgoRT3RoZXJJbnZpdGVNZURhdGESKQoGcGVvcGxlGAEgASgLMhkuUm9s",
+            "ZURhdGEuUGVvcGxlUHJvdG9EYXRhIlQKFk1lSW52aXRlT3RoZXJQcm90b0Rh",
+            "dGESKQoGcGVvcGxlGAEgASgLMhkuUm9sZURhdGEuUGVvcGxlUHJvdG9EYXRh",
+            "Eg8KB3JlZnVzZWQYAiABKAhiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.GameInfo), global::RoleData.GameInfo.Parser, new[]{ "PlayerPeople", "AllPeopleList", "TimeData", "CurGameModule", "TheId" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.GameInfo), global::RoleData.GameInfo.Parser, new[]{ "PlayerPeople", "AllPeopleList", "TimeData", "CurGameModule", "TheId", "CurActionData" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.TimeData), global::RoleData.TimeData.Parser, new[]{ "Year", "Month", "Day", "TheWeekDay", "DayProcess", "DayBeforeExam" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.OneChatData), global::RoleData.OneChatData.Parser, new[]{ "Year", "Month", "Day", "Content", "IsPlayer", "Checked", "Belong", "ChatType", "InviteActionId", "Valid" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.ActionData), global::RoleData.ActionData.Parser, new[]{ "Process" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.SinglePeopleChatData), global::RoleData.SinglePeopleChatData.Parser, new[]{ "Belong", "ChatDataList" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.PropertyData), global::RoleData.PropertyData.Parser, new[]{ "PropertyIdList", "PropertyDataList" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.SinglePropertyData), global::RoleData.SinglePropertyData.Parser, new[]{ "PropertyId", "PropertyNum", "PropertyLimit" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.PeopleProtoData), global::RoleData.PeopleProtoData.Parser, new[]{ "OnlyId", "PropertyData", "SensedOtherPeopleIdList", "FriendlinessToSensedOtherPeopleList", "Gender", "Name", "ActionId", "FinishInviteProcess", "MeInviteOtherList", "OtherInviteMeList", "RecordList", "ChatFriends", "IsPlayer", "ChoosedActionId", "AllSinglePeopleChatDataList", "ValidWithPeople" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.PeopleProtoData), global::RoleData.PeopleProtoData.Parser, new[]{ "OnlyId", "PropertyData", "SensedOtherPeopleIdList", "FriendlinessToSensedOtherPeopleList", "Gender", "Name", "ActionId", "FinishInviteProcess", "MeInviteOtherList", "OtherInviteMeList", "RecordList", "ChatFriends", "IsPlayer", "ChoosedActionId", "AllSinglePeopleChatDataList", "ValidWithPeople", "PlayerVocalRefusedMe", "CurPlanWithPeople" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.PlanProtoData), global::RoleData.PlanProtoData.Parser, new[]{ "P1", "P2", "ActionId" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.OtherInviteMeData), global::RoleData.OtherInviteMeData.Parser, new[]{ "People" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.MeInviteOtherProtoData), global::RoleData.MeInviteOtherProtoData.Parser, new[]{ "People", "Refused" }, null, null, null)
@@ -112,6 +116,7 @@ namespace RoleData {
       TimeData = other.timeData_ != null ? other.TimeData.Clone() : null;
       curGameModule_ = other.curGameModule_;
       theId_ = other.theId_;
+      CurActionData = other.curActionData_ != null ? other.CurActionData.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -189,6 +194,20 @@ namespace RoleData {
       }
     }
 
+    /// <summary>Field number for the "curActionData" field.</summary>
+    public const int CurActionDataFieldNumber = 6;
+    private global::RoleData.ActionData curActionData_;
+    /// <summary>
+    ///当前行动
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::RoleData.ActionData CurActionData {
+      get { return curActionData_; }
+      set {
+        curActionData_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as GameInfo);
@@ -207,6 +226,7 @@ namespace RoleData {
       if (!object.Equals(TimeData, other.TimeData)) return false;
       if (CurGameModule != other.CurGameModule) return false;
       if (TheId != other.TheId) return false;
+      if (!object.Equals(CurActionData, other.CurActionData)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -218,6 +238,7 @@ namespace RoleData {
       if (timeData_ != null) hash ^= TimeData.GetHashCode();
       if (CurGameModule != 0) hash ^= CurGameModule.GetHashCode();
       if (TheId != 0UL) hash ^= TheId.GetHashCode();
+      if (curActionData_ != null) hash ^= CurActionData.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -248,6 +269,10 @@ namespace RoleData {
         output.WriteRawTag(40);
         output.WriteUInt64(TheId);
       }
+      if (curActionData_ != null) {
+        output.WriteRawTag(50);
+        output.WriteMessage(CurActionData);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -268,6 +293,9 @@ namespace RoleData {
       }
       if (TheId != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(TheId);
+      }
+      if (curActionData_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(CurActionData);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -298,6 +326,12 @@ namespace RoleData {
       }
       if (other.TheId != 0UL) {
         TheId = other.TheId;
+      }
+      if (other.curActionData_ != null) {
+        if (curActionData_ == null) {
+          curActionData_ = new global::RoleData.ActionData();
+        }
+        CurActionData.MergeFrom(other.CurActionData);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -334,6 +368,13 @@ namespace RoleData {
           }
           case 40: {
             TheId = input.ReadUInt64();
+            break;
+          }
+          case 50: {
+            if (curActionData_ == null) {
+              curActionData_ = new global::RoleData.ActionData();
+            }
+            input.ReadMessage(curActionData_);
             break;
           }
         }
@@ -1047,6 +1088,141 @@ namespace RoleData {
   }
 
   /// <summary>
+  ///行动数据
+  /// </summary>
+  public sealed partial class ActionData : pb::IMessage<ActionData> {
+    private static readonly pb::MessageParser<ActionData> _parser = new pb::MessageParser<ActionData>(() => new ActionData());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<ActionData> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::RoleData.RoleInfoReflection.Descriptor.MessageTypes[3]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ActionData() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ActionData(ActionData other) : this() {
+      process_ = other.process_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ActionData Clone() {
+      return new ActionData(this);
+    }
+
+    /// <summary>Field number for the "process" field.</summary>
+    public const int ProcessFieldNumber = 1;
+    private float process_;
+    /// <summary>
+    ///进度 到百分之多少了
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float Process {
+      get { return process_; }
+      set {
+        process_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as ActionData);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(ActionData other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Process, other.Process)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Process != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Process);
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Process != 0F) {
+        output.WriteRawTag(13);
+        output.WriteFloat(Process);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Process != 0F) {
+        size += 1 + 4;
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(ActionData other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Process != 0F) {
+        Process = other.Process;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 13: {
+            Process = input.ReadFloat();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
   ///和单个人的聊天数据
   /// </summary>
   public sealed partial class SinglePeopleChatData : pb::IMessage<SinglePeopleChatData> {
@@ -1057,7 +1233,7 @@ namespace RoleData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::RoleData.RoleInfoReflection.Descriptor.MessageTypes[3]; }
+      get { return global::RoleData.RoleInfoReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1215,7 +1391,7 @@ namespace RoleData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::RoleData.RoleInfoReflection.Descriptor.MessageTypes[4]; }
+      get { return global::RoleData.RoleInfoReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1360,7 +1536,7 @@ namespace RoleData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::RoleData.RoleInfoReflection.Descriptor.MessageTypes[5]; }
+      get { return global::RoleData.RoleInfoReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1551,7 +1727,7 @@ namespace RoleData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::RoleData.RoleInfoReflection.Descriptor.MessageTypes[6]; }
+      get { return global::RoleData.RoleInfoReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1584,6 +1760,8 @@ namespace RoleData {
       choosedActionId_ = other.choosedActionId_;
       allSinglePeopleChatDataList_ = other.allSinglePeopleChatDataList_.Clone();
       validWithPeople_ = other.validWithPeople_.Clone();
+      playerVocalRefusedMe_ = other.playerVocalRefusedMe_;
+      curPlanWithPeople_ = other.curPlanWithPeople_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1808,6 +1986,34 @@ namespace RoleData {
       get { return validWithPeople_; }
     }
 
+    /// <summary>Field number for the "playerVocalRefusedMe" field.</summary>
+    public const int PlayerVocalRefusedMeFieldNumber = 17;
+    private bool playerVocalRefusedMe_;
+    /// <summary>
+    ///玩家口头拒绝了我（而不是放鸽子）
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool PlayerVocalRefusedMe {
+      get { return playerVocalRefusedMe_; }
+      set {
+        playerVocalRefusedMe_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "curPlanWithPeople" field.</summary>
+    public const int CurPlanWithPeopleFieldNumber = 18;
+    private ulong curPlanWithPeople_;
+    /// <summary>
+    ///当前和谁一起去
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ulong CurPlanWithPeople {
+      get { return curPlanWithPeople_; }
+      set {
+        curPlanWithPeople_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as PeopleProtoData);
@@ -1837,6 +2043,8 @@ namespace RoleData {
       if (ChoosedActionId != other.ChoosedActionId) return false;
       if(!allSinglePeopleChatDataList_.Equals(other.allSinglePeopleChatDataList_)) return false;
       if(!validWithPeople_.Equals(other.validWithPeople_)) return false;
+      if (PlayerVocalRefusedMe != other.PlayerVocalRefusedMe) return false;
+      if (CurPlanWithPeople != other.CurPlanWithPeople) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1859,6 +2067,8 @@ namespace RoleData {
       if (ChoosedActionId != 0) hash ^= ChoosedActionId.GetHashCode();
       hash ^= allSinglePeopleChatDataList_.GetHashCode();
       hash ^= validWithPeople_.GetHashCode();
+      if (PlayerVocalRefusedMe != false) hash ^= PlayerVocalRefusedMe.GetHashCode();
+      if (CurPlanWithPeople != 0UL) hash ^= CurPlanWithPeople.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1912,6 +2122,14 @@ namespace RoleData {
       }
       allSinglePeopleChatDataList_.WriteTo(output, _repeated_allSinglePeopleChatDataList_codec);
       validWithPeople_.WriteTo(output, _repeated_validWithPeople_codec);
+      if (PlayerVocalRefusedMe != false) {
+        output.WriteRawTag(136, 1);
+        output.WriteBool(PlayerVocalRefusedMe);
+      }
+      if (CurPlanWithPeople != 0UL) {
+        output.WriteRawTag(144, 1);
+        output.WriteUInt64(CurPlanWithPeople);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1952,6 +2170,12 @@ namespace RoleData {
       }
       size += allSinglePeopleChatDataList_.CalculateSize(_repeated_allSinglePeopleChatDataList_codec);
       size += validWithPeople_.CalculateSize(_repeated_validWithPeople_codec);
+      if (PlayerVocalRefusedMe != false) {
+        size += 2 + 1;
+      }
+      if (CurPlanWithPeople != 0UL) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt64Size(CurPlanWithPeople);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -1998,6 +2222,12 @@ namespace RoleData {
       }
       allSinglePeopleChatDataList_.Add(other.allSinglePeopleChatDataList_);
       validWithPeople_.Add(other.validWithPeople_);
+      if (other.PlayerVocalRefusedMe != false) {
+        PlayerVocalRefusedMe = other.PlayerVocalRefusedMe;
+      }
+      if (other.CurPlanWithPeople != 0UL) {
+        CurPlanWithPeople = other.CurPlanWithPeople;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -2079,6 +2309,14 @@ namespace RoleData {
             validWithPeople_.AddEntriesFrom(input, _repeated_validWithPeople_codec);
             break;
           }
+          case 136: {
+            PlayerVocalRefusedMe = input.ReadBool();
+            break;
+          }
+          case 144: {
+            CurPlanWithPeople = input.ReadUInt64();
+            break;
+          }
         }
       }
     }
@@ -2096,7 +2334,7 @@ namespace RoleData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::RoleData.RoleInfoReflection.Descriptor.MessageTypes[7]; }
+      get { return global::RoleData.RoleInfoReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2296,7 +2534,7 @@ namespace RoleData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::RoleData.RoleInfoReflection.Descriptor.MessageTypes[8]; }
+      get { return global::RoleData.RoleInfoReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2434,7 +2672,7 @@ namespace RoleData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::RoleData.RoleInfoReflection.Descriptor.MessageTypes[9]; }
+      get { return global::RoleData.RoleInfoReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

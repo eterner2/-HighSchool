@@ -10,6 +10,7 @@ public class BlackMaskPanel : PanelBase
     public float changeTimer;
     public float changeTime = 1;
     public Action finishCB;
+    public Action pingPongCloseFinishCB;//黑幕完全打开后才执行的
     public Image img;
     public BlackMaskType blackMaskType;
     bool startMove = false;
@@ -25,6 +26,7 @@ public class BlackMaskPanel : PanelBase
         {
             blackMaskType = (BlackMaskType)args[0];
             finishCB = args[1] as Action;
+            pingPongCloseFinishCB = args[2] as Action;
         }
     }
 
@@ -117,7 +119,7 @@ public class BlackMaskPanel : PanelBase
                 else if (moveTimer >= moveTime2)
                 {
                     PanelManager.Instance.ClosePanel(this);
-
+                    pingPongCloseFinishCB?.Invoke();
                 }
    
             }

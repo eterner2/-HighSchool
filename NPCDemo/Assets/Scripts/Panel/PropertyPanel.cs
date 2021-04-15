@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using RoleData;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,8 +18,8 @@ public class PropertyPanel : PanelBase
     public override void OnOpenIng()
     {
         base.OnOpenIng();
-
-        singlePropertyViewList.Add(PanelManager.Instance.OpenSingle<SinglePropertyView>(trans_grid, PropertyIdType.Study));
+        SinglePropertyData singlePropertyData=  RoleManager.Instance.FindSinglePropertyData(PropertyIdType.Study);
+        singlePropertyViewList.Add(PanelManager.Instance.OpenSingle<SinglePropertyView>(trans_grid, singlePropertyData));
     }
 
     public override void Clear()

@@ -4,18 +4,7 @@ using UnityEngine;
 
 public class ChooseActionPanel : SelfAdaptionChoosePanel
 {
-    //public Vector3 contentPos;//位置
-    //public float rectXOffset;//x补偿
-    //public float rectYOffset=10;//y补偿
-    ////世界边界
-    //public float leftBorder;
-    //public float rightBorder;
-    //public float topBorder;
-    //public float downBorder;
-    //private float myWidth;
-    //private float myHeight;
 
-    //public Transform grid;
 
     public override void Init(params object[] args)
     {
@@ -35,33 +24,11 @@ public class ChooseActionPanel : SelfAdaptionChoosePanel
         {
             int theId = actionIdArr[i].ToInt32();
        
-                selfAdaptionChooseBtnViewList.Add(PanelManager.Instance.OpenSingle<ChooseActionBtnView>(grid, this, theId));
+            selfAdaptionChooseBtnViewList.Add(PanelManager.Instance.OpenSingle<ChooseActionBtnView>(grid, this, theId));
 
         }
 
-        //PanelManager.Instance.OpenSingle<ChooseActionBtnView>(grid, "测试");
-        //PanelManager.Instance.OpenSingle<ChooseActionBtnView>(grid, "测试测");
-        //PanelManager.Instance.OpenSingle<ChooseActionBtnView>(grid, "测试测试");
 
-        //float maxRtX = 0;
-        //float rtY = 0;
-        //int count = grid.childCount;
-        //for(int i = 0; i < count; i++)
-        //{
-        //    Vector2 sizeDelta = grid.GetChild(i).GetComponent<RectTransform>().sizeDelta;
-        //   float theX = sizeDelta.x;
-        //    if (theX >= maxRtX)
-        //        maxRtX = theX;
-        //    rtY += sizeDelta.y;
-        //}
-        //for (int i = 0; i < count; i++)
-        //{
-        //    ChooseActionBtnView view = grid.GetChild(i).GetComponent<ChooseActionBtnView>();
-
-        //    view.SetSize(new Vector2(maxRtX, view.rect.sizeDelta.y));
-        //}
-        //RectTransform rt = trans_content.GetComponent<RectTransform>();
-        //rt.sizeDelta = new Vector2(maxRtX, rtY+ rectYOffset);
     }
 
 
@@ -69,18 +36,8 @@ public class ChooseActionPanel : SelfAdaptionChoosePanel
     public override void OnOpenIng()
     {
         base.OnOpenIng();
-
-       // ShowPos();
-
     }
 
-    /// <summary>
-    /// 显示位置 如果这里出现出框bug 那就是锚点设置有问题content的锚点为x0y1
-    /// </summary>
-    void ShowPos()
-    {
-
-    }
 
    
 

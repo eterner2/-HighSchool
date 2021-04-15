@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 /// <summary>
@@ -8,7 +9,7 @@ public class GameModuleManager : CommonInstance<GameModuleManager>
 {
     public GameModuleType curGameModule;
     //public int curEnterActionId;//当前进入的活动场景
-
+    public Action curCloseMaskAction;//完全亮起时需要执行的委托
     public override void Init()
     {
         curGameModule = (GameModuleType)RoleManager.Instance._CurGameInfo.CurGameModule;
@@ -20,7 +21,9 @@ public class GameModuleManager : CommonInstance<GameModuleManager>
     /// </summary>
     /// <param name="gameModuleType"></param>
     public void InitGameModule(GameModuleType gameModuleType)
-    {
+    {        
+        //
+        //Action closeMaskAction = null;
         InitGameModuleManager(gameModuleType);
         ChangeGameModule(gameModuleType);
     }
@@ -31,7 +34,9 @@ public class GameModuleManager : CommonInstance<GameModuleManager>
     /// <param name="gameModuleType"></param>
     public void ChangeGameModule(GameModuleType gameModuleType)
     {
-        PanelManager.Instance.BlackMask(BlackMaskType.PingPong, () => 
+
+
+        PanelManager.Instance.PingPongBlackMask(() => 
         {
 
 
@@ -43,9 +48,10 @@ public class GameModuleManager : CommonInstance<GameModuleManager>
             //初始化模块的panel
             PanelManager.Instance.InitPanel(curGameModule);
 
-        }
-        
-        );
+        },
+
+
+        curCloseMaskAction);
 
     }
 
@@ -61,22 +67,34 @@ public class GameModuleManager : CommonInstance<GameModuleManager>
                 //邀约
                 SocializationManager.Instance.StartNewInvite();
                 break;
-            //case GameModuleType.BigMap:
-            //    OpenPanel<BigMapPanel>(trans_commonPanelParent);
-            //    OpenPanel<StatusPanel>(trans_layer2);
+            case GameModuleType.SingleOutsideScene:
+                //邀约
+                RoleManager.Instance._CurGameInfo.CurActionData = new RoleData.ActionData();
+                curCloseMaskAction = StartAction;
+                break;
+                //case GameModuleType.BigMap:
+                //    OpenPanel<BigMapPanel>(trans_commonPanelParent);
+                //    OpenPanel<StatusPanel>(trans_layer2);
 
-            //    break;
-            //case GameModuleType.SingleOutsideScene:
+                //    break;
+                //case GameModuleType.SingleOutsideScene:
 
-            //    OpenPanel<OutsidePanel>(trans_commonPanelParent, SocializationManager.Instance.action_planDic[GameModuleManager.Instance.curEnterActionId]);
-            //    //OpenPanel<BigMapPanel>(trans_commonPanelParent);
-            //    OpenPanel<StatusPanel>(trans_layer2);
+                //    OpenPanel<OutsidePanel>(trans_commonPanelParent, SocializationManager.Instance.action_planDic[GameModuleManager.Instance.curEnterActionId]);
+                //    //OpenPanel<BigMapPanel>(trans_commonPanelParent);
+                //    OpenPanel<StatusPanel>(trans_layer2);
 
-            //    break;
+                //    break;
         }
     }
 
-
+    /// <summary>
+    /// 开始行动
+    /// </summary>
+    public void StartAction()
+    {
+        GameActionManager.Instance.StartAction();
+        curCloseMaskAction = null;
+    }
 }
 
 /// <summary>

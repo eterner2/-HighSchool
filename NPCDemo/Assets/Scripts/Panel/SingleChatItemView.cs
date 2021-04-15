@@ -60,6 +60,8 @@ public class SingleChatItemView : SingleViewBase
             case (int)WetalkMsgType.InviteAction:
                 if(oneChatData.Valid)
                 btn_reply.gameObject.SetActive(true);
+                else
+                    btn_reply.gameObject.SetActive(false);
 
                 break;
             default:

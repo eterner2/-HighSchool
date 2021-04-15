@@ -10,6 +10,7 @@ message GameInfo
 	TimeData timeData=3;//日期
 	int32 curGameModule=4;//当前是哪个游戏模块
 	uint64 theId=5;//setid用的
+	ActionData curActionData=6;//当前行动
 }
 //日期
 message TimeData
@@ -35,6 +36,14 @@ int32 chatType=8;//聊天类型
 int32 inviteActionId=9;//邀请干啥
 bool valid=10;//有效（可以回复等操作，下一句说出来以后就失效）
 }
+
+//行动数据
+message ActionData
+{
+float process=1;//进度 到百分之多少了
+
+}
+
 //和单个人的聊天数据
 message SinglePeopleChatData
 {
@@ -76,6 +85,8 @@ bool isPlayer=13;//是玩家
 int32 choosedActionId=14;//确定选择了的活动
 repeated SinglePeopleChatData AllSinglePeopleChatDataList=15;//和别人聊天记录
 repeated uint64 validWithPeople=16;//可以和谁一起去（答应过自己和邀请自己的）
+bool playerVocalRefusedMe=17;//玩家口头拒绝了我（而不是放鸽子）
+uint64 curPlanWithPeople=18;//当前和谁一起去
 }
 
 //计划

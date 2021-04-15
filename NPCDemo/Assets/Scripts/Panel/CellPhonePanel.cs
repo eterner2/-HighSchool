@@ -188,7 +188,7 @@ public class CellPhonePanel : PanelBase
     {
         WetalkMsgData wetalkMsgData = param[0] as WetalkMsgData;
 
-        Debug.Log(wetalkMsgData);
+
         //红点
         for(int i=0;i< messageFriendViewList.Count; i++)
         {
