@@ -173,4 +173,6 @@ public enum TheEventType
     OnActionStart,//开始行动
     ActionProcess,//行动进度
     ActionPause,//行动暂停
+    BattleHit,//战斗打中
+    BattleEnd,//战斗结束
 }

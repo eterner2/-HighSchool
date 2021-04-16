@@ -29,6 +29,8 @@ public class RoleManager
     public List<People> NPCPeopleList;//所有npc（除了玩家之外的所有人）
     public People playerPeople;//玩家
 
+    public PropertyData examPropertyData;//考试数据
+
     public void Init(int index)
     {
         //EventCenter.Register(TheEventType.)
@@ -51,7 +53,22 @@ public class RoleManager
        // CreateNewPlayer(gameInfo);
         CreateNewPeople(gameInfo);
         //CreateNewPropertyData(gameInfo);
+        InitTmpExamPropertyData();
         gameInfo.CurGameModule = (int)GameModuleType.WeekDay;
+    }
+
+    /// <summary>
+    /// 初始化临时考试数据
+    /// </summary>
+    void InitTmpExamPropertyData()
+    {
+        examPropertyData = new PropertyData();
+        InitSingleProperty(examPropertyData, PropertyIdType.Hp);
+        InitSingleProperty(examPropertyData, PropertyIdType.Attack);
+        InitSingleProperty(examPropertyData, PropertyIdType.Defense);
+        InitSingleProperty(examPropertyData, PropertyIdType.Crit);
+        InitSingleProperty(examPropertyData, PropertyIdType.Speed);
+
     }
 
     /// <summary>
@@ -109,46 +126,35 @@ public class RoleManager
     
     }
 
-    ///// <summary>
-    ///// 创建新的属性数据
-    ///// </summary>
-    ///// <param name="gameInfo"></param>
-    //void CreateNewPropertyData(PeopleScriptable peopleScriptable,PeopleProtoData peopleProtoData)
-    //{
+    public void InitSingleProperty(PropertyData propertyData, PropertyIdType idType)
+    {
+        //PropertyData propertyData = new PropertyData();
+        PropertySetting setting = DataTable.FindPropertySetting((int)idType);
 
-    //    PropertyData propertyData = new PropertyData();
-
+        string[] rdmRange = setting.newRdmRange.Split('|');
+        int val = RandomManager.Next(rdmRange[0].ToInt32(), rdmRange[1].ToInt32());
 
 
-    //    InitSingleProperty(propertyData, PropertyIdType.Study, 15);
-    //    InitSingleProperty(propertyData, PropertyIdType.Art, 8);
-    //    InitSingleProperty(propertyData, PropertyIdType.Physical, 4);
-    //    InitSingleProperty(propertyData, PropertyIdType.Money, 1500);
-    //    InitSingleProperty(propertyData, PropertyIdType.TiLi, 100);
-    //    InitSingleProperty(propertyData, PropertyIdType.Mood, 100);
-    //    InitSingleProperty(propertyData, PropertyIdType.SelfControl, 20);
+        SinglePropertyData singlePropertyData = new SinglePropertyData();
+        singlePropertyData.PropertyId = (int)idType;
+        singlePropertyData.PropertyNum = val;
+        singlePropertyData.PropertyLimit = setting.haveLimit.ToInt32();
 
 
-    //    peopleProtoData.PropertyData = propertyData;
-    //}
+        if (setting.isExamBattle == "1")
+        {
+            propertyData.ExamPropertyIdList.Add((int)idType);
+            propertyData.ExamPropertyDataList.Add(singlePropertyData);
 
-    //public void InitSingleProperty(PropertyData propertyData, PropertyIdType idType,int initNum)
-    //{
-    //    //PropertyData propertyData = new PropertyData();
-    //    PropertySetting setting = DataTable.FindPropertySetting((int)idType);
+        }
+        else
+        {
+            propertyData.PropertyIdList.Add((int)idType);
 
-    //    propertyData.PropertyIdList.Add((int)idType);
-
-    //    SinglePropertyData singlePropertyData = new SinglePropertyData();
-    //    singlePropertyData.PropertyId = (int)idType;
-    //    singlePropertyData.PropertyNum = initNum;
-    //    singlePropertyData.PropertyLimit = setting.haveLimit.ToInt32();
-
-    //    propertyData.PropertyDataList.Add(singlePropertyData);
-
-    //    //return singlePropertyData;
-    //}
-
+            propertyData.PropertyDataList.Add(singlePropertyData);
+        }
+        //return singlePropertyData;
+    }
     /// <summary>
     /// 得到学习分数
     /// </summary>

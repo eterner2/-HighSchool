@@ -76,7 +76,11 @@
     <Compile Include="Assets\RandomManager.cs" />
     <Compile Include="Assets\Resources\PeopleScriptable.cs" />
     <Compile Include="Assets\ScreenFit.cs" />
+    <Compile Include="Assets\Scripts\Effect\BattleHitEffect.cs" />
+    <Compile Include="Assets\Scripts\Effect\FinishKillEffect.cs" />
+    <Compile Include="Assets\Scripts\Effect\LoseHPEffect.cs" />
     <Compile Include="Assets\Scripts\Game.cs" />
+    <Compile Include="Assets\Scripts\Manager\BattleManager.cs" />
     <Compile Include="Assets\Scripts\Manager\DialogManager.cs" />
     <Compile Include="Assets\Scripts\Manager\EntityManager.cs" />
     <Compile Include="Assets\Scripts\Manager\GameActionManager.cs" />
@@ -112,6 +116,7 @@
     <Compile Include="Assets\Scripts\Panel\PropertyPanel.cs" />
     <Compile Include="Assets\Scripts\Panel\SelfAdaptionChooseBtnView.cs" />
     <Compile Include="Assets\Scripts\Panel\SelfAdaptionChoosePanel.cs" />
+    <Compile Include="Assets\Scripts\Panel\SingleBattlePeopleView.cs" />
     <Compile Include="Assets\Scripts\Panel\SingleChatItemView.cs" />
     <Compile Include="Assets\Scripts\Panel\SingleMapView.cs" />
     <Compile Include="Assets\Scripts\Panel\SinglePropertyView.cs" />
@@ -124,7 +129,9 @@
     <Compile Include="Assets\Scripts\Panel\WorkDayPanel.cs" />
     <Compile Include="Assets\Scripts\protocol\RoleInfo.cs" />
     <Compile Include="Assets\Scripts\Table\ActionSetting.cs" />
+    <Compile Include="Assets\Scripts\Table\BattleProperty_levelGrowSetting.cs" />
     <Compile Include="Assets\Scripts\Table\BigMapSetting.cs" />
+    <Compile Include="Assets\Scripts\Table\ExamBattlePropertySetting.cs" />
     <Compile Include="Assets\Scripts\Table\PropertySetting.cs" />
     <Compile Include="Assets\Scripts\TestPanel.cs" />
     <Compile Include="Assets\Scripts\Tools\CommonInstance.cs" />

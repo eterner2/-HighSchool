@@ -1,0 +1,72 @@
+﻿[
+  {
+    "id": "10001",
+    "level": "1",
+    "content": "10001|300$10002|30$10003|10$10004|20$10005|100",
+    "needExp": "0",
+    "": null
+  },
+  {
+    "id": "10002",
+    "level": "2",
+    "content": "10001|450$10002|50$10003|30$10004|20$10005|100",
+    "needExp": "1000",
+    "": null
+  },
+  {
+    "id": "10003",
+    "level": "3",
+    "content": "10001|450$10002|70$10003|50$10004|20$10005|100",
+    "needExp": "2500",
+    "": null
+  },
+  {
+    "id": "10004",
+    "level": "4",
+    "content": "10001|900$10002|90$10003|70$10004|20$10005|100",
+    "needExp": "5000",
+    "": null
+  },
+  {
+    "id": "10005",
+    "level": "5",
+    "content": "10001|1050$10002|110$10003|90$10004|20$10005|100",
+    "needExp": "10000",
+    "": null
+  },
+  {
+    "id": "10006",
+    "level": "6",
+    "content": "10001|1050$10002|110$10003|90$10004|20$10005|100",
+    "needExp": "20000",
+    "": null
+  },
+  {
+    "id": null,
+    "level": null,
+    "content": null,
+    "needExp": null,
+    "": null
+  },
+  {
+    "id": null,
+    "level": null,
+    "content": null,
+    "needExp": null,
+    "": null
+  },
+  {
+    "id": null,
+    "level": null,
+    "content": null,
+    "needExp": null,
+    "": null
+  },
+  {
+    "id": null,
+    "level": null,
+    "content": null,
+    "needExp": null,
+    "": null
+  }
+]

@@ -106,4 +106,11 @@ public enum PropertyIdType
     Mood=10006,//心情
     SelfControl=10007,//自制
     Charm=10008,//魅力
+
+    //考试战斗属性
+    Hp = 10009,//精力
+    Attack = 10010,//学习能力
+    Defense = 10011,//学习心态
+    Crit = 10012,//暴击率
+    Speed = 10013,//速度
 }

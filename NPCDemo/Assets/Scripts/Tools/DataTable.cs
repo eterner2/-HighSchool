@@ -23,6 +23,11 @@ namespace Framework.Data
         static public Dictionary<int, ActionSetting> actionDic = new Dictionary<int, ActionSetting>();
         static public List<ActionSetting> _actionList = new List<ActionSetting>();
 
+        //static string examBattlePropertyName = "examBattlePropertySetting.json";
+        //static public Dictionary<int, ExamBattlePropertySetting> examBattlePropertyDic = new Dictionary<int, ExamBattlePropertySetting>();
+        //static public List<ExamBattlePropertySetting> _examBattlePropertyList = new List<ExamBattlePropertySetting>();
+
+
         public static void LoadTableData()
         {
             JsonMapper.RegisterImporter<int, long>((int value) =>

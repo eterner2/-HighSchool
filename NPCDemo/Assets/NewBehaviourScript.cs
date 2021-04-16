@@ -656,6 +656,7 @@ public class People
         peopleProtoData.Name = peopleData.name;
         peopleProtoData.Gender = (int)peopleData.gender;
         peopleProtoData.IsPlayer = isPlayer;
+        peopleProtoData.ExamBattleCurLevel = 1;
         CreateNewPropertyData(peopleProtoData);
         this.protoData = peopleProtoData;
     }
@@ -679,41 +680,39 @@ public class People
 
         PropertyData propertyData = new PropertyData();
 
+        propertyData.IsPlayer = true;
 
+       RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Study);
+        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Art);
+        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Physical);
+        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Money);
+        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.TiLi);
+        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Mood);
+        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.SelfControl);
+        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Charm);
 
-        InitSingleProperty(propertyData, PropertyIdType.Study);
-        InitSingleProperty(propertyData, PropertyIdType.Art);
-        InitSingleProperty(propertyData, PropertyIdType.Physical);
-        InitSingleProperty(propertyData, PropertyIdType.Money);
-        InitSingleProperty(propertyData, PropertyIdType.TiLi);
-        InitSingleProperty(propertyData, PropertyIdType.Mood);
-        InitSingleProperty(propertyData, PropertyIdType.SelfControl);
-        InitSingleProperty(propertyData, PropertyIdType.Charm);
-
+        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Hp);
+        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Attack);
+        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Defense);
+        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Crit);
+        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Speed);
 
         peopleProtoData.PropertyData = propertyData;
     }
 
 
-    public void InitSingleProperty(PropertyData propertyData, PropertyIdType idType)
-    {
-        //PropertyData propertyData = new PropertyData();
-        PropertySetting setting = DataTable.FindPropertySetting((int)idType);
 
-        string[] rdmRange = setting.newRdmRange.Split('|');
-        int val = RandomManager.Next(rdmRange[0].ToInt32(), rdmRange[1].ToInt32());
 
-        propertyData.PropertyIdList.Add((int)idType);
+    ///// <summary>
+    ///// 初始化战斗属性
+    ///// </summary>
+    ///// <param name="propertyData"></param>
+    ///// <param name="idType"></param>
+    //public void InitSingleExamBattleProperty(PropertyData propertyData, PropertyIdType idType,int examBattleLevel)
+    //{
+    //    //string levelGrowStr=
+    //}
 
-        SinglePropertyData singlePropertyData = new SinglePropertyData();
-        singlePropertyData.PropertyId = (int)idType;
-        singlePropertyData.PropertyNum = val;
-        singlePropertyData.PropertyLimit = setting.haveLimit.ToInt32();
-
-        propertyData.PropertyDataList.Add(singlePropertyData);
-
-        //return singlePropertyData;
-    }
 
     /// <summary>
     /// 邀请

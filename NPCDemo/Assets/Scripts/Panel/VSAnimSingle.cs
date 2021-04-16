@@ -17,11 +17,24 @@ public class VSAnimSingle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            trans_obj.position = trans_startPos.position;
-            trans_obj.DOMove(trans_endPos.position, 1f).SetEase(animationCurve);
+        //if (Input.GetKeyDown(KeyCode.W))
+        //{
+        //    trans_obj.position = trans_startPos.position;
+        //    trans_obj.DOMove(trans_endPos.position, 1f).SetEase(animationCurve);
 
-        }
+        //}
+    }
+
+    /// <summary>
+    /// 开始动
+    /// </summary>
+    public void StartAnim()
+    {
+        trans_obj.DOKill();
+        trans_obj.position = trans_startPos.position;
+        trans_obj.DOMove(trans_endPos.position, 1f).SetEase(animationCurve).OnComplete(() =>
+        {
+            gameObject.SetActive(false);
+        });
     }
 }

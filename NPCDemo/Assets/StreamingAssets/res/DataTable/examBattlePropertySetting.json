@@ -1,0 +1,62 @@
+﻿[
+  {
+    "id": "10001",
+    "name": "精力",
+    "des": "精力降为0时玩家将结束做题",
+    "": null
+  },
+  {
+    "id": "10002",
+    "name": "学习能力",
+    "des": "直接影响单次攻击难题的伤害",
+    "": null
+  },
+  {
+    "id": "10003",
+    "name": "学习心态",
+    "des": "面对难题时，更好的心态意味着对难题的抵御力更强",
+    "": null
+  },
+  {
+    "id": "10004",
+    "name": "灵感",
+    "des": "灵感，让你有几率在面对难题时打出超出当前学习能力的伤害。对于一些特殊的题目，也能达到破防的效果",
+    "": null
+  },
+  {
+    "id": "10005",
+    "name": "解题速度",
+    "des": "天下武功，无快不破",
+    "": null
+  },
+  {
+    "id": null,
+    "name": null,
+    "des": null,
+    "": null
+  },
+  {
+    "id": null,
+    "name": null,
+    "des": null,
+    "": null
+  },
+  {
+    "id": null,
+    "name": null,
+    "des": null,
+    "": null
+  },
+  {
+    "id": null,
+    "name": null,
+    "des": null,
+    "": null
+  },
+  {
+    "id": null,
+    "name": null,
+    "des": null,
+    "": null
+  }
+]
