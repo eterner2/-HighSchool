@@ -43,6 +43,8 @@ using UnityEngine;
     ActionReadyPanelPeopleView,//行动准备模块的人
     ActionReadyPanel,//行动准备界面
     GetAwardPanel,//得奖
+    BattlePanel,//战斗面板
+    SingleBattlePeopleView,//单个战斗者
 }
 
 public class TempItem

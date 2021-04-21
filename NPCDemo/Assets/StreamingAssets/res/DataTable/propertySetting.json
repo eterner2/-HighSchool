@@ -5,7 +5,9 @@
     "showInStatusPanel": "0",
     "haveLimit": "-1",
     "iconName": "property_knowledge",
-    "newRdmRange": "10|20"
+    "newRdmRange": "10|20",
+    "des": null,
+    "isExamBattle": null
   },
   {
     "id": "10002",
@@ -13,7 +15,9 @@
     "showInStatusPanel": "0",
     "haveLimit": "-1",
     "iconName": "property_music",
-    "newRdmRange": "5|12"
+    "newRdmRange": "5|12",
+    "des": null,
+    "isExamBattle": null
   },
   {
     "id": "10003",
@@ -21,7 +25,9 @@
     "showInStatusPanel": "0",
     "haveLimit": "-1",
     "iconName": "property_physical",
-    "newRdmRange": "4|10"
+    "newRdmRange": "4|10",
+    "des": null,
+    "isExamBattle": null
   },
   {
     "id": "10004",
@@ -29,7 +35,9 @@
     "showInStatusPanel": "1",
     "haveLimit": "-1",
     "iconName": "property_money",
-    "newRdmRange": "800|3000"
+    "newRdmRange": "800|3000",
+    "des": null,
+    "isExamBattle": null
   },
   {
     "id": "10005",
@@ -37,7 +45,9 @@
     "showInStatusPanel": "1",
     "haveLimit": "100",
     "iconName": "property_power",
-    "newRdmRange": "100|100"
+    "newRdmRange": "100|100",
+    "des": null,
+    "isExamBattle": null
   },
   {
     "id": "10006",
@@ -45,7 +55,9 @@
     "showInStatusPanel": "1",
     "haveLimit": "100",
     "iconName": "property_mood",
-    "newRdmRange": "100|100"
+    "newRdmRange": "100|100",
+    "des": null,
+    "isExamBattle": null
   },
   {
     "id": "10007",
@@ -53,7 +65,9 @@
     "showInStatusPanel": "0",
     "haveLimit": "-1",
     "iconName": "property_selfControl",
-    "newRdmRange": "10|30"
+    "newRdmRange": "10|30",
+    "des": null,
+    "isExamBattle": null
   },
   {
     "id": "10008",
@@ -61,6 +75,58 @@
     "showInStatusPanel": "0",
     "haveLimit": "-1",
     "iconName": "property_charm",
-    "newRdmRange": "10|30"
+    "newRdmRange": "10|30",
+    "des": null,
+    "isExamBattle": null
+  },
+  {
+    "id": "10009",
+    "name": "精力",
+    "showInStatusPanel": "0",
+    "haveLimit": "-1",
+    "iconName": "hp",
+    "newRdmRange": "300|450",
+    "des": "精力降为0时玩家将结束做题",
+    "isExamBattle": "1"
+  },
+  {
+    "id": "10010",
+    "name": "学习能力",
+    "showInStatusPanel": "0",
+    "haveLimit": "-1",
+    "iconName": "gongji",
+    "newRdmRange": "30|50",
+    "des": "直接影响单次攻击难题的伤害",
+    "isExamBattle": "1"
+  },
+  {
+    "id": "10011",
+    "name": "学习心态",
+    "showInStatusPanel": "0",
+    "haveLimit": "-1",
+    "iconName": "fangyu",
+    "newRdmRange": "10|30",
+    "des": "面对难题时，更好的心态意味着对难题的抵御力更强",
+    "isExamBattle": "1"
+  },
+  {
+    "id": "10012",
+    "name": "灵感",
+    "showInStatusPanel": "0",
+    "haveLimit": "100",
+    "iconName": "baojilv",
+    "newRdmRange": "20|20",
+    "des": "灵感，让你有几率在面对难题时打出超出当前学习能力的伤害。对于一些特殊的题目，也能达到破防的效果",
+    "isExamBattle": "1"
+  },
+  {
+    "id": "10013",
+    "name": "解题速度",
+    "showInStatusPanel": "0",
+    "haveLimit": "-1",
+    "iconName": "gongsu",
+    "newRdmRange": "100|120",
+    "des": "天下武功，无快不破",
+    "isExamBattle": "1"
   }
 ]

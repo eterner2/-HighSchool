@@ -39,7 +39,7 @@ public class PanelManager : MonoInstance<PanelManager>
         {
             case GameModuleType.WeekDay:
                 OpenPanel<WorkDayPanel>(trans_commonPanelParent);
-                OpenPanel<PropertyPanel>(trans_commonPanelParent);
+                //OpenPanel<PropertyPanel>(trans_commonPanelParent);
                 OpenPanel<DeskPanel>(trans_commonPanelParent);
                 OpenPanel<StatusPanel>(trans_layer2);
                 OpenPanel<MainPanel>(trans_layer2);

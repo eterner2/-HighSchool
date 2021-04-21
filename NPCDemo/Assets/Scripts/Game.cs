@@ -22,10 +22,10 @@ public class Game : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.W))
-        //{
-        //    PanelManager.Instance.OpenPanel<ChooseActionPanel>(PanelManager.Instance.trans_layer3);
-        //}
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            PanelManager.Instance.OpenPanel<BattlePanel>(PanelManager.Instance.trans_layer3);
+        }
     }
 
     /// <summary>

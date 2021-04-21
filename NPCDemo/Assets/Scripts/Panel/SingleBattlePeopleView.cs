@@ -74,7 +74,7 @@ public class SingleBattlePeopleView : SingleViewBase
     /// </summary>
     public void OnHit()
     {
-        EntityManager.Instance.GenerateEntity<BattleHitEffect>(trans_hitEffectParent,)
+        EntityManager.Instance.GenerateEntity<BattleHitEffect>(trans_hitEffectParent);
 
     }
 }

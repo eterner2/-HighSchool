@@ -1,6 +1,8 @@
 ﻿using RoleData;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.Globalization;
 using UnityEngine;
 
@@ -19,7 +21,7 @@ public class BattleManager : CommonInstance<BattleManager>
             SinglePropertyData singleExamPropertyData = new SinglePropertyData();
             singleExamPropertyData.PropertyId = initData.PropertyId;
             singleExamPropertyData.PropertyNum = initData.PropertyNum;
-            PropertyData.CurExamPropertyDataList[i] = singleExamPropertyData;
+            PropertyData.CurExamPropertyDataList.Add(singleExamPropertyData);
 
 
         }
@@ -115,6 +117,12 @@ public class BattleManager : CommonInstance<BattleManager>
             critMul = 1 + critHurt * 0.01f;
         }
 
+         Test((a, b) =>
+         {
+
+             Debug.Log(a);
+             Debug.Log(b);
+         });
 
         int res = Mathf.RoundToInt((attack * attack / (attack + defence)) * critMul);
 
@@ -129,6 +137,17 @@ public class BattleManager : CommonInstance<BattleManager>
             EventCenter.Broadcast(TheEventType.BattleEnd, property2);
 
         }
+    }
+
+    private void Test(Action<int, int> p)
+    {
+        
+        p(123,4556);
+    }
+
+    public void Test(int a, int b)
+    {
+
     }
 }
 
