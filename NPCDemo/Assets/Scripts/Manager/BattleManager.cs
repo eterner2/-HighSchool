@@ -21,7 +21,9 @@ public class BattleManager : CommonInstance<BattleManager>
             SinglePropertyData singleExamPropertyData = new SinglePropertyData();
             singleExamPropertyData.PropertyId = initData.PropertyId;
             singleExamPropertyData.PropertyNum = initData.PropertyNum;
+
             PropertyData.CurExamPropertyDataList.Add(singleExamPropertyData);
+            PropertyData.CurExamPropertyIdList.Add(singleExamPropertyData.PropertyId);
 
 
         }
@@ -117,12 +119,6 @@ public class BattleManager : CommonInstance<BattleManager>
             critMul = 1 + critHurt * 0.01f;
         }
 
-         Test((a, b) =>
-         {
-
-             Debug.Log(a);
-             Debug.Log(b);
-         });
 
         int res = Mathf.RoundToInt((attack * attack / (attack + defence)) * critMul);
 

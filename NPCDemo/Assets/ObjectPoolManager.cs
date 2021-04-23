@@ -45,6 +45,7 @@ using UnityEngine;
     GetAwardPanel,//得奖
     BattlePanel,//战斗面板
     SingleBattlePeopleView,//单个战斗者
+    BattleHitEffect,//受击特效
 }
 
 public class TempItem

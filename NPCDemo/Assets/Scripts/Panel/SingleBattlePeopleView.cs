@@ -55,13 +55,18 @@ public class SingleBattlePeopleView : SingleViewBase
 
     private void Update()
     {
-        curAttackTimer += Time.deltaTime;
-        if (curAttackTimer >= curAttackSpeed)
+        if (startBattle)
         {
-            //攻击
-            parentPanel.Attack(this);
+            curAttackTimer += Time.deltaTime;
+            if (curAttackTimer >= curAttackSpeed)
+            {
+                //攻击
+                parentPanel.Attack(this);
+                curAttackTimer = 0;
+            }
+
         }
-    
+
     }
 
     public void StartBattle()
@@ -74,7 +79,7 @@ public class SingleBattlePeopleView : SingleViewBase
     /// </summary>
     public void OnHit()
     {
-        EntityManager.Instance.GenerateEntity<BattleHitEffect>(trans_hitEffectParent);
+        EntityManager.Instance.GenerateEntity<BattleHitEffect>(trans_hitEffectParent,ConstantVal.battleHitEffectPath);
 
     }
 }

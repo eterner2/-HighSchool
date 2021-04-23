@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class FinishKillEffect :MonoBehaviour, Entity
 {
-    public ObjectPoolSingle objType { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-    public bool isTmpObj { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-    public GameObject obj { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+    public ObjectPoolSingle objType { get; set; }
+    public bool isTmpObj { get; set; }
+    public GameObject obj { get; set; }
 
     public Animator anim;
     public float totalTime;

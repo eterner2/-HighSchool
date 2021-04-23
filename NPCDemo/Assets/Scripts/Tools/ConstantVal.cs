@@ -30,6 +30,8 @@ public class ConstantVal
     public const string verticalDrawFolderPath = "TestRes/Common/PeopleVerticalDraw/";//人物立绘文件夹
     public const string maleIcon = "icon_man";//男头像
     public const string femaleIcon = "icon_girl";//女头像
+
+    public const string battleHitEffectPath = "TestRes/Battle/effect/BattleHitEffect";//受击
     /// <summary>
     /// 通过Panel名字获取路径
     /// </summary>
