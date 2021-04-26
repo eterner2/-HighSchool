@@ -32,6 +32,8 @@ public class ConstantVal
     public const string femaleIcon = "icon_girl";//女头像
 
     public const string battleHitEffectPath = "TestRes/Battle/effect/BattleHitEffect";//受击
+    public const string loseHPEffectPath = "TestRes/Battle/effect/LoseHPEffect";//掉血
+
     /// <summary>
     /// 通过Panel名字获取路径
     /// </summary>

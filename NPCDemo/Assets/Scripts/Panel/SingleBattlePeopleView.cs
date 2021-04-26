@@ -77,9 +77,11 @@ public class SingleBattlePeopleView : SingleViewBase
     /// <summary>
     /// 被打
     /// </summary>
-    public void OnHit()
+    public void OnHit(HitData hitData)
     {
         EntityManager.Instance.GenerateEntity<BattleHitEffect>(trans_hitEffectParent,ConstantVal.battleHitEffectPath);
+        EntityManager.Instance.GenerateEntity<LoseHPEffect>(trans_hitEffectParent, ConstantVal.loseHPEffectPath,
+            trans_hitEffectParent.position,hitData.num);
 
     }
 }

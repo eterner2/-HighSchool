@@ -99,11 +99,11 @@ public class BattlePanel : PanelBase
         //玩家被打
         if (hitData.isPlayer)
         {
-            playerBattleView.OnHit();
+            playerBattleView.OnHit(hitData);
         }
         else
         {
-            enemyBattleView.OnHit();
+            enemyBattleView.OnHit(hitData);
         }
     }
 
