@@ -128,5 +128,25 @@
     "newRdmRange": "100|120",
     "des": "天下武功，无快不破",
     "isExamBattle": "1"
+  },
+  {
+    "id": "10014",
+    "name": "技能增伤",
+    "showInStatusPanel": "0",
+    "haveLimit": "-1",
+    "iconName": "gongsu",
+    "newRdmRange": "0.5|1",
+    "des": "给你的刀刃加点锋",
+    "isExamBattle": "1"
+  },
+  {
+    "id": "10015",
+    "name": "爆伤",
+    "showInStatusPanel": "0",
+    "haveLimit": "-1",
+    "iconName": "gongsu",
+    "newRdmRange": "0.5|1",
+    "des": "致命一击的脑力",
+    "isExamBattle": "1"
   }
 ]

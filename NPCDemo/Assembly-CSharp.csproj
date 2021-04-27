@@ -133,6 +133,8 @@
     <Compile Include="Assets\Scripts\Table\BigMapSetting.cs" />
     <Compile Include="Assets\Scripts\Table\ExamBattlePropertySetting.cs" />
     <Compile Include="Assets\Scripts\Table\PropertySetting.cs" />
+    <Compile Include="Assets\Scripts\Table\TestEnemyNumerialSetting.cs" />
+    <Compile Include="Assets\Scripts\Table\TestNumerialSetting.cs" />
     <Compile Include="Assets\Scripts\TestPanel.cs" />
     <Compile Include="Assets\Scripts\Tools\CommonInstance.cs" />
     <Compile Include="Assets\Scripts\Tools\CommonUtil.cs" />

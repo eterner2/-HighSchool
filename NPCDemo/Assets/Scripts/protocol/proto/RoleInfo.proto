@@ -66,8 +66,8 @@ bool isPlayer=7;//是玩家的属性（不是怪物（试卷）的）
 message SinglePropertyData
 {
 int32 propertyId=1;
-int32 propertyNum=2;
-int32 propertyLimit=3;//上限
+float propertyNum=2;
+float propertyLimit=3;//上限
 }
 
 //角色数据

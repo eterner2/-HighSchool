@@ -9,6 +9,7 @@ public class SingleBattlePeopleView : SingleViewBase
     public PropertyData propertyData;
 
     public Image img_hpBar;
+    public Image img_processBar;
     public Text txt_hp;
     public Text txt_name;
 
@@ -17,8 +18,7 @@ public class SingleBattlePeopleView : SingleViewBase
 
     bool startBattle;
 
-    public float basicAttackSpeed = 2f;//基本速度
-    public float curAttackSpeed;
+    public float curAttackTime;
     public float curAttackTimer = 0;
     public BattlePanel parentPanel;
     public Transform trans_hitEffectParent;
@@ -28,26 +28,28 @@ public class SingleBattlePeopleView : SingleViewBase
         base.Init(args);
         propertyData = args[0] as PropertyData;
         parentPanel = args[1] as BattlePanel;
+  
+
+        startBattle = false;
+
+        //curAttackSpeed= (BattleManager.Instance.GetCurExamPropertyById(PropertyIdType.Speed, propertyData).PropertyNum) * basicAttackSpeed;
+        //curAttackTimer = 0;
+        Show();
+        //txt_hp.SetText(propertyData.exam)
+    }
+
+    public void Show()
+    {
         if (propertyData.IsPlayer)
         {
             txt_name.SetText("我");
         }
         else
         {
-            txt_name.SetText("黄冈选择题1号");
+            txt_name.SetText("黄冈选择题1号Lv" + parentPanel.enemyLevel);
         }
-        curHp = BattleManager.Instance.GetCurExamPropertyById(PropertyIdType.Hp, propertyData).PropertyNum;
-        initHp = BattleManager.Instance.GetInitExamPropertyById(PropertyIdType.Hp, propertyData).PropertyNum;
-        startBattle = false;
-
-        curAttackSpeed= (BattleManager.Instance.GetCurExamPropertyById(PropertyIdType.Speed, propertyData).PropertyNum / (float)100) * basicAttackSpeed;
-        //curAttackTimer = 0;
-        Show();
-        //txt_hp.SetText(propertyData.exam)
-    }
-
-    void Show()
-    {
+        curHp = (int)BattleManager.Instance.GetCurExamPropertyById(PropertyIdType.Hp, propertyData).PropertyNum;
+        initHp = (int)BattleManager.Instance.GetInitExamPropertyById(PropertyIdType.Hp, propertyData).PropertyNum;
         txt_hp.SetText(curHp + "/" + initHp);
         img_hpBar.fillAmount = curHp / (float)initHp;
     }
@@ -58,14 +60,28 @@ public class SingleBattlePeopleView : SingleViewBase
         if (startBattle)
         {
             curAttackTimer += Time.deltaTime;
-            if (curAttackTimer >= curAttackSpeed)
+            if (curAttackTimer >= curAttackTime)
             {
                 //攻击
                 parentPanel.Attack(this);
                 curAttackTimer = 0;
+                img_processBar.fillAmount = 0;
             }
+            img_processBar.fillAmount = curAttackTimer / curAttackTime;
 
         }
+
+    }
+
+    /// <summary>
+    /// 设置测试数据
+    /// </summary>
+    public void SetTestData(PropertyData thePro)
+    {
+        curAttackTime = (1/(BattleManager.Instance.GetCurExamPropertyById(PropertyIdType.Speed, thePro).PropertyNum)) *parentPanel.basicAttackSpeed;
+        curHp = (int)BattleManager.Instance.GetCurExamPropertyById(PropertyIdType.Hp, thePro).PropertyNum;
+        initHp = (int)BattleManager.Instance.GetCurExamPropertyById(PropertyIdType.Hp, thePro).PropertyNum;
+        Show();
 
     }
 
@@ -73,13 +89,28 @@ public class SingleBattlePeopleView : SingleViewBase
     {
         startBattle = true;
         curAttackTimer = 0;
+        img_processBar.fillAmount = 0;
+        //curAttackSpeed= (BattleManager.Instance.GetCurExamPropertyById(PropertyIdType.Speed, propertyData).PropertyNum) * basicAttackSpeed;
+        //curHp = (int)BattleManager.Instance.GetCurExamPropertyById(PropertyIdType.Hp, propertyData).PropertyNum;
+        //initHp = (int)BattleManager.Instance.GetCurExamPropertyById(PropertyIdType.Hp, propertyData).PropertyNum;
+        //Show();
+
+
     }
     /// <summary>
     /// 被打
     /// </summary>
-    public void OnHit()
+    public void OnHit(HitData hitData)
     {
         EntityManager.Instance.GenerateEntity<BattleHitEffect>(trans_hitEffectParent,ConstantVal.battleHitEffectPath);
+        EntityManager.Instance.GenerateEntity<LoseHPEffect>(trans_hitEffectParent, ConstantVal.loseHPEffectPath,
+            trans_hitEffectParent.position,hitData.num);
+        Show();
+    }
 
+    public void OnEnd()
+    {
+        startBattle = false;
+        img_processBar.fillAmount = 0;
     }
 }

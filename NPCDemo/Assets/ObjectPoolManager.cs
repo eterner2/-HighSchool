@@ -46,6 +46,7 @@ using UnityEngine;
     BattlePanel,//战斗面板
     SingleBattlePeopleView,//单个战斗者
     BattleHitEffect,//受击特效
+    LoseHPEffect,//掉血特效
 }
 
 public class TempItem

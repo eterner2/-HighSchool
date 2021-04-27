@@ -32,6 +32,8 @@ public class ConstantVal
     public const string femaleIcon = "icon_girl";//女头像
 
     public const string battleHitEffectPath = "TestRes/Battle/effect/BattleHitEffect";//受击
+    public const string loseHPEffectPath = "TestRes/Battle/effect/LoseHPEffect";//掉血
+
     /// <summary>
     /// 通过Panel名字获取路径
     /// </summary>
@@ -113,6 +115,8 @@ public enum PropertyIdType
     Hp = 10009,//精力
     Attack = 10010,//学习能力
     Defense = 10011,//学习心态
-    Crit = 10012,//暴击率
+    CritRate = 10012,//暴击率
     Speed = 10013,//速度
+    SkillAdd=10014,//技能增伤
+    CritNum=10015,//爆伤
 }
