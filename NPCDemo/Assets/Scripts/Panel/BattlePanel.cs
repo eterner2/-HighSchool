@@ -3,6 +3,7 @@ using RoleData;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BattlePanel : PanelBase
 {
@@ -27,18 +28,41 @@ public class BattlePanel : PanelBase
     public SingleBattlePeopleView playerBattleView;
     public SingleBattlePeopleView enemyBattleView;
 
+    public int roleLevel;//玩家等级
+    public int enemyLevel;//敌人等级
+
+    public Button btn_restartTest;//重新开始测试
+    public Button btn_NextEnemy;//换个敌人
+    public float basicAttackSpeed = 5f;//基本速度
+
     public override void Init(params object[] args)
     {
         base.Init(args);
         EventCenter.Register(TheEventType.BattleHit, OnHit);
+        EventCenter.Register(TheEventType.BattleEnd, OnBattleEnd);
+
+        addBtnListener(btn_restartTest, () =>
+        {
+            RoleManager.Instance.TestSetProperty(true, enemyLevel);
+            RoleManager.Instance.TestSetProperty(false, roleLevel);
+            TestBattle();
+        });
+
+
+        addBtnListener(btn_NextEnemy, () =>
+        {
+            RoleManager.Instance.TestSetProperty(true, enemyLevel);
+           // RoleManager.Instance.TestSetProperty(false, roleLevel);
+            TestBattle();
+        });
     }
 
     public override void OnOpenIng()
     {
         base.OnOpenIng();
-        delayStartTimer = 0;
-        startBattle = false;
-        startCalcDelay = true;
+        //delayStartTimer = 0;
+        //startBattle = false;
+        //startCalcDelay = true;
         VSAnimSingle.StartAnim();
 
 
@@ -46,6 +70,10 @@ public class BattlePanel : PanelBase
         // property_player = RoleManager.Instance.playerPeople.protoData.PropertyData;
         BattleManager.Instance.InitCurExamPropertyData(RoleManager.Instance.playerPeople.protoData.PropertyData);
         BattleManager.Instance.InitCurExamPropertyData(RoleManager.Instance.examPropertyData);
+
+        ////以下为测试数据
+        //RoleManager.Instance.InitSingleProperty()
+
 
         playerBattleView = PanelManager.Instance.OpenSingle<SingleBattlePeopleView>(trans_playerPos, RoleManager.Instance.playerPeople.protoData.PropertyData,
             this);
@@ -70,10 +98,31 @@ public class BattlePanel : PanelBase
             }
         }
 
-        //if (startBattle)
+        //if (Input.GetKeyDown(KeyCode.Space))
         //{
-        
+        //    TestBattle();
         //}
+    }
+
+    /// <summary>
+    /// 测试battle
+    /// </summary>
+    void TestBattle()
+    {   
+        
+     
+        //BattleManager.Instance.InitCurExamPropertyData(RoleManager.Instance.playerPeople.protoData.PropertyData);
+        //BattleManager.Instance.InitCurExamPropertyData(RoleManager.Instance.examPropertyData);
+
+
+        playerBattleView.SetTestData(RoleManager.Instance.playerPeople.protoData.PropertyData);
+        enemyBattleView.SetTestData(RoleManager.Instance.examPropertyData);
+        playerBattleView.Show();
+        enemyBattleView.Show();
+
+        delayStartTimer = 0;
+        startBattle = false;
+        startCalcDelay = true;
     }
 
     /// <summary>
@@ -107,5 +156,20 @@ public class BattlePanel : PanelBase
         }
     }
 
+    void OnBattleEnd()
+    {
+        startBattle = false;
+        startCalcDelay = false;
+        playerBattleView.OnEnd();
+        enemyBattleView.OnEnd();
+    }
+
+    public override void OnClose()
+    {
+        base.OnClose();
+        EventCenter.Remove(TheEventType.BattleEnd, OnBattleEnd);
+        EventCenter.Remove(TheEventType.BattleHit, OnHit);
+
+    }
     //void StartBattle()
 }

@@ -46,8 +46,8 @@ namespace RoleData {
             "eURhdGESHQoVY3VyRXhhbVByb3BlcnR5SWRMaXN0GAUgAygFEj0KF2N1ckV4",
             "YW1Qcm9wZXJ0eURhdGFMaXN0GAYgAygLMhwuUm9sZURhdGEuU2luZ2xlUHJv",
             "cGVydHlEYXRhEhAKCGlzUGxheWVyGAcgASgIIlQKElNpbmdsZVByb3BlcnR5",
-            "RGF0YRISCgpwcm9wZXJ0eUlkGAEgASgFEhMKC3Byb3BlcnR5TnVtGAIgASgF",
-            "EhUKDXByb3BlcnR5TGltaXQYAyABKAUilAUKD1Blb3BsZVByb3RvRGF0YRIO",
+            "RGF0YRISCgpwcm9wZXJ0eUlkGAEgASgFEhMKC3Byb3BlcnR5TnVtGAIgASgC",
+            "EhUKDXByb3BlcnR5TGltaXQYAyABKAIilAUKD1Blb3BsZVByb3RvRGF0YRIO",
             "CgZvbmx5SWQYASABKAQSLAoMcHJvcGVydHlEYXRhGAIgASgLMhYuUm9sZURh",
             "dGEuUHJvcGVydHlEYXRhEh8KF3NlbnNlZE90aGVyUGVvcGxlSWRMaXN0GAMg",
             "AygEEisKI2ZyaWVuZGxpbmVzc1RvU2Vuc2VkT3RoZXJQZW9wbGVMaXN0GAQg",
@@ -1696,9 +1696,9 @@ namespace RoleData {
 
     /// <summary>Field number for the "propertyNum" field.</summary>
     public const int PropertyNumFieldNumber = 2;
-    private int propertyNum_;
+    private float propertyNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int PropertyNum {
+    public float PropertyNum {
       get { return propertyNum_; }
       set {
         propertyNum_ = value;
@@ -1707,12 +1707,12 @@ namespace RoleData {
 
     /// <summary>Field number for the "propertyLimit" field.</summary>
     public const int PropertyLimitFieldNumber = 3;
-    private int propertyLimit_;
+    private float propertyLimit_;
     /// <summary>
     ///иооч
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int PropertyLimit {
+    public float PropertyLimit {
       get { return propertyLimit_; }
       set {
         propertyLimit_ = value;
@@ -1733,8 +1733,8 @@ namespace RoleData {
         return true;
       }
       if (PropertyId != other.PropertyId) return false;
-      if (PropertyNum != other.PropertyNum) return false;
-      if (PropertyLimit != other.PropertyLimit) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(PropertyNum, other.PropertyNum)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(PropertyLimit, other.PropertyLimit)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1742,8 +1742,8 @@ namespace RoleData {
     public override int GetHashCode() {
       int hash = 1;
       if (PropertyId != 0) hash ^= PropertyId.GetHashCode();
-      if (PropertyNum != 0) hash ^= PropertyNum.GetHashCode();
-      if (PropertyLimit != 0) hash ^= PropertyLimit.GetHashCode();
+      if (PropertyNum != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(PropertyNum);
+      if (PropertyLimit != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(PropertyLimit);
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1761,13 +1761,13 @@ namespace RoleData {
         output.WriteRawTag(8);
         output.WriteInt32(PropertyId);
       }
-      if (PropertyNum != 0) {
-        output.WriteRawTag(16);
-        output.WriteInt32(PropertyNum);
+      if (PropertyNum != 0F) {
+        output.WriteRawTag(21);
+        output.WriteFloat(PropertyNum);
       }
-      if (PropertyLimit != 0) {
-        output.WriteRawTag(24);
-        output.WriteInt32(PropertyLimit);
+      if (PropertyLimit != 0F) {
+        output.WriteRawTag(29);
+        output.WriteFloat(PropertyLimit);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -1780,11 +1780,11 @@ namespace RoleData {
       if (PropertyId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(PropertyId);
       }
-      if (PropertyNum != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(PropertyNum);
+      if (PropertyNum != 0F) {
+        size += 1 + 4;
       }
-      if (PropertyLimit != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(PropertyLimit);
+      if (PropertyLimit != 0F) {
+        size += 1 + 4;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1800,10 +1800,10 @@ namespace RoleData {
       if (other.PropertyId != 0) {
         PropertyId = other.PropertyId;
       }
-      if (other.PropertyNum != 0) {
+      if (other.PropertyNum != 0F) {
         PropertyNum = other.PropertyNum;
       }
-      if (other.PropertyLimit != 0) {
+      if (other.PropertyLimit != 0F) {
         PropertyLimit = other.PropertyLimit;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -1821,12 +1821,12 @@ namespace RoleData {
             PropertyId = input.ReadInt32();
             break;
           }
-          case 16: {
-            PropertyNum = input.ReadInt32();
+          case 21: {
+            PropertyNum = input.ReadFloat();
             break;
           }
-          case 24: {
-            PropertyLimit = input.ReadInt32();
+          case 29: {
+            PropertyLimit = input.ReadFloat();
             break;
           }
         }

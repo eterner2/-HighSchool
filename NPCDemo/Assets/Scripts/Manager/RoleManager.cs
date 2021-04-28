@@ -66,8 +66,10 @@ public class RoleManager
         InitSingleProperty(examPropertyData, PropertyIdType.Hp);
         InitSingleProperty(examPropertyData, PropertyIdType.Attack);
         InitSingleProperty(examPropertyData, PropertyIdType.Defense);
-        InitSingleProperty(examPropertyData, PropertyIdType.Crit);
+        InitSingleProperty(examPropertyData, PropertyIdType.CritRate);
         InitSingleProperty(examPropertyData, PropertyIdType.Speed);
+        InitSingleProperty(examPropertyData, PropertyIdType.CritNum);
+        InitSingleProperty(examPropertyData, PropertyIdType.SkillAdd);
 
     }
 
@@ -214,7 +216,7 @@ public class RoleManager
         {
             int index = peopleProto.PropertyData.PropertyIdList.IndexOf((int)propertyIdType);
             SinglePropertyData singleData = peopleProto.PropertyData.PropertyDataList[index];
-            int limit = singleData.PropertyLimit;
+            float limit = singleData.PropertyLimit;
             singleData.PropertyNum += num;
             //如果该属性存在最大限制
             if (limit >= 0)
@@ -282,6 +284,182 @@ public class RoleManager
                 return people;
         }
         return null;
+    }
+
+    /// <summary>
+    /// 测试设置
+    /// </summary>
+    /// <param name="pro"></param>
+    public void TestSetProperty(bool isEnemy,int level)
+    {
+        PropertyData pro;
+        if (isEnemy)
+        {
+            pro = RoleManager.Instance.examPropertyData;
+        }
+        else
+        {
+            pro = RoleManager.Instance.playerPeople.protoData.PropertyData;
+        }
+
+        
+        for (int i = 0; i < pro.CurExamPropertyIdList.Count; i++)
+        {
+            PropertyIdType idType = (PropertyIdType)pro.CurExamPropertyIdList[i];
+            SinglePropertyData singlePro = pro.CurExamPropertyDataList[i];
+            switch (idType)
+            {
+                case PropertyIdType.Attack:
+                    if (isEnemy)
+                    {
+                        singlePro.PropertyNum = DataTable._testEnemyNumerialList[level - 1].attack.ToFloat();
+                    }
+                    else
+                    {
+                        singlePro.PropertyNum = DataTable._testNumerialList[level - 1].attack.ToFloat();
+                    }
+                    break;
+                case PropertyIdType.Defense:
+                    if (isEnemy)
+                    {
+                        singlePro.PropertyNum = DataTable._testEnemyNumerialList[level - 1].defense.ToFloat();
+                    }
+                    else
+                    {
+                        singlePro.PropertyNum = DataTable._testNumerialList[level - 1].defense.ToFloat();
+                    }
+                    break;
+                case PropertyIdType.CritRate:
+                    if (isEnemy)
+                    {
+                        singlePro.PropertyNum = DataTable._testEnemyNumerialList[level - 1].critRate.ToFloat();
+                    }
+                    else
+                    {
+                        singlePro.PropertyNum = DataTable._testNumerialList[level - 1].critRate.ToFloat();
+                    }
+                    break;
+                case PropertyIdType.CritNum:
+                    if (isEnemy)
+                    {
+                        singlePro.PropertyNum = DataTable._testEnemyNumerialList[level - 1].crit.ToFloat();
+                    }
+                    else
+                    {
+                        singlePro.PropertyNum = DataTable._testNumerialList[level - 1].crit.ToFloat();
+                    }
+                    break;
+                case PropertyIdType.SkillAdd:
+                    if (isEnemy)
+                    {
+                        singlePro.PropertyNum = DataTable._testEnemyNumerialList[level - 1].skillHurtAdd.ToFloat();
+                    }
+                    else
+                    {
+                        singlePro.PropertyNum = DataTable._testNumerialList[level - 1].skillHurtAdd.ToFloat();
+                    }
+                    break;
+                case PropertyIdType.Hp:
+                    if (isEnemy)
+                    {
+                        singlePro.PropertyNum = DataTable._testEnemyNumerialList[level - 1].hp.ToFloat();
+                    }
+                    else
+                    {
+                        singlePro.PropertyNum = DataTable._testNumerialList[level - 1].hp.ToFloat();
+                    }
+                    break;
+                case PropertyIdType.Speed:
+                    if (isEnemy)
+                    {
+                        singlePro.PropertyNum = DataTable._testEnemyNumerialList[level - 1].attackSpeed.ToFloat();
+                    }
+                    else
+                    {
+                        singlePro.PropertyNum = DataTable._testNumerialList[level - 1].attackSpeed.ToFloat();
+                    }
+                    break;
+            }
+        }
+
+        for (int i = 0; i < pro.ExamPropertyDataList.Count; i++)
+        {
+            PropertyIdType idType = (PropertyIdType)pro.ExamPropertyIdList[i];
+            SinglePropertyData singlePro = pro.ExamPropertyDataList[i];
+            switch (idType)
+            {
+                case PropertyIdType.Attack:
+                    if (isEnemy)
+                    {
+                        singlePro.PropertyNum = DataTable._testEnemyNumerialList[level - 1].attack.ToFloat();
+                    }
+                    else
+                    {
+                        singlePro.PropertyNum = DataTable._testNumerialList[level - 1].attack.ToFloat();
+                    }
+                    break;
+                case PropertyIdType.Defense:
+                    if (isEnemy)
+                    {
+                        singlePro.PropertyNum = DataTable._testEnemyNumerialList[level - 1].defense.ToFloat();
+                    }
+                    else
+                    {
+                        singlePro.PropertyNum = DataTable._testNumerialList[level - 1].defense.ToFloat();
+                    }
+                    break;
+                case PropertyIdType.CritRate:
+                    if (isEnemy)
+                    {
+                        singlePro.PropertyNum = DataTable._testEnemyNumerialList[level - 1].critRate.ToFloat();
+                    }
+                    else
+                    {
+                        singlePro.PropertyNum = DataTable._testNumerialList[level - 1].critRate.ToFloat();
+                    }
+                    break;
+                case PropertyIdType.CritNum:
+                    if (isEnemy)
+                    {
+                        singlePro.PropertyNum = DataTable._testEnemyNumerialList[level - 1].crit.ToFloat();
+                    }
+                    else
+                    {
+                        singlePro.PropertyNum = DataTable._testNumerialList[level - 1].crit.ToFloat();
+                    }
+                    break;
+                case PropertyIdType.SkillAdd:
+                    if (isEnemy)
+                    {
+                        singlePro.PropertyNum = DataTable._testEnemyNumerialList[level - 1].skillHurtAdd.ToFloat();
+                    }
+                    else
+                    {
+                        singlePro.PropertyNum = DataTable._testNumerialList[level - 1].skillHurtAdd.ToFloat();
+                    }
+                    break;
+                case PropertyIdType.Hp:
+                    if (isEnemy)
+                    {
+                        singlePro.PropertyNum = DataTable._testEnemyNumerialList[level - 1].hp.ToFloat();
+                    }
+                    else
+                    {
+                        singlePro.PropertyNum = DataTable._testNumerialList[level - 1].hp.ToFloat();
+                    }
+                    break;
+                case PropertyIdType.Speed:
+                    if (isEnemy)
+                    {
+                        singlePro.PropertyNum = DataTable._testEnemyNumerialList[level - 1].attackSpeed.ToFloat();
+                    }
+                    else
+                    {
+                        singlePro.PropertyNum = DataTable._testNumerialList[level - 1].attackSpeed.ToFloat();
+                    }
+                    break;
+            }
+        }
     }
 
 

@@ -694,8 +694,10 @@ public class People
         RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Hp);
         RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Attack);
         RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Defense);
-        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Crit);
+        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.CritNum);
         RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Speed);
+        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.CritRate);
+        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.SkillAdd);
 
         peopleProtoData.PropertyData = propertyData;
     }

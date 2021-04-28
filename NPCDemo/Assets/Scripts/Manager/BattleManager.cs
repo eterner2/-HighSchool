@@ -108,21 +108,22 @@ public class BattleManager : CommonInstance<BattleManager>
 
         float defence = GetCurExamPropertyById(PropertyIdType.Defense, property2).PropertyNum;
 
-        float critRate = GetCurExamPropertyById(PropertyIdType.Crit, property1).PropertyNum;
-
-        float critHurt = 120;
+        float critRate = GetCurExamPropertyById(PropertyIdType.CritRate, property1).PropertyNum;
+        float critNum = GetCurExamPropertyById(PropertyIdType.CritNum, property1).PropertyNum;
+        float skillAdd= GetCurExamPropertyById(PropertyIdType.SkillAdd, property1).PropertyNum;
+        //float critHurt = 120;
 
         float critMul = 1;
-        if (RandomManager.Next(0, 100) < critRate)
+        if (RandomManager.Next(0, 100) < critRate*100)
         {
             crit = true;
-            critMul = 1 + critHurt * 0.01f;
+            critMul = 1 + critNum;
         }
+        float skillAddVal = (1 + skillAdd);
 
+        int res = Mathf.RoundToInt((attack * attack / (attack + defence)) * critMul* skillAddVal);
 
-        int res = Mathf.RoundToInt((attack * attack / (attack + defence)) * critMul);
-
-        ChangeCurExamPropertyData(property2, PropertyIdType.Hp, res);
+        ChangeCurExamPropertyData(property2, PropertyIdType.Hp, -res);
         //发信息给UI显示
         HitData hit = new HitData(res, crit, property2.IsPlayer);
         EventCenter.Broadcast(TheEventType.BattleHit, hit);
@@ -135,16 +136,7 @@ public class BattleManager : CommonInstance<BattleManager>
         }
     }
 
-    private void Test(Action<int, int> p)
-    {
-        
-        p(123,4556);
-    }
 
-    public void Test(int a, int b)
-    {
-
-    }
 }
 
 /// <summary>
@@ -162,4 +154,13 @@ public class HitData
         this.ifCrit = ifCrit;
         this.isPlayer = isPlayer;
     }
+}
+
+
+/// <summary>
+/// 敌人数据
+/// </summary>
+public enum EnemyType
+{
+    MockExam
 }

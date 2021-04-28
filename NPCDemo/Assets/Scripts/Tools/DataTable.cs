@@ -23,10 +23,15 @@ namespace Framework.Data
         static public Dictionary<int, ActionSetting> actionDic = new Dictionary<int, ActionSetting>();
         static public List<ActionSetting> _actionList = new List<ActionSetting>();
 
-        //static string examBattlePropertyName = "examBattlePropertySetting.json";
-        //static public Dictionary<int, ExamBattlePropertySetting> examBattlePropertyDic = new Dictionary<int, ExamBattlePropertySetting>();
-        //static public List<ExamBattlePropertySetting> _examBattlePropertyList = new List<ExamBattlePropertySetting>();
 
+        static string testEnemyNumerialName = "testEnemyNumerialSetting.json";
+        static public Dictionary<int, TestEnemyNumerialSetting> testEnemyNumerialDic = new Dictionary<int, TestEnemyNumerialSetting>();
+        static public List<TestEnemyNumerialSetting> _testEnemyNumerialList = new List<TestEnemyNumerialSetting>();
+
+
+        static string testNumerialName = "testNumerialSetting.json";
+        static public Dictionary<int, TestNumerialSetting> testNumerialDic = new Dictionary<int, TestNumerialSetting>();
+        static public List<TestNumerialSetting> _testNumerialList = new List<TestNumerialSetting>();
 
         public static void LoadTableData()
         {
@@ -93,7 +98,7 @@ namespace Framework.Data
                 Debug.LogError("bigMapAsset为空");
             }
 
-            //行为
+            //测试数值
             string actionfilePath = filePathPre + actionName;
             string actionStr = File.ReadAllText(actionfilePath);
             if (!string.IsNullOrEmpty(actionStr))
@@ -118,6 +123,57 @@ namespace Framework.Data
                 Debug.LogError("actionAsset为空");
             }
 
+            //测试数值
+            string testNumerialfilePath = filePathPre + testNumerialName;
+            string testNumerialStr = File.ReadAllText(testNumerialfilePath);
+
+            if (!string.IsNullOrEmpty(testNumerialStr))
+            {
+                _testNumerialList = JsonMapper.ToObject<List<TestNumerialSetting>>(testNumerialStr);
+                foreach (TestNumerialSetting temp in _testNumerialList)
+                {
+                    int theID;
+                    if (!int.TryParse(temp.id, out theID))
+                    {
+                        Debug.LogError("该ID无法转为int，表名为" + temp);
+                        return;
+                    }
+                    if (!testNumerialDic.ContainsKey(theID))
+                    {
+                        testNumerialDic.Add(theID, temp);
+                    }
+                }
+            }
+            else
+            {
+                Debug.LogError("testNumerialAsset为空");
+            }
+
+            //测试数值
+            string testEnemyNumerialfilePath = filePathPre + testEnemyNumerialName;
+            string testEnemyNumerialStr = File.ReadAllText(testEnemyNumerialfilePath);
+
+            if (!string.IsNullOrEmpty(testEnemyNumerialStr))
+            {
+                _testEnemyNumerialList = JsonMapper.ToObject<List<TestEnemyNumerialSetting>>(testEnemyNumerialStr);
+                foreach (TestEnemyNumerialSetting temp in _testEnemyNumerialList)
+                {
+                    int theID;
+                    if (!int.TryParse(temp.id, out theID))
+                    {
+                        Debug.LogError("该ID无法转为int，表名为" + temp);
+                        return;
+                    }
+                    if (!testEnemyNumerialDic.ContainsKey(theID))
+                    {
+                        testEnemyNumerialDic.Add(theID, temp);
+                    }
+                }
+            }
+            else
+            {
+                Debug.LogError("testEnemyNumerialAsset为空");
+            }
         }
 
 
