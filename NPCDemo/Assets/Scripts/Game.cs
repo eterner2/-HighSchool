@@ -24,9 +24,23 @@ public class Game : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.W))
         {
-            PanelManager.Instance.OpenPanel<BattlePanel>(PanelManager.Instance.trans_layer3);
+            MaxSubArray(new int[]{  -2, 1, -3, 4, -1, 2, 1, -5, 4});
+         //   PanelManager.Instance.OpenPanel<BattlePanel>(PanelManager.Instance.trans_layer3);
+        
         }
     }
+  
+        public int MaxSubArray(int[] nums)
+        {
+            int pre = 0, maxAns = nums[0];
+            foreach (int x in nums)
+            {
+                pre = Math.Max(pre + x, x);
+                maxAns = Math.Max(maxAns, pre);
+            }
+            return maxAns;
+        }
+    
 
     /// <summary>
     /// tableok了 这里是初始化总入口

@@ -71,20 +71,10 @@ public class GameModuleManager : CommonInstance<GameModuleManager>
                 //邀约
                 RoleManager.Instance._CurGameInfo.CurActionData = new RoleData.ActionData();
                 curCloseMaskAction = StartAction;
+
+          
                 break;
-                //case GameModuleType.BigMap:
-                //    OpenPanel<BigMapPanel>(trans_commonPanelParent);
-                //    OpenPanel<StatusPanel>(trans_layer2);
-
-                //    break;
-                //case GameModuleType.SingleOutsideScene:
-
-                //    OpenPanel<OutsidePanel>(trans_commonPanelParent, SocializationManager.Instance.action_planDic[GameModuleManager.Instance.curEnterActionId]);
-                //    //OpenPanel<BigMapPanel>(trans_commonPanelParent);
-                //    OpenPanel<StatusPanel>(trans_layer2);
-
-                //    break;
-        }
+          }
     }
 
     /// <summary>

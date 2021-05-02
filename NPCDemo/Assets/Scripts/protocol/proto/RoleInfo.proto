@@ -12,6 +12,12 @@ message GameInfo
 	uint64 theId=5;//setid用的
 	ActionData curActionData=6;//当前行动
 }
+//成就
+message Achievement
+{
+int32 highestExamLevel=1;//最高pass的考试等级
+}
+
 //日期
 message TimeData
 {
@@ -41,7 +47,21 @@ bool valid=10;//有效（可以回复等操作，下一句说出来以后就失效）
 message ActionData
 {
 float process=1;//进度 到百分之多少了
+ExamData curExamData=2;//当前考试数据
+}
 
+//考试数据
+message ExamData
+{
+repeated SingleExamEnemy enemyList=1;
+ 
+}
+
+message SingleExamEnemy
+{
+int32 id=1;
+int32 status=2;//状态（完成与否） 暂时不保存血量等数据
+repeated SinglePropertyData curPropertyList=3;//属性
 }
 
 //和单个人的聊天数据
@@ -94,6 +114,8 @@ bool playerVocalRefusedMe=17;//玩家口头拒绝了我（而不是放鸽子）
 uint64 curPlanWithPeople=18;//当前和谁一起去
 int32 examBattle_curExp=19;//当前经验值
 int32 examBattle_curLevel=20;//当前等级TODO这个可以改成由经验算等级 看最终的成长公式是什么
+Achievement achievement=21;//成就
+
 }
 
 //计划

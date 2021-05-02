@@ -175,4 +175,5 @@ public enum TheEventType
     ActionPause,//行动暂停
     BattleHit,//战斗打中
     BattleEnd,//战斗结束
+    StartExam,//开始考试
 }

@@ -14,14 +14,9 @@ public class BattlePanel : PanelBase
     bool startBattle = false;
     public VSAnimSingle VSAnimSingle;
 
-    //public PropertyData property_enemy;//敌人属性
-    //public PropertyData property_player;//我的属性
-
-    //public float basicAttackSpeed = 2f;//基本速度
-    //public float enemyAttackSpeed;
-    //public float enemyAttackTimer = 0;
-    //public float playerAttackSpeed;
-    //public float playerAttackTimer = 0;//
+    public SingleExamEnemy curEnemy;
+    //public 
+   
     public Transform trans_playerPos;
     public Transform trans_enemyPos;
 
