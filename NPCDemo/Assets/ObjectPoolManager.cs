@@ -47,6 +47,9 @@ using UnityEngine;
     SingleBattlePeopleView,//单个战斗者
     BattleHitEffect,//受击特效
     LoseHPEffect,//掉血特效
+    SingleExamDifficultyView,//考试难度选择
+    SingleExamQuestionView,//单个题目
+    ExamPreparePanel,//考试准备面板
 }
 
 public class TempItem

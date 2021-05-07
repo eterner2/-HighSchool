@@ -86,6 +86,7 @@ public class ExamManager : CommonInstance<ExamManager>
     public void StartSingleQuestion(SingleExamEnemy enemy)
     {
         //ExamSetting setting=
+        PanelManager.Instance.OpenPanel<BattlePanel>(PanelManager.Instance.trans_layer2, enemy);
     }
 }
 

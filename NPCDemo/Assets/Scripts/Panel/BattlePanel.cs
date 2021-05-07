@@ -33,6 +33,7 @@ public class BattlePanel : PanelBase
     public override void Init(params object[] args)
     {
         base.Init(args);
+        this.curEnemy = args[0] as SingleExamEnemy;
         EventCenter.Register(TheEventType.BattleHit, OnHit);
         EventCenter.Register(TheEventType.BattleEnd, OnBattleEnd);
 

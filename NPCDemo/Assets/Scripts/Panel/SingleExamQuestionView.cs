@@ -22,7 +22,7 @@ public class SingleExamQuestionView :SingleViewBase
         singleEnemy =args[0] as SingleExamEnemy;
         addBtnListener(btn_battle, () =>
         {
-            ExamManager.Instance.StartBattle()
+            ExamManager.Instance.StartSingleQuestion(singleEnemy);
         });
     }
     public override void OnOpenIng()

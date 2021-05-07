@@ -14,6 +14,10 @@ public class SingleExamDifficultyView : SingleViewBase
     {
         base.Init(args);
         examSetting = args[0] as ExamSetting;
+        addBtnListener(btn_startBattle, () =>
+        {
+            ExamManager.Instance.StartExam(examSetting);
+        });
     }
 
     public override void OnOpenIng()

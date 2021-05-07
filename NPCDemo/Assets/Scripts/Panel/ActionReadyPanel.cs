@@ -84,7 +84,10 @@ public class ActionReadyPanel : PanelBase
             PanelManager.Instance.ClosePanel(this);
         });
 
-        if(actionSetting.id==actionid)
+        if (actionSetting.id.ToInt32() == (int)ActionIdType.DoMockExam)
+        {
+            PanelManager.Instance.OpenPanel<ExamPreparePanel>(PanelManager.Instance.trans_layer2);
+        }
   
     }
 
