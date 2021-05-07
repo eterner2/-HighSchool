@@ -147,8 +147,19 @@ public class RoleManager
 
         if (setting.isExamBattle == "1")
         {
+        
+
+            propertyData.CurExamPropertyIdList.Add((int)idType);
+            propertyData.CurExamPropertyDataList.Add(singlePropertyData);
+
+
+            SinglePropertyData initsinglePropertyData = new SinglePropertyData();
+            initsinglePropertyData.PropertyId = (int)idType;
+            initsinglePropertyData.PropertyNum = val;
+            initsinglePropertyData.PropertyLimit = setting.haveLimit.ToInt32();
+
             propertyData.ExamPropertyIdList.Add((int)idType);
-            propertyData.ExamPropertyDataList.Add(singlePropertyData);
+            propertyData.ExamPropertyDataList.Add(initsinglePropertyData);
 
         }
         else

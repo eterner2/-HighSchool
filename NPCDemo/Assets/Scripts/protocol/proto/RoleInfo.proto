@@ -48,6 +48,7 @@ message ActionData
 {
 float process=1;//进度 到百分之多少了
 ExamData curExamData=2;//当前考试数据
+int32 actionId=3;
 }
 
 //考试数据
@@ -61,7 +62,8 @@ message SingleExamEnemy
 {
 int32 id=1;
 int32 status=2;//状态（完成与否） 暂时不保存血量等数据
-repeated SinglePropertyData curPropertyList=3;//属性
+PropertyData property=3;//属性
+
 }
 
 //和单个人的聊天数据

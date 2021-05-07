@@ -36,11 +36,11 @@ public class SingleExamDifficultyView : SingleViewBase
         if (RoleManager.Instance.playerPeople.protoData.Achievement.HighestExamLevel >= level
             ||examSetting.initLevel=="1")
         {
-            trans_lock.gameObject.SetActive(true);
+            trans_lock.gameObject.SetActive(false);
         }
         else
         {
-            trans_lock.gameObject.SetActive(false);
+            trans_lock.gameObject.SetActive(true);
         }
     }
 }

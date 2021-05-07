@@ -54,13 +54,13 @@ public class BattleManager : CommonInstance<BattleManager>
     /// 通过id得到当前战斗属性
     /// </summary>
     /// <param name="propertyData"></param>
-    public SinglePropertyData GetCurExamPropertyById(PropertyIdType propertyIdType, PropertyData PropertyData)
+    public SinglePropertyData GetCurExamPropertyById(PropertyIdType propertyIdType, PropertyData pro)
     {
-        for(int i = 0; i < PropertyData.CurExamPropertyIdList.Count; i++)
+        for(int i = 0; i < pro.CurExamPropertyIdList.Count; i++)
         {
-            if (PropertyData.CurExamPropertyIdList[i] == (int)propertyIdType)
+            if (pro.CurExamPropertyIdList[i] == (int)propertyIdType)
             {
-                return PropertyData.CurExamPropertyDataList[i];
+                return pro.CurExamPropertyDataList[i];
             }
         }
         return null;
@@ -70,13 +70,13 @@ public class BattleManager : CommonInstance<BattleManager>
     /// 通过id得到初始战斗属性
     /// </summary>
     /// <param name="propertyData"></param>
-    public SinglePropertyData GetInitExamPropertyById(PropertyIdType propertyIdType, PropertyData PropertyData)
+    public SinglePropertyData GetInitExamPropertyById(PropertyIdType propertyIdType, PropertyData pro)
     {
-        for (int i = 0; i < PropertyData.ExamPropertyIdList.Count; i++)
+        for (int i = 0; i < pro.ExamPropertyIdList.Count; i++)
         {
-            if (PropertyData.ExamPropertyIdList[i] == (int)propertyIdType)
+            if (pro.ExamPropertyIdList[i] == (int)propertyIdType)
             {
-                return PropertyData.ExamPropertyDataList[i];
+                return pro.ExamPropertyDataList[i];
             }
         }
         return null;

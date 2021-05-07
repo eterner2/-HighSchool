@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class SingleBattlePeopleView : SingleViewBase
 {
-    public PropertyData propertyData;
-
+    public SingleExamEnemy singleEnemy;
+    public PropertyData pro;
     public Image img_hpBar;
     public Image img_processBar;
     public Text txt_hp;
@@ -26,30 +26,36 @@ public class SingleBattlePeopleView : SingleViewBase
     public override void Init(params object[] args)
     {
         base.Init(args);
-        propertyData = args[0] as PropertyData;
+        singleEnemy = args[0] as SingleExamEnemy;
         parentPanel = args[1] as BattlePanel;
   
 
         startBattle = false;
 
-        //curAttackSpeed= (BattleManager.Instance.GetCurExamPropertyById(PropertyIdType.Speed, propertyData).PropertyNum) * basicAttackSpeed;
-        //curAttackTimer = 0;
+
+        if (singleEnemy != null)
+            pro = singleEnemy.Property;
+        else
+            pro = RoleManager.Instance.playerPeople.protoData.PropertyData;
+        float proNumSpeed= BattleManager.Instance.GetCurExamPropertyById(PropertyIdType.Speed, pro).PropertyNum;
+        curAttackTime = (1 / (BattleManager.Instance.GetCurExamPropertyById(PropertyIdType.Speed, pro).PropertyNum)) * parentPanel.basicAttackSpeed;
         Show();
         //txt_hp.SetText(propertyData.exam)
     }
 
     public void Show()
     {
-        if (propertyData.IsPlayer)
+        if (singleEnemy==null)
         {
             txt_name.SetText("我");
         }
         else
         {
+         
             txt_name.SetText("黄冈选择题1号Lv" + parentPanel.enemyLevel);
         }
-        curHp = (int)BattleManager.Instance.GetCurExamPropertyById(PropertyIdType.Hp, propertyData).PropertyNum;
-        initHp = (int)BattleManager.Instance.GetInitExamPropertyById(PropertyIdType.Hp, propertyData).PropertyNum;
+        curHp = (int)BattleManager.Instance.GetCurExamPropertyById(PropertyIdType.Hp, pro).PropertyNum;
+        initHp = (int)BattleManager.Instance.GetInitExamPropertyById(PropertyIdType.Hp, pro).PropertyNum;
         txt_hp.SetText(curHp + "/" + initHp);
         img_hpBar.fillAmount = curHp / (float)initHp;
     }
@@ -73,17 +79,17 @@ public class SingleBattlePeopleView : SingleViewBase
 
     }
 
-    /// <summary>
-    /// 设置测试数据
-    /// </summary>
-    public void SetTestData(PropertyData thePro)
-    {
-        curAttackTime = (1/(BattleManager.Instance.GetCurExamPropertyById(PropertyIdType.Speed, thePro).PropertyNum)) *parentPanel.basicAttackSpeed;
-        curHp = (int)BattleManager.Instance.GetCurExamPropertyById(PropertyIdType.Hp, thePro).PropertyNum;
-        initHp = (int)BattleManager.Instance.GetCurExamPropertyById(PropertyIdType.Hp, thePro).PropertyNum;
-        Show();
+    ///// <summary>
+    ///// 设置测试数据
+    ///// </summary>
+    //public void SetTestData(PropertyData thePro)
+    //{
+    //    curAttackTime = (1/(BattleManager.Instance.GetCurExamPropertyById(PropertyIdType.Speed, thePro).PropertyNum)) *parentPanel.basicAttackSpeed;
+    //    curHp = (int)BattleManager.Instance.GetCurExamPropertyById(PropertyIdType.Hp, thePro).PropertyNum;
+    //    initHp = (int)BattleManager.Instance.GetCurExamPropertyById(PropertyIdType.Hp, thePro).PropertyNum;
+    //    Show();
 
-    }
+    //}
 
     public void StartBattle()
     {

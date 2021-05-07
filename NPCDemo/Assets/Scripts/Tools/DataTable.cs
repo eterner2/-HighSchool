@@ -179,6 +179,32 @@ namespace Framework.Data
             {
                 Debug.LogError("testEnemyNumerialAsset为空");
             }
+
+            //考试数值
+            string examfilePath = filePathPre + examName;
+            string examStr = File.ReadAllText(examfilePath);
+
+            if (!string.IsNullOrEmpty(examStr))
+            {
+                _examList = JsonMapper.ToObject<List<ExamSetting>>(examStr);
+                foreach (ExamSetting temp in _examList)
+                {
+                    int theID;
+                    if (!int.TryParse(temp.id, out theID))
+                    {
+                        Debug.LogError("该ID无法转为int，表名为" + temp);
+                        return;
+                    }
+                    if (!examDic.ContainsKey(theID))
+                    {
+                        examDic.Add(theID, temp);
+                    }
+                }
+            }
+            else
+            {
+                Debug.LogError("examAsset为空");
+            }
         }
 
 

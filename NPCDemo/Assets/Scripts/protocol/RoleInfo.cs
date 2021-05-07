@@ -37,44 +37,44 @@ namespace RoleData {
             "BW1vbnRoGAIgASgFEgsKA2RheRgDIAEoBRIPCgdjb250ZW50GAQgASgJEhAK",
             "CGlzUGxheWVyGAUgASgIEg8KB2NoZWNrZWQYBiABKAgSDgoGYmVsb25nGAcg",
             "ASgEEhAKCGNoYXRUeXBlGAggASgFEhYKDmludml0ZUFjdGlvbklkGAkgASgF",
-            "Eg0KBXZhbGlkGAogASgIIkYKCkFjdGlvbkRhdGESDwoHcHJvY2VzcxgBIAEo",
-            "AhInCgtjdXJFeGFtRGF0YRgCIAEoCzISLlJvbGVEYXRhLkV4YW1EYXRhIjgK",
-            "CEV4YW1EYXRhEiwKCWVuZW15TGlzdBgBIAMoCzIZLlJvbGVEYXRhLlNpbmds",
-            "ZUV4YW1FbmVteSJkCg9TaW5nbGVFeGFtRW5lbXkSCgoCaWQYASABKAUSDgoG",
-            "c3RhdHVzGAIgASgFEjUKD2N1clByb3BlcnR5TGlzdBgDIAMoCzIcLlJvbGVE",
-            "YXRhLlNpbmdsZVByb3BlcnR5RGF0YSJTChRTaW5nbGVQZW9wbGVDaGF0RGF0",
-            "YRIOCgZiZWxvbmcYASABKAQSKwoMY2hhdERhdGFMaXN0GAIgAygLMhUuUm9s",
-            "ZURhdGEuT25lQ2hhdERhdGEipgIKDFByb3BlcnR5RGF0YRIWCg5wcm9wZXJ0",
-            "eUlkTGlzdBgBIAMoBRI2ChBwcm9wZXJ0eURhdGFMaXN0GAIgAygLMhwuUm9s",
-            "ZURhdGEuU2luZ2xlUHJvcGVydHlEYXRhEhoKEmV4YW1Qcm9wZXJ0eUlkTGlz",
-            "dBgDIAMoBRI6ChRleGFtUHJvcGVydHlEYXRhTGlzdBgEIAMoCzIcLlJvbGVE",
-            "YXRhLlNpbmdsZVByb3BlcnR5RGF0YRIdChVjdXJFeGFtUHJvcGVydHlJZExp",
-            "c3QYBSADKAUSPQoXY3VyRXhhbVByb3BlcnR5RGF0YUxpc3QYBiADKAsyHC5S",
-            "b2xlRGF0YS5TaW5nbGVQcm9wZXJ0eURhdGESEAoIaXNQbGF5ZXIYByABKAgi",
-            "VAoSU2luZ2xlUHJvcGVydHlEYXRhEhIKCnByb3BlcnR5SWQYASABKAUSEwoL",
-            "cHJvcGVydHlOdW0YAiABKAISFQoNcHJvcGVydHlMaW1pdBgDIAEoAiLABQoP",
-            "UGVvcGxlUHJvdG9EYXRhEg4KBm9ubHlJZBgBIAEoBBIsCgxwcm9wZXJ0eURh",
-            "dGEYAiABKAsyFi5Sb2xlRGF0YS5Qcm9wZXJ0eURhdGESHwoXc2Vuc2VkT3Ro",
-            "ZXJQZW9wbGVJZExpc3QYAyADKAQSKwojZnJpZW5kbGluZXNzVG9TZW5zZWRP",
-            "dGhlclBlb3BsZUxpc3QYBCADKAUSDgoGZ2VuZGVyGAUgASgFEgwKBG5hbWUY",
-            "BiABKAkSEAoIYWN0aW9uSWQYByABKAUSGwoTZmluaXNoSW52aXRlUHJvY2Vz",
-            "cxgIIAEoCBI0ChFtZUludml0ZU90aGVyTGlzdBgJIAMoCzIZLlJvbGVEYXRh",
-            "LlBlb3BsZVByb3RvRGF0YRI0ChFvdGhlckludml0ZU1lTGlzdBgKIAMoCzIZ",
-            "LlJvbGVEYXRhLlBlb3BsZVByb3RvRGF0YRISCgpyZWNvcmRMaXN0GAsgAygJ",
-            "Ei4KC2NoYXRGcmllbmRzGAwgAygLMhkuUm9sZURhdGEuUGVvcGxlUHJvdG9E",
-            "YXRhEhAKCGlzUGxheWVyGA0gASgIEhcKD2Nob29zZWRBY3Rpb25JZBgOIAEo",
-            "BRJDChtBbGxTaW5nbGVQZW9wbGVDaGF0RGF0YUxpc3QYDyADKAsyHi5Sb2xl",
-            "RGF0YS5TaW5nbGVQZW9wbGVDaGF0RGF0YRIXCg92YWxpZFdpdGhQZW9wbGUY",
-            "ECADKAQSHAoUcGxheWVyVm9jYWxSZWZ1c2VkTWUYESABKAgSGQoRY3VyUGxh",
-            "bldpdGhQZW9wbGUYEiABKAQSGQoRZXhhbUJhdHRsZV9jdXJFeHAYEyABKAUS",
-            "GwoTZXhhbUJhdHRsZV9jdXJMZXZlbBgUIAEoBRIqCgthY2hpZXZlbWVudBgV",
-            "IAEoCzIVLlJvbGVEYXRhLkFjaGlldmVtZW50Im8KDVBsYW5Qcm90b0RhdGES",
-            "JQoCcDEYASABKAsyGS5Sb2xlRGF0YS5QZW9wbGVQcm90b0RhdGESJQoCcDIY",
-            "AiABKAsyGS5Sb2xlRGF0YS5QZW9wbGVQcm90b0RhdGESEAoIYWN0aW9uSWQY",
-            "AyABKAUiPgoRT3RoZXJJbnZpdGVNZURhdGESKQoGcGVvcGxlGAEgASgLMhku",
-            "Um9sZURhdGEuUGVvcGxlUHJvdG9EYXRhIlQKFk1lSW52aXRlT3RoZXJQcm90",
-            "b0RhdGESKQoGcGVvcGxlGAEgASgLMhkuUm9sZURhdGEuUGVvcGxlUHJvdG9E",
-            "YXRhEg8KB3JlZnVzZWQYAiABKAhiBnByb3RvMw=="));
+            "Eg0KBXZhbGlkGAogASgIIlgKCkFjdGlvbkRhdGESDwoHcHJvY2VzcxgBIAEo",
+            "AhInCgtjdXJFeGFtRGF0YRgCIAEoCzISLlJvbGVEYXRhLkV4YW1EYXRhEhAK",
+            "CGFjdGlvbklkGAMgASgFIjgKCEV4YW1EYXRhEiwKCWVuZW15TGlzdBgBIAMo",
+            "CzIZLlJvbGVEYXRhLlNpbmdsZUV4YW1FbmVteSJXCg9TaW5nbGVFeGFtRW5l",
+            "bXkSCgoCaWQYASABKAUSDgoGc3RhdHVzGAIgASgFEigKCHByb3BlcnR5GAMg",
+            "ASgLMhYuUm9sZURhdGEuUHJvcGVydHlEYXRhIlMKFFNpbmdsZVBlb3BsZUNo",
+            "YXREYXRhEg4KBmJlbG9uZxgBIAEoBBIrCgxjaGF0RGF0YUxpc3QYAiADKAsy",
+            "FS5Sb2xlRGF0YS5PbmVDaGF0RGF0YSKmAgoMUHJvcGVydHlEYXRhEhYKDnBy",
+            "b3BlcnR5SWRMaXN0GAEgAygFEjYKEHByb3BlcnR5RGF0YUxpc3QYAiADKAsy",
+            "HC5Sb2xlRGF0YS5TaW5nbGVQcm9wZXJ0eURhdGESGgoSZXhhbVByb3BlcnR5",
+            "SWRMaXN0GAMgAygFEjoKFGV4YW1Qcm9wZXJ0eURhdGFMaXN0GAQgAygLMhwu",
+            "Um9sZURhdGEuU2luZ2xlUHJvcGVydHlEYXRhEh0KFWN1ckV4YW1Qcm9wZXJ0",
+            "eUlkTGlzdBgFIAMoBRI9ChdjdXJFeGFtUHJvcGVydHlEYXRhTGlzdBgGIAMo",
+            "CzIcLlJvbGVEYXRhLlNpbmdsZVByb3BlcnR5RGF0YRIQCghpc1BsYXllchgH",
+            "IAEoCCJUChJTaW5nbGVQcm9wZXJ0eURhdGESEgoKcHJvcGVydHlJZBgBIAEo",
+            "BRITCgtwcm9wZXJ0eU51bRgCIAEoAhIVCg1wcm9wZXJ0eUxpbWl0GAMgASgC",
+            "IsAFCg9QZW9wbGVQcm90b0RhdGESDgoGb25seUlkGAEgASgEEiwKDHByb3Bl",
+            "cnR5RGF0YRgCIAEoCzIWLlJvbGVEYXRhLlByb3BlcnR5RGF0YRIfChdzZW5z",
+            "ZWRPdGhlclBlb3BsZUlkTGlzdBgDIAMoBBIrCiNmcmllbmRsaW5lc3NUb1Nl",
+            "bnNlZE90aGVyUGVvcGxlTGlzdBgEIAMoBRIOCgZnZW5kZXIYBSABKAUSDAoE",
+            "bmFtZRgGIAEoCRIQCghhY3Rpb25JZBgHIAEoBRIbChNmaW5pc2hJbnZpdGVQ",
+            "cm9jZXNzGAggASgIEjQKEW1lSW52aXRlT3RoZXJMaXN0GAkgAygLMhkuUm9s",
+            "ZURhdGEuUGVvcGxlUHJvdG9EYXRhEjQKEW90aGVySW52aXRlTWVMaXN0GAog",
+            "AygLMhkuUm9sZURhdGEuUGVvcGxlUHJvdG9EYXRhEhIKCnJlY29yZExpc3QY",
+            "CyADKAkSLgoLY2hhdEZyaWVuZHMYDCADKAsyGS5Sb2xlRGF0YS5QZW9wbGVQ",
+            "cm90b0RhdGESEAoIaXNQbGF5ZXIYDSABKAgSFwoPY2hvb3NlZEFjdGlvbklk",
+            "GA4gASgFEkMKG0FsbFNpbmdsZVBlb3BsZUNoYXREYXRhTGlzdBgPIAMoCzIe",
+            "LlJvbGVEYXRhLlNpbmdsZVBlb3BsZUNoYXREYXRhEhcKD3ZhbGlkV2l0aFBl",
+            "b3BsZRgQIAMoBBIcChRwbGF5ZXJWb2NhbFJlZnVzZWRNZRgRIAEoCBIZChFj",
+            "dXJQbGFuV2l0aFBlb3BsZRgSIAEoBBIZChFleGFtQmF0dGxlX2N1ckV4cBgT",
+            "IAEoBRIbChNleGFtQmF0dGxlX2N1ckxldmVsGBQgASgFEioKC2FjaGlldmVt",
+            "ZW50GBUgASgLMhUuUm9sZURhdGEuQWNoaWV2ZW1lbnQibwoNUGxhblByb3Rv",
+            "RGF0YRIlCgJwMRgBIAEoCzIZLlJvbGVEYXRhLlBlb3BsZVByb3RvRGF0YRIl",
+            "CgJwMhgCIAEoCzIZLlJvbGVEYXRhLlBlb3BsZVByb3RvRGF0YRIQCghhY3Rp",
+            "b25JZBgDIAEoBSI+ChFPdGhlckludml0ZU1lRGF0YRIpCgZwZW9wbGUYASAB",
+            "KAsyGS5Sb2xlRGF0YS5QZW9wbGVQcm90b0RhdGEiVAoWTWVJbnZpdGVPdGhl",
+            "clByb3RvRGF0YRIpCgZwZW9wbGUYASABKAsyGS5Sb2xlRGF0YS5QZW9wbGVQ",
+            "cm90b0RhdGESDwoHcmVmdXNlZBgCIAEoCGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,9 +82,9 @@ namespace RoleData {
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.Achievement), global::RoleData.Achievement.Parser, new[]{ "HighestExamLevel" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.TimeData), global::RoleData.TimeData.Parser, new[]{ "Year", "Month", "Day", "TheWeekDay", "DayProcess", "DayBeforeExam" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.OneChatData), global::RoleData.OneChatData.Parser, new[]{ "Year", "Month", "Day", "Content", "IsPlayer", "Checked", "Belong", "ChatType", "InviteActionId", "Valid" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.ActionData), global::RoleData.ActionData.Parser, new[]{ "Process", "CurExamData" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.ActionData), global::RoleData.ActionData.Parser, new[]{ "Process", "CurExamData", "ActionId" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.ExamData), global::RoleData.ExamData.Parser, new[]{ "EnemyList" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.SingleExamEnemy), global::RoleData.SingleExamEnemy.Parser, new[]{ "Id", "Status", "CurPropertyList" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.SingleExamEnemy), global::RoleData.SingleExamEnemy.Parser, new[]{ "Id", "Status", "Property" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.SinglePeopleChatData), global::RoleData.SinglePeopleChatData.Parser, new[]{ "Belong", "ChatDataList" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.PropertyData), global::RoleData.PropertyData.Parser, new[]{ "PropertyIdList", "PropertyDataList", "ExamPropertyIdList", "ExamPropertyDataList", "CurExamPropertyIdList", "CurExamPropertyDataList", "IsPlayer" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.SinglePropertyData), global::RoleData.SinglePropertyData.Parser, new[]{ "PropertyId", "PropertyNum", "PropertyLimit" }, null, null, null),
@@ -1267,6 +1267,7 @@ namespace RoleData {
     public ActionData(ActionData other) : this() {
       process_ = other.process_;
       CurExamData = other.curExamData_ != null ? other.CurExamData.Clone() : null;
+      actionId_ = other.actionId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1303,6 +1304,17 @@ namespace RoleData {
       }
     }
 
+    /// <summary>Field number for the "actionId" field.</summary>
+    public const int ActionIdFieldNumber = 3;
+    private int actionId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ActionId {
+      get { return actionId_; }
+      set {
+        actionId_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as ActionData);
@@ -1318,6 +1330,7 @@ namespace RoleData {
       }
       if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Process, other.Process)) return false;
       if (!object.Equals(CurExamData, other.CurExamData)) return false;
+      if (ActionId != other.ActionId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1326,6 +1339,7 @@ namespace RoleData {
       int hash = 1;
       if (Process != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Process);
       if (curExamData_ != null) hash ^= CurExamData.GetHashCode();
+      if (ActionId != 0) hash ^= ActionId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1347,6 +1361,10 @@ namespace RoleData {
         output.WriteRawTag(18);
         output.WriteMessage(CurExamData);
       }
+      if (ActionId != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(ActionId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1360,6 +1378,9 @@ namespace RoleData {
       }
       if (curExamData_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(CurExamData);
+      }
+      if (ActionId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ActionId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1381,6 +1402,9 @@ namespace RoleData {
         }
         CurExamData.MergeFrom(other.CurExamData);
       }
+      if (other.ActionId != 0) {
+        ActionId = other.ActionId;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -1401,6 +1425,10 @@ namespace RoleData {
               curExamData_ = new global::RoleData.ExamData();
             }
             input.ReadMessage(curExamData_);
+            break;
+          }
+          case 24: {
+            ActionId = input.ReadInt32();
             break;
           }
         }
@@ -1560,7 +1588,7 @@ namespace RoleData {
     public SingleExamEnemy(SingleExamEnemy other) : this() {
       id_ = other.id_;
       status_ = other.status_;
-      curPropertyList_ = other.curPropertyList_.Clone();
+      Property = other.property_ != null ? other.Property.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1594,17 +1622,18 @@ namespace RoleData {
       }
     }
 
-    /// <summary>Field number for the "curPropertyList" field.</summary>
-    public const int CurPropertyListFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::RoleData.SinglePropertyData> _repeated_curPropertyList_codec
-        = pb::FieldCodec.ForMessage(26, global::RoleData.SinglePropertyData.Parser);
-    private readonly pbc::RepeatedField<global::RoleData.SinglePropertyData> curPropertyList_ = new pbc::RepeatedField<global::RoleData.SinglePropertyData>();
+    /// <summary>Field number for the "property" field.</summary>
+    public const int PropertyFieldNumber = 3;
+    private global::RoleData.PropertyData property_;
     /// <summary>
     /// Ù–‘
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::RoleData.SinglePropertyData> CurPropertyList {
-      get { return curPropertyList_; }
+    public global::RoleData.PropertyData Property {
+      get { return property_; }
+      set {
+        property_ = value;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1622,7 +1651,7 @@ namespace RoleData {
       }
       if (Id != other.Id) return false;
       if (Status != other.Status) return false;
-      if(!curPropertyList_.Equals(other.curPropertyList_)) return false;
+      if (!object.Equals(Property, other.Property)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1631,7 +1660,7 @@ namespace RoleData {
       int hash = 1;
       if (Id != 0) hash ^= Id.GetHashCode();
       if (Status != 0) hash ^= Status.GetHashCode();
-      hash ^= curPropertyList_.GetHashCode();
+      if (property_ != null) hash ^= Property.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1653,7 +1682,10 @@ namespace RoleData {
         output.WriteRawTag(16);
         output.WriteInt32(Status);
       }
-      curPropertyList_.WriteTo(output, _repeated_curPropertyList_codec);
+      if (property_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(Property);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1668,7 +1700,9 @@ namespace RoleData {
       if (Status != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Status);
       }
-      size += curPropertyList_.CalculateSize(_repeated_curPropertyList_codec);
+      if (property_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Property);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -1686,7 +1720,12 @@ namespace RoleData {
       if (other.Status != 0) {
         Status = other.Status;
       }
-      curPropertyList_.Add(other.curPropertyList_);
+      if (other.property_ != null) {
+        if (property_ == null) {
+          property_ = new global::RoleData.PropertyData();
+        }
+        Property.MergeFrom(other.Property);
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -1707,7 +1746,10 @@ namespace RoleData {
             break;
           }
           case 26: {
-            curPropertyList_.AddEntriesFrom(input, _repeated_curPropertyList_codec);
+            if (property_ == null) {
+              property_ = new global::RoleData.PropertyData();
+            }
+            input.ReadMessage(property_);
             break;
           }
         }

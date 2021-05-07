@@ -36,7 +36,7 @@ public class ExamPreparePanel : PanelBase
         for(int i = 0; i < count; i++)
         {
             PanelManager.Instance.OpenSingle<SingleExamQuestionView>(examPosList[i],
-                (SingleExamEnemyStatus)RoleManager.Instance._CurGameInfo.CurActionData.CurExamData.EnemyList[i].Status);
+                RoleManager.Instance._CurGameInfo.CurActionData.CurExamData.EnemyList[i]);
         }
     }
 

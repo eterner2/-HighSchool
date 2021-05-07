@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class BattlePanel : PanelBase
 {
+    
     public float delayStartTime = 1f;//延迟多久以后开始
     public float delayStartTimer = 0;
     bool startCalcDelay;
@@ -29,6 +30,7 @@ public class BattlePanel : PanelBase
     public Button btn_restartTest;//重新开始测试
     public Button btn_NextEnemy;//换个敌人
     public float basicAttackSpeed = 5f;//基本速度
+    public bool isTestBattle = false;//是否测试玩法
 
     public override void Init(params object[] args)
     {
@@ -37,20 +39,29 @@ public class BattlePanel : PanelBase
         EventCenter.Register(TheEventType.BattleHit, OnHit);
         EventCenter.Register(TheEventType.BattleEnd, OnBattleEnd);
 
-        addBtnListener(btn_restartTest, () =>
+        if (isTestBattle)
         {
-            RoleManager.Instance.TestSetProperty(true, enemyLevel);
-            RoleManager.Instance.TestSetProperty(false, roleLevel);
-            TestBattle();
-        });
+            addBtnListener(btn_restartTest, () =>
+            {
+                RoleManager.Instance.TestSetProperty(true, enemyLevel);
+                RoleManager.Instance.TestSetProperty(false, roleLevel);
+                TestBattle();
+            });
 
 
-        addBtnListener(btn_NextEnemy, () =>
+            addBtnListener(btn_NextEnemy, () =>
+            {
+                RoleManager.Instance.TestSetProperty(true, enemyLevel);
+                // RoleManager.Instance.TestSetProperty(false, roleLevel);
+                TestBattle();
+            });
+        }
+        else
         {
-            RoleManager.Instance.TestSetProperty(true, enemyLevel);
-           // RoleManager.Instance.TestSetProperty(false, roleLevel);
-            TestBattle();
-        });
+            btn_restartTest.gameObject.SetActive(false);
+            btn_NextEnemy.gameObject.SetActive(false);
+        }
+  
     }
 
     public override void OnOpenIng()
@@ -64,20 +75,28 @@ public class BattlePanel : PanelBase
 
 
         // property_player = RoleManager.Instance.playerPeople.protoData.PropertyData;
-        BattleManager.Instance.InitCurExamPropertyData(RoleManager.Instance.playerPeople.protoData.PropertyData);
-        BattleManager.Instance.InitCurExamPropertyData(RoleManager.Instance.examPropertyData);
+        //BattleManager.Instance.InitCurExamPropertyData(RoleManager.Instance.playerPeople.protoData.PropertyData);
+        //BattleManager.Instance.InitCurExamPropertyData(RoleManager.Instance.examPropertyData);
 
         ////以下为测试数据
         //RoleManager.Instance.InitSingleProperty()
 
 
-        playerBattleView = PanelManager.Instance.OpenSingle<SingleBattlePeopleView>(trans_playerPos, RoleManager.Instance.playerPeople.protoData.PropertyData,
+        playerBattleView = PanelManager.Instance.OpenSingle<SingleBattlePeopleView>(trans_playerPos,null,
             this);
-        enemyBattleView= PanelManager.Instance.OpenSingle<SingleBattlePeopleView>(trans_enemyPos, RoleManager.Instance.examPropertyData,
+        enemyBattleView= PanelManager.Instance.OpenSingle<SingleBattlePeopleView>(trans_enemyPos, curEnemy,
         this);
 
         //enemyAttackSpeed = (BattleManager.Instance.GetCurExamPropertyById(PropertyIdType.Speed, property_enemy).PropertyNum / (float)100) * basicAttackSpeed;
         //playerAttackSpeed= (BattleManager.Instance.GetCurExamPropertyById(PropertyIdType.Speed, property_player).PropertyNum / (float)100) * basicAttackSpeed;
+        BattleStart();
+    }
+
+    void BattleStart()
+    {
+        delayStartTimer = 0;
+        startBattle = false;
+        startCalcDelay = true;
     }
 
     private void Update()
@@ -111,8 +130,8 @@ public class BattlePanel : PanelBase
         //BattleManager.Instance.InitCurExamPropertyData(RoleManager.Instance.examPropertyData);
 
 
-        playerBattleView.SetTestData(RoleManager.Instance.playerPeople.protoData.PropertyData);
-        enemyBattleView.SetTestData(RoleManager.Instance.examPropertyData);
+        //playerBattleView.SetTestData(RoleManager.Instance.playerPeople.protoData.PropertyData);
+        //enemyBattleView.SetTestData(RoleManager.Instance.examPropertyData);
         playerBattleView.Show();
         enemyBattleView.Show();
 

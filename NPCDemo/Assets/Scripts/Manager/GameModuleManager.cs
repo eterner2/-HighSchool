@@ -70,9 +70,17 @@ public class GameModuleManager : CommonInstance<GameModuleManager>
             case GameModuleType.SingleOutsideScene:
                 //邀约
                 RoleManager.Instance._CurGameInfo.CurActionData = new RoleData.ActionData();
-                curCloseMaskAction = StartAction;
+                RoleManager.Instance._CurGameInfo.CurActionData.ActionId = RoleManager.Instance.playerPeople.protoData.ChoosedActionId;
+                if (RoleManager.Instance._CurGameInfo.CurActionData.ActionId == (int)ActionIdType.DoMockExam)
+                {
+                    curCloseMaskAction = null;
+                }
+                else
+                {
+                    curCloseMaskAction = StartAction;
 
-          
+                }
+
                 break;
           }
     }

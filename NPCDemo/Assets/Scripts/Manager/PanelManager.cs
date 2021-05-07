@@ -60,11 +60,19 @@ public class PanelManager : MonoInstance<PanelManager>
 
                 break;
             case GameModuleType.SingleOutsideScene:
+                if (RoleManager.Instance._CurGameInfo.CurActionData.ActionId == (int)ActionIdType.DoMockExam)
+                {
+                    PanelManager.Instance.OpenPanel<ExamPreparePanel>(PanelManager.Instance.trans_layer2);
+                }
+                else
+                {
+                    OpenPanel<OutsidePanel>(trans_commonPanelParent, SocializationManager.Instance.action_planDic[RoleManager.Instance.playerPeople.protoData.ChoosedActionId]);
+                    //OpenPanel<BigMapPanel>(trans_commonPanelParent);
+                    OpenPanel<StatusPanel>(trans_layer2);
+                    OpenPanel<MainPanel>(trans_layer2);
 
-                OpenPanel<OutsidePanel>(trans_commonPanelParent, SocializationManager.Instance.action_planDic[RoleManager.Instance.playerPeople.protoData.ChoosedActionId]);
-                //OpenPanel<BigMapPanel>(trans_commonPanelParent);
-                OpenPanel<StatusPanel>(trans_layer2);
-                OpenPanel<MainPanel>(trans_layer2);
+                }
+         
 
                 break;
         }

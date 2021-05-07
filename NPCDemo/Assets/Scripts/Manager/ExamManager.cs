@@ -45,6 +45,7 @@ public class ExamManager : CommonInstance<ExamManager>
             SingleExamEnemy enemy = new SingleExamEnemy();
             enemy.Id = DataTable._testEnemyNumerialList[examSetting.level.ToInt32()].id.ToInt32();
             enemy.Status = (int)SingleExamEnemyStatus.UnAccomplished;
+            InitExamProperty(enemy);
             RoleManager.Instance._CurGameInfo.CurActionData.CurExamData.EnemyList.Add(enemy);
         }
         //发消息给view显示数据
@@ -59,26 +60,36 @@ public class ExamManager : CommonInstance<ExamManager>
     {
         //singleExamEnemy.Id;
         TestEnemyNumerialSetting setting = DataTable._testEnemyNumerialList[singleExamEnemy.Id];
-        singleExamEnemy.CurPropertyList.Clear();
-        InitExamProperty(PropertyIdType.Attack, setting.attack.ToInt32());
-        InitExamProperty(PropertyIdType.Defense, setting.defense.ToInt32());
-        InitExamProperty(PropertyIdType.CritRate, setting.critRate.ToFloat());
-        InitExamProperty(PropertyIdType.CritNum, setting.crit.ToFloat());
-        InitExamProperty(PropertyIdType.SkillAdd, setting.skillHurtAdd.ToFloat());
-        InitExamProperty(PropertyIdType.Hp, setting.hp.ToInt32());
-        InitExamProperty(PropertyIdType.Speed, setting.attackSpeed.ToFloat());
+        //singleExamEnemy.CurPropertyList.Clear();
+        singleExamEnemy.Property = new PropertyData();
+        InitExamProperty(PropertyIdType.Attack, setting.attack.ToInt32(), singleExamEnemy.Property);
+        InitExamProperty(PropertyIdType.Defense, setting.defense.ToInt32(), singleExamEnemy.Property);
+        InitExamProperty(PropertyIdType.CritRate, setting.critRate.ToFloat(), singleExamEnemy.Property);
+        InitExamProperty(PropertyIdType.CritNum, setting.crit.ToFloat(), singleExamEnemy.Property);
+        InitExamProperty(PropertyIdType.SkillAdd, setting.skillHurtAdd.ToFloat(), singleExamEnemy.Property);
+        InitExamProperty(PropertyIdType.Hp, setting.hp.ToInt32(), singleExamEnemy.Property);
+        InitExamProperty(PropertyIdType.Speed, setting.attackSpeed.ToFloat(), singleExamEnemy.Property);
 
 
     }
-    public SinglePropertyData InitExamProperty(PropertyIdType idType,float num)
+    public void InitExamProperty(PropertyIdType idType,float num,PropertyData property)
     {
 
         SinglePropertyData singlePropertyData = new SinglePropertyData();
         singlePropertyData.PropertyId = (int)idType;
         singlePropertyData.PropertyNum = num;
 
+        property.CurExamPropertyIdList.Add((int)idType);
+        property.CurExamPropertyDataList.Add(singlePropertyData);
 
-        return singlePropertyData;
+        SinglePropertyData initSinglePropertyData = new SinglePropertyData();
+        initSinglePropertyData.PropertyId = (int)idType;
+        initSinglePropertyData.PropertyNum = num;
+
+        property.ExamPropertyIdList.Add((int)idType);
+        property.ExamPropertyDataList.Add(singlePropertyData);
+
+        //return singlePropertyData;
     }
     /// <summary>
     /// 开始单个题目 进入战斗面板
