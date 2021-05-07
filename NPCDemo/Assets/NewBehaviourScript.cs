@@ -652,6 +652,7 @@ public class People
         }
         
         PeopleProtoData peopleProtoData = new PeopleProtoData();
+        peopleProtoData.Achievement = new Achievement();
         peopleProtoData.OnlyId = ConstantVal.SetId;
         peopleProtoData.Name = peopleData.name;
         peopleProtoData.Gender = (int)peopleData.gender;

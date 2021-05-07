@@ -1,0 +1,56 @@
+﻿[
+  {
+    "id": 10001.0,
+    "level": 1.0,
+    "nextExamId": 10002.0,
+    "forExamId": -1.0
+  },
+  {
+    "id": 10002.0,
+    "level": 5.0,
+    "nextExamId": 10003.0,
+    "forExamId": 10001.0
+  },
+  {
+    "id": 10003.0,
+    "level": 10.0,
+    "nextExamId": 10004.0,
+    "forExamId": 10002.0
+  },
+  {
+    "id": 10004.0,
+    "level": 15.0,
+    "nextExamId": 10005.0,
+    "forExamId": 10003.0
+  },
+  {
+    "id": 10005.0,
+    "level": 20.0,
+    "nextExamId": 10006.0,
+    "forExamId": 10004.0
+  },
+  {
+    "id": 10006.0,
+    "level": 25.0,
+    "nextExamId": 10007.0,
+    "forExamId": 10005.0
+  },
+  {
+    "id": 10007.0,
+    "level": 30.0,
+    "nextExamId": 10008.0,
+    "forExamId": 10006.0
+  },
+  {
+    "id": 10008.0,
+    "level": 35.0,
+    "nextExamId": 10009.0,
+    "forExamId": 10007.0
+  },
+  {
+    "id": 10009.0,
+    "level": 40.0,
+    "nextExamId": -1.0,
+    "forExamId": 10008.0
+  }
+]

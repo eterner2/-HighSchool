@@ -33,6 +33,11 @@ namespace Framework.Data
         static public Dictionary<int, TestNumerialSetting> testNumerialDic = new Dictionary<int, TestNumerialSetting>();
         static public List<TestNumerialSetting> _testNumerialList = new List<TestNumerialSetting>();
 
+
+        static string examName = "examSetting.json";
+        static public Dictionary<int, ExamSetting> examDic = new Dictionary<int, ExamSetting>();
+        static public List<ExamSetting> _examList = new List<ExamSetting>();
+
         public static void LoadTableData()
         {
             JsonMapper.RegisterImporter<int, long>((int value) =>

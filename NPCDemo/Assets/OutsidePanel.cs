@@ -47,6 +47,14 @@ public class OutsidePanel : PanelBase
         });
         trans_grid.gameObject.SetActive(false);
         btn_continue.gameObject.SetActive(false);
+        //如果是图书馆，则直接弹考试界面
+
+        if ((ActionType)RoleManager.Instance._CurGameInfo.PlayerPeople.ChoosedActionId
+            == ActionType.GoLibraryStudy)
+        {
+            PanelManager.Instance.OpenPanel<ExamPreparePanel>(PanelManager.Instance.trans_layer2);
+                
+        }
     }
 
     /// <summary>
