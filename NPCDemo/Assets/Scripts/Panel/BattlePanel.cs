@@ -1,5 +1,6 @@
 ﻿using DG.Tweening;
 using RoleData;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -31,6 +32,11 @@ public class BattlePanel : PanelBase
     public Button btn_NextEnemy;//换个敌人
     public float basicAttackSpeed = 5f;//基本速度
     public bool isTestBattle = false;//是否测试玩法
+
+    public Transform trans_gameEnd;
+    public Text txt_gameEnd;
+
+    public Button btn_gameEndLeave;//离开
 
     public override void Init(params object[] args)
     {
@@ -89,6 +95,8 @@ public class BattlePanel : PanelBase
 
         //enemyAttackSpeed = (BattleManager.Instance.GetCurExamPropertyById(PropertyIdType.Speed, property_enemy).PropertyNum / (float)100) * basicAttackSpeed;
         //playerAttackSpeed= (BattleManager.Instance.GetCurExamPropertyById(PropertyIdType.Speed, property_player).PropertyNum / (float)100) * basicAttackSpeed;
+
+        trans_gameEnd.gameObject.SetActive(false);
         BattleStart();
     }
 
@@ -147,12 +155,11 @@ public class BattlePanel : PanelBase
     {
         if (singleBattlePeopleView == playerBattleView)
         {
-            BattleManager.Instance.Attack(RoleManager.Instance.playerPeople.protoData.PropertyData, RoleManager.Instance.examPropertyData);
+            BattleManager.Instance.Attack(RoleManager.Instance.playerPeople.protoData.PropertyData, enemyBattleView.singleEnemy.Property);
         }
         else
         {
-            BattleManager.Instance.Attack(RoleManager.Instance.examPropertyData,RoleManager.Instance.playerPeople.protoData.PropertyData);
-
+            BattleManager.Instance.Attack(enemyBattleView.singleEnemy.Property, RoleManager.Instance.playerPeople.protoData.PropertyData);
         }
 
     }
@@ -160,8 +167,11 @@ public class BattlePanel : PanelBase
     void OnHit(object[] param)
     {
         HitData hitData = param[0] as HitData;
+
+        //UInt64 onlyId = hitData.beHitPro.OnlyId;
+        //PropertyData pro=
         //玩家被打
-        if (hitData.isPlayer)
+        if (hitData.beHitPro.IsPlayer)
         {
             playerBattleView.OnHit(hitData);
         }
@@ -171,13 +181,38 @@ public class BattlePanel : PanelBase
         }
     }
 
-    void OnBattleEnd()
+    void OnBattleEnd(object[] args)
     {
+        PropertyData deadPro = args[0] as PropertyData;
         startBattle = false;
         startCalcDelay = false;
         playerBattleView.OnEnd();
         enemyBattleView.OnEnd();
+
+        trans_gameEnd.gameObject.SetActive(true);
+        bool win;
+        //玩家死了
+        if (deadPro.IsPlayer)
+        {
+            txt_gameEnd.SetText("输");
+            win = false;
+ 
+        }
+        else
+        {
+            win = true;
+            txt_gameEnd.SetText("赢");
+
+        }
+        addBtnListener(btn_gameEndLeave, () =>
+        {
+            //直接结算
+            EventCenter.Broadcast(TheEventType.LeaveBattlePanel, win);
+            
+        });
     }
+
+    
 
     public override void OnClose()
     {

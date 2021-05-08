@@ -673,7 +673,7 @@ public class People
    
 
     /// <summary>
-    /// 创建新的属性数据
+    /// 创建新的属性数据(人）
     /// </summary>
     /// <param name="gameInfo"></param>
     void CreateNewPropertyData(PeopleProtoData peopleProtoData)
@@ -682,23 +682,26 @@ public class People
         PropertyData propertyData = new PropertyData();
 
         propertyData.IsPlayer = true;
+        propertyData.OnlyId = peopleProtoData.OnlyId;
+        propertyData.Level = 1;
 
-       RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Study);
-        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Art);
-        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Physical);
-        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Money);
-        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.TiLi);
-        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Mood);
-        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.SelfControl);
-        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Charm);
 
-        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Hp);
-        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Attack);
-        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Defense);
-        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.CritNum);
-        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Speed);
-        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.CritRate);
-        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.SkillAdd);
+        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Study,-1);
+        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Art, -1);
+        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Physical, -1);
+        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Money, -1);
+        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.TiLi, -1);
+        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Mood, -1);
+        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.SelfControl, -1);
+        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Charm, -1);
+
+        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Hp,DataTable.FindTestNumerialByLevel(propertyData.Level).hp.ToFloat());
+        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Attack, DataTable.FindTestNumerialByLevel(propertyData.Level).attack.ToFloat());
+        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Defense, DataTable.FindTestNumerialByLevel(propertyData.Level).defense.ToFloat());
+        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.CritNum, DataTable.FindTestNumerialByLevel(propertyData.Level).crit.ToFloat());
+        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Speed, DataTable.FindTestNumerialByLevel(propertyData.Level).attackSpeed.ToFloat());
+        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.CritRate, DataTable.FindTestNumerialByLevel(propertyData.Level).critRate.ToFloat());
+        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.SkillAdd, DataTable.FindTestNumerialByLevel(propertyData.Level).skillHurtAdd.ToFloat());
 
         peopleProtoData.PropertyData = propertyData;
     }

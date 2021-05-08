@@ -1,4 +1,5 @@
 ﻿using RoleData;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -41,6 +42,25 @@ public class SingleBattlePeopleView : SingleViewBase
         curAttackTime = (1 / (BattleManager.Instance.GetCurExamPropertyById(PropertyIdType.Speed, pro).PropertyNum)) * parentPanel.basicAttackSpeed;
         Show();
         //txt_hp.SetText(propertyData.exam)
+    }
+
+    /// <summary>
+    /// 初始化属性
+    /// </summary>
+    public void InitPro(PropertyData thePro)
+    {
+        UInt64 onlyId = thePro.OnlyId;
+
+        if (thePro.IsPlayer)
+        {
+            singleEnemy = null;
+            pro = RoleManager.Instance.FindPeopleWithOnlyId(onlyId).protoData.PropertyData;
+        }
+        else
+        {
+            singleEnemy = ExamManager.Instance.FindSingleExamEnemyWithOnlyId(onlyId);
+            pro = singleEnemy.Property;
+        }
     }
 
     public void Show()
@@ -108,6 +128,7 @@ public class SingleBattlePeopleView : SingleViewBase
     /// </summary>
     public void OnHit(HitData hitData)
     {
+        InitPro(hitData.beHitPro);
         EntityManager.Instance.GenerateEntity<BattleHitEffect>(trans_hitEffectParent,ConstantVal.battleHitEffectPath);
         EntityManager.Instance.GenerateEntity<LoseHPEffect>(trans_hitEffectParent, ConstantVal.loseHPEffectPath,
             trans_hitEffectParent.position,hitData.num);

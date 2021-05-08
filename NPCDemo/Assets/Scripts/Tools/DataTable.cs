@@ -240,6 +240,75 @@ namespace Framework.Data
                 return null;
             }
         }
+
+        /// <summary>
+        /// 获取单个敌人测试数值
+        /// </summary>
+        /// <param name="level"></param>
+        /// <returns></returns>
+        public static TestEnemyNumerialSetting FindTestEnemyNumerialByLevel(int level)
+        {
+            for(int i = 0; i < _testEnemyNumerialList.Count; i++)
+            {
+                TestEnemyNumerialSetting setting = _testEnemyNumerialList[i];
+                if (setting.level.ToInt32() == level)
+                    return setting;
+            }
+            Debug.Log("寻找一个不存在的 TestEnemyNumerialSetting，level为" + level);
+
+            return null;
+        }
+
+
+        /// <summary>
+        /// 获取单个敌人测试数值
+        /// </summary>
+        /// <param name="level"></param>
+        /// <returns></returns>
+        public static TestEnemyNumerialSetting FindTestEnemyNumerial(int id)
+        {
+            if (testEnemyNumerialDic.ContainsKey(id))
+                return testEnemyNumerialDic[id];
+            else
+            {
+                Debug.Log("寻找一个不存在的 TestEnemyNumerialSetting，id为" + id);
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// 获取测试数值
+        /// </summary>
+        /// <param name="level"></param>
+        /// <returns></returns>
+        public static TestNumerialSetting FindTestNumerial(int id)
+        {
+            if (testNumerialDic.ContainsKey(id))
+                return testNumerialDic[id];
+            else
+            {
+                Debug.Log("寻找一个不存在的 testNumerialDic，id为" + id);
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// 通过等级获取测试数值
+        /// </summary>
+        /// <param name="level"></param>
+        /// <returns></returns>
+        public static TestNumerialSetting FindTestNumerialByLevel(int level)
+        {
+            for (int i = 0; i < _testNumerialList.Count; i++)
+            {
+                TestNumerialSetting setting = _testNumerialList[i];
+                if (setting.level.ToInt32() == level)
+                    return setting;
+            }
+            Debug.Log("寻找一个不存在的 TestNumerialSetting，level为" + level);
+
+            return null;
+        }
     }
 
 }

@@ -176,4 +176,5 @@ public enum TheEventType
     BattleHit,//战斗打中
     BattleEnd,//战斗结束
     StartExam,//开始考试
+    LeaveBattlePanel,//离开战斗面板
 }

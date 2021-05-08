@@ -125,7 +125,7 @@
     "showInStatusPanel": "0",
     "haveLimit": "-1",
     "iconName": "gongsu",
-    "newRdmRange": "100|120",
+    "newRdmRange": "1|1",
     "des": "天下武功，无快不破",
     "isExamBattle": "1"
   },

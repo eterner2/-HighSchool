@@ -29,7 +29,7 @@ public class RoleManager
     public List<People> NPCPeopleList;//所有npc（除了玩家之外的所有人）
     public People playerPeople;//玩家
 
-    public PropertyData examPropertyData;//考试数据
+    //public PropertyData examPropertyData;//考试数据
 
     public void Init(int index)
     {
@@ -62,14 +62,14 @@ public class RoleManager
     /// </summary>
     void InitTmpExamPropertyData()
     {
-        examPropertyData = new PropertyData();
-        InitSingleProperty(examPropertyData, PropertyIdType.Hp);
-        InitSingleProperty(examPropertyData, PropertyIdType.Attack);
-        InitSingleProperty(examPropertyData, PropertyIdType.Defense);
-        InitSingleProperty(examPropertyData, PropertyIdType.CritRate);
-        InitSingleProperty(examPropertyData, PropertyIdType.Speed);
-        InitSingleProperty(examPropertyData, PropertyIdType.CritNum);
-        InitSingleProperty(examPropertyData, PropertyIdType.SkillAdd);
+        //examPropertyData = new PropertyData();
+        //InitSingleProperty(examPropertyData, PropertyIdType.Hp);
+        //InitSingleProperty(examPropertyData, PropertyIdType.Attack);
+        //InitSingleProperty(examPropertyData, PropertyIdType.Defense);
+        //InitSingleProperty(examPropertyData, PropertyIdType.CritRate);
+        //InitSingleProperty(examPropertyData, PropertyIdType.Speed);
+        //InitSingleProperty(examPropertyData, PropertyIdType.CritNum);
+        //InitSingleProperty(examPropertyData, PropertyIdType.SkillAdd);
 
     }
 
@@ -129,34 +129,35 @@ public class RoleManager
 
     
     }
-
-    public void InitSingleProperty(PropertyData propertyData, PropertyIdType idType)
+    /// <summary>
+    /// 初始化人物属性
+    /// </summary>
+    /// <param name="propertyData"></param>
+    /// <param name="idType"></param>
+    /// <param name="propertyNum"></param>
+    public void InitSingleProperty(PropertyData propertyData, PropertyIdType idType,float propertyNum)
     {
         //PropertyData propertyData = new PropertyData();
-        PropertySetting setting = DataTable.FindPropertySetting((int)idType);
-
-        string[] rdmRange = setting.newRdmRange.Split('|');
-        int val = RandomManager.Next(rdmRange[0].ToInt32(), rdmRange[1].ToInt32());
 
 
-        SinglePropertyData singlePropertyData = new SinglePropertyData();
-        singlePropertyData.PropertyId = (int)idType;
-        singlePropertyData.PropertyNum = val;
-        singlePropertyData.PropertyLimit = setting.haveLimit.ToInt32();
-
-
-        if (setting.isExamBattle == "1")
+        //如果属性为-1 说明非考试属性 从property表读取
+        if (propertyNum !=-1)
         {
-        
+            //TestEnemyNumerialSetting examSetting = DataTable.FindTestNumerial((int)idType));
+            //考试数值需要和等级挂钩
+            SinglePropertyData examPro = new SinglePropertyData();
+            examPro.PropertyId = (int)idType;
+            examPro.PropertyNum = propertyNum;
+            examPro.PropertyLimit = -1;
 
             propertyData.CurExamPropertyIdList.Add((int)idType);
-            propertyData.CurExamPropertyDataList.Add(singlePropertyData);
+            propertyData.CurExamPropertyDataList.Add(examPro);
 
 
             SinglePropertyData initsinglePropertyData = new SinglePropertyData();
             initsinglePropertyData.PropertyId = (int)idType;
-            initsinglePropertyData.PropertyNum = val;
-            initsinglePropertyData.PropertyLimit = setting.haveLimit.ToInt32();
+            initsinglePropertyData.PropertyNum = propertyNum;
+            initsinglePropertyData.PropertyLimit = -1;
 
             propertyData.ExamPropertyIdList.Add((int)idType);
             propertyData.ExamPropertyDataList.Add(initsinglePropertyData);
@@ -164,6 +165,17 @@ public class RoleManager
         }
         else
         {
+            PropertySetting setting = DataTable.FindPropertySetting((int)idType);
+
+            string[] rdmRange = setting.newRdmRange.Split('|');
+            int val = RandomManager.Next(rdmRange[0].ToInt32(), rdmRange[1].ToInt32());
+
+
+            SinglePropertyData singlePropertyData = new SinglePropertyData();
+            singlePropertyData.PropertyId = (int)idType;
+            singlePropertyData.PropertyNum = val;
+            singlePropertyData.PropertyLimit = setting.haveLimit.ToInt32();
+
             propertyData.PropertyIdList.Add((int)idType);
 
             propertyData.PropertyDataList.Add(singlePropertyData);
@@ -305,10 +317,10 @@ public class RoleManager
     /// <param name="pro"></param>
     public void TestSetProperty(bool isEnemy,int level)
     {
-        PropertyData pro;
+        PropertyData pro=null;
         if (isEnemy)
         {
-            pro = RoleManager.Instance.examPropertyData;
+            //pro = RoleManager.Instance.examPropertyData;
         }
         else
         {

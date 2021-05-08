@@ -55,7 +55,8 @@ int32 actionId=3;
 message ExamData
 {
 repeated SingleExamEnemy enemyList=1;
- 
+int32 settingId=2;//配置id
+int32 curScore=3;//当前得分
 }
 
 message SingleExamEnemy
@@ -63,6 +64,7 @@ message SingleExamEnemy
 int32 id=1;
 int32 status=2;//状态（完成与否） 暂时不保存血量等数据
 PropertyData property=3;//属性
+uint64 onlyId=4;//唯一id
 
 }
 
@@ -82,6 +84,8 @@ repeated SinglePropertyData examPropertyDataList=4;
 repeated int32 curExamPropertyIdList=5;
 repeated SinglePropertyData curExamPropertyDataList=6;
 bool isPlayer=7;//是玩家的属性（不是怪物（试卷）的）
+uint64 onlyId=8;//属于谁的唯一id
+int32 level=9;//等级
 }
 
 //单个普通属性

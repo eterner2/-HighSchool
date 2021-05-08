@@ -123,17 +123,54 @@ public class BattleManager : CommonInstance<BattleManager>
 
         int res = Mathf.RoundToInt((attack * attack / (attack + defence)) * critMul* skillAddVal);
 
-        ChangeCurExamPropertyData(property2, PropertyIdType.Hp, -res);
+        //扣玩家的血
+        if (property2.IsPlayer)
+        {
+            PropertyData pro = RoleManager.Instance.FindPeopleWithOnlyId(property2.OnlyId).protoData.PropertyData;
+            ChangeCurExamPropertyData(pro, PropertyIdType.Hp, -res);
+        }
+        //扣试卷的血
+        else
+        {
+            PropertyData pro = ExamManager.Instance.FindSingleExamEnemyWithOnlyId(property2.OnlyId).Property;
+
+            ChangeCurExamPropertyData(pro, PropertyIdType.Hp, -res);
+
+        }
+
         //发信息给UI显示
-        HitData hit = new HitData(res, crit, property2.IsPlayer);
+        HitData hit = new HitData(res, crit, property2);
         EventCenter.Broadcast(TheEventType.BattleHit, hit);
 
         ///打死了
         if (GetCurExamPropertyById(PropertyIdType.Hp,property2).PropertyNum <= 0)
         {
+            if (!property2.IsPlayer)
+            {
+                GetScore(property2);
+            }
             EventCenter.Broadcast(TheEventType.BattleEnd, property2);
-
         }
+    }
+
+    /// <summary>
+    /// 得分
+    /// </summary>
+    public void GetScore(PropertyData pro)
+    {
+        for(int i=0;i< RoleManager.Instance._CurGameInfo.CurActionData.CurExamData.EnemyList.Count; i++)
+        {
+            SingleExamEnemy enemy = RoleManager.Instance._CurGameInfo.CurActionData.CurExamData.EnemyList[i];
+            if(enemy.OnlyId== pro.OnlyId)
+            {
+                enemy.Status = (int)SingleExamEnemyStatus.Accomplished;
+                break;
+            }
+        }
+        
+        RoleManager.Instance._CurGameInfo.CurActionData.CurExamData.CurScore += 13;
+        if (RoleManager.Instance._CurGameInfo.CurActionData.CurExamData.CurScore >= 100)
+            RoleManager.Instance._CurGameInfo.CurActionData.CurExamData.CurScore = 100;
     }
 
 
@@ -146,13 +183,13 @@ public class HitData
 {
     public int num;//打了多少血
     public bool ifCrit;//是否暴击
-    public bool isPlayer;//是打玩家
+    public PropertyData beHitPro;//被打的属性
     
-    public HitData(int num,bool ifCrit,bool isPlayer)
+    public HitData(int num,bool ifCrit, PropertyData beHitPro)
     {
         this.num = num;
         this.ifCrit = ifCrit;
-        this.isPlayer = isPlayer;
+        this.beHitPro = beHitPro;
     }
 }
 

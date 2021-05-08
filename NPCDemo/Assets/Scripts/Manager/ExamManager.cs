@@ -1,5 +1,6 @@
 ﻿using Framework.Data;
 using RoleData;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -39,12 +40,15 @@ public class ExamManager : CommonInstance<ExamManager>
     /// </summary>
     public void GenerateExam(ExamSetting examSetting)
     {
-        RoleManager.Instance._CurGameInfo.CurActionData.CurExamData = new ExamData();
+        ExamData examData = new ExamData();
+        examData.SettingId = examSetting.id.ToInt32();
+        RoleManager.Instance._CurGameInfo.CurActionData.CurExamData = examData;
         for(int i = 0; i < 8; i++)
         {
             SingleExamEnemy enemy = new SingleExamEnemy();
-            enemy.Id = DataTable._testEnemyNumerialList[examSetting.level.ToInt32()].id.ToInt32();
+            enemy.Id = DataTable.FindTestEnemyNumerialByLevel(examSetting.level.ToInt32()).id.ToInt32();
             enemy.Status = (int)SingleExamEnemyStatus.UnAccomplished;
+            enemy.OnlyId = ConstantVal.SetId;
             InitExamProperty(enemy);
             RoleManager.Instance._CurGameInfo.CurActionData.CurExamData.EnemyList.Add(enemy);
         }
@@ -59,9 +63,10 @@ public class ExamManager : CommonInstance<ExamManager>
     public void InitExamProperty(SingleExamEnemy singleExamEnemy)
     {
         //singleExamEnemy.Id;
-        TestEnemyNumerialSetting setting = DataTable._testEnemyNumerialList[singleExamEnemy.Id];
+        TestEnemyNumerialSetting setting = DataTable.FindTestEnemyNumerial(singleExamEnemy.Id);
         //singleExamEnemy.CurPropertyList.Clear();
         singleExamEnemy.Property = new PropertyData();
+        singleExamEnemy.Property.OnlyId = singleExamEnemy.OnlyId;
         InitExamProperty(PropertyIdType.Attack, setting.attack.ToInt32(), singleExamEnemy.Property);
         InitExamProperty(PropertyIdType.Defense, setting.defense.ToInt32(), singleExamEnemy.Property);
         InitExamProperty(PropertyIdType.CritRate, setting.critRate.ToFloat(), singleExamEnemy.Property);
@@ -87,7 +92,7 @@ public class ExamManager : CommonInstance<ExamManager>
         initSinglePropertyData.PropertyNum = num;
 
         property.ExamPropertyIdList.Add((int)idType);
-        property.ExamPropertyDataList.Add(singlePropertyData);
+        property.ExamPropertyDataList.Add(initSinglePropertyData);
 
         //return singlePropertyData;
     }
@@ -99,6 +104,25 @@ public class ExamManager : CommonInstance<ExamManager>
         //ExamSetting setting=
         PanelManager.Instance.OpenPanel<BattlePanel>(PanelManager.Instance.trans_layer2, enemy);
     }
+
+    /// <summary>
+    /// 通过唯一id获取考卷
+    /// </summary>
+    public SingleExamEnemy FindSingleExamEnemyWithOnlyId(UInt64 onlyId)
+    {
+        int count = RoleManager.Instance._CurGameInfo.CurActionData.CurExamData.EnemyList.Count;
+        for(int i = 0; i < count; i++)
+        {
+            SingleExamEnemy enemy = RoleManager.Instance._CurGameInfo.CurActionData.CurExamData.EnemyList[i];
+            if (enemy.OnlyId == onlyId)
+            {
+                return enemy;
+            }
+        }
+        return null;
+    }
+
+
 }
 
 /// <summary>
