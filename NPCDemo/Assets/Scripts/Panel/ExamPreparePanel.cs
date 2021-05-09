@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 /// <summary>
 /// 考试准备界面
 /// </summary>
@@ -12,11 +13,20 @@ public class ExamPreparePanel : PanelBase
 
     public List<Transform> examPosList = new List<Transform>();//考试位置
 
+    public Button btn_quit;
+
+    public Transform trans_result;//结算
+    public Text txt_result;
+
     public override void Init(params object[] args)
     {
         base.Init(args);
 
         EventCenter.Register(TheEventType.StartExam, OnExamStart);
+        addBtnListener(btn_quit, () =>
+        {
+            OnQuitClick();
+        });
     }
 
     public override void OnOpenIng()
@@ -26,6 +36,21 @@ public class ExamPreparePanel : PanelBase
 
     }
 
+    void OnQuitClick()
+    {
+        if (ExamManager.Instance.CheckIfAccomplishAllExam())
+        {
+            Result();
+        }
+    }
+    /// <summary>
+    /// 结算
+    /// </summary>
+    void Result()
+    {
+        trans_result.gameObject.SetActive(true);
+        txt_result.SetText("考试结束，您的得分是" + RoleManager.Instance._CurGameInfo.CurActionData.CurExamData.CurScore);
+    }
     /// <summary>
     /// 开始考试
     /// </summary>

@@ -97,7 +97,7 @@ public class GameActionManager : MonoInstance<GameActionManager>
     /// </summary>
     void EndGameAction()
     {
-        List<SinglePropertyData> proList = new List<SinglePropertyData>();
+        List<AwardData> awardList = new List<AwardData>();
 
         //玩家和npc的属性都要变化 TODO玩家每次见到的NPC有限 一个图书馆可能只抽出一部分NPC
         for (int i = 0; i < RoleManager.Instance.allPeopleList.Count; i++)
@@ -112,12 +112,13 @@ public class GameActionManager : MonoInstance<GameActionManager>
                 if (singleChange[1] > 0)
                 {
                     RoleManager.Instance.AddProperty((PropertyIdType)singleChange[0], singleChange[1], people.protoData);
-                    SinglePropertyData singlePropertyData = new SinglePropertyData();
                     if (people.protoData.OnlyId == RoleManager.Instance.playerPeople.protoData.OnlyId)
                     {
-                        singlePropertyData.PropertyId = singleChange[0];
-                        singlePropertyData.PropertyNum = singleChange[1];
-                        proList.Add(singlePropertyData);
+                        AwardData award = new AwardData(AwardType.Property, singleChange[0], singleChange[1]);
+
+                        //singlePropertyData.PropertyId = singleChange[0];
+                        //singlePropertyData.PropertyNum = singleChange[1];
+                        awardList.Add(award);
 
                     }
     
@@ -130,7 +131,7 @@ public class GameActionManager : MonoInstance<GameActionManager>
         {
             GameModuleManager.Instance.InitGameModule(GameModuleType.Home);
         };
-        PanelManager.Instance.OpenPanel<GetAwardPanel>(PanelManager.Instance.trans_layer2, proList, backHome);
+        PanelManager.Instance.OpenPanel<GetAwardPanel>(PanelManager.Instance.trans_layer2, awardList, backHome);
         //for(int i=0;i<)
     }
 

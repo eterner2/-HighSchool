@@ -119,4 +119,6 @@ public enum PropertyIdType
     Speed = 10013,//速度
     SkillAdd=10014,//技能增伤
     CritNum=10015,//爆伤
+
+    Score=10016,//分数
 }

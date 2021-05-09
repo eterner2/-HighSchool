@@ -37,6 +37,8 @@ public class BattlePanel : PanelBase
     public Text txt_gameEnd;
 
     public Button btn_gameEndLeave;//离开
+    public Transform trans_award;//奖励
+    public Transform trans_awardGrid;
 
     public override void Init(params object[] args)
     {
@@ -184,6 +186,7 @@ public class BattlePanel : PanelBase
     void OnBattleEnd(object[] args)
     {
         PropertyData deadPro = args[0] as PropertyData;
+        int score = (int)args[1];
         startBattle = false;
         startCalcDelay = false;
         playerBattleView.OnEnd();
@@ -194,6 +197,7 @@ public class BattlePanel : PanelBase
         //玩家死了
         if (deadPro.IsPlayer)
         {
+            trans_award.gameObject.SetActive(false);
             txt_gameEnd.SetText("输");
             win = false;
  
@@ -201,15 +205,19 @@ public class BattlePanel : PanelBase
         else
         {
             win = true;
+            trans_award.gameObject.SetActive(true);
             txt_gameEnd.SetText("赢");
 
         }
+        PanelManager.Instance.OpenSingle<AwardView>(trans_awardGrid, new AwardData(AwardType.Property, (int)PropertyIdType.Score, score));
         addBtnListener(btn_gameEndLeave, () =>
         {
             //直接结算
             EventCenter.Broadcast(TheEventType.LeaveBattlePanel, win);
             
         });
+
+
     }
 
     
@@ -220,6 +228,11 @@ public class BattlePanel : PanelBase
         EventCenter.Remove(TheEventType.BattleEnd, OnBattleEnd);
         EventCenter.Remove(TheEventType.BattleHit, OnHit);
 
+    }
+    public override void Clear()
+    {
+        base.Clear();
+        PanelManager.Instance.CloseAllSingle(trans_awardGrid);
     }
     //void StartBattle()
 }

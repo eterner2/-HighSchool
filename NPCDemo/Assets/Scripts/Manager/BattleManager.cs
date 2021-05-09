@@ -145,18 +145,19 @@ public class BattleManager : CommonInstance<BattleManager>
         ///打死了
         if (GetCurExamPropertyById(PropertyIdType.Hp,property2).PropertyNum <= 0)
         {
+            int score = 0;
             if (!property2.IsPlayer)
             {
-                GetScore(property2);
+               score= GetScore(property2);
             }
-            EventCenter.Broadcast(TheEventType.BattleEnd, property2);
+            EventCenter.Broadcast(TheEventType.BattleEnd, property2, score);
         }
     }
 
     /// <summary>
     /// 得分
     /// </summary>
-    public void GetScore(PropertyData pro)
+    public int GetScore(PropertyData pro)
     {
         for(int i=0;i< RoleManager.Instance._CurGameInfo.CurActionData.CurExamData.EnemyList.Count; i++)
         {
@@ -171,6 +172,9 @@ public class BattleManager : CommonInstance<BattleManager>
         RoleManager.Instance._CurGameInfo.CurActionData.CurExamData.CurScore += 13;
         if (RoleManager.Instance._CurGameInfo.CurActionData.CurExamData.CurScore >= 100)
             RoleManager.Instance._CurGameInfo.CurActionData.CurExamData.CurScore = 100;
+
+        //弹出结算面板
+        return 13;
     }
 
 

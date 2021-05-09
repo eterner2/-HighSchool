@@ -122,6 +122,41 @@ public class ExamManager : CommonInstance<ExamManager>
         return null;
     }
 
+    /// <summary>
+    /// 找是否完成所有考试
+    /// </summary>
+    /// <returns></returns>
+    public bool CheckIfAccomplishAllExam()
+    {
+        for(int i = 0; i < RoleManager.Instance._CurGameInfo.CurActionData.CurExamData.EnemyList.Count; i++)
+        {
+            SingleExamEnemy enemy = RoleManager.Instance._CurGameInfo.CurActionData.CurExamData.EnemyList[i];
+            if(enemy.Status != (int)SingleExamEnemyStatus.Accomplished)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
+
+    /// <summary>
+    /// 结算整个考试
+    /// </summary>
+    public void ResultTotalExam()
+    {
+        //按比例给钱
+        int score = RoleManager.Instance._CurGameInfo.CurActionData.CurExamData.CurScore;
+        int settingId = RoleManager.Instance._CurGameInfo.CurActionData.CurExamData.SettingId;
+        ExamSetting setting = DataTable.FindExamSetting(settingId);
+        string[] awardArr = setting.award.Split('|');
+        int awardId = awardArr[0].ToInt32();
+        int awardCount = Mathf.RoundToInt(awardArr[1].ToInt32() * score / (float)100);
+
+        RoleManager.Instance.AddProperty((PropertyIdType)awardId, awardCount);
+        //把需要显示的发给ui
+        EventCenter.Broadcast(TheEventType.resu)
+    }
 
 }
 

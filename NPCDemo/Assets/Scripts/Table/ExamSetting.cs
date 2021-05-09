@@ -10,4 +10,5 @@ public class ExamSetting
     public string forExamId;
     public string initLevel;
     public string cost;
+    public string award;
 }

@@ -309,6 +309,23 @@ namespace Framework.Data
 
             return null;
         }
+
+
+        /// <summary>
+        /// 找考试数值
+        /// </summary>
+        /// <param name="level"></param>
+        /// <returns></returns>
+        public static ExamSetting FindExamSetting(int id)
+        {
+            if (examDic.ContainsKey(id))
+                return examDic[id];
+            else
+            {
+                Debug.Log("寻找一个不存在的 examDic，id为" + id);
+                return null;
+            }
+        }
     }
 
 }

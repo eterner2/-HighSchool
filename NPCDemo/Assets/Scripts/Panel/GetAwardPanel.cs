@@ -9,21 +9,21 @@ public class GetAwardPanel : PanelBase
 {
     public Transform trans_grid;
 
-    public List<SinglePropertyData> proDataList = new List<SinglePropertyData>();
+    public List<AwardData> awardDataList = new List<AwardData>();
     public Action closeCallBack;
     public override void Init(params object[] args)
     {
         base.Init(args);
-        proDataList = args[0] as List<SinglePropertyData>;
+        awardDataList = args[0] as List<AwardData>;
         closeCallBack = args[1] as Action;
     }
 
     public override void OnOpenIng()
     {
         base.OnOpenIng();
-        for(int i=0;i< proDataList.Count; i++)
+        for(int i=0;i< awardDataList.Count; i++)
         {
-            PanelManager.Instance.OpenSingle<SinglePropertyView>(trans_grid, proDataList[i]);
+            PanelManager.Instance.OpenSingle<AwardView>(trans_grid, awardDataList[i]);
         }
     }
 
