@@ -50,6 +50,7 @@ using UnityEngine;
     SingleExamDifficultyView,//考试难度选择
     SingleExamQuestionView,//单个题目
     ExamPreparePanel,//考试准备面板
+    AwardView,//奖励
 }
 
 public class TempItem

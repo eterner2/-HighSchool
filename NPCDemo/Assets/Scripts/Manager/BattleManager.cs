@@ -151,6 +151,7 @@ public class BattleManager : CommonInstance<BattleManager>
                score= GetScore(property2);
             }
             EventCenter.Broadcast(TheEventType.BattleEnd, property2, score);
+            
         }
     }
 

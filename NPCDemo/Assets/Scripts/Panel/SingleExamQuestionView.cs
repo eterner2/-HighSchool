@@ -1,4 +1,5 @@
 ﻿using RoleData;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -43,6 +44,16 @@ public class SingleExamQuestionView :SingleViewBase
 
 
 
+    }
+
+    /// <summary>
+    /// 刷新显示
+    /// </summary>
+    public void RefreshShow()
+    {
+        UInt64 enemyId = singleEnemy.OnlyId;
+        singleEnemy = ExamManager.Instance.FindSingleExamEnemyWithOnlyId(enemyId);
+        OnOpenIng();
     }
 
     

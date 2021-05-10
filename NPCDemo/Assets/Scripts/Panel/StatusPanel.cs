@@ -26,7 +26,7 @@ public class StatusPanel : PanelBase
             PropertySetting setting = DataTable.FindPropertySetting(id);
             if (setting.showInStatusPanel == "1")
             {
-                PanelManager.Instance.OpenSingle<StatusPropertyView>(trans_grid, setting, singleData);
+                PanelManager.Instance.OpenSingle<StatusPropertyView>(trans_grid, singleData);
             }
         }
 

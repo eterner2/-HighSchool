@@ -148,5 +148,15 @@
     "newRdmRange": "0.5|1",
     "des": "致命一击的脑力",
     "isExamBattle": "1"
+  },
+  {
+    "id": "10016",
+    "name": "分数",
+    "showInStatusPanel": "0",
+    "haveLimit": "-1",
+    "iconName": "score",
+    "newRdmRange": "0",
+    "des": "每一分，都拉下成千上万的人",
+    "isExamBattle": null
   }
 ]

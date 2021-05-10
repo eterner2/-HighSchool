@@ -154,8 +154,10 @@ public class ExamManager : CommonInstance<ExamManager>
         int awardCount = Mathf.RoundToInt(awardArr[1].ToInt32() * score / (float)100);
 
         RoleManager.Instance.AddProperty((PropertyIdType)awardId, awardCount);
+        List<AwardData> awardList=new List<AwardData>();
+        awardList.Add(new AwardData(AwardType.Property, awardId, awardCount));
         //把需要显示的发给ui
-        EventCenter.Broadcast(TheEventType.resu)
+        EventCenter.Broadcast(TheEventType.ResultAllExam, awardList);
     }
 
 }

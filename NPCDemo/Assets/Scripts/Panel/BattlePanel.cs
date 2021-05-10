@@ -30,7 +30,7 @@ public class BattlePanel : PanelBase
 
     public Button btn_restartTest;//重新开始测试
     public Button btn_NextEnemy;//换个敌人
-    public float basicAttackSpeed = 5f;//基本速度
+    public float basicAttackSpeed = 2f;//基本速度
     public bool isTestBattle = false;//是否测试玩法
 
     public Transform trans_gameEnd;
@@ -40,9 +40,12 @@ public class BattlePanel : PanelBase
     public Transform trans_award;//奖励
     public Transform trans_awardGrid;
 
+    
+
     public override void Init(params object[] args)
     {
         base.Init(args);
+        basicAttackSpeed = 2;
         this.curEnemy = args[0] as SingleExamEnemy;
         EventCenter.Register(TheEventType.BattleHit, OnHit);
         EventCenter.Register(TheEventType.BattleEnd, OnBattleEnd);
@@ -213,8 +216,7 @@ public class BattlePanel : PanelBase
         addBtnListener(btn_gameEndLeave, () =>
         {
             //直接结算
-            EventCenter.Broadcast(TheEventType.LeaveBattlePanel, win);
-            
+            PanelManager.Instance.ClosePanel(this);
         });
 
 

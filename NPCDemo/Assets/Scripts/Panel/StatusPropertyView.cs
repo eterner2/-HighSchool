@@ -1,4 +1,5 @@
-﻿using RoleData;
+﻿using Framework.Data;
+using RoleData;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,8 +18,9 @@ public class StatusPropertyView : SingleViewBase
     public override void Init(params object[] args)
     {
         base.Init(args);
-        propertySetting = args[0] as PropertySetting;
-        singlePropertyData = args[1] as SinglePropertyData;
+        //propertySetting = args[0] as PropertySetting;
+        singlePropertyData = args[0] as SinglePropertyData;
+        propertySetting = DataTable.FindPropertySetting(singlePropertyData.PropertyId);
     }
 
     public override void OnOpenIng()
