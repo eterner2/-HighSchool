@@ -45,7 +45,7 @@ public class BattlePanel : PanelBase
     public override void Init(params object[] args)
     {
         base.Init(args);
-        basicAttackSpeed = 2;
+        basicAttackSpeed = 1;
         this.curEnemy = args[0] as SingleExamEnemy;
         EventCenter.Register(TheEventType.BattleHit, OnHit);
         EventCenter.Register(TheEventType.BattleEnd, OnBattleEnd);

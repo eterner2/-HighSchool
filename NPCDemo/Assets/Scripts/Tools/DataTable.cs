@@ -38,6 +38,10 @@ namespace Framework.Data
         static public Dictionary<int, ExamSetting> examDic = new Dictionary<int, ExamSetting>();
         static public List<ExamSetting> _examList = new List<ExamSetting>();
 
+        static string peopleUpgradeName = "peopleUpgradeSetting.json";
+        static public Dictionary<int, PeopleUpgradeSetting> peopleUpgradeDic = new Dictionary<int, PeopleUpgradeSetting>();
+        static public List<PeopleUpgradeSetting> _peopleUpgradeList = new List<PeopleUpgradeSetting>();
+
         public static void LoadTableData()
         {
             JsonMapper.RegisterImporter<int, long>((int value) =>
@@ -103,7 +107,7 @@ namespace Framework.Data
                 Debug.LogError("bigMapAsset为空");
             }
 
-            //测试数值
+            //行动
             string actionfilePath = filePathPre + actionName;
             string actionStr = File.ReadAllText(actionfilePath);
             if (!string.IsNullOrEmpty(actionStr))
@@ -204,6 +208,32 @@ namespace Framework.Data
             else
             {
                 Debug.LogError("examAsset为空");
+            }
+
+            //升级所需经验
+            string peopleUpgradefilePath = filePathPre + peopleUpgradeName;
+            string peopleUpgradeStr = File.ReadAllText(peopleUpgradefilePath);
+
+            if (!string.IsNullOrEmpty(peopleUpgradeStr))
+            {
+                _peopleUpgradeList = JsonMapper.ToObject<List<PeopleUpgradeSetting>>(peopleUpgradeStr);
+                foreach (PeopleUpgradeSetting temp in _peopleUpgradeList)
+                {
+                    int theID;
+                    if (!int.TryParse(temp.id, out theID))
+                    {
+                        Debug.LogError("该ID无法转为int，表名为" + temp);
+                        return;
+                    }
+                    if (!peopleUpgradeDic.ContainsKey(theID))
+                    {
+                        peopleUpgradeDic.Add(theID, temp);
+                    }
+                }
+            }
+            else
+            {
+                Debug.LogError("peopleUpgradeAsset为空");
             }
         }
 

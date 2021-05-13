@@ -1,12 +1,17 @@
-﻿using RoleData;
+﻿using Framework.Data;
+using RoleData;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PropertyPanel : PanelBase
 {
     public Transform trans_grid;
     public List<SinglePropertyView> singlePropertyViewList = new List<SinglePropertyView>();
+
+    public Image img_upgradeBar;//升级进度
+    public Text txt_upgradeBar;//升级进度
 
     public override void Init(params object[] args)
     {
@@ -42,5 +47,7 @@ public class PropertyPanel : PanelBase
         {
             singlePropertyViewList[i].RefreshShow();
         }
+
+    
     }
 }

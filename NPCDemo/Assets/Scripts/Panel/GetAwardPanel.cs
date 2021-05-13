@@ -1,4 +1,5 @@
-﻿using RoleData;
+﻿using Framework.Data;
+using RoleData;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,6 +12,8 @@ public class GetAwardPanel : PanelBase
 
     public List<AwardData> awardDataList = new List<AwardData>();
     public Action closeCallBack;
+
+   
     public override void Init(params object[] args)
     {
         base.Init(args);
@@ -36,5 +39,62 @@ public class GetAwardPanel : PanelBase
     {
         base.OnClose();
         closeCallBack?.Invoke();
+    }
+
+    /// <summary>
+    /// 显示经验值增加
+    /// </summary>
+    public void ShowExpAdd()
+    {
+        int numBeforeAdd = 0;
+        //反推出升级之前的等级 然后播放一个动画
+        for (int i = 0; i < awardDataList.Count; i++)
+        {
+            AwardData awardData = awardDataList[i];
+            if (awardData.awardType==AwardType.Property
+                && awardData.id == (int)PropertyIdType.Study)
+            {
+                int curLevel = RoleManager.Instance.playerPeople.protoData.PropertyData.Level;
+                int curNum =Mathf.RoundToInt(RoleManager.Instance.FindSinglePropertyData(PropertyIdType.Study).PropertyNum);
+                int addedNum = awardData.num;
+                numBeforeAdd = curNum - addedNum;
+
+                break;
+            }
+        }
+
+
+        int canReachLevel = 1;
+        int studyNum = numBeforeAdd;// Mathf.RoundToInt(RoleManager.Instance.FindSinglePropertyData(PropertyIdType.Study).PropertyNum);
+        int studyNumAfterAllUpgrade = 0;
+        //int curLevel = 1;
+        if (canReachLevel < DataTable._peopleUpgradeList.Count)
+        {
+            studyNumAfterAllUpgrade = studyNum;
+            for (int i = canReachLevel; i < DataTable._peopleUpgradeList.Count; i++)
+            {
+
+                PeopleUpgradeSetting nextSetting = DataTable._peopleUpgradeList[i];
+                int nextLevelNeed = nextSetting.needExp.ToInt32();
+                //就在这个等级了
+                if (studyNumAfterAllUpgrade < nextLevelNeed)
+                {
+                    break;
+                }
+                else
+                {
+                    canReachLevel++;
+                    studyNumAfterAllUpgrade -= nextLevelNeed;
+                }
+            }
+        }
+
+        //之前的等级为canreachLevel
+
+    }
+
+    void PlayExpAnim(int beforeLevel,int afterLevel,)
+    {
+
     }
 }

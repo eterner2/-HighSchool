@@ -7,6 +7,7 @@ public class MainPanel : PanelBase
 {
     public Button btn_cellPhone;
     public GameObject obj_redPointInCellPhoneBtn;//手机按钮的红点
+    public Button btn_property;//属性按钮
 
     public override void Init(params object[] args)
     {
@@ -17,6 +18,12 @@ public class MainPanel : PanelBase
         {
             PanelManager.Instance.OpenPanel<CellPhonePanel>(PanelManager.Instance.trans_layer2,CellphoneHandleType.Common);
         });
+
+        addBtnListener(btn_property, () =>
+        {
+            PanelManager.Instance.OpenPanel<PropertyPanel>(PanelManager.Instance.trans_layer2);
+        });
+
     }
 
     public override void OnOpenIng()

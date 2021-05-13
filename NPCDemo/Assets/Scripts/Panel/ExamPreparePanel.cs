@@ -73,6 +73,14 @@ public class ExamPreparePanel : PanelBase
         {
             ExamManager.Instance.ResultTotalExam();
         }
+        else
+        {
+            PanelManager.Instance.OpenCommonHint("题目未做完，确定退出吗？", () =>
+             {
+                 ExamManager.Instance.ResultTotalExam();
+
+             }, null);
+        }
     }
 
     /// <summary>
@@ -131,7 +139,8 @@ public class ExamPreparePanel : PanelBase
     {
         Action OnQuitExam = delegate
         {
-            PanelManager.Instance.ClosePanel(this);
+            //PanelManager.Instance.ClosePanel(this);
+            GameModuleManager.Instance.ChangeGameModule(GameModuleType.Home);
         };
         PanelManager.Instance.OpenPanel<GetAwardPanel>(PanelManager.Instance.trans_layer2, resultAwardList, OnQuitExam);
     }
