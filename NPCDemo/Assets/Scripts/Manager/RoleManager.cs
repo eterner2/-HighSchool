@@ -239,25 +239,31 @@ public class RoleManager
         }
         if (peopleProto.PropertyData.PropertyIdList.Contains((int)propertyIdType))
         {
+
+         
+
             int index = peopleProto.PropertyData.PropertyIdList.IndexOf((int)propertyIdType);
             SinglePropertyData singleData = peopleProto.PropertyData.PropertyDataList[index];
             float limit = singleData.PropertyLimit;
-            singleData.PropertyNum += num;
+            float realAdd = num;
             //如果该属性存在最大限制
             if (limit >= 0)
             {
-                if (singleData.PropertyLimit >= limit)
+                if (realAdd + singleData.PropertyNum >= limit)
                 {
-                    singleData.PropertyNum = limit;
+                    realAdd = limit - singleData.PropertyNum;
                 }
+                
             }
 
             //如果是经验 则增加等级
             if (propertyIdType == PropertyIdType.Study)
             {
-                LevelInfo levelInfo = GetPeopleLevelInfo(peopleProto.PropertyData.Level,Mathf.RoundToInt(FindSinglePropertyData(PropertyIdType.Study, peopleProto).PropertyNum));
+                LevelInfo levelInfo = GetPeopleLevelInfo(peopleProto.PropertyData.Level,Mathf.RoundToInt(singleData.PropertyNum));
                 peopleProto.PropertyData.Level = levelInfo.canReachLevel;
             }
+            singleData.PropertyNum += realAdd;
+
         }
     }
 
@@ -535,7 +541,7 @@ public class RoleManager
                 }
             }
         }
-        LevelInfo info = new LevelInfo(canReachLevel, curLevel, studyNum, studyNumAfterAllUpgrade);
+        LevelInfo info = new LevelInfo(canReachLevel, curLevel,studyNum, studyNumAfterAllUpgrade);
 
         return info;
     }
@@ -548,7 +554,7 @@ public class LevelInfo
     public int curExp;//当前经验值
     public int curExpAfterAllUpgrade;//生完所有级后剩余的经验值
 
-    public LevelInfo(int canReachLevel,int curLevel,int curExp,int curExpAfterAllUpgrade)
+    public LevelInfo(int canReachLevel,int curLevel,int curExp, int curExpAfterAllUpgrade)
     {
         this.canReachLevel = canReachLevel;
         this.curLevel = curLevel;

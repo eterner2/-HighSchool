@@ -131,7 +131,7 @@ public class GameActionManager : MonoInstance<GameActionManager>
         {
             GameModuleManager.Instance.InitGameModule(GameModuleType.Home);
         };
-        PanelManager.Instance.OpenPanel<GetAwardPanel>(PanelManager.Instance.trans_layer2, awardList, backHome);
+        PanelManager.Instance.OpenPanel<GetAwardPanel>(PanelManager.Instance.trans_layer2, awardList, backHome,null);
         //for(int i=0;i<)
     }
 

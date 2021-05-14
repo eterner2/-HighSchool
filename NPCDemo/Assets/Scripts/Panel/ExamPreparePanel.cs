@@ -26,6 +26,7 @@ public class ExamPreparePanel : PanelBase
 
     public Transform trans_statusGrid;//状态
 
+    public LevelInfo levelInfo;//结算的等级状态 用于显示
     public override void Init(params object[] args)
     {
         base.Init(args);
@@ -128,6 +129,7 @@ public class ExamPreparePanel : PanelBase
     public void ShowResult(object[] args)
     {
         resultAwardList = args[0] as List<AwardData>;
+        levelInfo = args[1] as LevelInfo;
         trans_result.gameObject.SetActive(true);
         txt_result.SetText("考试结束，您的得分是" + RoleManager.Instance._CurGameInfo.CurActionData.CurExamData.CurScore + "分");
     }
@@ -142,7 +144,7 @@ public class ExamPreparePanel : PanelBase
             //PanelManager.Instance.ClosePanel(this);
             GameModuleManager.Instance.ChangeGameModule(GameModuleType.Home);
         };
-        PanelManager.Instance.OpenPanel<GetAwardPanel>(PanelManager.Instance.trans_layer2, resultAwardList, OnQuitExam);
+        PanelManager.Instance.OpenPanel<GetAwardPanel>(PanelManager.Instance.trans_layer2, resultAwardList, OnQuitExam, levelInfo);
     }
 
     /// <summary>

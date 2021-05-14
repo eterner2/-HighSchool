@@ -153,11 +153,20 @@ public class ExamManager : CommonInstance<ExamManager>
         int awardId = awardArr[0].ToInt32();
         int awardCount = Mathf.RoundToInt(awardArr[1].ToInt32() * score / (float)100);
 
+        //升级前
+        LevelInfo levelInfo = null;
+        if (awardId == (int)PropertyIdType.Study)
+        {
+            levelInfo = RoleManager.Instance.GetPeopleLevelInfo(RoleManager.Instance.playerPeople.protoData.PropertyData.Level,
+Mathf.RoundToInt(RoleManager.Instance.FindSinglePropertyData(PropertyIdType.Study).PropertyNum)+awardCount);
+        }
+
+
         RoleManager.Instance.AddProperty((PropertyIdType)awardId, awardCount);
         List<AwardData> awardList=new List<AwardData>();
         awardList.Add(new AwardData(AwardType.Property, awardId, awardCount));
         //把需要显示的发给ui
-        EventCenter.Broadcast(TheEventType.ResultAllExam, awardList);
+        EventCenter.Broadcast(TheEventType.ResultAllExam, awardList, levelInfo);
     }
 
 }
