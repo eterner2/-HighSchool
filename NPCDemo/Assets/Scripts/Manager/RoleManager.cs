@@ -239,9 +239,6 @@ public class RoleManager
         }
         if (peopleProto.PropertyData.PropertyIdList.Contains((int)propertyIdType))
         {
-
-         
-
             int index = peopleProto.PropertyData.PropertyIdList.IndexOf((int)propertyIdType);
             SinglePropertyData singleData = peopleProto.PropertyData.PropertyDataList[index];
             float limit = singleData.PropertyLimit;
@@ -259,7 +256,7 @@ public class RoleManager
             //如果是经验 则增加等级
             if (propertyIdType == PropertyIdType.Study)
             {
-                LevelInfo levelInfo = GetPeopleLevelInfo(peopleProto.PropertyData.Level,Mathf.RoundToInt(singleData.PropertyNum));
+                LevelInfo levelInfo = GetPeopleLevelInfo(Mathf.RoundToInt(realAdd));
                 peopleProto.PropertyData.Level = levelInfo.canReachLevel;
             }
             singleData.PropertyNum += realAdd;
@@ -504,44 +501,35 @@ public class RoleManager
     /// <summary>
     /// 获取人物等级数据
     /// </summary>
-    public LevelInfo GetPeopleLevelInfo(int curLevel,int curExp)
+    public LevelInfo GetPeopleLevelInfo(int addExp)
     {
         //int curLevel=playerPeople.protoData.PropertyData.Level;
-        int canReachLevel = curLevel;
-        int studyNum = curExp;// Mathf.RoundToInt(RoleManager.Instance.FindSinglePropertyData(PropertyIdType.Study).PropertyNum);
-        
-        int studyNumAfterAllUpgrade=0;
+        int canReachLevel = playerPeople.protoData.PropertyData.Level;
+
+        int expAfterAllUpgrade= playerPeople.protoData.PropertyData.CurExp+addExp;
 
         //int curLevel = 1;
         if (canReachLevel < DataTable._peopleUpgradeList.Count)
         {     
             
-            //升到这一级用掉了多少学习数量
-            for (int i = 1; i < canReachLevel; i++)
-            {
-                int theNum = DataTable._peopleUpgradeList[i].needExp.ToInt32();
-                studyNum -= theNum;
-
-            }
-            studyNumAfterAllUpgrade = studyNum;
             for (int i = canReachLevel; i < DataTable._peopleUpgradeList.Count; i++)
             {
 
                 PeopleUpgradeSetting nextSetting = DataTable._peopleUpgradeList[i];
                 int nextLevelNeed = nextSetting.needExp.ToInt32();
                 //就在这个等级了
-                if (studyNumAfterAllUpgrade < nextLevelNeed)
+                if (expAfterAllUpgrade < nextLevelNeed)
                 {
                     break;
                 }
                 else
                 {
                     canReachLevel++;
-                    studyNumAfterAllUpgrade -= nextLevelNeed;
+                    expAfterAllUpgrade -= nextLevelNeed;
                 }
             }
         }
-        LevelInfo info = new LevelInfo(canReachLevel, curLevel,studyNum, studyNumAfterAllUpgrade);
+        LevelInfo info = new LevelInfo(canReachLevel, expAfterAllUpgrade);
 
         return info;
     }
@@ -550,15 +538,11 @@ public class RoleManager
 public class LevelInfo
 {
     public int canReachLevel;//能达到哪一级
-    public int curLevel;//当前哪一级
-    public int curExp;//当前经验值
-    public int curExpAfterAllUpgrade;//生完所有级后剩余的经验值
+    public int ExpAfterUpgrade;//生完所有级后剩余的经验值
 
-    public LevelInfo(int canReachLevel,int curLevel,int curExp, int curExpAfterAllUpgrade)
+    public LevelInfo(int canReachLevel, int ExpAfterUpgrade)
     {
         this.canReachLevel = canReachLevel;
-        this.curLevel = curLevel;
-        this.curExp = curExp;
-        this.curExpAfterAllUpgrade = curExpAfterAllUpgrade;
+        this.ExpAfterUpgrade = ExpAfterUpgrade;
     }
 }

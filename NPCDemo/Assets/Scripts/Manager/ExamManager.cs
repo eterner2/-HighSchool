@@ -157,8 +157,7 @@ public class ExamManager : CommonInstance<ExamManager>
         LevelInfo levelInfo = null;
         if (awardId == (int)PropertyIdType.Study)
         {
-            levelInfo = RoleManager.Instance.GetPeopleLevelInfo(RoleManager.Instance.playerPeople.protoData.PropertyData.Level,
-Mathf.RoundToInt(RoleManager.Instance.FindSinglePropertyData(PropertyIdType.Study).PropertyNum)+awardCount);
+            levelInfo = RoleManager.Instance.GetPeopleLevelInfo(awardCount);
         }
 
 

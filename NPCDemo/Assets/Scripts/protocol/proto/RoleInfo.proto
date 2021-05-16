@@ -86,6 +86,7 @@ repeated SinglePropertyData curExamPropertyDataList=6;
 bool isPlayer=7;//是玩家的属性（不是怪物（试卷）的）
 uint64 onlyId=8;//属于谁的唯一id
 int32 level=9;//等级
+int32 curExp=10;//当前经验
 }
 
 //单个普通属性

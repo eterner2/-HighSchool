@@ -707,7 +707,19 @@ MonoBehaviour:
   btn_emptyClose: {fileID: 7301264362152666327}
   trans_content: {fileID: 4638396560099484684}
   trans_grid: {fileID: 6705334180144196428}
-  trans_exp: {fileID: 0}
+  trans_exp: {fileID: 7736861031958283583}
+  expMoveTotalTime: 0
+  singleExpMoveTime: 0
+  expMoveTimer: 0
+  startExpMove: 0
+  afterExpBarProcess: 0
+  beforeExpBarProcess: 0
+  expMoveCurLevel: 0
+  expMoveCurPorocess: 0
+  expMoveCurSpeed: 0
+  img_expBar: {fileID: 6753924783653902756}
+  txt_level: {fileID: 456690443674541881}
+  txt_exp: {fileID: 286859954743193004}
 --- !u!1 &8710011809275382874
 GameObject:
   m_ObjectHideFlags: 0
@@ -725,7 +737,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4171036141674201626
 RectTransform:
   m_ObjectHideFlags: 0
