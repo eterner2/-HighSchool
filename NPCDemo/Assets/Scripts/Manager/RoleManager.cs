@@ -257,6 +257,7 @@ public class RoleManager
             if (propertyIdType == PropertyIdType.Study)
             {
                 LevelInfo levelInfo = GetPeopleLevelInfo(Mathf.RoundToInt(realAdd));
+                peopleProto.PropertyData.CurExp = levelInfo.ExpAfterUpgrade;
                 peopleProto.PropertyData.Level = levelInfo.canReachLevel;
             }
             singleData.PropertyNum += realAdd;
@@ -504,9 +505,10 @@ public class RoleManager
     public LevelInfo GetPeopleLevelInfo(int addExp)
     {
         //int curLevel=playerPeople.protoData.PropertyData.Level;
-        int canReachLevel = playerPeople.protoData.PropertyData.Level;
-
-        int expAfterAllUpgrade= playerPeople.protoData.PropertyData.CurExp+addExp;
+        int beforeExp = playerPeople.protoData.PropertyData.CurExp;
+        int beforeLevel = playerPeople.protoData.PropertyData.Level;
+        int canReachLevel = beforeLevel;
+        int expAfterAllUpgrade = beforeExp + addExp;
 
         //int curLevel = 1;
         if (canReachLevel < DataTable._peopleUpgradeList.Count)
@@ -529,7 +531,7 @@ public class RoleManager
                 }
             }
         }
-        LevelInfo info = new LevelInfo(canReachLevel, expAfterAllUpgrade);
+       LevelInfo info = new LevelInfo(canReachLevel, expAfterAllUpgrade,beforeExp,beforeLevel);
 
         return info;
     }
@@ -539,10 +541,13 @@ public class LevelInfo
 {
     public int canReachLevel;//能达到哪一级
     public int ExpAfterUpgrade;//生完所有级后剩余的经验值
-
-    public LevelInfo(int canReachLevel, int ExpAfterUpgrade)
+    public int beforeExp;//之前的经验
+    public int beforeLevel;//之前的等级
+    public LevelInfo(int canReachLevel, int ExpAfterUpgrade,int beforeExp,int beforeLevel)
     {
         this.canReachLevel = canReachLevel;
         this.ExpAfterUpgrade = ExpAfterUpgrade;
+        this.beforeExp = beforeExp;
+        this.beforeLevel = beforeLevel;
     }
 }

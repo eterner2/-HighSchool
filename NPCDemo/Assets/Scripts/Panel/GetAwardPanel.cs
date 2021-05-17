@@ -106,14 +106,26 @@ public class GetAwardPanel : PanelBase
                     {
                         img_expBar.fillAmount = 0;
                         expMoveCurLevel++;
-                        curExpLimit = DataTable._peopleUpgradeList[expMoveCurLevel].needExp.ToInt32();
-                        txt_exp.SetText(img_expBar.fillAmount * curExpLimit + "/" + curExpLimit);
+
+                        //如果满级了
+                        if (expMoveCurLevel == DataTable._peopleUpgradeList.Count)
+                        {
+                            txt_exp.SetText("已满级");
+                            img_expBar.fillAmount = 1;
+                            startExpMove = false;
+                        }
+                        else
+                        {
+                            curExpLimit = DataTable._peopleUpgradeList[expMoveCurLevel].needExp.ToInt32();
+                            txt_exp.SetText(levelInfo.ExpAfterUpgrade + "/" + curExpLimit);
+                        }
                         txt_level.SetText(expMoveCurLevel.ToString());
+
                     }
                     else
                     {
                         startExpMove = false;
-                        txt_exp.SetText(img_expBar.fillAmount * curExpLimit + "/" + curExpLimit);
+                        txt_exp.SetText(levelInfo.ExpAfterUpgrade + "/" + curExpLimit);
 
                         //如果满级了
                         if (expMoveCurLevel== DataTable._peopleUpgradeList.Count)
@@ -126,7 +138,7 @@ public class GetAwardPanel : PanelBase
                 else
                 {
                     img_expBar.fillAmount += realAdd;
-                    txt_exp.SetText(img_expBar.fillAmount * curExpLimit + "/" + curExpLimit);
+                    txt_exp.SetText((int)(img_expBar.fillAmount * curExpLimit) + "/" + curExpLimit);
 
                 }
             }
@@ -141,7 +153,7 @@ public class GetAwardPanel : PanelBase
     {
 
         //之前的等级为canreachLevel
-        expMoveCurLevel = RoleManager.Instance.playerPeople.protoData.PropertyData.Level;
+        expMoveCurLevel = levelInfo.beforeLevel;
         int levelChange = levelInfo.canReachLevel - expMoveCurLevel;
 
         singleExpMoveTime = expMoveTotalTime / (levelChange + 1);
@@ -151,7 +163,7 @@ public class GetAwardPanel : PanelBase
         //经验条的位置
         if (expMoveCurLevel < DataTable._peopleUpgradeList.Count)
         {
-            beforeExpBarProcess = RoleManager.Instance.playerPeople.protoData.PropertyData.CurExp / DataTable._peopleUpgradeList[expMoveCurLevel].needExp.ToFloat();
+            beforeExpBarProcess = levelInfo.beforeExp / DataTable._peopleUpgradeList[expMoveCurLevel].needExp.ToFloat();
             curExpLimit = DataTable._peopleUpgradeList[expMoveCurLevel].needExp.ToInt32();
         }
         //满级了
