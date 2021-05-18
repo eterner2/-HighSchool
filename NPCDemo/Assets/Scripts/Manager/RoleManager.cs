@@ -190,8 +190,8 @@ public class RoleManager
         //CurScore += 30;
         //int init
         PropertySetting pro = DataTable.FindPropertySetting((int)PropertyIdType.Study);
-        AddProperty(PropertyIdType.Study, 30);
-        EventCenter.Broadcast(TheEventType.GetStudyScore, "获得"+ pro.name+30);
+        //AddProperty(PropertyIdType.Study, 30);
+        EventCenter.Broadcast(TheEventType.GetStudyScore, "获得"+ pro.name);
         //GameObject.Find("SinglePropertyView/txt_num").GetComponent<Text>().SetText(CurScore.ToString());
         //PanelManager.Instance.OpenSingle<FlyTxtView>(GameObject.Find("DeskPanel/trans_proChangeParent").transform,"获得知识+30");
 
@@ -225,6 +225,20 @@ public class RoleManager
     //    }
     //    return 0;
     //}
+
+    /// <summary>
+    /// 初始化战斗属性
+    /// </summary>
+    public void InitBattleProperty()
+    {
+        int count =playerPeople.protoData.PropertyData.CurExamPropertyIdList.Count;
+        for(int i = 0; i < count; i++)
+        {
+            SinglePropertyData curPro = playerPeople.protoData.PropertyData.CurExamPropertyDataList[i];
+            SinglePropertyData rawPro= playerPeople.protoData.PropertyData.ExamPropertyDataList[i];
+            curPro.PropertyNum = rawPro.PropertyNum;
+        }
+    }
 
     /// <summary>
     /// 增加能力值 传了人就是给人加
@@ -320,6 +334,31 @@ public class RoleManager
                 return people;
         }
         return null;
+    }
+
+    /// <summary>
+    /// 获得属性并结算
+    /// </summary>
+    public void GetAwardAndResult(List<AwardData> awardDataList,Action cb)
+    {
+        //升级前
+        LevelInfo levelInfo = null;
+        for (int i = 0; i < awardDataList.Count; i++)
+        {
+            AwardData data = awardDataList[i];
+            if (data.awardType == AwardType.Property) 
+            {
+                int awardId = data.id;
+                int awardNum = data.num;
+      
+                if (awardId == (int)PropertyIdType.Study)
+                {
+                    levelInfo = RoleManager.Instance.GetPeopleLevelInfo(awardNum);
+                }
+                RoleManager.Instance.AddProperty((PropertyIdType)awardId, awardNum);
+            }
+        }
+        PanelManager.Instance.OpenPanel<GetAwardPanel>(PanelManager.Instance.trans_layer2, awardDataList, cb, levelInfo);
     }
 
     /// <summary>

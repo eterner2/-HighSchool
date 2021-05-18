@@ -12,11 +12,17 @@ public class PropertyPanel : PanelBase
 
     public Image img_upgradeBar;//升级进度
     public Text txt_upgradeBar;//升级进度
+    public Text txt_lv;//等级
+    public Button btn_close;
 
     public override void Init(params object[] args)
     {
         base.Init(args);
         EventCenter.Register(TheEventType.GetStudyScore, GetStudyScore);
+        addBtnListener(btn_close, () =>
+         {
+             PanelManager.Instance.ClosePanel(this);
+         });
     }
 
 
@@ -25,6 +31,7 @@ public class PropertyPanel : PanelBase
         base.OnOpenIng();
         SinglePropertyData singlePropertyData=  RoleManager.Instance.FindSinglePropertyData(PropertyIdType.Study);
         singlePropertyViewList.Add(PanelManager.Instance.OpenSingle<SinglePropertyView>(trans_grid, singlePropertyData));
+        RefreshShow();
     }
 
     public override void Clear()
@@ -47,7 +54,22 @@ public class PropertyPanel : PanelBase
         {
             singlePropertyViewList[i].RefreshShow();
         }
+        int expLimit = 0;
+        LevelInfo levelInfo = RoleManager.Instance.GetPeopleLevelInfo(0);
+        if (levelInfo.beforeLevel < DataTable._peopleUpgradeList.Count)
+        {
+            PeopleUpgradeSetting setting = DataTable._peopleUpgradeList[levelInfo.beforeLevel];
+            expLimit = DataTable._peopleUpgradeList[levelInfo.beforeLevel].needExp.ToInt32();
+            txt_upgradeBar.SetText(levelInfo.beforeExp + "/" + expLimit);
+            img_upgradeBar.fillAmount = levelInfo.beforeExp / (float)expLimit;
+        }
+        else
+        {
+            img_upgradeBar.fillAmount = 1;
+            txt_upgradeBar.SetText("已满级");
+        }
+        txt_lv.SetText(("LV.") + levelInfo.beforeLevel);
 
-    
+
     }
 }

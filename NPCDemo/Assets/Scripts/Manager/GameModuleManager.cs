@@ -62,10 +62,23 @@ public class GameModuleManager : CommonInstance<GameModuleManager>
     {
         switch (gameModuleType)
         {
+            case GameModuleType.WeekDay:
+                curCloseMaskAction = delegate
+                {
+                    GameTimeManager.Instance.startMove = true;
+                };
+
+                break;
 
             case GameModuleType.Home:
                 //邀约
+                curCloseMaskAction = null;
                 SocializationManager.Instance.StartNewInvite();
+                if (GameTimeManager.Instance._CurTimeData.TheWeekDay == 7)
+                {
+                    //给体力25
+                    RoleManager.Instance.AddProperty(PropertyIdType.TiLi, 25);
+                }
                 break;
             case GameModuleType.SingleOutsideScene:
                 //邀约

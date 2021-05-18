@@ -52,9 +52,14 @@ public class Game : MonoBehaviour
         RoleManager.Instance.Init(-1);
         SocializationManager.Instance.Init();
         GameModuleManager.Instance.Init();
-        PanelManager.Instance.Init();
         GameTimeManager.Instance.Init();
+        AchievementManager.Instance.Init();
+
+        PanelManager.Instance.Init();
+
         Test();
+
+
     }
 
     void Test()

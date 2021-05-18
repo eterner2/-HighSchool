@@ -396,6 +396,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trans_lock: {fileID: 3825392393592138283}
   btn_startBattle: {fileID: 2843574829220089141}
+  txt_lv: {fileID: 3825392394573867561}
 --- !u!1 &3825392393592138282
 GameObject:
   m_ObjectHideFlags: 0

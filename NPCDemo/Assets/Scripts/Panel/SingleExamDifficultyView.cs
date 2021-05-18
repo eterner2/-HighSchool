@@ -10,6 +10,7 @@ public class SingleExamDifficultyView : SingleViewBase
     public ExamSetting examSetting;
     public Transform trans_lock;
     public Button btn_startBattle;//开始战斗
+    public Text txt_lv;//等级
     public override void Init(params object[] args)
     {
         base.Init(args);
@@ -24,6 +25,7 @@ public class SingleExamDifficultyView : SingleViewBase
     {
         base.OnOpenIng();
         ShowUnlockStatus();
+        txt_lv.SetText("Lv." + examSetting.level);
     }
 
     /// <summary>
@@ -33,7 +35,7 @@ public class SingleExamDifficultyView : SingleViewBase
     {
         int level = examSetting.level.ToInt32();
         //解锁
-        if (RoleManager.Instance.playerPeople.protoData.Achievement.HighestExamLevel >= level
+        if (RoleManager.Instance.playerPeople.protoData.Achievement.UnlockedExamIdList.Contains(examSetting.id.ToInt32())
             ||examSetting.initLevel=="1")
         {
             trans_lock.gameObject.SetActive(false);

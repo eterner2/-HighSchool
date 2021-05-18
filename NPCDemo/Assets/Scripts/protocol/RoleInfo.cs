@@ -29,59 +29,59 @@ namespace RoleData {
             "Cg1hbGxQZW9wbGVMaXN0GAIgAygLMhkuUm9sZURhdGEuUGVvcGxlUHJvdG9E",
             "YXRhEiQKCHRpbWVEYXRhGAMgASgLMhIuUm9sZURhdGEuVGltZURhdGESFQoN",
             "Y3VyR2FtZU1vZHVsZRgEIAEoBRINCgV0aGVJZBgFIAEoBBIrCg1jdXJBY3Rp",
-            "b25EYXRhGAYgASgLMhQuUm9sZURhdGEuQWN0aW9uRGF0YSInCgtBY2hpZXZl",
-            "bWVudBIYChBoaWdoZXN0RXhhbUxldmVsGAEgASgFInMKCFRpbWVEYXRhEgwK",
-            "BHllYXIYASABKAUSDQoFbW9udGgYAiABKAUSCwoDZGF5GAMgASgFEhIKCnRo",
-            "ZVdlZWtEYXkYBCABKAUSEgoKZGF5UHJvY2VzcxgFIAEoAhIVCg1kYXlCZWZv",
-            "cmVFeGFtGAYgASgFIrQBCgtPbmVDaGF0RGF0YRIMCgR5ZWFyGAEgASgFEg0K",
-            "BW1vbnRoGAIgASgFEgsKA2RheRgDIAEoBRIPCgdjb250ZW50GAQgASgJEhAK",
-            "CGlzUGxheWVyGAUgASgIEg8KB2NoZWNrZWQYBiABKAgSDgoGYmVsb25nGAcg",
-            "ASgEEhAKCGNoYXRUeXBlGAggASgFEhYKDmludml0ZUFjdGlvbklkGAkgASgF",
-            "Eg0KBXZhbGlkGAogASgIIlgKCkFjdGlvbkRhdGESDwoHcHJvY2VzcxgBIAEo",
-            "AhInCgtjdXJFeGFtRGF0YRgCIAEoCzISLlJvbGVEYXRhLkV4YW1EYXRhEhAK",
-            "CGFjdGlvbklkGAMgASgFIl0KCEV4YW1EYXRhEiwKCWVuZW15TGlzdBgBIAMo",
-            "CzIZLlJvbGVEYXRhLlNpbmdsZUV4YW1FbmVteRIRCglzZXR0aW5nSWQYAiAB",
-            "KAUSEAoIY3VyU2NvcmUYAyABKAUiZwoPU2luZ2xlRXhhbUVuZW15EgoKAmlk",
-            "GAEgASgFEg4KBnN0YXR1cxgCIAEoBRIoCghwcm9wZXJ0eRgDIAEoCzIWLlJv",
-            "bGVEYXRhLlByb3BlcnR5RGF0YRIOCgZvbmx5SWQYBCABKAQiUwoUU2luZ2xl",
-            "UGVvcGxlQ2hhdERhdGESDgoGYmVsb25nGAEgASgEEisKDGNoYXREYXRhTGlz",
-            "dBgCIAMoCzIVLlJvbGVEYXRhLk9uZUNoYXREYXRhItUCCgxQcm9wZXJ0eURh",
-            "dGESFgoOcHJvcGVydHlJZExpc3QYASADKAUSNgoQcHJvcGVydHlEYXRhTGlz",
-            "dBgCIAMoCzIcLlJvbGVEYXRhLlNpbmdsZVByb3BlcnR5RGF0YRIaChJleGFt",
-            "UHJvcGVydHlJZExpc3QYAyADKAUSOgoUZXhhbVByb3BlcnR5RGF0YUxpc3QY",
-            "BCADKAsyHC5Sb2xlRGF0YS5TaW5nbGVQcm9wZXJ0eURhdGESHQoVY3VyRXhh",
-            "bVByb3BlcnR5SWRMaXN0GAUgAygFEj0KF2N1ckV4YW1Qcm9wZXJ0eURhdGFM",
-            "aXN0GAYgAygLMhwuUm9sZURhdGEuU2luZ2xlUHJvcGVydHlEYXRhEhAKCGlz",
-            "UGxheWVyGAcgASgIEg4KBm9ubHlJZBgIIAEoBBINCgVsZXZlbBgJIAEoBRIO",
-            "CgZjdXJFeHAYCiABKAUiVAoSU2luZ2xlUHJvcGVydHlEYXRhEhIKCnByb3Bl",
-            "cnR5SWQYASABKAUSEwoLcHJvcGVydHlOdW0YAiABKAISFQoNcHJvcGVydHlM",
-            "aW1pdBgDIAEoAiLABQoPUGVvcGxlUHJvdG9EYXRhEg4KBm9ubHlJZBgBIAEo",
-            "BBIsCgxwcm9wZXJ0eURhdGEYAiABKAsyFi5Sb2xlRGF0YS5Qcm9wZXJ0eURh",
-            "dGESHwoXc2Vuc2VkT3RoZXJQZW9wbGVJZExpc3QYAyADKAQSKwojZnJpZW5k",
-            "bGluZXNzVG9TZW5zZWRPdGhlclBlb3BsZUxpc3QYBCADKAUSDgoGZ2VuZGVy",
-            "GAUgASgFEgwKBG5hbWUYBiABKAkSEAoIYWN0aW9uSWQYByABKAUSGwoTZmlu",
-            "aXNoSW52aXRlUHJvY2VzcxgIIAEoCBI0ChFtZUludml0ZU90aGVyTGlzdBgJ",
-            "IAMoCzIZLlJvbGVEYXRhLlBlb3BsZVByb3RvRGF0YRI0ChFvdGhlckludml0",
-            "ZU1lTGlzdBgKIAMoCzIZLlJvbGVEYXRhLlBlb3BsZVByb3RvRGF0YRISCgpy",
-            "ZWNvcmRMaXN0GAsgAygJEi4KC2NoYXRGcmllbmRzGAwgAygLMhkuUm9sZURh",
-            "dGEuUGVvcGxlUHJvdG9EYXRhEhAKCGlzUGxheWVyGA0gASgIEhcKD2Nob29z",
-            "ZWRBY3Rpb25JZBgOIAEoBRJDChtBbGxTaW5nbGVQZW9wbGVDaGF0RGF0YUxp",
-            "c3QYDyADKAsyHi5Sb2xlRGF0YS5TaW5nbGVQZW9wbGVDaGF0RGF0YRIXCg92",
-            "YWxpZFdpdGhQZW9wbGUYECADKAQSHAoUcGxheWVyVm9jYWxSZWZ1c2VkTWUY",
-            "ESABKAgSGQoRY3VyUGxhbldpdGhQZW9wbGUYEiABKAQSGQoRZXhhbUJhdHRs",
-            "ZV9jdXJFeHAYEyABKAUSGwoTZXhhbUJhdHRsZV9jdXJMZXZlbBgUIAEoBRIq",
-            "CgthY2hpZXZlbWVudBgVIAEoCzIVLlJvbGVEYXRhLkFjaGlldmVtZW50Im8K",
-            "DVBsYW5Qcm90b0RhdGESJQoCcDEYASABKAsyGS5Sb2xlRGF0YS5QZW9wbGVQ",
-            "cm90b0RhdGESJQoCcDIYAiABKAsyGS5Sb2xlRGF0YS5QZW9wbGVQcm90b0Rh",
-            "dGESEAoIYWN0aW9uSWQYAyABKAUiPgoRT3RoZXJJbnZpdGVNZURhdGESKQoG",
-            "cGVvcGxlGAEgASgLMhkuUm9sZURhdGEuUGVvcGxlUHJvdG9EYXRhIlQKFk1l",
-            "SW52aXRlT3RoZXJQcm90b0RhdGESKQoGcGVvcGxlGAEgASgLMhkuUm9sZURh",
-            "dGEuUGVvcGxlUHJvdG9EYXRhEg8KB3JlZnVzZWQYAiABKAhiBnByb3RvMw=="));
+            "b25EYXRhGAYgASgLMhQuUm9sZURhdGEuQWN0aW9uRGF0YSIpCgtBY2hpZXZl",
+            "bWVudBIaChJ1bmxvY2tlZEV4YW1JZExpc3QYASADKAUicwoIVGltZURhdGES",
+            "DAoEeWVhchgBIAEoBRINCgVtb250aBgCIAEoBRILCgNkYXkYAyABKAUSEgoK",
+            "dGhlV2Vla0RheRgEIAEoBRISCgpkYXlQcm9jZXNzGAUgASgCEhUKDWRheUJl",
+            "Zm9yZUV4YW0YBiABKAUitAEKC09uZUNoYXREYXRhEgwKBHllYXIYASABKAUS",
+            "DQoFbW9udGgYAiABKAUSCwoDZGF5GAMgASgFEg8KB2NvbnRlbnQYBCABKAkS",
+            "EAoIaXNQbGF5ZXIYBSABKAgSDwoHY2hlY2tlZBgGIAEoCBIOCgZiZWxvbmcY",
+            "ByABKAQSEAoIY2hhdFR5cGUYCCABKAUSFgoOaW52aXRlQWN0aW9uSWQYCSAB",
+            "KAUSDQoFdmFsaWQYCiABKAgiWAoKQWN0aW9uRGF0YRIPCgdwcm9jZXNzGAEg",
+            "ASgCEicKC2N1ckV4YW1EYXRhGAIgASgLMhIuUm9sZURhdGEuRXhhbURhdGES",
+            "EAoIYWN0aW9uSWQYAyABKAUiXQoIRXhhbURhdGESLAoJZW5lbXlMaXN0GAEg",
+            "AygLMhkuUm9sZURhdGEuU2luZ2xlRXhhbUVuZW15EhEKCXNldHRpbmdJZBgC",
+            "IAEoBRIQCghjdXJTY29yZRgDIAEoBSJnCg9TaW5nbGVFeGFtRW5lbXkSCgoC",
+            "aWQYASABKAUSDgoGc3RhdHVzGAIgASgFEigKCHByb3BlcnR5GAMgASgLMhYu",
+            "Um9sZURhdGEuUHJvcGVydHlEYXRhEg4KBm9ubHlJZBgEIAEoBCJTChRTaW5n",
+            "bGVQZW9wbGVDaGF0RGF0YRIOCgZiZWxvbmcYASABKAQSKwoMY2hhdERhdGFM",
+            "aXN0GAIgAygLMhUuUm9sZURhdGEuT25lQ2hhdERhdGEi1QIKDFByb3BlcnR5",
+            "RGF0YRIWCg5wcm9wZXJ0eUlkTGlzdBgBIAMoBRI2ChBwcm9wZXJ0eURhdGFM",
+            "aXN0GAIgAygLMhwuUm9sZURhdGEuU2luZ2xlUHJvcGVydHlEYXRhEhoKEmV4",
+            "YW1Qcm9wZXJ0eUlkTGlzdBgDIAMoBRI6ChRleGFtUHJvcGVydHlEYXRhTGlz",
+            "dBgEIAMoCzIcLlJvbGVEYXRhLlNpbmdsZVByb3BlcnR5RGF0YRIdChVjdXJF",
+            "eGFtUHJvcGVydHlJZExpc3QYBSADKAUSPQoXY3VyRXhhbVByb3BlcnR5RGF0",
+            "YUxpc3QYBiADKAsyHC5Sb2xlRGF0YS5TaW5nbGVQcm9wZXJ0eURhdGESEAoI",
+            "aXNQbGF5ZXIYByABKAgSDgoGb25seUlkGAggASgEEg0KBWxldmVsGAkgASgF",
+            "Eg4KBmN1ckV4cBgKIAEoBSJUChJTaW5nbGVQcm9wZXJ0eURhdGESEgoKcHJv",
+            "cGVydHlJZBgBIAEoBRITCgtwcm9wZXJ0eU51bRgCIAEoAhIVCg1wcm9wZXJ0",
+            "eUxpbWl0GAMgASgCIsAFCg9QZW9wbGVQcm90b0RhdGESDgoGb25seUlkGAEg",
+            "ASgEEiwKDHByb3BlcnR5RGF0YRgCIAEoCzIWLlJvbGVEYXRhLlByb3BlcnR5",
+            "RGF0YRIfChdzZW5zZWRPdGhlclBlb3BsZUlkTGlzdBgDIAMoBBIrCiNmcmll",
+            "bmRsaW5lc3NUb1NlbnNlZE90aGVyUGVvcGxlTGlzdBgEIAMoBRIOCgZnZW5k",
+            "ZXIYBSABKAUSDAoEbmFtZRgGIAEoCRIQCghhY3Rpb25JZBgHIAEoBRIbChNm",
+            "aW5pc2hJbnZpdGVQcm9jZXNzGAggASgIEjQKEW1lSW52aXRlT3RoZXJMaXN0",
+            "GAkgAygLMhkuUm9sZURhdGEuUGVvcGxlUHJvdG9EYXRhEjQKEW90aGVySW52",
+            "aXRlTWVMaXN0GAogAygLMhkuUm9sZURhdGEuUGVvcGxlUHJvdG9EYXRhEhIK",
+            "CnJlY29yZExpc3QYCyADKAkSLgoLY2hhdEZyaWVuZHMYDCADKAsyGS5Sb2xl",
+            "RGF0YS5QZW9wbGVQcm90b0RhdGESEAoIaXNQbGF5ZXIYDSABKAgSFwoPY2hv",
+            "b3NlZEFjdGlvbklkGA4gASgFEkMKG0FsbFNpbmdsZVBlb3BsZUNoYXREYXRh",
+            "TGlzdBgPIAMoCzIeLlJvbGVEYXRhLlNpbmdsZVBlb3BsZUNoYXREYXRhEhcK",
+            "D3ZhbGlkV2l0aFBlb3BsZRgQIAMoBBIcChRwbGF5ZXJWb2NhbFJlZnVzZWRN",
+            "ZRgRIAEoCBIZChFjdXJQbGFuV2l0aFBlb3BsZRgSIAEoBBIZChFleGFtQmF0",
+            "dGxlX2N1ckV4cBgTIAEoBRIbChNleGFtQmF0dGxlX2N1ckxldmVsGBQgASgF",
+            "EioKC2FjaGlldmVtZW50GBUgASgLMhUuUm9sZURhdGEuQWNoaWV2ZW1lbnQi",
+            "bwoNUGxhblByb3RvRGF0YRIlCgJwMRgBIAEoCzIZLlJvbGVEYXRhLlBlb3Bs",
+            "ZVByb3RvRGF0YRIlCgJwMhgCIAEoCzIZLlJvbGVEYXRhLlBlb3BsZVByb3Rv",
+            "RGF0YRIQCghhY3Rpb25JZBgDIAEoBSI+ChFPdGhlckludml0ZU1lRGF0YRIp",
+            "CgZwZW9wbGUYASABKAsyGS5Sb2xlRGF0YS5QZW9wbGVQcm90b0RhdGEiVAoW",
+            "TWVJbnZpdGVPdGhlclByb3RvRGF0YRIpCgZwZW9wbGUYASABKAsyGS5Sb2xl",
+            "RGF0YS5QZW9wbGVQcm90b0RhdGESDwoHcmVmdXNlZBgCIAEoCGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.GameInfo), global::RoleData.GameInfo.Parser, new[]{ "PlayerPeople", "AllPeopleList", "TimeData", "CurGameModule", "TheId", "CurActionData" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.Achievement), global::RoleData.Achievement.Parser, new[]{ "HighestExamLevel" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.Achievement), global::RoleData.Achievement.Parser, new[]{ "UnlockedExamIdList" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.TimeData), global::RoleData.TimeData.Parser, new[]{ "Year", "Month", "Day", "TheWeekDay", "DayProcess", "DayBeforeExam" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.OneChatData), global::RoleData.OneChatData.Parser, new[]{ "Year", "Month", "Day", "Content", "IsPlayer", "Checked", "Belong", "ChatType", "InviteActionId", "Valid" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.ActionData), global::RoleData.ActionData.Parser, new[]{ "Process", "CurExamData", "ActionId" }, null, null, null),
@@ -428,7 +428,7 @@ namespace RoleData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public Achievement(Achievement other) : this() {
-      highestExamLevel_ = other.highestExamLevel_;
+      unlockedExamIdList_ = other.unlockedExamIdList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -437,18 +437,17 @@ namespace RoleData {
       return new Achievement(this);
     }
 
-    /// <summary>Field number for the "highestExamLevel" field.</summary>
-    public const int HighestExamLevelFieldNumber = 1;
-    private int highestExamLevel_;
+    /// <summary>Field number for the "unlockedExamIdList" field.</summary>
+    public const int UnlockedExamIdListFieldNumber = 1;
+    private static readonly pb::FieldCodec<int> _repeated_unlockedExamIdList_codec
+        = pb::FieldCodec.ForInt32(10);
+    private readonly pbc::RepeatedField<int> unlockedExamIdList_ = new pbc::RepeatedField<int>();
     /// <summary>
-    ///最高pass的考试等级
+    ///解锁了的考试id
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int HighestExamLevel {
-      get { return highestExamLevel_; }
-      set {
-        highestExamLevel_ = value;
-      }
+    public pbc::RepeatedField<int> UnlockedExamIdList {
+      get { return unlockedExamIdList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -464,14 +463,14 @@ namespace RoleData {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (HighestExamLevel != other.HighestExamLevel) return false;
+      if(!unlockedExamIdList_.Equals(other.unlockedExamIdList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (HighestExamLevel != 0) hash ^= HighestExamLevel.GetHashCode();
+      hash ^= unlockedExamIdList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -485,10 +484,7 @@ namespace RoleData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (HighestExamLevel != 0) {
-        output.WriteRawTag(8);
-        output.WriteInt32(HighestExamLevel);
-      }
+      unlockedExamIdList_.WriteTo(output, _repeated_unlockedExamIdList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -497,9 +493,7 @@ namespace RoleData {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (HighestExamLevel != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(HighestExamLevel);
-      }
+      size += unlockedExamIdList_.CalculateSize(_repeated_unlockedExamIdList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -511,9 +505,7 @@ namespace RoleData {
       if (other == null) {
         return;
       }
-      if (other.HighestExamLevel != 0) {
-        HighestExamLevel = other.HighestExamLevel;
-      }
+      unlockedExamIdList_.Add(other.unlockedExamIdList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -525,8 +517,9 @@ namespace RoleData {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
+          case 10:
           case 8: {
-            HighestExamLevel = input.ReadInt32();
+            unlockedExamIdList_.AddEntriesFrom(input, _repeated_unlockedExamIdList_codec);
             break;
           }
         }

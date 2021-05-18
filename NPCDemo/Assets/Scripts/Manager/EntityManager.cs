@@ -22,7 +22,7 @@ public class EntityManager : MonoInstance<EntityManager>
         // GameObject plobj = GameObject.Instantiate<GameObject>(Resources.Load<GameObject>(path), parent);
         ObjectPoolSingle singleType = (ObjectPoolSingle)Enum.Parse(typeof(ObjectPoolSingle), typeName);
 
-        GameObject plobj = ObjectPoolManager.Instance.GetObjcectFromPool(singleType, path, false);
+        GameObject plobj = ObjectPoolManager.Instance.GetObjcectFromPool(singleType, path, true);
         plobj.transform.SetParent(parent, false);
         plobj.name = typeName;
         T t = plobj.GetComponent<T>();

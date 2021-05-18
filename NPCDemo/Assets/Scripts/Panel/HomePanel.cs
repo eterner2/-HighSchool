@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class HomePanel : PanelBase
 {
     public Button btn_Action;//行动 去大地图
-
+    public Button btn_endDay;
     public override void Init(params object[] args)
     {
         base.Init(args);
@@ -19,6 +19,11 @@ public class HomePanel : PanelBase
         addBtnListener(btn_Action, () =>
         {
             GameModuleManager.Instance.ChangeGameModule(GameModuleType.BigMap);
+        });
+
+        addBtnListener(btn_endDay, () =>
+        {
+            GameTimeManager.Instance.EndDay();
         });
     }
 }

@@ -160,8 +160,24 @@ public class ExamManager : CommonInstance<ExamManager>
             levelInfo = RoleManager.Instance.GetPeopleLevelInfo(awardCount);
         }
 
+        //考了100分可解锁下一关
+        if (score == 100)
+        {
+            int nextId = setting.nextExamId.ToInt32();
+            ExamSetting nextSetting = DataTable.FindExamSetting(nextId);
+            if (nextSetting != null)
+            {
+                if (!RoleManager.Instance.playerPeople.protoData.Achievement.UnlockedExamIdList.Contains(nextId))
+                {
+                    RoleManager.Instance.playerPeople.protoData.Achievement.UnlockedExamIdList.Add(nextId);
+                }
+            }    
+        }
+
 
         RoleManager.Instance.AddProperty((PropertyIdType)awardId, awardCount);
+        RoleManager.Instance.InitBattleProperty();
+        //血量回满 
         List<AwardData> awardList=new List<AwardData>();
         awardList.Add(new AwardData(AwardType.Property, awardId, awardCount));
         //把需要显示的发给ui

@@ -59,29 +59,46 @@ public class GameTimeManager:MonoInstance<GameTimeManager>
     /// </summary>
     public void EndDay()
     {
-        //Action endDayMask = delegate 
-        //{
-        //    PanelManager.Instance.ClosePanel(PanelManager.Instance.GetPanel<BlackMaskPanel>());
-
-        //};
-
-        //PanelManager.Instance.OpenPanel<BlackMaskPanel>(PanelManager.Instance.trans_commonPanelParent, BlackMaskType.Close);
-
-        //如果到了周五晚上 则进入到周六模式
-        if (_CurTimeData.TheWeekDay >=5)
+        DayPlus();
+        //是周六，回家
+        if (_CurTimeData.TheWeekDay >= 5)
         {
             GameModuleManager.Instance.InitGameModule(GameModuleType.Home);
-
         }
         else
         {
-            PanelManager.Instance.BlackMask(BlackMaskType.Close, () =>
-            {
-                PanelManager.Instance.ClosePanel(PanelManager.Instance.GetPanel<BlackMaskPanel>());
-                DayPlus();
-            });
+            GameModuleManager.Instance.InitGameModule(GameModuleType.WeekDay);
 
+            //if (_CurTimeData.TheWeekDay == 1)
+            //{
+            //    GameModuleManager.Instance.InitGameModule(GameModuleType.WeekDay);
+            //}
+            //PanelManager.Instance.PingPongBlackMask(() =>
+            //{
+            //   EventCenter.Broadcast(TheEventType.OnNewDayStart);
+
+            //}, () =>
+            //{
+            //   startMove = true;
+                
+            //});
         }
+
+   
+        ////如果到了周五晚上 则进入到周六模式
+        //if (_CurTimeData.TheWeekDay >=5)
+        //{
+  
+        //}
+        //else
+        //{
+        //    PanelManager.Instance.BlackMask(BlackMaskType.Close, () =>
+        //    {
+        //        PanelManager.Instance.ClosePanel(PanelManager.Instance.GetPanel<BlackMaskPanel>());
+        //        DayPlus();
+        //    });
+
+        //}
 
     }
     /// <summary>
@@ -99,6 +116,7 @@ public class GameTimeManager:MonoInstance<GameTimeManager>
 
         };
         //GameObject.Find("WorkDayPanel").GetComponent<WorkDayPanel>().OnNewDayStart();
+
         PanelManager.Instance.OpenPanel<BlackMaskPanel>(PanelManager.Instance.trans_commonPanelParent, BlackMaskType.Open, finishMask);
 
     }
@@ -124,12 +142,17 @@ public class GameTimeManager:MonoInstance<GameTimeManager>
         _CurTimeData.DayProcess += (theProcessAdd);
         EventCenter.Broadcast(TheEventType.DayTimeProcess, _CurTimeData.DayProcess);
 
-        //一天过去了
+        //一天过去了 结算
         if (_CurTimeData.DayProcess >= 100)
         {
             _CurTimeData.DayProcess = 100;
             startMove = false;
-            EndDay();
+            List<AwardData> awardList = new List<AwardData>();
+            int num = (RoleManager.Instance.playerPeople.protoData.PropertyData.Level * 160 + 1290) / 7;
+            AwardData awardData = new AwardData(AwardType.Property, (int)PropertyIdType.Study, num);
+            awardList.Add(awardData);
+            RoleManager.Instance.GetAwardAndResult(awardList, EndDay);
+            //EndDay();
             //DayPlus();
         }
         else
@@ -171,19 +194,18 @@ public class GameTimeManager:MonoInstance<GameTimeManager>
         {
             WeekPlus();
         }
-        EventCenter.Broadcast(TheEventType.OnNewDayStart);
 
        
 
-            PanelManager.Instance.BlackMask(BlackMaskType.Open, () =>
-            {
-                PanelManager.Instance.ClosePanel(PanelManager.Instance.GetPanel<BlackMaskPanel>());
+            //PanelManager.Instance.BlackMask(BlackMaskType.Open, () =>
+            //{
+            //    PanelManager.Instance.ClosePanel(PanelManager.Instance.GetPanel<BlackMaskPanel>());
 
                
-                    startMove = true;
+            //        startMove = true;
 
                 
-            });
+            //});
         
 
 

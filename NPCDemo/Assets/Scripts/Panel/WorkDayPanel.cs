@@ -32,15 +32,12 @@ public class WorkDayPanel : PanelBase
     public override void OnOpenIng()
     {
         base.OnOpenIng();
-    }
 
-
-    void Start()
-    {
-        //startMove = true;
         RefreshShow();
-        //singleCourseTime = totalTime / 9;
+
     }
+
+
 
     /// <summary>
     /// 一天的时间变化
@@ -83,6 +80,8 @@ public class WorkDayPanel : PanelBase
 
     public void RefreshShow()
     {
+        img_processBar.fillAmount = GameTimeManager.Instance._CurTimeData.DayProcess / (float)100;
+
         txt_dayBeforeExam.SetText("距离高考还有" + GameTimeManager.Instance._CurTimeData.DayBeforeExam + "天");
         txt_weekDay.SetText("星期" + UIUtil.ChangeArabicToChinese(GameTimeManager.Instance._CurTimeData.TheWeekDay));
     }

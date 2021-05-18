@@ -15,7 +15,7 @@ message GameInfo
 //成就
 message Achievement
 {
-int32 highestExamLevel=1;//最高pass的考试等级
+repeated int32 unlockedExamIdList=1;//解锁了的考试id
 }
 
 //日期
