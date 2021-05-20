@@ -703,6 +703,8 @@ public class People
         RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.CritRate, DataTable.FindTestNumerialByLevel(propertyData.Level).critRate.ToFloat());
         RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.SkillAdd, DataTable.FindTestNumerialByLevel(propertyData.Level).skillHurtAdd.ToFloat());
 
+        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.SkillAdd, DataTable.FindTestNumerialByLevel(propertyData.Level).skillHurtAdd.ToFloat());
+
         peopleProtoData.PropertyData = propertyData;
     }
 

@@ -138,9 +138,7 @@ public class RoleManager
     public void InitSingleProperty(PropertyData propertyData, PropertyIdType idType,float propertyNum)
     {
         //PropertyData propertyData = new PropertyData();
-
-
-        //如果属性为-1 说明非考试属性 从property表读取
+        //如果属性为-1 说明是考试属性 从property表读取
         if (propertyNum !=-1)
         {
             //TestEnemyNumerialSetting examSetting = DataTable.FindTestNumerial((int)idType));
@@ -150,6 +148,7 @@ public class RoleManager
             examPro.PropertyNum = propertyNum;
             examPro.PropertyLimit = -1;
 
+            curExamProperty不应该在这里赋值 而应该在考试时赋值
             propertyData.CurExamPropertyIdList.Add((int)idType);
             propertyData.CurExamPropertyDataList.Add(examPro);
 
