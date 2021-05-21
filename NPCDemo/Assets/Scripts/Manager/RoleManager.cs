@@ -247,6 +247,14 @@ public class RoleManager
         }
         return null;
     }
+    /// <summary>
+    /// 获取显示在面板上的属性
+    /// </summary>
+    /// <returns></returns>
+    public List<SinglePropertyData> FindCommonPropertyDataList()
+    {
+
+    }
     ///// <summary>
     ///// 获取能力值
     ///// </summary>
