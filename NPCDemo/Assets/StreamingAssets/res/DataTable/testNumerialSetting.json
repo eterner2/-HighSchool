@@ -10,7 +10,12 @@
     "skillHurtAdd": "0.5",
     "hp": "300",
     "attackSpeed": "0.5",
-    "": null
+    "studyCharm": "5",
+    "studyDefense": "4",
+    "physicalCharm": "5",
+    "physicalDefense": "4",
+    "artCharm": "5",
+    "artDefense": "4"
   },
   {
     "id": "2",
@@ -23,7 +28,12 @@
     "skillHurtAdd": "0.525",
     "hp": "390",
     "attackSpeed": "0.525",
-    "": null
+    "studyCharm": "6",
+    "studyDefense": "4.8",
+    "physicalCharm": "5",
+    "physicalDefense": "4",
+    "artCharm": "5",
+    "artDefense": "4"
   },
   {
     "id": "3",
@@ -36,7 +46,12 @@
     "skillHurtAdd": "0.55",
     "hp": "480",
     "attackSpeed": "0.55",
-    "": null
+    "studyCharm": "7",
+    "studyDefense": "5.6",
+    "physicalCharm": "5",
+    "physicalDefense": "4",
+    "artCharm": "5",
+    "artDefense": "4"
   },
   {
     "id": "4",
@@ -49,7 +64,12 @@
     "skillHurtAdd": "0.575",
     "hp": "570",
     "attackSpeed": "0.575",
-    "": null
+    "studyCharm": "8",
+    "studyDefense": "6.4",
+    "physicalCharm": "5",
+    "physicalDefense": "4",
+    "artCharm": "5",
+    "artDefense": "4"
   },
   {
     "id": "5",
@@ -62,7 +82,12 @@
     "skillHurtAdd": "0.6",
     "hp": "660",
     "attackSpeed": "0.6",
-    "": null
+    "studyCharm": "9",
+    "studyDefense": "7.2",
+    "physicalCharm": "5",
+    "physicalDefense": "4",
+    "artCharm": "5",
+    "artDefense": "4"
   },
   {
     "id": "6",
@@ -75,7 +100,12 @@
     "skillHurtAdd": "0.625",
     "hp": "750",
     "attackSpeed": "0.625",
-    "": null
+    "studyCharm": "10",
+    "studyDefense": "8",
+    "physicalCharm": "5",
+    "physicalDefense": "4",
+    "artCharm": "5",
+    "artDefense": "4"
   },
   {
     "id": "7",
@@ -88,7 +118,12 @@
     "skillHurtAdd": "0.65",
     "hp": "840",
     "attackSpeed": "0.65",
-    "": null
+    "studyCharm": "11",
+    "studyDefense": "8.8",
+    "physicalCharm": "5",
+    "physicalDefense": "4",
+    "artCharm": "5",
+    "artDefense": "4"
   },
   {
     "id": "8",
@@ -101,7 +136,12 @@
     "skillHurtAdd": "0.675",
     "hp": "930",
     "attackSpeed": "0.675",
-    "": null
+    "studyCharm": "12",
+    "studyDefense": "9.6",
+    "physicalCharm": "5",
+    "physicalDefense": "4",
+    "artCharm": "5",
+    "artDefense": "4"
   },
   {
     "id": "9",
@@ -114,7 +154,12 @@
     "skillHurtAdd": "0.7",
     "hp": "1020",
     "attackSpeed": "0.7",
-    "": null
+    "studyCharm": "13",
+    "studyDefense": "10.4",
+    "physicalCharm": "5",
+    "physicalDefense": "4",
+    "artCharm": "5",
+    "artDefense": "4"
   },
   {
     "id": "10",
@@ -127,7 +172,12 @@
     "skillHurtAdd": "0.725",
     "hp": "1110",
     "attackSpeed": "0.725",
-    "": null
+    "studyCharm": "14",
+    "studyDefense": "11.2",
+    "physicalCharm": "5",
+    "physicalDefense": "4",
+    "artCharm": "5",
+    "artDefense": "4"
   },
   {
     "id": "11",
@@ -140,7 +190,12 @@
     "skillHurtAdd": "0.75",
     "hp": "1200",
     "attackSpeed": "0.75",
-    "": null
+    "studyCharm": "15",
+    "studyDefense": "12",
+    "physicalCharm": "5",
+    "physicalDefense": "4",
+    "artCharm": "5",
+    "artDefense": "4"
   },
   {
     "id": "12",
@@ -153,7 +208,12 @@
     "skillHurtAdd": "0.775",
     "hp": "1290",
     "attackSpeed": "0.775",
-    "": null
+    "studyCharm": "16",
+    "studyDefense": "12.8",
+    "physicalCharm": "5",
+    "physicalDefense": "4",
+    "artCharm": "5",
+    "artDefense": "4"
   },
   {
     "id": "13",
@@ -166,7 +226,12 @@
     "skillHurtAdd": "0.8",
     "hp": "1380",
     "attackSpeed": "0.8",
-    "": null
+    "studyCharm": "17",
+    "studyDefense": "13.6",
+    "physicalCharm": "5",
+    "physicalDefense": "4",
+    "artCharm": "5",
+    "artDefense": "4"
   },
   {
     "id": "14",
@@ -179,7 +244,12 @@
     "skillHurtAdd": "0.825",
     "hp": "1470",
     "attackSpeed": "0.825",
-    "": null
+    "studyCharm": "18",
+    "studyDefense": "14.4",
+    "physicalCharm": "5",
+    "physicalDefense": "4",
+    "artCharm": "5",
+    "artDefense": "4"
   },
   {
     "id": "15",
@@ -192,7 +262,12 @@
     "skillHurtAdd": "0.85",
     "hp": "1560",
     "attackSpeed": "0.85",
-    "": null
+    "studyCharm": "19",
+    "studyDefense": "15.2",
+    "physicalCharm": "5",
+    "physicalDefense": "4",
+    "artCharm": "5",
+    "artDefense": "4"
   },
   {
     "id": "16",
@@ -205,7 +280,12 @@
     "skillHurtAdd": "0.875",
     "hp": "1650",
     "attackSpeed": "0.875",
-    "": null
+    "studyCharm": "20",
+    "studyDefense": "16",
+    "physicalCharm": "5",
+    "physicalDefense": "4",
+    "artCharm": "5",
+    "artDefense": "4"
   },
   {
     "id": "17",
@@ -218,7 +298,12 @@
     "skillHurtAdd": "0.9",
     "hp": "1740",
     "attackSpeed": "0.9",
-    "": null
+    "studyCharm": "21",
+    "studyDefense": "16.8",
+    "physicalCharm": "5",
+    "physicalDefense": "4",
+    "artCharm": "5",
+    "artDefense": "4"
   },
   {
     "id": "18",
@@ -231,7 +316,12 @@
     "skillHurtAdd": "0.925",
     "hp": "1830",
     "attackSpeed": "0.925",
-    "": null
+    "studyCharm": "22",
+    "studyDefense": "17.6",
+    "physicalCharm": "5",
+    "physicalDefense": "4",
+    "artCharm": "5",
+    "artDefense": "4"
   },
   {
     "id": "19",
@@ -244,7 +334,12 @@
     "skillHurtAdd": "0.95",
     "hp": "1920",
     "attackSpeed": "0.95",
-    "": null
+    "studyCharm": "23",
+    "studyDefense": "18.4",
+    "physicalCharm": "5",
+    "physicalDefense": "4",
+    "artCharm": "5",
+    "artDefense": "4"
   },
   {
     "id": "20",
@@ -257,7 +352,12 @@
     "skillHurtAdd": "0.975",
     "hp": "2010",
     "attackSpeed": "0.975",
-    "": null
+    "studyCharm": "24",
+    "studyDefense": "19.2",
+    "physicalCharm": "5",
+    "physicalDefense": "4",
+    "artCharm": "5",
+    "artDefense": "4"
   },
   {
     "id": "21",
@@ -270,7 +370,12 @@
     "skillHurtAdd": "1",
     "hp": "2100",
     "attackSpeed": "1",
-    "": null
+    "studyCharm": "25",
+    "studyDefense": "20",
+    "physicalCharm": "5",
+    "physicalDefense": "4",
+    "artCharm": "5",
+    "artDefense": "4"
   },
   {
     "id": "22",
@@ -283,7 +388,12 @@
     "skillHurtAdd": "1.025",
     "hp": "2190",
     "attackSpeed": "1.025",
-    "": null
+    "studyCharm": "26",
+    "studyDefense": "20.8",
+    "physicalCharm": "5",
+    "physicalDefense": "4",
+    "artCharm": "5",
+    "artDefense": "4"
   },
   {
     "id": "23",
@@ -296,7 +406,12 @@
     "skillHurtAdd": "1.05",
     "hp": "2280",
     "attackSpeed": "1.05",
-    "": null
+    "studyCharm": "27",
+    "studyDefense": "21.6",
+    "physicalCharm": "5",
+    "physicalDefense": "4",
+    "artCharm": "5",
+    "artDefense": "4"
   },
   {
     "id": "24",
@@ -309,7 +424,12 @@
     "skillHurtAdd": "1.075",
     "hp": "2370",
     "attackSpeed": "1.075",
-    "": null
+    "studyCharm": "28",
+    "studyDefense": "22.4",
+    "physicalCharm": "5",
+    "physicalDefense": "4",
+    "artCharm": "5",
+    "artDefense": "4"
   },
   {
     "id": "25",
@@ -322,7 +442,12 @@
     "skillHurtAdd": "1.1",
     "hp": "2460",
     "attackSpeed": "1.1",
-    "": null
+    "studyCharm": "29",
+    "studyDefense": "23.2",
+    "physicalCharm": "5",
+    "physicalDefense": "4",
+    "artCharm": "5",
+    "artDefense": "4"
   },
   {
     "id": "26",
@@ -335,7 +460,12 @@
     "skillHurtAdd": "1.125",
     "hp": "2550",
     "attackSpeed": "1.125",
-    "": null
+    "studyCharm": "30",
+    "studyDefense": "24",
+    "physicalCharm": "5",
+    "physicalDefense": "4",
+    "artCharm": "5",
+    "artDefense": "4"
   },
   {
     "id": "27",
@@ -348,7 +478,12 @@
     "skillHurtAdd": "1.15",
     "hp": "2640",
     "attackSpeed": "1.15",
-    "": null
+    "studyCharm": "31",
+    "studyDefense": "24.8",
+    "physicalCharm": "5",
+    "physicalDefense": "4",
+    "artCharm": "5",
+    "artDefense": "4"
   },
   {
     "id": "28",
@@ -361,7 +496,12 @@
     "skillHurtAdd": "1.175",
     "hp": "2730",
     "attackSpeed": "1.175",
-    "": null
+    "studyCharm": "32",
+    "studyDefense": "25.6",
+    "physicalCharm": "5",
+    "physicalDefense": "4",
+    "artCharm": "5",
+    "artDefense": "4"
   },
   {
     "id": "29",
@@ -374,7 +514,12 @@
     "skillHurtAdd": "1.2",
     "hp": "2820",
     "attackSpeed": "1.2",
-    "": null
+    "studyCharm": "33",
+    "studyDefense": "26.4",
+    "physicalCharm": "5",
+    "physicalDefense": "4",
+    "artCharm": "5",
+    "artDefense": "4"
   },
   {
     "id": "30",
@@ -387,7 +532,12 @@
     "skillHurtAdd": "1.225",
     "hp": "2910",
     "attackSpeed": "1.225",
-    "": null
+    "studyCharm": "34",
+    "studyDefense": "27.2",
+    "physicalCharm": "5",
+    "physicalDefense": "4",
+    "artCharm": "5",
+    "artDefense": "4"
   },
   {
     "id": "31",
@@ -400,7 +550,12 @@
     "skillHurtAdd": "1.25",
     "hp": "3000",
     "attackSpeed": "1.25",
-    "": null
+    "studyCharm": "35",
+    "studyDefense": "28",
+    "physicalCharm": "5",
+    "physicalDefense": "4",
+    "artCharm": "5",
+    "artDefense": "4"
   },
   {
     "id": "32",
@@ -413,7 +568,12 @@
     "skillHurtAdd": "1.275",
     "hp": "3090",
     "attackSpeed": "1.275",
-    "": null
+    "studyCharm": "36",
+    "studyDefense": "28.8",
+    "physicalCharm": "5",
+    "physicalDefense": "4",
+    "artCharm": "5",
+    "artDefense": "4"
   },
   {
     "id": "33",
@@ -426,7 +586,12 @@
     "skillHurtAdd": "1.3",
     "hp": "3180",
     "attackSpeed": "1.3",
-    "": null
+    "studyCharm": "37",
+    "studyDefense": "29.6",
+    "physicalCharm": "5",
+    "physicalDefense": "4",
+    "artCharm": "5",
+    "artDefense": "4"
   },
   {
     "id": "34",
@@ -439,7 +604,12 @@
     "skillHurtAdd": "1.325",
     "hp": "3270",
     "attackSpeed": "1.325",
-    "": null
+    "studyCharm": "38",
+    "studyDefense": "30.4",
+    "physicalCharm": "5",
+    "physicalDefense": "4",
+    "artCharm": "5",
+    "artDefense": "4"
   },
   {
     "id": "35",
@@ -452,7 +622,12 @@
     "skillHurtAdd": "1.35",
     "hp": "3360",
     "attackSpeed": "1.35",
-    "": null
+    "studyCharm": "39",
+    "studyDefense": "31.2",
+    "physicalCharm": "5",
+    "physicalDefense": "4",
+    "artCharm": "5",
+    "artDefense": "4"
   },
   {
     "id": "36",
@@ -465,7 +640,12 @@
     "skillHurtAdd": "1.375",
     "hp": "3450",
     "attackSpeed": "1.375",
-    "": null
+    "studyCharm": "40",
+    "studyDefense": "32",
+    "physicalCharm": "5",
+    "physicalDefense": "4",
+    "artCharm": "5",
+    "artDefense": "4"
   },
   {
     "id": "37",
@@ -478,7 +658,12 @@
     "skillHurtAdd": "1.4",
     "hp": "3540",
     "attackSpeed": "1.4",
-    "": null
+    "studyCharm": "41",
+    "studyDefense": "32.8",
+    "physicalCharm": "5",
+    "physicalDefense": "4",
+    "artCharm": "5",
+    "artDefense": "4"
   },
   {
     "id": "38",
@@ -491,7 +676,12 @@
     "skillHurtAdd": "1.425",
     "hp": "3630",
     "attackSpeed": "1.425",
-    "": null
+    "studyCharm": "42",
+    "studyDefense": "33.6",
+    "physicalCharm": "5",
+    "physicalDefense": "4",
+    "artCharm": "5",
+    "artDefense": "4"
   },
   {
     "id": "39",
@@ -504,7 +694,12 @@
     "skillHurtAdd": "1.45",
     "hp": "3720",
     "attackSpeed": "1.45",
-    "": null
+    "studyCharm": "43",
+    "studyDefense": "34.4",
+    "physicalCharm": "5",
+    "physicalDefense": "4",
+    "artCharm": "5",
+    "artDefense": "4"
   },
   {
     "id": "40",
@@ -517,7 +712,12 @@
     "skillHurtAdd": "1.475",
     "hp": "3810",
     "attackSpeed": "1.475",
-    "": null
+    "studyCharm": "44",
+    "studyDefense": "35.2",
+    "physicalCharm": "5",
+    "physicalDefense": "4",
+    "artCharm": "5",
+    "artDefense": "4"
   },
   {
     "id": "41",
@@ -530,7 +730,12 @@
     "skillHurtAdd": "1.5",
     "hp": "3900",
     "attackSpeed": "1.5",
-    "": null
+    "studyCharm": "45",
+    "studyDefense": "36",
+    "physicalCharm": "5",
+    "physicalDefense": "4",
+    "artCharm": "5",
+    "artDefense": "4"
   },
   {
     "id": "42",
@@ -543,7 +748,12 @@
     "skillHurtAdd": "1.525",
     "hp": "3990",
     "attackSpeed": "1.525",
-    "": null
+    "studyCharm": "46",
+    "studyDefense": "36.8",
+    "physicalCharm": "5",
+    "physicalDefense": "4",
+    "artCharm": "5",
+    "artDefense": "4"
   },
   {
     "id": "43",
@@ -556,7 +766,12 @@
     "skillHurtAdd": "1.55",
     "hp": "4080",
     "attackSpeed": "1.55",
-    "": null
+    "studyCharm": "47",
+    "studyDefense": "37.6",
+    "physicalCharm": "5",
+    "physicalDefense": "4",
+    "artCharm": "5",
+    "artDefense": "4"
   },
   {
     "id": "44",
@@ -569,7 +784,12 @@
     "skillHurtAdd": "1.575",
     "hp": "4170",
     "attackSpeed": "1.575",
-    "": null
+    "studyCharm": "48",
+    "studyDefense": "38.4",
+    "physicalCharm": "5",
+    "physicalDefense": "4",
+    "artCharm": "5",
+    "artDefense": "4"
   },
   {
     "id": "45",
@@ -582,7 +802,12 @@
     "skillHurtAdd": "1.6",
     "hp": "4260",
     "attackSpeed": "1.6",
-    "": null
+    "studyCharm": "49",
+    "studyDefense": "39.2",
+    "physicalCharm": "5",
+    "physicalDefense": "4",
+    "artCharm": "5",
+    "artDefense": "4"
   },
   {
     "id": "46",
@@ -595,7 +820,12 @@
     "skillHurtAdd": "1.625",
     "hp": "4350",
     "attackSpeed": "1.625",
-    "": null
+    "studyCharm": "50",
+    "studyDefense": "40",
+    "physicalCharm": "5",
+    "physicalDefense": "4",
+    "artCharm": "5",
+    "artDefense": "4"
   },
   {
     "id": "47",
@@ -608,7 +838,12 @@
     "skillHurtAdd": "1.65",
     "hp": "4440",
     "attackSpeed": "1.65",
-    "": null
+    "studyCharm": "51",
+    "studyDefense": "40.8",
+    "physicalCharm": "5",
+    "physicalDefense": "4",
+    "artCharm": "5",
+    "artDefense": "4"
   },
   {
     "id": "48",
@@ -621,7 +856,12 @@
     "skillHurtAdd": "1.675",
     "hp": "4530",
     "attackSpeed": "1.675",
-    "": null
+    "studyCharm": "52",
+    "studyDefense": "41.6",
+    "physicalCharm": "5",
+    "physicalDefense": "4",
+    "artCharm": "5",
+    "artDefense": "4"
   },
   {
     "id": "49",
@@ -634,7 +874,12 @@
     "skillHurtAdd": "1.7",
     "hp": "4620",
     "attackSpeed": "1.7",
-    "": null
+    "studyCharm": "53",
+    "studyDefense": "42.4",
+    "physicalCharm": "5",
+    "physicalDefense": "4",
+    "artCharm": "5",
+    "artDefense": "4"
   },
   {
     "id": "50",
@@ -647,6 +892,11 @@
     "skillHurtAdd": "1.725",
     "hp": "4710",
     "attackSpeed": "1.725",
-    "": null
+    "studyCharm": "54",
+    "studyDefense": "43.2",
+    "physicalCharm": "5",
+    "physicalDefense": "4",
+    "artCharm": "5",
+    "artDefense": "4"
   }
 ]

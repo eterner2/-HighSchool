@@ -7,7 +7,8 @@
     "iconName": "property_knowledge",
     "newRdmRange": "10|20",
     "des": null,
-    "isExamBattle": null
+    "isExamBattle": null,
+    "isChangeWithLevel": null
   },
   {
     "id": "10002",
@@ -17,7 +18,8 @@
     "iconName": "property_music",
     "newRdmRange": "5|12",
     "des": null,
-    "isExamBattle": null
+    "isExamBattle": null,
+    "isChangeWithLevel": null
   },
   {
     "id": "10003",
@@ -27,7 +29,8 @@
     "iconName": "property_physical",
     "newRdmRange": "4|10",
     "des": null,
-    "isExamBattle": null
+    "isExamBattle": null,
+    "isChangeWithLevel": null
   },
   {
     "id": "10004",
@@ -37,7 +40,8 @@
     "iconName": "property_money",
     "newRdmRange": "800|3000",
     "des": null,
-    "isExamBattle": null
+    "isExamBattle": null,
+    "isChangeWithLevel": null
   },
   {
     "id": "10005",
@@ -47,7 +51,8 @@
     "iconName": "property_power",
     "newRdmRange": "100|100",
     "des": null,
-    "isExamBattle": null
+    "isExamBattle": null,
+    "isChangeWithLevel": null
   },
   {
     "id": "10006",
@@ -57,7 +62,8 @@
     "iconName": "property_mood",
     "newRdmRange": "100|100",
     "des": null,
-    "isExamBattle": null
+    "isExamBattle": null,
+    "isChangeWithLevel": null
   },
   {
     "id": "10007",
@@ -67,7 +73,8 @@
     "iconName": "property_selfControl",
     "newRdmRange": "10|30",
     "des": null,
-    "isExamBattle": null
+    "isExamBattle": null,
+    "isChangeWithLevel": null
   },
   {
     "id": "10008",
@@ -77,7 +84,8 @@
     "iconName": "property_charm",
     "newRdmRange": "10|30",
     "des": null,
-    "isExamBattle": null
+    "isExamBattle": null,
+    "isChangeWithLevel": null
   },
   {
     "id": "10009",
@@ -87,7 +95,8 @@
     "iconName": "hp",
     "newRdmRange": "300|450",
     "des": "精力降为0时玩家将结束做题",
-    "isExamBattle": "1"
+    "isExamBattle": "1",
+    "isChangeWithLevel": "1"
   },
   {
     "id": "10010",
@@ -97,7 +106,8 @@
     "iconName": "gongji",
     "newRdmRange": "30|50",
     "des": "直接影响单次攻击难题的伤害",
-    "isExamBattle": "1"
+    "isExamBattle": "1",
+    "isChangeWithLevel": "1"
   },
   {
     "id": "10011",
@@ -107,7 +117,8 @@
     "iconName": "fangyu",
     "newRdmRange": "10|30",
     "des": "面对难题时，更好的心态意味着对难题的抵御力更强",
-    "isExamBattle": "1"
+    "isExamBattle": "1",
+    "isChangeWithLevel": "1"
   },
   {
     "id": "10012",
@@ -117,7 +128,8 @@
     "iconName": "baojilv",
     "newRdmRange": "20|20",
     "des": "灵感，让你有几率在面对难题时打出超出当前学习能力的伤害。对于一些特殊的题目，也能达到破防的效果",
-    "isExamBattle": "1"
+    "isExamBattle": "1",
+    "isChangeWithLevel": "1"
   },
   {
     "id": "10013",
@@ -127,7 +139,8 @@
     "iconName": "gongsu",
     "newRdmRange": "1|1",
     "des": "天下武功，无快不破",
-    "isExamBattle": "1"
+    "isExamBattle": "1",
+    "isChangeWithLevel": "1"
   },
   {
     "id": "10014",
@@ -137,7 +150,8 @@
     "iconName": "gongsu",
     "newRdmRange": "0.5|1",
     "des": "给你的刀刃加点锋",
-    "isExamBattle": "1"
+    "isExamBattle": "1",
+    "isChangeWithLevel": "1"
   },
   {
     "id": "10015",
@@ -147,7 +161,8 @@
     "iconName": "gongsu",
     "newRdmRange": "0.5|1",
     "des": "致命一击的脑力",
-    "isExamBattle": "1"
+    "isExamBattle": "1",
+    "isChangeWithLevel": "1"
   },
   {
     "id": "10016",
@@ -157,6 +172,73 @@
     "iconName": "score",
     "newRdmRange": "0",
     "des": "每一分，都拉下成千上万的人",
-    "isExamBattle": null
+    "isExamBattle": null,
+    "isChangeWithLevel": null
+  },
+  {
+    "id": "10017",
+    "name": "学习魅力",
+    "showInStatusPanel": "0",
+    "haveLimit": "-1",
+    "iconName": "property_mood",
+    "newRdmRange": "0",
+    "des": "腹有诗书气自华",
+    "isExamBattle": null,
+    "isChangeWithLevel": "1"
+  },
+  {
+    "id": "10018",
+    "name": "学习抗性",
+    "showInStatusPanel": "0",
+    "haveLimit": "-1",
+    "iconName": "property_mood",
+    "newRdmRange": "0",
+    "des": "见识越多，越是波澜不惊",
+    "isExamBattle": null,
+    "isChangeWithLevel": "1"
+  },
+  {
+    "id": "10019",
+    "name": "体育魅力",
+    "showInStatusPanel": "0",
+    "haveLimit": "-1",
+    "iconName": "property_mood",
+    "newRdmRange": "0",
+    "des": "运动使你更美",
+    "isExamBattle": null,
+    "isChangeWithLevel": "1"
+  },
+  {
+    "id": "10020",
+    "name": "体育抗性",
+    "showInStatusPanel": "0",
+    "haveLimit": "-1",
+    "iconName": "property_mood",
+    "newRdmRange": "0",
+    "des": "手无缚鸡之力，想撩谁呢",
+    "isExamBattle": null,
+    "isChangeWithLevel": "1"
+  },
+  {
+    "id": "10021",
+    "name": "艺术魅力",
+    "showInStatusPanel": "0",
+    "haveLimit": "-1",
+    "iconName": "property_mood",
+    "newRdmRange": "0",
+    "des": "有艺术细胞的人在哪里都会受到欢迎",
+    "isExamBattle": null,
+    "isChangeWithLevel": "1"
+  },
+  {
+    "id": "10022",
+    "name": "艺术抗性",
+    "showInStatusPanel": "0",
+    "haveLimit": "-1",
+    "iconName": "property_mood",
+    "newRdmRange": "0",
+    "des": "想对牛弹琴吗，那试试铁面的味道吧",
+    "isExamBattle": null,
+    "isChangeWithLevel": "1"
   }
 ]

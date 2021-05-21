@@ -685,41 +685,48 @@ public class People
         propertyData.OnlyId = peopleProtoData.OnlyId;
         propertyData.Level = 1;
 
+        //PropertySetting setting= DataTable.FindPropertySetting(PropertyIdType.Study)
+        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Study, GetRdmProperty(PropertyIdType.Study),false);
+        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Art, GetRdmProperty(PropertyIdType.Art), false);
+        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Physical, GetRdmProperty(PropertyIdType.Physical), false);
+        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Money, GetRdmProperty(PropertyIdType.Money), false);
+        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.TiLi, GetRdmProperty(PropertyIdType.TiLi), false);
+        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Mood, GetRdmProperty(PropertyIdType.Mood), false);
+        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.SelfControl, GetRdmProperty(PropertyIdType.SelfControl), false);
+        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Charm, GetRdmProperty(PropertyIdType.Charm), false);
 
-        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Study,-1);
-        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Art, -1);
-        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Physical, -1);
-        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Money, -1);
-        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.TiLi, -1);
-        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Mood, -1);
-        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.SelfControl, -1);
-        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Charm, -1);
+        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Hp,DataTable.FindTestNumerialByLevel(propertyData.Level).hp.ToFloat(),true);
+        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Attack, DataTable.FindTestNumerialByLevel(propertyData.Level).attack.ToFloat(),true);
+        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Defense, DataTable.FindTestNumerialByLevel(propertyData.Level).defense.ToFloat(),true);
+        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.CritNum, DataTable.FindTestNumerialByLevel(propertyData.Level).crit.ToFloat(),true);
+        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Speed, DataTable.FindTestNumerialByLevel(propertyData.Level).attackSpeed.ToFloat(),true);
+        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.CritRate, DataTable.FindTestNumerialByLevel(propertyData.Level).critRate.ToFloat(),true);
+        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.SkillAdd, DataTable.FindTestNumerialByLevel(propertyData.Level).skillHurtAdd.ToFloat(),true);
 
-        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Hp,DataTable.FindTestNumerialByLevel(propertyData.Level).hp.ToFloat());
-        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Attack, DataTable.FindTestNumerialByLevel(propertyData.Level).attack.ToFloat());
-        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Defense, DataTable.FindTestNumerialByLevel(propertyData.Level).defense.ToFloat());
-        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.CritNum, DataTable.FindTestNumerialByLevel(propertyData.Level).crit.ToFloat());
-        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Speed, DataTable.FindTestNumerialByLevel(propertyData.Level).attackSpeed.ToFloat());
-        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.CritRate, DataTable.FindTestNumerialByLevel(propertyData.Level).critRate.ToFloat());
-        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.SkillAdd, DataTable.FindTestNumerialByLevel(propertyData.Level).skillHurtAdd.ToFloat());
-
-        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.SkillAdd, DataTable.FindTestNumerialByLevel(propertyData.Level).skillHurtAdd.ToFloat());
+        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.StudyCharm, DataTable.FindTestNumerialByLevel(propertyData.Level).studyCharm.ToFloat(),false);
+        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.StudyDefense, DataTable.FindTestNumerialByLevel(propertyData.Level).studyDefense.ToFloat(), false);
+        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.PhysicalCharm, DataTable.FindTestNumerialByLevel(propertyData.Level).physicalCharm.ToFloat(), false);
+        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.PhysicalDefense, DataTable.FindTestNumerialByLevel(propertyData.Level).physicalDefense.ToFloat(), false);
+        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.ArtCharm, DataTable.FindTestNumerialByLevel(propertyData.Level).artCharm.ToFloat(), false);
+        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.ArtDefense, DataTable.FindTestNumerialByLevel(propertyData.Level).artDefense.ToFloat(), false);
 
         peopleProtoData.PropertyData = propertyData;
     }
 
 
+    /// <summary>
+    /// 通过setting获取属性数值
+    /// </summary>
+    /// <param name="propertySetting"></param>
+    /// <returns></returns>
+    int GetRdmProperty(PropertyIdType id)
+    {
+        PropertySetting propertySetting = DataTable.FindPropertySetting((int)id);
+        string[] rdmRange = propertySetting.newRdmRange.Split('|');
+        int val = RandomManager.Next(rdmRange[0].ToInt32(), rdmRange[1].ToInt32());
+        return val;
+    }
 
-
-    ///// <summary>
-    ///// 初始化战斗属性
-    ///// </summary>
-    ///// <param name="propertyData"></param>
-    ///// <param name="idType"></param>
-    //public void InitSingleExamBattleProperty(PropertyData propertyData, PropertyIdType idType,int examBattleLevel)
-    //{
-    //    //string levelGrowStr=
-    //}
 
 
     /// <summary>

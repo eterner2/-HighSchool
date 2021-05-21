@@ -135,52 +135,88 @@ public class RoleManager
     /// <param name="propertyData"></param>
     /// <param name="idType"></param>
     /// <param name="propertyNum"></param>
-    public void InitSingleProperty(PropertyData propertyData, PropertyIdType idType,float propertyNum)
+    public void InitSingleProperty(PropertyData propertyData, PropertyIdType idType,float propertyNum,bool isExamBattle)
     {
+        PropertySetting setting = DataTable.FindPropertySetting((int)idType);
+
         //PropertyData propertyData = new PropertyData();
         //如果属性为-1 说明是考试属性 从property表读取
-        if (propertyNum !=-1)
+        if (isExamBattle)
         {
             //TestEnemyNumerialSetting examSetting = DataTable.FindTestNumerial((int)idType));
-            //考试数值需要和等级挂钩
-            SinglePropertyData examPro = new SinglePropertyData();
-            examPro.PropertyId = (int)idType;
-            examPro.PropertyNum = propertyNum;
-            examPro.PropertyLimit = -1;
+            ////考试数值需要和等级挂钩
+            //SinglePropertyData examPro = new SinglePropertyData();
+            //examPro.PropertyId = (int)idType;
+            //examPro.PropertyNum = propertyNum;
+            //examPro.PropertyLimit = -1;
 
-            curExamProperty不应该在这里赋值 而应该在考试时赋值
-            propertyData.CurExamPropertyIdList.Add((int)idType);
-            propertyData.CurExamPropertyDataList.Add(examPro);
+            //curExamProperty不应该在这里赋值 而应该在考试时赋值
+            //propertyData.CurExamPropertyIdList.Add((int)idType);
+            //propertyData.CurExamPropertyDataList.Add(examPro);
 
+            if (propertyData.ExamPropertyIdList.Contains((int)idType))
+            {
+                int index = propertyData.ExamPropertyIdList.IndexOf((int)idType);
+                propertyData.ExamPropertyDataList[index].PropertyNum = propertyNum;
+            }
+            else
+            {
+                SinglePropertyData initsinglePropertyData = new SinglePropertyData();
+                initsinglePropertyData.PropertyId = (int)idType;
+                initsinglePropertyData.PropertyNum = propertyNum;
+                initsinglePropertyData.PropertyLimit = -1;
 
-            SinglePropertyData initsinglePropertyData = new SinglePropertyData();
-            initsinglePropertyData.PropertyId = (int)idType;
-            initsinglePropertyData.PropertyNum = propertyNum;
-            initsinglePropertyData.PropertyLimit = -1;
-
-            propertyData.ExamPropertyIdList.Add((int)idType);
-            propertyData.ExamPropertyDataList.Add(initsinglePropertyData);
+                propertyData.ExamPropertyIdList.Add((int)idType);
+                propertyData.ExamPropertyDataList.Add(initsinglePropertyData);
+            }
+    
 
         }
         else
         {
-            PropertySetting setting = DataTable.FindPropertySetting((int)idType);
+            if (propertyData.PropertyIdList.Contains((int)idType))
+            {
+                int index = propertyData.PropertyIdList.IndexOf((int)idType);
+                propertyData.PropertyDataList[index].PropertyNum = propertyNum;
+            }
+            else
+            {
+                SinglePropertyData singlePropertyData = new SinglePropertyData();
+                singlePropertyData.PropertyId = (int)idType;
+                singlePropertyData.PropertyNum = propertyNum;
+                singlePropertyData.PropertyLimit = setting.haveLimit.ToInt32();
 
-            string[] rdmRange = setting.newRdmRange.Split('|');
-            int val = RandomManager.Next(rdmRange[0].ToInt32(), rdmRange[1].ToInt32());
+                propertyData.PropertyIdList.Add((int)idType);
 
+                propertyData.PropertyDataList.Add(singlePropertyData);
+            }
 
-            SinglePropertyData singlePropertyData = new SinglePropertyData();
-            singlePropertyData.PropertyId = (int)idType;
-            singlePropertyData.PropertyNum = val;
-            singlePropertyData.PropertyLimit = setting.haveLimit.ToInt32();
-
-            propertyData.PropertyIdList.Add((int)idType);
-
-            propertyData.PropertyDataList.Add(singlePropertyData);
+          
         }
         //return singlePropertyData;
     }
+
+    /// <summary>
+    /// 学习升级
+    /// </summary>
+    void OnUpgrade()
+    {
+        InitSingleProperty(playerPeople.protoData.PropertyData, PropertyIdType.Hp, DataTable.FindTestNumerialByLevel(playerPeople.protoData.PropertyData.Level).hp.ToFloat(), true);
+        InitSingleProperty(playerPeople.protoData.PropertyData, PropertyIdType.Attack, DataTable.FindTestNumerialByLevel(playerPeople.protoData.PropertyData.Level).attack.ToFloat(), true);
+        InitSingleProperty(playerPeople.protoData.PropertyData, PropertyIdType.Defense, DataTable.FindTestNumerialByLevel(playerPeople.protoData.PropertyData.Level).defense.ToFloat(), true);
+        InitSingleProperty(playerPeople.protoData.PropertyData, PropertyIdType.CritNum, DataTable.FindTestNumerialByLevel(playerPeople.protoData.PropertyData.Level).crit.ToFloat(), true);
+        InitSingleProperty(playerPeople.protoData.PropertyData, PropertyIdType.Speed, DataTable.FindTestNumerialByLevel(playerPeople.protoData.PropertyData.Level).attackSpeed.ToFloat(), true);
+        InitSingleProperty(playerPeople.protoData.PropertyData, PropertyIdType.CritRate, DataTable.FindTestNumerialByLevel(playerPeople.protoData.PropertyData.Level).critRate.ToFloat(), true);
+        InitSingleProperty(playerPeople.protoData.PropertyData, PropertyIdType.SkillAdd, DataTable.FindTestNumerialByLevel(playerPeople.protoData.PropertyData.Level).skillHurtAdd.ToFloat(), true);
+
+        InitSingleProperty(playerPeople.protoData.PropertyData, PropertyIdType.StudyCharm, DataTable.FindTestNumerialByLevel(playerPeople.protoData.PropertyData.Level).studyCharm.ToFloat(), false);
+        InitSingleProperty(playerPeople.protoData.PropertyData, PropertyIdType.StudyDefense, DataTable.FindTestNumerialByLevel(playerPeople.protoData.PropertyData.Level).studyDefense.ToFloat(), false);
+        InitSingleProperty(playerPeople.protoData.PropertyData, PropertyIdType.PhysicalCharm, DataTable.FindTestNumerialByLevel(playerPeople.protoData.PropertyData.Level).physicalCharm.ToFloat(), false);
+        InitSingleProperty(playerPeople.protoData.PropertyData, PropertyIdType.PhysicalDefense, DataTable.FindTestNumerialByLevel(playerPeople.protoData.PropertyData.Level).physicalDefense.ToFloat(), false);
+        InitSingleProperty(playerPeople.protoData.PropertyData, PropertyIdType.ArtCharm, DataTable.FindTestNumerialByLevel(playerPeople.protoData.PropertyData.Level).artCharm.ToFloat(), false);
+        InitSingleProperty(playerPeople.protoData.PropertyData, PropertyIdType.ArtDefense, DataTable.FindTestNumerialByLevel(playerPeople.protoData.PropertyData.Level).artDefense.ToFloat(), false);
+    }
+
     /// <summary>
     /// 得到学习分数
     /// </summary>
@@ -272,6 +308,7 @@ public class RoleManager
                 LevelInfo levelInfo = GetPeopleLevelInfo(Mathf.RoundToInt(realAdd));
                 peopleProto.PropertyData.CurExp = levelInfo.ExpAfterUpgrade;
                 peopleProto.PropertyData.Level = levelInfo.canReachLevel;
+                OnUpgrade();
             }
             singleData.PropertyNum += realAdd;
 

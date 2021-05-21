@@ -121,4 +121,11 @@ public enum PropertyIdType
     CritNum=10015,//爆伤
 
     Score=10016,//分数
+
+    StudyCharm = 10017,//学习魅力
+    StudyDefense =10018,//学习抵抗
+    PhysicalCharm = 10019,//体育魅力
+    PhysicalDefense= 10020,//体育抗性
+    ArtCharm=10021,//艺术魅力
+    ArtDefense=10022,//艺术抗性
 }

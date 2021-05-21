@@ -12,4 +12,10 @@ public class TestNumerialSetting
     public string skillHurtAdd;
     public string hp;
     public string attackSpeed;
+    public string studyCharm;
+    public string studyDefense;
+    public string physicalCharm;
+    public string physicalDefense;
+    public string artCharm;
+    public string artDefense;
 }

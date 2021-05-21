@@ -10,4 +10,5 @@ public class PropertySetting
     public string newRdmRange;//随机范围
     public string des;//描述
     public string isExamBattle;//考试
+    public string isChangeWithLevel;//随等级而变的属性
 }
