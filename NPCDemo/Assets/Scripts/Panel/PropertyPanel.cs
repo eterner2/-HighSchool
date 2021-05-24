@@ -8,7 +8,10 @@ using UnityEngine.UI;
 public class PropertyPanel : PanelBase
 {
     public Transform trans_grid;
-    public List<SinglePropertyView> singlePropertyViewList = new List<SinglePropertyView>();
+    public Transform trans_examProGrid;//战斗技能格子
+
+    public List<SinglePropertyView> singlePropertyViewList = new List<SinglePropertyView>();//非战斗技能
+    public List<SinglePropertyView> examPropertyViewList = new List<SinglePropertyView>();//战斗技能
 
     public Image img_upgradeBar;//升级进度
     public Text txt_upgradeBar;//升级进度
@@ -29,8 +32,22 @@ public class PropertyPanel : PanelBase
     public override void OnOpenIng()
     {
         base.OnOpenIng();
-        SinglePropertyData singlePropertyData=  RoleManager.Instance.FindSinglePropertyData(PropertyIdType.Study);
-        singlePropertyViewList.Add(PanelManager.Instance.OpenSingle<SinglePropertyView>(trans_grid, singlePropertyData));
+
+        List<SinglePropertyData> singlePropertyDataList = RoleManager.Instance.FindCommonPropertyDataList();
+
+        for(int i = 0; i < singlePropertyDataList.Count; i++)
+        {
+            singlePropertyViewList.Add(PanelManager.Instance.OpenSingle<SinglePropertyView>(trans_grid, singlePropertyDataList[i]));
+
+        }
+        List<SinglePropertyData> examPropertyDataList = RoleManager.Instance.FindExamPropertyDataList();
+        for (int i = 0; i < examPropertyDataList.Count; i++)
+        {
+            examPropertyViewList.Add(PanelManager.Instance.OpenSingle<SinglePropertyView>(trans_examProGrid, examPropertyDataList[i]));
+
+        }
+
+
         RefreshShow();
     }
 
@@ -38,6 +55,10 @@ public class PropertyPanel : PanelBase
     {
         base.Clear();
         PanelManager.Instance.CloseAllSingle(trans_grid);
+        PanelManager.Instance.CloseAllSingle(trans_examProGrid);
+
+        singlePropertyViewList.Clear();
+        examPropertyViewList.Clear();
     }
     /// <summary>
     /// 获取学习属性

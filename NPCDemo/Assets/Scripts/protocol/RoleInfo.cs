@@ -45,7 +45,7 @@ namespace RoleData {
             "aWQYASABKAUSDgoGc3RhdHVzGAIgASgFEigKCHByb3BlcnR5GAMgASgLMhYu",
             "Um9sZURhdGEuUHJvcGVydHlEYXRhEg4KBm9ubHlJZBgEIAEoBCJTChRTaW5n",
             "bGVQZW9wbGVDaGF0RGF0YRIOCgZiZWxvbmcYASABKAQSKwoMY2hhdERhdGFM",
-            "aXN0GAIgAygLMhUuUm9sZURhdGEuT25lQ2hhdERhdGEi1QIKDFByb3BlcnR5",
+            "aXN0GAIgAygLMhUuUm9sZURhdGEuT25lQ2hhdERhdGEi/gIKDFByb3BlcnR5",
             "RGF0YRIWCg5wcm9wZXJ0eUlkTGlzdBgBIAMoBRI2ChBwcm9wZXJ0eURhdGFM",
             "aXN0GAIgAygLMhwuUm9sZURhdGEuU2luZ2xlUHJvcGVydHlEYXRhEhoKEmV4",
             "YW1Qcm9wZXJ0eUlkTGlzdBgDIAMoBRI6ChRleGFtUHJvcGVydHlEYXRhTGlz",
@@ -53,30 +53,31 @@ namespace RoleData {
             "eGFtUHJvcGVydHlJZExpc3QYBSADKAUSPQoXY3VyRXhhbVByb3BlcnR5RGF0",
             "YUxpc3QYBiADKAsyHC5Sb2xlRGF0YS5TaW5nbGVQcm9wZXJ0eURhdGESEAoI",
             "aXNQbGF5ZXIYByABKAgSDgoGb25seUlkGAggASgEEg0KBWxldmVsGAkgASgF",
-            "Eg4KBmN1ckV4cBgKIAEoBSJUChJTaW5nbGVQcm9wZXJ0eURhdGESEgoKcHJv",
-            "cGVydHlJZBgBIAEoBRITCgtwcm9wZXJ0eU51bRgCIAEoAhIVCg1wcm9wZXJ0",
-            "eUxpbWl0GAMgASgCIsAFCg9QZW9wbGVQcm90b0RhdGESDgoGb25seUlkGAEg",
-            "ASgEEiwKDHByb3BlcnR5RGF0YRgCIAEoCzIWLlJvbGVEYXRhLlByb3BlcnR5",
-            "RGF0YRIfChdzZW5zZWRPdGhlclBlb3BsZUlkTGlzdBgDIAMoBBIrCiNmcmll",
-            "bmRsaW5lc3NUb1NlbnNlZE90aGVyUGVvcGxlTGlzdBgEIAMoBRIOCgZnZW5k",
-            "ZXIYBSABKAUSDAoEbmFtZRgGIAEoCRIQCghhY3Rpb25JZBgHIAEoBRIbChNm",
-            "aW5pc2hJbnZpdGVQcm9jZXNzGAggASgIEjQKEW1lSW52aXRlT3RoZXJMaXN0",
-            "GAkgAygLMhkuUm9sZURhdGEuUGVvcGxlUHJvdG9EYXRhEjQKEW90aGVySW52",
-            "aXRlTWVMaXN0GAogAygLMhkuUm9sZURhdGEuUGVvcGxlUHJvdG9EYXRhEhIK",
-            "CnJlY29yZExpc3QYCyADKAkSLgoLY2hhdEZyaWVuZHMYDCADKAsyGS5Sb2xl",
-            "RGF0YS5QZW9wbGVQcm90b0RhdGESEAoIaXNQbGF5ZXIYDSABKAgSFwoPY2hv",
-            "b3NlZEFjdGlvbklkGA4gASgFEkMKG0FsbFNpbmdsZVBlb3BsZUNoYXREYXRh",
-            "TGlzdBgPIAMoCzIeLlJvbGVEYXRhLlNpbmdsZVBlb3BsZUNoYXREYXRhEhcK",
-            "D3ZhbGlkV2l0aFBlb3BsZRgQIAMoBBIcChRwbGF5ZXJWb2NhbFJlZnVzZWRN",
-            "ZRgRIAEoCBIZChFjdXJQbGFuV2l0aFBlb3BsZRgSIAEoBBIZChFleGFtQmF0",
-            "dGxlX2N1ckV4cBgTIAEoBRIbChNleGFtQmF0dGxlX2N1ckxldmVsGBQgASgF",
-            "EioKC2FjaGlldmVtZW50GBUgASgLMhUuUm9sZURhdGEuQWNoaWV2ZW1lbnQi",
-            "bwoNUGxhblByb3RvRGF0YRIlCgJwMRgBIAEoCzIZLlJvbGVEYXRhLlBlb3Bs",
-            "ZVByb3RvRGF0YRIlCgJwMhgCIAEoCzIZLlJvbGVEYXRhLlBlb3BsZVByb3Rv",
-            "RGF0YRIQCghhY3Rpb25JZBgDIAEoBSI+ChFPdGhlckludml0ZU1lRGF0YRIp",
-            "CgZwZW9wbGUYASABKAsyGS5Sb2xlRGF0YS5QZW9wbGVQcm90b0RhdGEiVAoW",
-            "TWVJbnZpdGVPdGhlclByb3RvRGF0YRIpCgZwZW9wbGUYASABKAsyGS5Sb2xl",
-            "RGF0YS5QZW9wbGVQcm90b0RhdGESDwoHcmVmdXNlZBgCIAEoCGIGcHJvdG8z"));
+            "Eg4KBmN1ckV4cBgKIAEoBRIQCghhcnRMZXZlbBgLIAEoBRIVCg1waHlzaWNh",
+            "bExldmVsGAwgASgFIlQKElNpbmdsZVByb3BlcnR5RGF0YRISCgpwcm9wZXJ0",
+            "eUlkGAEgASgFEhMKC3Byb3BlcnR5TnVtGAIgASgCEhUKDXByb3BlcnR5TGlt",
+            "aXQYAyABKAIiwAUKD1Blb3BsZVByb3RvRGF0YRIOCgZvbmx5SWQYASABKAQS",
+            "LAoMcHJvcGVydHlEYXRhGAIgASgLMhYuUm9sZURhdGEuUHJvcGVydHlEYXRh",
+            "Eh8KF3NlbnNlZE90aGVyUGVvcGxlSWRMaXN0GAMgAygEEisKI2ZyaWVuZGxp",
+            "bmVzc1RvU2Vuc2VkT3RoZXJQZW9wbGVMaXN0GAQgAygFEg4KBmdlbmRlchgF",
+            "IAEoBRIMCgRuYW1lGAYgASgJEhAKCGFjdGlvbklkGAcgASgFEhsKE2Zpbmlz",
+            "aEludml0ZVByb2Nlc3MYCCABKAgSNAoRbWVJbnZpdGVPdGhlckxpc3QYCSAD",
+            "KAsyGS5Sb2xlRGF0YS5QZW9wbGVQcm90b0RhdGESNAoRb3RoZXJJbnZpdGVN",
+            "ZUxpc3QYCiADKAsyGS5Sb2xlRGF0YS5QZW9wbGVQcm90b0RhdGESEgoKcmVj",
+            "b3JkTGlzdBgLIAMoCRIuCgtjaGF0RnJpZW5kcxgMIAMoCzIZLlJvbGVEYXRh",
+            "LlBlb3BsZVByb3RvRGF0YRIQCghpc1BsYXllchgNIAEoCBIXCg9jaG9vc2Vk",
+            "QWN0aW9uSWQYDiABKAUSQwobQWxsU2luZ2xlUGVvcGxlQ2hhdERhdGFMaXN0",
+            "GA8gAygLMh4uUm9sZURhdGEuU2luZ2xlUGVvcGxlQ2hhdERhdGESFwoPdmFs",
+            "aWRXaXRoUGVvcGxlGBAgAygEEhwKFHBsYXllclZvY2FsUmVmdXNlZE1lGBEg",
+            "ASgIEhkKEWN1clBsYW5XaXRoUGVvcGxlGBIgASgEEhkKEWV4YW1CYXR0bGVf",
+            "Y3VyRXhwGBMgASgFEhsKE2V4YW1CYXR0bGVfY3VyTGV2ZWwYFCABKAUSKgoL",
+            "YWNoaWV2ZW1lbnQYFSABKAsyFS5Sb2xlRGF0YS5BY2hpZXZlbWVudCJvCg1Q",
+            "bGFuUHJvdG9EYXRhEiUKAnAxGAEgASgLMhkuUm9sZURhdGEuUGVvcGxlUHJv",
+            "dG9EYXRhEiUKAnAyGAIgASgLMhkuUm9sZURhdGEuUGVvcGxlUHJvdG9EYXRh",
+            "EhAKCGFjdGlvbklkGAMgASgFIj4KEU90aGVySW52aXRlTWVEYXRhEikKBnBl",
+            "b3BsZRgBIAEoCzIZLlJvbGVEYXRhLlBlb3BsZVByb3RvRGF0YSJUChZNZUlu",
+            "dml0ZU90aGVyUHJvdG9EYXRhEikKBnBlb3BsZRgBIAEoCzIZLlJvbGVEYXRh",
+            "LlBlb3BsZVByb3RvRGF0YRIPCgdyZWZ1c2VkGAIgASgIYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +89,7 @@ namespace RoleData {
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.ExamData), global::RoleData.ExamData.Parser, new[]{ "EnemyList", "SettingId", "CurScore" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.SingleExamEnemy), global::RoleData.SingleExamEnemy.Parser, new[]{ "Id", "Status", "Property", "OnlyId" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.SinglePeopleChatData), global::RoleData.SinglePeopleChatData.Parser, new[]{ "Belong", "ChatDataList" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.PropertyData), global::RoleData.PropertyData.Parser, new[]{ "PropertyIdList", "PropertyDataList", "ExamPropertyIdList", "ExamPropertyDataList", "CurExamPropertyIdList", "CurExamPropertyDataList", "IsPlayer", "OnlyId", "Level", "CurExp" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.PropertyData), global::RoleData.PropertyData.Parser, new[]{ "PropertyIdList", "PropertyDataList", "ExamPropertyIdList", "ExamPropertyDataList", "CurExamPropertyIdList", "CurExamPropertyDataList", "IsPlayer", "OnlyId", "Level", "CurExp", "ArtLevel", "PhysicalLevel" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.SinglePropertyData), global::RoleData.SinglePropertyData.Parser, new[]{ "PropertyId", "PropertyNum", "PropertyLimit" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.PeopleProtoData), global::RoleData.PeopleProtoData.Parser, new[]{ "OnlyId", "PropertyData", "SensedOtherPeopleIdList", "FriendlinessToSensedOtherPeopleList", "Gender", "Name", "ActionId", "FinishInviteProcess", "MeInviteOtherList", "OtherInviteMeList", "RecordList", "ChatFriends", "IsPlayer", "ChoosedActionId", "AllSinglePeopleChatDataList", "ValidWithPeople", "PlayerVocalRefusedMe", "CurPlanWithPeople", "ExamBattleCurExp", "ExamBattleCurLevel", "Achievement" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.PlanProtoData), global::RoleData.PlanProtoData.Parser, new[]{ "P1", "P2", "ActionId" }, null, null, null),
@@ -2042,6 +2043,8 @@ namespace RoleData {
       onlyId_ = other.onlyId_;
       level_ = other.level_;
       curExp_ = other.curExp_;
+      artLevel_ = other.artLevel_;
+      physicalLevel_ = other.physicalLevel_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -2166,6 +2169,34 @@ namespace RoleData {
       }
     }
 
+    /// <summary>Field number for the "artLevel" field.</summary>
+    public const int ArtLevelFieldNumber = 11;
+    private int artLevel_;
+    /// <summary>
+    ///艺术等级
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ArtLevel {
+      get { return artLevel_; }
+      set {
+        artLevel_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "physicalLevel" field.</summary>
+    public const int PhysicalLevelFieldNumber = 12;
+    private int physicalLevel_;
+    /// <summary>
+    ///体育等级
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int PhysicalLevel {
+      get { return physicalLevel_; }
+      set {
+        physicalLevel_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as PropertyData);
@@ -2189,6 +2220,8 @@ namespace RoleData {
       if (OnlyId != other.OnlyId) return false;
       if (Level != other.Level) return false;
       if (CurExp != other.CurExp) return false;
+      if (ArtLevel != other.ArtLevel) return false;
+      if (PhysicalLevel != other.PhysicalLevel) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -2205,6 +2238,8 @@ namespace RoleData {
       if (OnlyId != 0UL) hash ^= OnlyId.GetHashCode();
       if (Level != 0) hash ^= Level.GetHashCode();
       if (CurExp != 0) hash ^= CurExp.GetHashCode();
+      if (ArtLevel != 0) hash ^= ArtLevel.GetHashCode();
+      if (PhysicalLevel != 0) hash ^= PhysicalLevel.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -2240,6 +2275,14 @@ namespace RoleData {
         output.WriteRawTag(80);
         output.WriteInt32(CurExp);
       }
+      if (ArtLevel != 0) {
+        output.WriteRawTag(88);
+        output.WriteInt32(ArtLevel);
+      }
+      if (PhysicalLevel != 0) {
+        output.WriteRawTag(96);
+        output.WriteInt32(PhysicalLevel);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -2265,6 +2308,12 @@ namespace RoleData {
       }
       if (CurExp != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(CurExp);
+      }
+      if (ArtLevel != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ArtLevel);
+      }
+      if (PhysicalLevel != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(PhysicalLevel);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -2294,6 +2343,12 @@ namespace RoleData {
       }
       if (other.CurExp != 0) {
         CurExp = other.CurExp;
+      }
+      if (other.ArtLevel != 0) {
+        ArtLevel = other.ArtLevel;
+      }
+      if (other.PhysicalLevel != 0) {
+        PhysicalLevel = other.PhysicalLevel;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -2347,6 +2402,14 @@ namespace RoleData {
           }
           case 80: {
             CurExp = input.ReadInt32();
+            break;
+          }
+          case 88: {
+            ArtLevel = input.ReadInt32();
+            break;
+          }
+          case 96: {
+            PhysicalLevel = input.ReadInt32();
             break;
           }
         }

@@ -42,6 +42,14 @@ namespace Framework.Data
         static public Dictionary<int, PeopleUpgradeSetting> peopleUpgradeDic = new Dictionary<int, PeopleUpgradeSetting>();
         static public List<PeopleUpgradeSetting> _peopleUpgradeList = new List<PeopleUpgradeSetting>();
 
+        static string physicalUpgradeNumerialName = "physicalUpgradeNumerialSetting.json";
+        static public Dictionary<int, PhysicalUpgradeNumerialSetting> physicalUpgradeNumerialDic = new Dictionary<int, PhysicalUpgradeNumerialSetting>();
+        static public List<PhysicalUpgradeNumerialSetting> _physicalUpgradeNumerialList = new List<PhysicalUpgradeNumerialSetting>();
+
+        static string artUpgradeNumerialName = "artUpgradeNumerialSetting.json";
+        static public Dictionary<int, ArtUpgradeNumerialSetting> artUpgradeNumerialDic = new Dictionary<int, ArtUpgradeNumerialSetting>();
+        static public List<ArtUpgradeNumerialSetting> _artUpgradeNumerialList = new List<ArtUpgradeNumerialSetting>();
+
         public static void LoadTableData()
         {
             JsonMapper.RegisterImporter<int, long>((int value) =>
@@ -235,6 +243,59 @@ namespace Framework.Data
             {
                 Debug.LogError("peopleUpgradeAsset为空");
             }
+
+            //体育数值
+            string physicalUpgradeNumerialfilePath = filePathPre + physicalUpgradeNumerialName;
+            string physicalUpgradeNumerialStr = File.ReadAllText(physicalUpgradeNumerialfilePath);
+
+            if (!string.IsNullOrEmpty(physicalUpgradeNumerialStr))
+            {
+                _physicalUpgradeNumerialList = JsonMapper.ToObject<List<PhysicalUpgradeNumerialSetting>>(physicalUpgradeNumerialStr);
+                foreach (PhysicalUpgradeNumerialSetting temp in _physicalUpgradeNumerialList)
+                {
+                    int theID;
+                    if (!int.TryParse(temp.id, out theID))
+                    {
+                        Debug.LogError("该ID无法转为int，表名为" + temp);
+                        return;
+                    }
+                    if (!physicalUpgradeNumerialDic.ContainsKey(theID))
+                    {
+                        physicalUpgradeNumerialDic.Add(theID, temp);
+                    }
+                }
+            }
+            else
+            {
+                Debug.LogError("physicalUpgradeNumerialAsset为空");
+            }
+
+
+            //艺术数值
+            string artUpgradeNumerialfilePath = filePathPre + artUpgradeNumerialName;
+            string artUpgradeNumerialStr = File.ReadAllText(artUpgradeNumerialfilePath);
+
+            if (!string.IsNullOrEmpty(artUpgradeNumerialStr))
+            {
+                _artUpgradeNumerialList = JsonMapper.ToObject<List<ArtUpgradeNumerialSetting>>(artUpgradeNumerialStr);
+                foreach (ArtUpgradeNumerialSetting temp in _artUpgradeNumerialList)
+                {
+                    int theID;
+                    if (!int.TryParse(temp.id, out theID))
+                    {
+                        Debug.LogError("该ID无法转为int，表名为" + temp);
+                        return;
+                    }
+                    if (!artUpgradeNumerialDic.ContainsKey(theID))
+                    {
+                        artUpgradeNumerialDic.Add(theID, temp);
+                    }
+                }
+            }
+            else
+            {
+                Debug.LogError("artUpgradeNumerialAsset为空");
+            }
         }
 
 
@@ -339,7 +400,41 @@ namespace Framework.Data
 
             return null;
         }
+        /// <summary>
+        /// 通过等级获取体育数值
+        /// </summary>
+        /// <param name="level"></param>
+        /// <returns></returns>
+        public static PhysicalUpgradeNumerialSetting FindPhysicalUpgradeNumerialByLevel(int level)
+        {
+            for (int i = 0; i < _physicalUpgradeNumerialList.Count; i++)
+            {
+                PhysicalUpgradeNumerialSetting setting = _physicalUpgradeNumerialList[i];
+                if (setting.level.ToInt32() == level)
+                    return setting;
+            }
+            Debug.Log("寻找一个不存在的 _physicalUpgradeNumerialList，level为" + level);
 
+            return null;
+        }
+
+        /// <summary>
+        /// 通过等级获取艺术数值
+        /// </summary>
+        /// <param name="level"></param>
+        /// <returns></returns>
+        public static ArtUpgradeNumerialSetting FindArtUpgradeNumerialByLevel(int level)
+        {
+            for (int i = 0; i < _artUpgradeNumerialList.Count; i++)
+            {
+                ArtUpgradeNumerialSetting setting = _artUpgradeNumerialList[i];
+                if (setting.level.ToInt32() == level)
+                    return setting;
+            }
+            Debug.Log("寻找一个不存在的 ArtUpgradeNumerialSetting，level为" + level);
+
+            return null;
+        }
 
         /// <summary>
         /// 找考试数值

@@ -8,7 +8,8 @@
     "newRdmRange": "10|20",
     "des": null,
     "isExamBattle": null,
-    "isChangeWithLevel": null
+    "isChangeWithLevel": null,
+    "isInitRdm": "1"
   },
   {
     "id": "10002",
@@ -19,7 +20,8 @@
     "newRdmRange": "5|12",
     "des": null,
     "isExamBattle": null,
-    "isChangeWithLevel": null
+    "isChangeWithLevel": null,
+    "isInitRdm": "1"
   },
   {
     "id": "10003",
@@ -30,7 +32,8 @@
     "newRdmRange": "4|10",
     "des": null,
     "isExamBattle": null,
-    "isChangeWithLevel": null
+    "isChangeWithLevel": null,
+    "isInitRdm": "1"
   },
   {
     "id": "10004",
@@ -41,7 +44,8 @@
     "newRdmRange": "800|3000",
     "des": null,
     "isExamBattle": null,
-    "isChangeWithLevel": null
+    "isChangeWithLevel": null,
+    "isInitRdm": "1"
   },
   {
     "id": "10005",
@@ -52,7 +56,8 @@
     "newRdmRange": "100|100",
     "des": null,
     "isExamBattle": null,
-    "isChangeWithLevel": null
+    "isChangeWithLevel": null,
+    "isInitRdm": "1"
   },
   {
     "id": "10006",
@@ -63,7 +68,8 @@
     "newRdmRange": "100|100",
     "des": null,
     "isExamBattle": null,
-    "isChangeWithLevel": null
+    "isChangeWithLevel": null,
+    "isInitRdm": "1"
   },
   {
     "id": "10007",
@@ -74,7 +80,8 @@
     "newRdmRange": "10|30",
     "des": null,
     "isExamBattle": null,
-    "isChangeWithLevel": null
+    "isChangeWithLevel": null,
+    "isInitRdm": "1"
   },
   {
     "id": "10008",
@@ -85,7 +92,8 @@
     "newRdmRange": "10|30",
     "des": null,
     "isExamBattle": null,
-    "isChangeWithLevel": null
+    "isChangeWithLevel": null,
+    "isInitRdm": "1"
   },
   {
     "id": "10009",
@@ -96,7 +104,8 @@
     "newRdmRange": "300|450",
     "des": "精力降为0时玩家将结束做题",
     "isExamBattle": "1",
-    "isChangeWithLevel": "1"
+    "isChangeWithLevel": "1",
+    "isInitRdm": null
   },
   {
     "id": "10010",
@@ -107,7 +116,8 @@
     "newRdmRange": "30|50",
     "des": "直接影响单次攻击难题的伤害",
     "isExamBattle": "1",
-    "isChangeWithLevel": "1"
+    "isChangeWithLevel": "1",
+    "isInitRdm": null
   },
   {
     "id": "10011",
@@ -118,7 +128,8 @@
     "newRdmRange": "10|30",
     "des": "面对难题时，更好的心态意味着对难题的抵御力更强",
     "isExamBattle": "1",
-    "isChangeWithLevel": "1"
+    "isChangeWithLevel": "1",
+    "isInitRdm": null
   },
   {
     "id": "10012",
@@ -129,7 +140,8 @@
     "newRdmRange": "20|20",
     "des": "灵感，让你有几率在面对难题时打出超出当前学习能力的伤害。对于一些特殊的题目，也能达到破防的效果",
     "isExamBattle": "1",
-    "isChangeWithLevel": "1"
+    "isChangeWithLevel": "1",
+    "isInitRdm": null
   },
   {
     "id": "10013",
@@ -140,7 +152,8 @@
     "newRdmRange": "1|1",
     "des": "天下武功，无快不破",
     "isExamBattle": "1",
-    "isChangeWithLevel": "1"
+    "isChangeWithLevel": "1",
+    "isInitRdm": null
   },
   {
     "id": "10014",
@@ -151,7 +164,8 @@
     "newRdmRange": "0.5|1",
     "des": "给你的刀刃加点锋",
     "isExamBattle": "1",
-    "isChangeWithLevel": "1"
+    "isChangeWithLevel": "1",
+    "isInitRdm": null
   },
   {
     "id": "10015",
@@ -162,7 +176,8 @@
     "newRdmRange": "0.5|1",
     "des": "致命一击的脑力",
     "isExamBattle": "1",
-    "isChangeWithLevel": "1"
+    "isChangeWithLevel": "1",
+    "isInitRdm": null
   },
   {
     "id": "10016",
@@ -173,7 +188,8 @@
     "newRdmRange": "0",
     "des": "每一分，都拉下成千上万的人",
     "isExamBattle": null,
-    "isChangeWithLevel": null
+    "isChangeWithLevel": null,
+    "isInitRdm": null
   },
   {
     "id": "10017",
@@ -184,7 +200,8 @@
     "newRdmRange": "0",
     "des": "腹有诗书气自华",
     "isExamBattle": null,
-    "isChangeWithLevel": "1"
+    "isChangeWithLevel": "1",
+    "isInitRdm": null
   },
   {
     "id": "10018",
@@ -195,7 +212,8 @@
     "newRdmRange": "0",
     "des": "见识越多，越是波澜不惊",
     "isExamBattle": null,
-    "isChangeWithLevel": "1"
+    "isChangeWithLevel": "1",
+    "isInitRdm": null
   },
   {
     "id": "10019",
@@ -206,7 +224,8 @@
     "newRdmRange": "0",
     "des": "运动使你更美",
     "isExamBattle": null,
-    "isChangeWithLevel": "1"
+    "isChangeWithLevel": "1",
+    "isInitRdm": null
   },
   {
     "id": "10020",
@@ -217,7 +236,8 @@
     "newRdmRange": "0",
     "des": "手无缚鸡之力，想撩谁呢",
     "isExamBattle": null,
-    "isChangeWithLevel": "1"
+    "isChangeWithLevel": "1",
+    "isInitRdm": null
   },
   {
     "id": "10021",
@@ -228,7 +248,8 @@
     "newRdmRange": "0",
     "des": "有艺术细胞的人在哪里都会受到欢迎",
     "isExamBattle": null,
-    "isChangeWithLevel": "1"
+    "isChangeWithLevel": "1",
+    "isInitRdm": null
   },
   {
     "id": "10022",
@@ -239,6 +260,7 @@
     "newRdmRange": "0",
     "des": "想对牛弹琴吗，那试试铁面的味道吧",
     "isExamBattle": null,
-    "isChangeWithLevel": "1"
+    "isChangeWithLevel": "1",
+    "isInitRdm": null
   }
 ]

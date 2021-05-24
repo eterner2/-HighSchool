@@ -9,7 +9,8 @@
     "crit": "0.5",
     "skillHurtAdd": "0",
     "hp": "180",
-    "attackSpeed": "0.5"
+    "attackSpeed": "0.5",
+    "award": "10001|90"
   },
   {
     "id": "2",
@@ -21,7 +22,8 @@
     "crit": "0.5",
     "skillHurtAdd": "0",
     "hp": "252",
-    "attackSpeed": "0.525"
+    "attackSpeed": "0.525",
+    "award": "10001|100"
   },
   {
     "id": "3",
@@ -33,7 +35,8 @@
     "crit": "0.5",
     "skillHurtAdd": "0",
     "hp": "324",
-    "attackSpeed": "0.55"
+    "attackSpeed": "0.55",
+    "award": "10001|110"
   },
   {
     "id": "4",
@@ -45,7 +48,8 @@
     "crit": "0.5",
     "skillHurtAdd": "0",
     "hp": "396",
-    "attackSpeed": "0.575"
+    "attackSpeed": "0.575",
+    "award": "10001|120"
   },
   {
     "id": "5",
@@ -57,7 +61,8 @@
     "crit": "0.5",
     "skillHurtAdd": "0",
     "hp": "468",
-    "attackSpeed": "0.6"
+    "attackSpeed": "0.6",
+    "award": "10001|130"
   },
   {
     "id": "6",
@@ -69,7 +74,8 @@
     "crit": "0.5",
     "skillHurtAdd": "0",
     "hp": "540",
-    "attackSpeed": "0.625"
+    "attackSpeed": "0.625",
+    "award": "10001|140"
   },
   {
     "id": "7",
@@ -81,7 +87,8 @@
     "crit": "0.5",
     "skillHurtAdd": "0",
     "hp": "612",
-    "attackSpeed": "0.65"
+    "attackSpeed": "0.65",
+    "award": "10001|150"
   },
   {
     "id": "8",
@@ -93,7 +100,8 @@
     "crit": "0.5",
     "skillHurtAdd": "0",
     "hp": "684",
-    "attackSpeed": "0.675"
+    "attackSpeed": "0.675",
+    "award": "10001|160"
   },
   {
     "id": "9",
@@ -105,7 +113,8 @@
     "crit": "0.5",
     "skillHurtAdd": "0",
     "hp": "756",
-    "attackSpeed": "0.7"
+    "attackSpeed": "0.7",
+    "award": "10001|170"
   },
   {
     "id": "10",
@@ -117,7 +126,8 @@
     "crit": "0.5",
     "skillHurtAdd": "0",
     "hp": "828",
-    "attackSpeed": "0.725"
+    "attackSpeed": "0.725",
+    "award": "10001|180"
   },
   {
     "id": "11",
@@ -129,7 +139,8 @@
     "crit": "0.5",
     "skillHurtAdd": "0",
     "hp": "900",
-    "attackSpeed": "0.75"
+    "attackSpeed": "0.75",
+    "award": "10001|190"
   },
   {
     "id": "12",
@@ -141,7 +152,8 @@
     "crit": "0.5",
     "skillHurtAdd": "0",
     "hp": "972",
-    "attackSpeed": "0.775"
+    "attackSpeed": "0.775",
+    "award": "10001|200"
   },
   {
     "id": "13",
@@ -153,7 +165,8 @@
     "crit": "0.5",
     "skillHurtAdd": "0",
     "hp": "1044",
-    "attackSpeed": "0.8"
+    "attackSpeed": "0.8",
+    "award": "10001|210"
   },
   {
     "id": "14",
@@ -165,7 +178,8 @@
     "crit": "0.5",
     "skillHurtAdd": "0",
     "hp": "1116",
-    "attackSpeed": "0.825"
+    "attackSpeed": "0.825",
+    "award": "10001|220"
   },
   {
     "id": "15",
@@ -177,7 +191,8 @@
     "crit": "0.5",
     "skillHurtAdd": "0",
     "hp": "1188",
-    "attackSpeed": "0.85"
+    "attackSpeed": "0.85",
+    "award": "10001|230"
   },
   {
     "id": "16",
@@ -189,7 +204,8 @@
     "crit": "0.5",
     "skillHurtAdd": "0",
     "hp": "1260",
-    "attackSpeed": "0.875"
+    "attackSpeed": "0.875",
+    "award": "10001|240"
   },
   {
     "id": "17",
@@ -201,7 +217,8 @@
     "crit": "0.5",
     "skillHurtAdd": "0",
     "hp": "1332",
-    "attackSpeed": "0.9"
+    "attackSpeed": "0.9",
+    "award": "10001|250"
   },
   {
     "id": "18",
@@ -213,7 +230,8 @@
     "crit": "0.5",
     "skillHurtAdd": "0",
     "hp": "1404",
-    "attackSpeed": "0.925"
+    "attackSpeed": "0.925",
+    "award": "10001|260"
   },
   {
     "id": "19",
@@ -225,7 +243,8 @@
     "crit": "0.5",
     "skillHurtAdd": "0",
     "hp": "1476",
-    "attackSpeed": "0.95"
+    "attackSpeed": "0.95",
+    "award": "10001|270"
   },
   {
     "id": "20",
@@ -237,7 +256,8 @@
     "crit": "0.5",
     "skillHurtAdd": "0",
     "hp": "1548",
-    "attackSpeed": "0.975"
+    "attackSpeed": "0.975",
+    "award": "10001|280"
   },
   {
     "id": "21",
@@ -249,7 +269,8 @@
     "crit": "0.5",
     "skillHurtAdd": "0",
     "hp": "1620",
-    "attackSpeed": "1"
+    "attackSpeed": "1",
+    "award": "10001|290"
   },
   {
     "id": "22",
@@ -261,7 +282,8 @@
     "crit": "0.5",
     "skillHurtAdd": "0",
     "hp": "1692",
-    "attackSpeed": "1.025"
+    "attackSpeed": "1.025",
+    "award": "10001|300"
   },
   {
     "id": "23",
@@ -273,7 +295,8 @@
     "crit": "0.5",
     "skillHurtAdd": "0",
     "hp": "1764",
-    "attackSpeed": "1.05"
+    "attackSpeed": "1.05",
+    "award": "10001|310"
   },
   {
     "id": "24",
@@ -285,7 +308,8 @@
     "crit": "0.5",
     "skillHurtAdd": "0",
     "hp": "1836",
-    "attackSpeed": "1.075"
+    "attackSpeed": "1.075",
+    "award": "10001|320"
   },
   {
     "id": "25",
@@ -297,7 +321,8 @@
     "crit": "0.5",
     "skillHurtAdd": "0",
     "hp": "1908",
-    "attackSpeed": "1.1"
+    "attackSpeed": "1.1",
+    "award": "10001|330"
   },
   {
     "id": "26",
@@ -309,7 +334,8 @@
     "crit": "0.5",
     "skillHurtAdd": "0",
     "hp": "1980",
-    "attackSpeed": "1.125"
+    "attackSpeed": "1.125",
+    "award": "10001|340"
   },
   {
     "id": "27",
@@ -321,7 +347,8 @@
     "crit": "0.5",
     "skillHurtAdd": "0",
     "hp": "2052",
-    "attackSpeed": "1.15"
+    "attackSpeed": "1.15",
+    "award": "10001|350"
   },
   {
     "id": "28",
@@ -333,7 +360,8 @@
     "crit": "0.5",
     "skillHurtAdd": "0",
     "hp": "2124",
-    "attackSpeed": "1.175"
+    "attackSpeed": "1.175",
+    "award": "10001|360"
   },
   {
     "id": "29",
@@ -345,7 +373,8 @@
     "crit": "0.5",
     "skillHurtAdd": "0",
     "hp": "2196",
-    "attackSpeed": "1.2"
+    "attackSpeed": "1.2",
+    "award": "10001|370"
   },
   {
     "id": "30",
@@ -357,7 +386,8 @@
     "crit": "0.5",
     "skillHurtAdd": "0",
     "hp": "2268",
-    "attackSpeed": "1.225"
+    "attackSpeed": "1.225",
+    "award": "10001|380"
   },
   {
     "id": "31",
@@ -369,7 +399,8 @@
     "crit": "0.5",
     "skillHurtAdd": "0",
     "hp": "2340",
-    "attackSpeed": "1.25"
+    "attackSpeed": "1.25",
+    "award": "10001|390"
   },
   {
     "id": "32",
@@ -381,7 +412,8 @@
     "crit": "0.5",
     "skillHurtAdd": "0",
     "hp": "2412",
-    "attackSpeed": "1.275"
+    "attackSpeed": "1.275",
+    "award": "10001|400"
   },
   {
     "id": "33",
@@ -393,7 +425,8 @@
     "crit": "0.5",
     "skillHurtAdd": "0",
     "hp": "2484",
-    "attackSpeed": "1.3"
+    "attackSpeed": "1.3",
+    "award": "10001|410"
   },
   {
     "id": "34",
@@ -405,7 +438,8 @@
     "crit": "0.5",
     "skillHurtAdd": "0",
     "hp": "2556",
-    "attackSpeed": "1.325"
+    "attackSpeed": "1.325",
+    "award": "10001|420"
   },
   {
     "id": "35",
@@ -417,7 +451,8 @@
     "crit": "0.5",
     "skillHurtAdd": "0",
     "hp": "2628",
-    "attackSpeed": "1.35"
+    "attackSpeed": "1.35",
+    "award": "10001|430"
   },
   {
     "id": "36",
@@ -429,7 +464,8 @@
     "crit": "0.5",
     "skillHurtAdd": "0",
     "hp": "2700",
-    "attackSpeed": "1.375"
+    "attackSpeed": "1.375",
+    "award": "10001|440"
   },
   {
     "id": "37",
@@ -441,7 +477,8 @@
     "crit": "0.5",
     "skillHurtAdd": "0",
     "hp": "2772",
-    "attackSpeed": "1.4"
+    "attackSpeed": "1.4",
+    "award": "10001|450"
   },
   {
     "id": "38",
@@ -453,7 +490,8 @@
     "crit": "0.5",
     "skillHurtAdd": "0",
     "hp": "2844",
-    "attackSpeed": "1.425"
+    "attackSpeed": "1.425",
+    "award": "10001|460"
   },
   {
     "id": "39",
@@ -465,7 +503,8 @@
     "crit": "0.5",
     "skillHurtAdd": "0",
     "hp": "2916",
-    "attackSpeed": "1.45"
+    "attackSpeed": "1.45",
+    "award": "10001|470"
   },
   {
     "id": "40",
@@ -477,7 +516,8 @@
     "crit": "0.5",
     "skillHurtAdd": "0",
     "hp": "2988",
-    "attackSpeed": "1.475"
+    "attackSpeed": "1.475",
+    "award": "10001|480"
   },
   {
     "id": "41",
@@ -489,7 +529,8 @@
     "crit": "0.5",
     "skillHurtAdd": "0",
     "hp": "3060",
-    "attackSpeed": "1.5"
+    "attackSpeed": "1.5",
+    "award": "10001|490"
   },
   {
     "id": "42",
@@ -501,7 +542,8 @@
     "crit": "0.5",
     "skillHurtAdd": "0",
     "hp": "3132",
-    "attackSpeed": "1.525"
+    "attackSpeed": "1.525",
+    "award": "10001|500"
   },
   {
     "id": "43",
@@ -513,7 +555,8 @@
     "crit": "0.5",
     "skillHurtAdd": "0",
     "hp": "3204",
-    "attackSpeed": "1.55"
+    "attackSpeed": "1.55",
+    "award": "10001|510"
   },
   {
     "id": "44",
@@ -525,7 +568,8 @@
     "crit": "0.5",
     "skillHurtAdd": "0",
     "hp": "3276",
-    "attackSpeed": "1.575"
+    "attackSpeed": "1.575",
+    "award": "10001|520"
   },
   {
     "id": "45",
@@ -537,7 +581,8 @@
     "crit": "0.5",
     "skillHurtAdd": "0",
     "hp": "3348",
-    "attackSpeed": "1.6"
+    "attackSpeed": "1.6",
+    "award": "10001|530"
   },
   {
     "id": "46",
@@ -549,7 +594,8 @@
     "crit": "0.5",
     "skillHurtAdd": "0",
     "hp": "3420",
-    "attackSpeed": "1.625"
+    "attackSpeed": "1.625",
+    "award": "10001|540"
   },
   {
     "id": "47",
@@ -561,7 +607,8 @@
     "crit": "0.5",
     "skillHurtAdd": "0",
     "hp": "3492",
-    "attackSpeed": "1.65"
+    "attackSpeed": "1.65",
+    "award": "10001|550"
   },
   {
     "id": "48",
@@ -573,7 +620,8 @@
     "crit": "0.5",
     "skillHurtAdd": "0",
     "hp": "3564",
-    "attackSpeed": "1.675"
+    "attackSpeed": "1.675",
+    "award": "10001|560"
   },
   {
     "id": "49",
@@ -585,7 +633,8 @@
     "crit": "0.5",
     "skillHurtAdd": "0",
     "hp": "3636",
-    "attackSpeed": "1.7"
+    "attackSpeed": "1.7",
+    "award": "10001|570"
   },
   {
     "id": "50",
@@ -597,6 +646,7 @@
     "crit": "0.5",
     "skillHurtAdd": "0",
     "hp": "3708",
-    "attackSpeed": "1.725"
+    "attackSpeed": "1.725",
+    "award": "10001|580"
   }
 ]

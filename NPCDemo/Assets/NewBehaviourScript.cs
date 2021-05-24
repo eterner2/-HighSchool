@@ -684,31 +684,34 @@ public class People
         propertyData.IsPlayer = true;
         propertyData.OnlyId = peopleProtoData.OnlyId;
         propertyData.Level = 1;
+        propertyData.ArtLevel = 1;
+        propertyData.PhysicalLevel = 1;
 
-        //PropertySetting setting= DataTable.FindPropertySetting(PropertyIdType.Study)
-        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Study, GetRdmProperty(PropertyIdType.Study),false);
-        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Art, GetRdmProperty(PropertyIdType.Art), false);
-        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Physical, GetRdmProperty(PropertyIdType.Physical), false);
-        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Money, GetRdmProperty(PropertyIdType.Money), false);
-        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.TiLi, GetRdmProperty(PropertyIdType.TiLi), false);
-        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Mood, GetRdmProperty(PropertyIdType.Mood), false);
-        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.SelfControl, GetRdmProperty(PropertyIdType.SelfControl), false);
-        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Charm, GetRdmProperty(PropertyIdType.Charm), false);
+        RoleManager.Instance.InitProperty(propertyData);
+        ////PropertySetting setting= DataTable.FindPropertySetting(PropertyIdType.Study)
+        //RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Study, GetRdmProperty(PropertyIdType.Study),false);
+        //RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Art, GetRdmProperty(PropertyIdType.Art), false);
+        //RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Physical, GetRdmProperty(PropertyIdType.Physical), false);
+        //RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Money, GetRdmProperty(PropertyIdType.Money), false);
+        //RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.TiLi, GetRdmProperty(PropertyIdType.TiLi), false);
+        //RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Mood, GetRdmProperty(PropertyIdType.Mood), false);
+        //RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.SelfControl, GetRdmProperty(PropertyIdType.SelfControl), false);
+        //RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Charm, GetRdmProperty(PropertyIdType.Charm), false);
 
-        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Hp,DataTable.FindTestNumerialByLevel(propertyData.Level).hp.ToFloat(),true);
-        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Attack, DataTable.FindTestNumerialByLevel(propertyData.Level).attack.ToFloat(),true);
-        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Defense, DataTable.FindTestNumerialByLevel(propertyData.Level).defense.ToFloat(),true);
-        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.CritNum, DataTable.FindTestNumerialByLevel(propertyData.Level).crit.ToFloat(),true);
-        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Speed, DataTable.FindTestNumerialByLevel(propertyData.Level).attackSpeed.ToFloat(),true);
-        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.CritRate, DataTable.FindTestNumerialByLevel(propertyData.Level).critRate.ToFloat(),true);
-        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.SkillAdd, DataTable.FindTestNumerialByLevel(propertyData.Level).skillHurtAdd.ToFloat(),true);
+        //RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Hp,DataTable.FindTestNumerialByLevel(propertyData.Level).hp.ToFloat(),true);
+        //RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Attack, DataTable.FindTestNumerialByLevel(propertyData.Level).attack.ToFloat(),true);
+        //RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Defense, DataTable.FindTestNumerialByLevel(propertyData.Level).defense.ToFloat(),true);
+        //RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.CritNum, DataTable.FindTestNumerialByLevel(propertyData.Level).crit.ToFloat(),true);
+        //RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.Speed, DataTable.FindTestNumerialByLevel(propertyData.Level).attackSpeed.ToFloat(),true);
+        //RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.CritRate, DataTable.FindTestNumerialByLevel(propertyData.Level).critRate.ToFloat(),true);
+        //RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.SkillAdd, DataTable.FindTestNumerialByLevel(propertyData.Level).skillHurtAdd.ToFloat(),true);
 
-        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.StudyCharm, DataTable.FindTestNumerialByLevel(propertyData.Level).studyCharm.ToFloat(),false);
-        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.StudyDefense, DataTable.FindTestNumerialByLevel(propertyData.Level).studyDefense.ToFloat(), false);
-        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.PhysicalCharm, DataTable.FindTestNumerialByLevel(propertyData.Level).physicalCharm.ToFloat(), false);
-        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.PhysicalDefense, DataTable.FindTestNumerialByLevel(propertyData.Level).physicalDefense.ToFloat(), false);
-        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.ArtCharm, DataTable.FindTestNumerialByLevel(propertyData.Level).artCharm.ToFloat(), false);
-        RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.ArtDefense, DataTable.FindTestNumerialByLevel(propertyData.Level).artDefense.ToFloat(), false);
+        //RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.StudyCharm, DataTable.FindTestNumerialByLevel(propertyData.Level).studyCharm.ToFloat(),false);
+        //RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.StudyDefense, DataTable.FindTestNumerialByLevel(propertyData.Level).studyDefense.ToFloat(), false);
+        //RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.PhysicalCharm, DataTable.FindTestNumerialByLevel(propertyData.Level).physicalCharm.ToFloat(), false);
+        //RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.PhysicalDefense, DataTable.FindTestNumerialByLevel(propertyData.Level).physicalDefense.ToFloat(), false);
+        //RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.ArtCharm, DataTable.FindTestNumerialByLevel(propertyData.Level).artCharm.ToFloat(), false);
+        //RoleManager.Instance.InitSingleProperty(propertyData, PropertyIdType.ArtDefense, DataTable.FindTestNumerialByLevel(propertyData.Level).artDefense.ToFloat(), false);
 
         peopleProtoData.PropertyData = propertyData;
     }
