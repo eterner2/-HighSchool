@@ -52,6 +52,20 @@ public class ExamManager : CommonInstance<ExamManager>
             InitExamProperty(enemy);
             RoleManager.Instance._CurGameInfo.CurActionData.CurExamData.EnemyList.Add(enemy);
         }
+        //生成玩家的数据
+        int count= RoleManager.Instance.playerPeople.protoData.PropertyData.ExamPropertyIdList.Count;
+        RoleManager.Instance.playerPeople.protoData.PropertyData.CurExamPropertyIdList.Clear();
+        RoleManager.Instance.playerPeople.protoData.PropertyData.CurExamPropertyDataList.Clear();
+
+        for (int i = 0; i < count; i++)
+        {
+            int theId = RoleManager.Instance.playerPeople.protoData.PropertyData.ExamPropertyIdList[i];
+            SinglePropertyData pro = RoleManager.Instance.playerPeople.protoData.PropertyData.ExamPropertyDataList[i];
+            SinglePropertyData newPro = pro.Clone();
+            RoleManager.Instance.playerPeople.protoData.PropertyData.CurExamPropertyIdList.Add(theId);
+            RoleManager.Instance.playerPeople.protoData.PropertyData.CurExamPropertyDataList.Add(newPro);
+        }
+
         //发消息给view显示数据
         EventCenter.Broadcast(TheEventType.StartExam);
     }

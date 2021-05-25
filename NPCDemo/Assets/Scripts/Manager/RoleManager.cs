@@ -171,18 +171,18 @@ public class RoleManager
     {
         //学习
         TestNumerialSetting studySetting = DataTable.FindTestNumerialByLevel(propertyData.Level);
-        List<List<int>> studyProChange = CommonUtil.SplitCfg(studySetting.proChange);
+        List<List<float>> studyProChange = CommonUtil.Split2CfgFloat(studySetting.proChange);
         InitPropertyChangeWithNumerial(propertyData, studyProChange);
 
 
         //体育
         PhysicalUpgradeNumerialSetting physicalSetting = DataTable.FindPhysicalUpgradeNumerialByLevel(propertyData.PhysicalLevel);
-        List<List<int>> physicalProChange = CommonUtil.SplitCfg(physicalSetting.proChange);
+        List<List<float>> physicalProChange = CommonUtil.Split2CfgFloat(physicalSetting.proChange);
         InitPropertyChangeWithNumerial(propertyData, physicalProChange);
 
         //艺术
         ArtUpgradeNumerialSetting artSetting = DataTable.FindArtUpgradeNumerialByLevel(propertyData.ArtLevel);
-        List<List<int>> artProChange = CommonUtil.SplitCfg(artSetting.proChange);
+        List<List<float>> artProChange = CommonUtil.Split2CfgFloat(artSetting.proChange);
         InitPropertyChangeWithNumerial(propertyData, artProChange);
     }
     /// <summary>
@@ -190,13 +190,13 @@ public class RoleManager
     /// </summary>
     /// <param name="pro"></param>
     /// <param name="proChange"></param>
-    public void InitPropertyChangeWithNumerial(PropertyData propertyData, List<List<int>> proChange)
+    public void InitPropertyChangeWithNumerial(PropertyData propertyData, List<List<float>> proChange)
     {
         for (int i = 0; i < proChange.Count; i++)
         {
-            List<int> single = proChange[i];
-            int theId = single[0];
-            int theNum = single[1];
+            List<float> single = proChange[i];
+            int theId = (int)single[0];
+            float theNum = single[1];
             PropertySetting setting = DataTable.FindPropertySetting(theId);
 
             SinglePropertyData singlePro = new SinglePropertyData();
@@ -212,13 +212,31 @@ public class RoleManager
             singlePro.PropertyNum = theNum;
             if (setting.isExamBattle == "1")
             {
-                propertyData.ExamPropertyIdList.Add(theId);
-                propertyData.ExamPropertyDataList.Add(singlePro);
+                if (propertyData.ExamPropertyIdList.Contains(theId))
+                {
+                    int index = propertyData.ExamPropertyIdList.IndexOf(theId);
+                    propertyData.ExamPropertyDataList[index].PropertyNum = theNum;
+                }
+                else
+                {
+                    propertyData.ExamPropertyIdList.Add(theId);
+                    propertyData.ExamPropertyDataList.Add(singlePro);
+                }
+          
             }
             else
             {
-                propertyData.PropertyIdList.Add(theId);
-                propertyData.PropertyDataList.Add(singlePro);
+                if (propertyData.PropertyIdList.Contains(theId))
+                {
+                    int index = propertyData.PropertyIdList.IndexOf(theId);
+                    propertyData.PropertyDataList[index].PropertyNum = theNum;
+                }
+                else
+                {
+                    propertyData.PropertyIdList.Add(theId);
+                    propertyData.PropertyDataList.Add(singlePro);
+                }
+          
             }
         }
     }
@@ -709,13 +727,13 @@ public class RoleManager
         int expAfterAllUpgrade = beforeExp + addExp;
 
         //int curLevel = 1;
-        if (canReachLevel < DataTable._peopleUpgradeList.Count)
+        if (canReachLevel < DataTable._testNumerialList.Count)
         {     
             
-            for (int i = canReachLevel; i < DataTable._peopleUpgradeList.Count; i++)
+            for (int i = canReachLevel; i < DataTable._testNumerialList.Count; i++)
             {
 
-                PeopleUpgradeSetting nextSetting = DataTable._peopleUpgradeList[i];
+                TestNumerialSetting nextSetting = DataTable._testNumerialList[i];
                 int nextLevelNeed = nextSetting.needExp.ToInt32();
                 //就在这个等级了
                 if (expAfterAllUpgrade < nextLevelNeed)

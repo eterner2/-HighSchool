@@ -166,6 +166,30 @@ public static class CommonUtil
         return Mathf.Abs(b.position.x - a.position.x);
 
     }
+    /// <summary>
+    /// 把2|10001|20$1|10002|30转换为[[2,10001,20],[1,10002,30]] 支持小数
+    /// </summary>
+    /// <returns></returns>
+    public static List<List<float>> Split2CfgFloat(string source)
+    {
+        string[] str = source.Split('$');
+        List<List<float>> totalList = new List<List<float>>();
+
+        for (int i = 0; i < str.Length; i++)
+        {
+            string singleStr = str[i];
+            string[] singleArr = singleStr.Split('|');
+
+            List<float> smallList = new List<float>();
+            for (int j = 0; j < singleArr.Length; j++)
+            {
+                float theFloat = singleArr[j].ToFloat();
+                smallList.Add(theFloat);
+            }
+            totalList.Add(smallList);
+        }
+        return totalList;
+    }
 
     /// <summary>
     /// 把2|10001|20$1|10002|30,2|10001|20$1|10002|30转换为{[[2,10001,20],[1,10002,30]],[[2,10001,20],[1,10002,30]]

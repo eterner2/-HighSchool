@@ -108,7 +108,7 @@ public class GetAwardPanel : PanelBase
                         expMoveCurLevel++;
 
                         //如果满级了
-                        if (expMoveCurLevel == DataTable._peopleUpgradeList.Count)
+                        if (expMoveCurLevel == DataTable._testNumerialList.Count)
                         {
                             txt_exp.SetText("已满级");
                             img_expBar.fillAmount = 1;
@@ -116,10 +116,10 @@ public class GetAwardPanel : PanelBase
                         }
                         else
                         {
-                            curExpLimit = DataTable._peopleUpgradeList[expMoveCurLevel].needExp.ToInt32();
+                            curExpLimit = DataTable._testNumerialList[expMoveCurLevel].needExp.ToInt32();
                             txt_exp.SetText(levelInfo.ExpAfterUpgrade + "/" + curExpLimit);
                         }
-                        txt_level.SetText(expMoveCurLevel.ToString());
+                        txt_level.SetText("Lv."+expMoveCurLevel.ToString());
 
                     }
                     else
@@ -128,7 +128,7 @@ public class GetAwardPanel : PanelBase
                         txt_exp.SetText(levelInfo.ExpAfterUpgrade + "/" + curExpLimit);
 
                         //如果满级了
-                        if (expMoveCurLevel== DataTable._peopleUpgradeList.Count)
+                        if (expMoveCurLevel== DataTable._testNumerialList.Count)
                         {
                             txt_exp.SetText("已满级");
                         }
@@ -161,10 +161,10 @@ public class GetAwardPanel : PanelBase
         beforeExpBarProcess = 0;
 
         //经验条的位置
-        if (expMoveCurLevel < DataTable._peopleUpgradeList.Count)
+        if (expMoveCurLevel < DataTable._testNumerialList.Count)
         {
-            beforeExpBarProcess = levelInfo.beforeExp / DataTable._peopleUpgradeList[expMoveCurLevel].needExp.ToFloat();
-            curExpLimit = DataTable._peopleUpgradeList[expMoveCurLevel].needExp.ToInt32();
+            beforeExpBarProcess = levelInfo.beforeExp / DataTable._testNumerialList[expMoveCurLevel].needExp.ToFloat();
+            curExpLimit = DataTable._testNumerialList[expMoveCurLevel].needExp.ToInt32();
         }
         //满级了
         else
@@ -175,9 +175,9 @@ public class GetAwardPanel : PanelBase
 
         afterExpBarProcess = 0;
         //经验条的位置
-        if (levelInfo.canReachLevel < DataTable._peopleUpgradeList.Count)
+        if (levelInfo.canReachLevel < DataTable._testNumerialList.Count)
         {
-            afterExpBarProcess = levelInfo.ExpAfterUpgrade / DataTable._peopleUpgradeList[levelInfo.canReachLevel].needExp.ToFloat();
+            afterExpBarProcess = levelInfo.ExpAfterUpgrade / DataTable._testNumerialList[levelInfo.canReachLevel].needExp.ToFloat();
         }
         else
         {
@@ -185,7 +185,7 @@ public class GetAwardPanel : PanelBase
         }
         expMoveCurSpeed = (1 / singleExpMoveTime)* Time.deltaTime;
 
-        txt_level.SetText(expMoveCurLevel.ToString());
+        txt_level.SetText("Lv."+expMoveCurLevel.ToString());
         //InitExpMoveSpeed();
         startExpMove = true;
         expMoveTimer = 0;

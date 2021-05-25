@@ -23,7 +23,16 @@ public class SingleExamQuestionView :SingleViewBase
         singleEnemy =args[0] as SingleExamEnemy;
         addBtnListener(btn_battle, () =>
         {
-            ExamManager.Instance.StartSingleQuestion(singleEnemy);
+            //如果精力耗尽，则输
+           if(RoleManager.Instance.FindSinglePropertyData(PropertyIdType.Hp).PropertyNum <= 0)
+            {
+                PanelManager.Instance.OpenFloatWindow("精力已耗尽，无法做题");
+            }
+            else
+            {
+                ExamManager.Instance.StartSingleQuestion(singleEnemy);
+
+            }
         });
     }
     public override void OnOpenIng()

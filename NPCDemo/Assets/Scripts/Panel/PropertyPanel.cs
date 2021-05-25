@@ -77,10 +77,10 @@ public class PropertyPanel : PanelBase
         }
         int expLimit = 0;
         LevelInfo levelInfo = RoleManager.Instance.GetPeopleLevelInfo(0);
-        if (levelInfo.beforeLevel < DataTable._peopleUpgradeList.Count)
+        if (levelInfo.beforeLevel < DataTable._testNumerialList.Count)
         {
-            PeopleUpgradeSetting setting = DataTable._peopleUpgradeList[levelInfo.beforeLevel];
-            expLimit = DataTable._peopleUpgradeList[levelInfo.beforeLevel].needExp.ToInt32();
+            TestNumerialSetting setting = DataTable._testNumerialList[levelInfo.beforeLevel];
+            expLimit = DataTable._testNumerialList[levelInfo.beforeLevel].needExp.ToInt32();
             txt_upgradeBar.SetText(levelInfo.beforeExp + "/" + expLimit);
             img_upgradeBar.fillAmount = levelInfo.beforeExp / (float)expLimit;
         }
@@ -89,7 +89,7 @@ public class PropertyPanel : PanelBase
             img_upgradeBar.fillAmount = 1;
             txt_upgradeBar.SetText("已满级");
         }
-        txt_lv.SetText(("LV.") + levelInfo.beforeLevel);
+        txt_lv.SetText(("LV.") + levelInfo.beforeLevel);    
 
 
     }
