@@ -16,6 +16,15 @@ public class PropertyPanel : PanelBase
     public Image img_upgradeBar;//升级进度
     public Text txt_upgradeBar;//升级进度
     public Text txt_lv;//等级
+
+    public Image img_physicalUpgradeBar;//体育升级进度
+    public Text txt_physicalUpgradeBar;
+    public Text txt_physicalLv;
+
+    public Image img_artUpgradeBar;//艺术升级进度
+    public Text txt_artUpgradeBar;
+    public Text txt_artLv;
+
     public Button btn_close;
 
     public override void Init(params object[] args)
@@ -89,7 +98,39 @@ public class PropertyPanel : PanelBase
             img_upgradeBar.fillAmount = 1;
             txt_upgradeBar.SetText("已满级");
         }
-        txt_lv.SetText(("LV.") + levelInfo.beforeLevel);    
+        txt_lv.SetText(("LV.") + levelInfo.beforeLevel);
+
+        LevelInfo physicalLevelInfo = RoleManager.Instance.GetPeoplePhysicalLevelInfo(0);
+        if (physicalLevelInfo.beforeLevel < DataTable._testNumerialList.Count)
+        {
+            TestNumerialSetting setting = DataTable._testNumerialList[levelInfo.beforeLevel];
+            expLimit = DataTable._testNumerialList[physicalLevelInfo.beforeLevel].needExp.ToInt32();
+            txt_physicalUpgradeBar.SetText(physicalLevelInfo.beforeExp + "/" + expLimit);
+            img_physicalUpgradeBar.fillAmount = physicalLevelInfo.beforeExp / (float)expLimit;
+        }
+        else
+        {
+            img_physicalUpgradeBar.fillAmount = 1;
+            txt_physicalUpgradeBar.SetText("已满级");
+        }
+        txt_physicalLv.SetText(("LV.") + physicalLevelInfo.beforeLevel);
+
+        LevelInfo artLevelInfo = RoleManager.Instance.GetPeopleArtLevelInfo(0);
+        if (artLevelInfo.beforeLevel < DataTable._testNumerialList.Count)
+        {
+            TestNumerialSetting setting = DataTable._testNumerialList[levelInfo.beforeLevel];
+            expLimit = DataTable._testNumerialList[artLevelInfo.beforeLevel].needExp.ToInt32();
+            txt_artUpgradeBar.SetText(artLevelInfo.beforeExp + "/" + expLimit);
+            img_artUpgradeBar.fillAmount = artLevelInfo.beforeExp / (float)expLimit;
+        }
+        else
+        {
+            img_artUpgradeBar.fillAmount = 1;
+            txt_artUpgradeBar.SetText("已满级");
+        }
+        txt_artLv.SetText(("LV.") + artLevelInfo.beforeLevel);
+
+
 
 
     }

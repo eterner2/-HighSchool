@@ -1744,6 +1744,12 @@ MonoBehaviour:
   img_upgradeBar: {fileID: 5516972752846747660}
   txt_upgradeBar: {fileID: 7547780660124562340}
   txt_lv: {fileID: 3844427256887753706}
+  img_physicalUpgradeBar: {fileID: 1600348691132150198}
+  txt_physicalUpgradeBar: {fileID: 2940397315198302624}
+  txt_physicalLv: {fileID: 4966772667876121905}
+  img_artUpgradeBar: {fileID: 97065671172168785}
+  txt_artUpgradeBar: {fileID: 3179692984797509847}
+  txt_artLv: {fileID: 8986330121031716931}
   btn_close: {fileID: 6987727192333202607}
 --- !u!1 &8463049173398002172
 GameObject:
