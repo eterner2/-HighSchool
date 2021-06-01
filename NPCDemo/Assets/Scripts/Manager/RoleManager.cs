@@ -443,15 +443,29 @@ public class RoleManager
             }
 
             //如果是经验 则增加等级
-            if (propertyIdType == PropertyIdType.Study)
+            switch (propertyIdType)
             {
-                LevelInfo levelInfo = GetPeopleLevelInfo(Mathf.RoundToInt(realAdd));
-                peopleProto.PropertyData.CurExp = levelInfo.ExpAfterUpgrade;
-                peopleProto.PropertyData.Level = levelInfo.canReachLevel;
-               // OnUpgrade();
-                RefreshProperty(peopleProto.PropertyData);
+                case PropertyIdType.Study:
+                    LevelInfo levelInfo = GetPeopleLevelInfo(Mathf.RoundToInt(realAdd));
+                    peopleProto.PropertyData.CurExp = levelInfo.ExpAfterUpgrade;
+                    peopleProto.PropertyData.Level = levelInfo.canReachLevel;
+                    break;                               
+                case PropertyIdType.Physical:
+                    LevelInfo physicalLevelInfo = GetPeoplePhysicalLevelInfo(Mathf.RoundToInt(realAdd));
+                    peopleProto.PropertyData.CurPhysicalExp = physicalLevelInfo.ExpAfterUpgrade;
+                    peopleProto.PropertyData.PhysicalLevel = physicalLevelInfo.canReachLevel;
+                    break;
+                case PropertyIdType.Art:
+                    LevelInfo artLevelInfo = GetPeopleArtLevelInfo(Mathf.RoundToInt(realAdd));
+                    peopleProto.PropertyData.CurArtExp = artLevelInfo.ExpAfterUpgrade;
+                    peopleProto.PropertyData.ArtLevel = artLevelInfo.canReachLevel;
+                    break;
+                default:
+                    break;
             }
+     
             singleData.PropertyNum += realAdd;
+            RefreshProperty(peopleProto.PropertyData);
 
         }
     }
@@ -748,6 +762,80 @@ public class RoleManager
             }
         }
        LevelInfo info = new LevelInfo(canReachLevel, expAfterAllUpgrade,beforeExp,beforeLevel);
+
+        return info;
+    }
+
+    /// <summary>
+    /// 获取人物体育等级数据
+    /// </summary>
+    public LevelInfo GetPeoplePhysicalLevelInfo(int addExp)
+    {
+        //int curLevel=playerPeople.protoData.PropertyData.Level;
+        int beforeExp = playerPeople.protoData.PropertyData.CurPhysicalExp;
+        int beforeLevel = playerPeople.protoData.PropertyData.PhysicalLevel;
+        int canReachLevel = beforeLevel;
+        int expAfterAllUpgrade = beforeExp + addExp;
+
+        //int curLevel = 1;
+        if (canReachLevel < DataTable._testNumerialList.Count)
+        {
+
+            for (int i = canReachLevel; i < DataTable._testNumerialList.Count; i++)
+            {
+
+                TestNumerialSetting nextSetting = DataTable._testNumerialList[i];
+                int nextLevelNeed = nextSetting.needExp.ToInt32();
+                //就在这个等级了
+                if (expAfterAllUpgrade < nextLevelNeed)
+                {
+                    break;
+                }
+                else
+                {
+                    canReachLevel++;
+                    expAfterAllUpgrade -= nextLevelNeed;
+                }
+            }
+        }
+        LevelInfo info = new LevelInfo(canReachLevel, expAfterAllUpgrade, beforeExp, beforeLevel);
+
+        return info;
+    }
+
+    /// <summary>
+    /// 获取人物艺术等级数据
+    /// </summary>
+    public LevelInfo GetPeopleArtLevelInfo(int addExp)
+    {
+        //int curLevel=playerPeople.protoData.PropertyData.Level;
+        int beforeExp = playerPeople.protoData.PropertyData.CurArtExp;
+        int beforeLevel = playerPeople.protoData.PropertyData.ArtLevel;
+        int canReachLevel = beforeLevel;
+        int expAfterAllUpgrade = beforeExp + addExp;
+
+        //int curLevel = 1;
+        if (canReachLevel < DataTable._testNumerialList.Count)
+        {
+
+            for (int i = canReachLevel; i < DataTable._testNumerialList.Count; i++)
+            {
+
+                TestNumerialSetting nextSetting = DataTable._testNumerialList[i];
+                int nextLevelNeed = nextSetting.needExp.ToInt32();
+                //就在这个等级了
+                if (expAfterAllUpgrade < nextLevelNeed)
+                {
+                    break;
+                }
+                else
+                {
+                    canReachLevel++;
+                    expAfterAllUpgrade -= nextLevelNeed;
+                }
+            }
+        }
+        LevelInfo info = new LevelInfo(canReachLevel, expAfterAllUpgrade, beforeExp, beforeLevel);
 
         return info;
     }

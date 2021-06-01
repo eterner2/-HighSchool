@@ -89,6 +89,8 @@ int32 level=9;//等级
 int32 curExp=10;//当前经验
 int32 artLevel=11;//艺术等级
 int32 physicalLevel=12;//体育等级
+int32 curArtExp=13;//当前艺术经验
+int32 curPhysicalExp=14;//当前体育经验
 }
 
 //单个普通属性
