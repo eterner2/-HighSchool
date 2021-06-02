@@ -107,7 +107,7 @@ message PeopleProtoData
 uint64 onlyId=1;//唯一id
 PropertyData propertyData=2;//属性
 repeated uint64 sensedOtherPeopleIdList=3;//感受到的其他人
-repeated int32 friendlinessToSensedOtherPeopleList=4;//对感受到的人的好感度
+repeated float friendlinessToSensedOtherPeopleList=4;//对感受到的人的好感度
 int32 gender=5;//性别
 string name=6;//姓名
 int32 actionId=7;//想做什么
@@ -127,6 +127,9 @@ int32 examBattle_curExp=19;//当前经验值
 int32 examBattle_curLevel=20;//当前等级TODO这个可以改成由经验算等级 看最终的成长公式是什么
 Achievement achievement=21;//成就
 
+repeated int32 beAttractParamList=22;//容易被什么人吸引0学习1艺术2体育
+int32 socializationPreference=23;//社交倾向 百分制 越高越喜欢社交（可后续提高
+int32 addWeChatInterest=24;//多少好感可以解锁微信
 }
 
 //计划

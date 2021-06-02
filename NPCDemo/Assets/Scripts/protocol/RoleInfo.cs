@@ -57,10 +57,10 @@ namespace RoleData {
             "bExldmVsGAwgASgFEhEKCWN1ckFydEV4cBgNIAEoBRIWCg5jdXJQaHlzaWNh",
             "bEV4cBgOIAEoBSJUChJTaW5nbGVQcm9wZXJ0eURhdGESEgoKcHJvcGVydHlJ",
             "ZBgBIAEoBRITCgtwcm9wZXJ0eU51bRgCIAEoAhIVCg1wcm9wZXJ0eUxpbWl0",
-            "GAMgASgCIsAFCg9QZW9wbGVQcm90b0RhdGESDgoGb25seUlkGAEgASgEEiwK",
+            "GAMgASgCIpgGCg9QZW9wbGVQcm90b0RhdGESDgoGb25seUlkGAEgASgEEiwK",
             "DHByb3BlcnR5RGF0YRgCIAEoCzIWLlJvbGVEYXRhLlByb3BlcnR5RGF0YRIf",
             "ChdzZW5zZWRPdGhlclBlb3BsZUlkTGlzdBgDIAMoBBIrCiNmcmllbmRsaW5l",
-            "c3NUb1NlbnNlZE90aGVyUGVvcGxlTGlzdBgEIAMoBRIOCgZnZW5kZXIYBSAB",
+            "c3NUb1NlbnNlZE90aGVyUGVvcGxlTGlzdBgEIAMoAhIOCgZnZW5kZXIYBSAB",
             "KAUSDAoEbmFtZRgGIAEoCRIQCghhY3Rpb25JZBgHIAEoBRIbChNmaW5pc2hJ",
             "bnZpdGVQcm9jZXNzGAggASgIEjQKEW1lSW52aXRlT3RoZXJMaXN0GAkgAygL",
             "MhkuUm9sZURhdGEuUGVvcGxlUHJvdG9EYXRhEjQKEW90aGVySW52aXRlTWVM",
@@ -72,13 +72,15 @@ namespace RoleData {
             "V2l0aFBlb3BsZRgQIAMoBBIcChRwbGF5ZXJWb2NhbFJlZnVzZWRNZRgRIAEo",
             "CBIZChFjdXJQbGFuV2l0aFBlb3BsZRgSIAEoBBIZChFleGFtQmF0dGxlX2N1",
             "ckV4cBgTIAEoBRIbChNleGFtQmF0dGxlX2N1ckxldmVsGBQgASgFEioKC2Fj",
-            "aGlldmVtZW50GBUgASgLMhUuUm9sZURhdGEuQWNoaWV2ZW1lbnQibwoNUGxh",
-            "blByb3RvRGF0YRIlCgJwMRgBIAEoCzIZLlJvbGVEYXRhLlBlb3BsZVByb3Rv",
-            "RGF0YRIlCgJwMhgCIAEoCzIZLlJvbGVEYXRhLlBlb3BsZVByb3RvRGF0YRIQ",
-            "CghhY3Rpb25JZBgDIAEoBSI+ChFPdGhlckludml0ZU1lRGF0YRIpCgZwZW9w",
-            "bGUYASABKAsyGS5Sb2xlRGF0YS5QZW9wbGVQcm90b0RhdGEiVAoWTWVJbnZp",
-            "dGVPdGhlclByb3RvRGF0YRIpCgZwZW9wbGUYASABKAsyGS5Sb2xlRGF0YS5Q",
-            "ZW9wbGVQcm90b0RhdGESDwoHcmVmdXNlZBgCIAEoCGIGcHJvdG8z"));
+            "aGlldmVtZW50GBUgASgLMhUuUm9sZURhdGEuQWNoaWV2ZW1lbnQSGgoSYmVB",
+            "dHRyYWN0UGFyYW1MaXN0GBYgAygFEh8KF3NvY2lhbGl6YXRpb25QcmVmZXJl",
+            "bmNlGBcgASgFEhkKEWFkZFdlQ2hhdEludGVyZXN0GBggASgFIm8KDVBsYW5Q",
+            "cm90b0RhdGESJQoCcDEYASABKAsyGS5Sb2xlRGF0YS5QZW9wbGVQcm90b0Rh",
+            "dGESJQoCcDIYAiABKAsyGS5Sb2xlRGF0YS5QZW9wbGVQcm90b0RhdGESEAoI",
+            "YWN0aW9uSWQYAyABKAUiPgoRT3RoZXJJbnZpdGVNZURhdGESKQoGcGVvcGxl",
+            "GAEgASgLMhkuUm9sZURhdGEuUGVvcGxlUHJvdG9EYXRhIlQKFk1lSW52aXRl",
+            "T3RoZXJQcm90b0RhdGESKQoGcGVvcGxlGAEgASgLMhkuUm9sZURhdGEuUGVv",
+            "cGxlUHJvdG9EYXRhEg8KB3JlZnVzZWQYAiABKAhiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
@@ -92,7 +94,7 @@ namespace RoleData {
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.SinglePeopleChatData), global::RoleData.SinglePeopleChatData.Parser, new[]{ "Belong", "ChatDataList" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.PropertyData), global::RoleData.PropertyData.Parser, new[]{ "PropertyIdList", "PropertyDataList", "ExamPropertyIdList", "ExamPropertyDataList", "CurExamPropertyIdList", "CurExamPropertyDataList", "IsPlayer", "OnlyId", "Level", "CurExp", "ArtLevel", "PhysicalLevel", "CurArtExp", "CurPhysicalExp" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.SinglePropertyData), global::RoleData.SinglePropertyData.Parser, new[]{ "PropertyId", "PropertyNum", "PropertyLimit" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.PeopleProtoData), global::RoleData.PeopleProtoData.Parser, new[]{ "OnlyId", "PropertyData", "SensedOtherPeopleIdList", "FriendlinessToSensedOtherPeopleList", "Gender", "Name", "ActionId", "FinishInviteProcess", "MeInviteOtherList", "OtherInviteMeList", "RecordList", "ChatFriends", "IsPlayer", "ChoosedActionId", "AllSinglePeopleChatDataList", "ValidWithPeople", "PlayerVocalRefusedMe", "CurPlanWithPeople", "ExamBattleCurExp", "ExamBattleCurLevel", "Achievement" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.PeopleProtoData), global::RoleData.PeopleProtoData.Parser, new[]{ "OnlyId", "PropertyData", "SensedOtherPeopleIdList", "FriendlinessToSensedOtherPeopleList", "Gender", "Name", "ActionId", "FinishInviteProcess", "MeInviteOtherList", "OtherInviteMeList", "RecordList", "ChatFriends", "IsPlayer", "ChoosedActionId", "AllSinglePeopleChatDataList", "ValidWithPeople", "PlayerVocalRefusedMe", "CurPlanWithPeople", "ExamBattleCurExp", "ExamBattleCurLevel", "Achievement", "BeAttractParamList", "SocializationPreference", "AddWeChatInterest" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.PlanProtoData), global::RoleData.PlanProtoData.Parser, new[]{ "P1", "P2", "ActionId" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.OtherInviteMeData), global::RoleData.OtherInviteMeData.Parser, new[]{ "People" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.MeInviteOtherProtoData), global::RoleData.MeInviteOtherProtoData.Parser, new[]{ "People", "Refused" }, null, null, null)
@@ -2721,6 +2723,9 @@ namespace RoleData {
       examBattleCurExp_ = other.examBattleCurExp_;
       examBattleCurLevel_ = other.examBattleCurLevel_;
       Achievement = other.achievement_ != null ? other.Achievement.Clone() : null;
+      beAttractParamList_ = other.beAttractParamList_.Clone();
+      socializationPreference_ = other.socializationPreference_;
+      addWeChatInterest_ = other.addWeChatInterest_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -2772,14 +2777,14 @@ namespace RoleData {
 
     /// <summary>Field number for the "friendlinessToSensedOtherPeopleList" field.</summary>
     public const int FriendlinessToSensedOtherPeopleListFieldNumber = 4;
-    private static readonly pb::FieldCodec<int> _repeated_friendlinessToSensedOtherPeopleList_codec
-        = pb::FieldCodec.ForInt32(34);
-    private readonly pbc::RepeatedField<int> friendlinessToSensedOtherPeopleList_ = new pbc::RepeatedField<int>();
+    private static readonly pb::FieldCodec<float> _repeated_friendlinessToSensedOtherPeopleList_codec
+        = pb::FieldCodec.ForFloat(34);
+    private readonly pbc::RepeatedField<float> friendlinessToSensedOtherPeopleList_ = new pbc::RepeatedField<float>();
     /// <summary>
     ///对感受到的人的好感度
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<int> FriendlinessToSensedOtherPeopleList {
+    public pbc::RepeatedField<float> FriendlinessToSensedOtherPeopleList {
       get { return friendlinessToSensedOtherPeopleList_; }
     }
 
@@ -3015,6 +3020,47 @@ namespace RoleData {
       }
     }
 
+    /// <summary>Field number for the "beAttractParamList" field.</summary>
+    public const int BeAttractParamListFieldNumber = 22;
+    private static readonly pb::FieldCodec<int> _repeated_beAttractParamList_codec
+        = pb::FieldCodec.ForInt32(178);
+    private readonly pbc::RepeatedField<int> beAttractParamList_ = new pbc::RepeatedField<int>();
+    /// <summary>
+    ///容易被什么人吸引0学习1艺术2体育
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> BeAttractParamList {
+      get { return beAttractParamList_; }
+    }
+
+    /// <summary>Field number for the "socializationPreference" field.</summary>
+    public const int SocializationPreferenceFieldNumber = 23;
+    private int socializationPreference_;
+    /// <summary>
+    ///社交倾向 百分制 越高越喜欢社交（可后续提高
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int SocializationPreference {
+      get { return socializationPreference_; }
+      set {
+        socializationPreference_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "addWeChatInterest" field.</summary>
+    public const int AddWeChatInterestFieldNumber = 24;
+    private int addWeChatInterest_;
+    /// <summary>
+    ///多少好感可以解锁微信
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AddWeChatInterest {
+      get { return addWeChatInterest_; }
+      set {
+        addWeChatInterest_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as PeopleProtoData);
@@ -3049,6 +3095,9 @@ namespace RoleData {
       if (ExamBattleCurExp != other.ExamBattleCurExp) return false;
       if (ExamBattleCurLevel != other.ExamBattleCurLevel) return false;
       if (!object.Equals(Achievement, other.Achievement)) return false;
+      if(!beAttractParamList_.Equals(other.beAttractParamList_)) return false;
+      if (SocializationPreference != other.SocializationPreference) return false;
+      if (AddWeChatInterest != other.AddWeChatInterest) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -3076,6 +3125,9 @@ namespace RoleData {
       if (ExamBattleCurExp != 0) hash ^= ExamBattleCurExp.GetHashCode();
       if (ExamBattleCurLevel != 0) hash ^= ExamBattleCurLevel.GetHashCode();
       if (achievement_ != null) hash ^= Achievement.GetHashCode();
+      hash ^= beAttractParamList_.GetHashCode();
+      if (SocializationPreference != 0) hash ^= SocializationPreference.GetHashCode();
+      if (AddWeChatInterest != 0) hash ^= AddWeChatInterest.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -3149,6 +3201,15 @@ namespace RoleData {
         output.WriteRawTag(170, 1);
         output.WriteMessage(Achievement);
       }
+      beAttractParamList_.WriteTo(output, _repeated_beAttractParamList_codec);
+      if (SocializationPreference != 0) {
+        output.WriteRawTag(184, 1);
+        output.WriteInt32(SocializationPreference);
+      }
+      if (AddWeChatInterest != 0) {
+        output.WriteRawTag(192, 1);
+        output.WriteInt32(AddWeChatInterest);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -3203,6 +3264,13 @@ namespace RoleData {
       }
       if (achievement_ != null) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(Achievement);
+      }
+      size += beAttractParamList_.CalculateSize(_repeated_beAttractParamList_codec);
+      if (SocializationPreference != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(SocializationPreference);
+      }
+      if (AddWeChatInterest != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(AddWeChatInterest);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -3268,6 +3336,13 @@ namespace RoleData {
         }
         Achievement.MergeFrom(other.Achievement);
       }
+      beAttractParamList_.Add(other.beAttractParamList_);
+      if (other.SocializationPreference != 0) {
+        SocializationPreference = other.SocializationPreference;
+      }
+      if (other.AddWeChatInterest != 0) {
+        AddWeChatInterest = other.AddWeChatInterest;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -3296,7 +3371,7 @@ namespace RoleData {
             break;
           }
           case 34:
-          case 32: {
+          case 37: {
             friendlinessToSensedOtherPeopleList_.AddEntriesFrom(input, _repeated_friendlinessToSensedOtherPeopleList_codec);
             break;
           }
@@ -3370,6 +3445,19 @@ namespace RoleData {
               achievement_ = new global::RoleData.Achievement();
             }
             input.ReadMessage(achievement_);
+            break;
+          }
+          case 178:
+          case 176: {
+            beAttractParamList_.AddEntriesFrom(input, _repeated_beAttractParamList_codec);
+            break;
+          }
+          case 184: {
+            SocializationPreference = input.ReadInt32();
+            break;
+          }
+          case 192: {
+            AddWeChatInterest = input.ReadInt32();
             break;
           }
         }

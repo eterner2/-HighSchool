@@ -760,6 +760,81 @@ public class SocializationManager : MonoInstance<SocializationManager>
 
         }
     }
+
+    /// <summary>
+    /// 在外出时社交
+    /// </summary>
+    public void OutSideSocial()
+    {
+        foreach(List<Plan> planList in action_planDic.Values)
+        {
+            int count = planList.Count;
+            for(int i = 0; i < count; i++)
+            {
+                //和plan的人对A一次
+                Plan plan = planList[i];
+                if (plan.peopleList.Count > 1)
+                {
+                    SocialAttack(plan.peopleList[0].protoData, plan.peopleList[1].protoData);
+                }
+                搭讪不在plan的人 如果好感度到一定程度 则加微信 如果有组了 搭讪欲望降低一半 男神对自己的攻击模拟值会直接加到概率
+
+            }
+        } 
+    }
+
+    /// <summary>
+    /// 社交对A 如卡顿 则考虑加载存档的时候把中间变量计算后缓存导peopledata里面 （加一个表现稳定性）
+    /// </summary>
+    /// <param name="p1"></param>
+    /// <param name="p2"></param>
+    public void SocialAttack(PeopleProtoData p1,PeopleProtoData p2)
+    {
+        float studyAttack1 = RoleManager.Instance.FindSinglePropertyData(PropertyIdType.StudyCharm, p1).PropertyNum;// DataTable.FindTestNumerialByLevel(p1.PropertyData.Level).proChange
+        float studyDefense1= RoleManager.Instance.FindSinglePropertyData(PropertyIdType.StudyDefense, p1).PropertyNum;
+
+        float artAttack1 = RoleManager.Instance.FindSinglePropertyData(PropertyIdType.ArtCharm, p1).PropertyNum;// DataTable.FindTestNumerialByLevel(p1.PropertyData.Level).proChange
+        float artDefense1 = RoleManager.Instance.FindSinglePropertyData(PropertyIdType.ArtDefense, p1).PropertyNum;
+
+        float physicalAttack1 = RoleManager.Instance.FindSinglePropertyData(PropertyIdType.PhysicalCharm, p1).PropertyNum;// DataTable.FindTestNumerialByLevel(p1.PropertyData.Level).proChange
+        float physicalDefense1 = RoleManager.Instance.FindSinglePropertyData(PropertyIdType.PhysicalDefense, p1).PropertyNum;
+
+        float studyAttack2 = RoleManager.Instance.FindSinglePropertyData(PropertyIdType.StudyCharm, p2).PropertyNum;// DataTable.FindTestNumerialByLevel(p1.PropertyData.Level).proChange
+        float studyDefense2 = RoleManager.Instance.FindSinglePropertyData(PropertyIdType.StudyDefense, p2).PropertyNum;
+
+        float artAttack2 = RoleManager.Instance.FindSinglePropertyData(PropertyIdType.ArtCharm, p2).PropertyNum;// DataTable.FindTestNumerialByLevel(p1.PropertyData.Level).proChange
+        float artDefense2 = RoleManager.Instance.FindSinglePropertyData(PropertyIdType.ArtDefense, p2).PropertyNum;
+
+        float physicalAttack2 = RoleManager.Instance.FindSinglePropertyData(PropertyIdType.PhysicalCharm, p2).PropertyNum;// DataTable.FindTestNumerialByLevel(p1.PropertyData.Level).proChange
+        float physicalDefense2 = RoleManager.Instance.FindSinglePropertyData(PropertyIdType.PhysicalDefense, p2).PropertyNum;
+
+        //2对1的好感度变化
+        float studyInfluenceTo2 = p2.BeAttractParamList[0] / (float)100;
+        float artInfluenceTo2 = p2.BeAttractParamList[1] / (float)100;
+        float physicalInfluenceTo2 = p2.BeAttractParamList[2] / (float)100;
+
+
+        float change2 = (studyAttack1 - studyDefense2) * studyInfluenceTo2 + (artAttack1 - artDefense2) * artInfluenceTo2 + (physicalAttack1 - physicalDefense2) * physicalInfluenceTo2;
+        if (!p2.SensedOtherPeopleIdList.Contains(p1.OnlyId))
+            p2.SensedOtherPeopleIdList.Add(p1.OnlyId);
+        int index1 = p2.SensedOtherPeopleIdList.IndexOf(p1.OnlyId);
+        p2.FriendlinessToSensedOtherPeopleList[index1] += change2;
+
+        //1对2的好感度变化
+        float studyInfluenceTo1 = p1.BeAttractParamList[0] / (float)100;
+        float artInfluenceTo1 = p1.BeAttractParamList[1] / (float)100;
+        float physicalInfluenceTo1 = p1.BeAttractParamList[2] / (float)100;
+
+
+        float change1 = (studyAttack2 - studyDefense1) * studyInfluenceTo1 + (artAttack2 - artDefense1) * artInfluenceTo1 + (physicalAttack2 - physicalDefense1) * physicalInfluenceTo1;
+        if (!p1.SensedOtherPeopleIdList.Contains(p2.OnlyId))
+            p1.SensedOtherPeopleIdList.Add(p2.OnlyId);
+        int index2 = p1.SensedOtherPeopleIdList.IndexOf(p2.OnlyId);
+        p1.FriendlinessToSensedOtherPeopleList[index2] += change1;
+    }
+
+
+
 }
 
 /// <summary>

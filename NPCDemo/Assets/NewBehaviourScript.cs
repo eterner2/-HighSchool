@@ -659,6 +659,7 @@ public class People
         peopleProtoData.IsPlayer = isPlayer;
         peopleProtoData.ExamBattleCurLevel = 1;
         CreateNewPropertyData(peopleProtoData);
+        RoleManager.Instance.InitPeopleSocializationProperty(peopleProtoData);
         this.protoData = peopleProtoData;
     }
     /// <summary>

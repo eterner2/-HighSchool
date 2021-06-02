@@ -129,6 +129,33 @@ public class RoleManager
 
     
     }
+
+    /// <summary>
+    /// 初始化人物社交属性 后续这个随机值根据性格来
+    /// </summary>
+    public void InitPeopleSocializationProperty(PeopleProtoData peopleProtoData)
+    {
+        int beAttractByStudy = RandomManager.Next(1, 99);
+
+        int remain1 = 100 - beAttractByStudy;
+        int beAttractByArt = RandomManager.Next(1, remain1);
+        int remain2 = remain1 - beAttractByArt;
+        int beAttractByPhysic = 0;
+        if (remain2 > 1)
+        {
+            beAttractByPhysic = RandomManager.Next(1, remain2);
+        }
+        else
+        {
+            beAttractByPhysic = 1;
+        }
+        peopleProtoData.BeAttractParamList.Add(beAttractByStudy);
+        peopleProtoData.BeAttractParamList.Add(beAttractByArt);
+        peopleProtoData.BeAttractParamList.Add(beAttractByPhysic);
+
+        peopleProtoData.SocializationPreference = RandomManager.Next(1, 100);
+    }
+
     /// <summary>
     /// 初始化属性
     /// </summary>
