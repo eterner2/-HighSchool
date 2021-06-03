@@ -10,6 +10,8 @@ public class PeopleInteractManager : CommonInstance<PeopleInteractManager>
     /// </summary>
     public void AskForWetalkNum(People main,People beAsked)
     {
+        //两人先交手一次
+        SocializationManager.Instance.SocialAttack(main.protoData, beAsked.protoData);
         //暂时50%同意 TODO引入数值
         int val = RandomManager.Next(0, 100);
         if (val < 50)
@@ -26,12 +28,16 @@ public class PeopleInteractManager : CommonInstance<PeopleInteractManager>
         }
         else
         {
-            List<DialogData> dialogList = new List<DialogData>();
-            dialogList.Add(new DialogData(beAsked, "我们好像不是很熟吧"));
-            DialogManager.Instance.CreateDialog(dialogList,()=> 
+            if (main.protoData.IsPlayer)
             {
-                PanelManager.Instance.OpenFloatWindow(beAsked.protoData.Name+"拒绝了你的请求");
-            });
+                List<DialogData> dialogList = new List<DialogData>();
+                dialogList.Add(new DialogData(beAsked, "我们好像不是很熟吧"));
+                DialogManager.Instance.CreateDialog(dialogList, () =>
+                {
+                    PanelManager.Instance.OpenFloatWindow(beAsked.protoData.Name + "拒绝了你的请求");
+                });
+            }
+     
         }
     }
 

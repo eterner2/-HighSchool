@@ -599,12 +599,13 @@ public class Plan
         peopleList.Add(p1);
         p1.actionName = actionName;
         p1.FinishInviteProcess();
-        
+        p1.protoData.ContactedPeopleInSingleAction.Clear();
         if (p2 != null)
         {
             peopleList.Add(p2);
             p2.actionName = actionName;
             p2.FinishInviteProcess();
+            p2.protoData.ContactedPeopleInSingleAction.Clear();
 
         }
 
@@ -845,6 +846,7 @@ public class People
         protoData.ValidWithPeople.Clear();
         protoData.PlayerVocalRefusedMe = false;
         protoData.CurPlanWithPeople = 0;
+        protoData.ContactedPeopleInSingleAction.Clear();
     }
 
 
