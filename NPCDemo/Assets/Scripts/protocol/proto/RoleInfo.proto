@@ -131,6 +131,7 @@ repeated int32 beAttractParamList=22;//容易被什么人吸引0学习1艺术2体育
 int32 socializationPreference=23;//社交倾向 百分制 越高越喜欢社交（可后续提高
 int32 addWeChatInterest=24;//多少好感可以解锁微信
 repeated uint64 contactedPeopleInSingleAction=25;//在单次活动中有过社交的人
+repeated uint64 wetalkFriends=26;//微信好友
 }
 
 //计划

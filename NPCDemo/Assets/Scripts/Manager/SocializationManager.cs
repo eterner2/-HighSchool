@@ -56,10 +56,10 @@ public class SocializationManager : MonoInstance<SocializationManager>
             me.actionName = actionSetting.name;
             me.protoData.ActionId = actionSetting.id.ToInt32();
             //邀请0-5人(不能重复邀请
-            if (me.weTalkFriends.Count > 0&&actionSetting.socializationType.ToInt32()!=(int)ActionSocializationProperty.MustAlone)
+            if (me.protoData.WetalkFriends.Count > 0&&actionSetting.socializationType.ToInt32()!=(int)ActionSocializationProperty.MustAlone)
             {
                 //暂时一定邀请 这里改成1
-                int num = RandomManager.Next(0, me.weTalkFriends.Count+1);
+                int num = RandomManager.Next(0, me.protoData.WetalkFriends.Count+1);
                 if (num > 0)
                 {
                     for (int j = 0; j < num; j++)
@@ -69,8 +69,8 @@ public class SocializationManager : MonoInstance<SocializationManager>
                             || choosed == me
                             || tmpList.Contains(choosed))
                         {
-                            int index = RandomManager.Next(0, me.weTalkFriends.Count);
-                            choosed = me.weTalkFriends[index];
+                            int index = RandomManager.Next(0, me.protoData.WetalkFriends.Count);
+                            choosed =RoleManager.Instance.FindPeopleWithOnlyId(me.protoData.WetalkFriends[index]);
                         }
                         tmpList.Add(choosed);
                         if (choosed.isPlayer)
@@ -832,16 +832,14 @@ public class SocializationManager : MonoInstance<SocializationManager>
             int choosedIndex = CommonUtil.GetIndexByWeight(weightList);
             People choosedPeople = candidateList[choosedIndex];
 
-            //对对方好感度达30% 则要微信 这个走配置
-            if (weightList[choosedIndex] > 30)
+            //对对方好感度达30% 如果没有微信 则要微信 这个走配置
+            if (weightList[choosedIndex] > 30&&p0.protoData.WetalkFriends.Contains(choosedPeople.protoData.OnlyId))
             {
                 PeopleInteractManager.Instance.AskForWetalkNum(p0, choosedPeople);
-
             }
             else
             {
                 SocialAttack(p0.protoData, candidateList[choosedIndex].protoData);
-
             }
         }
     }

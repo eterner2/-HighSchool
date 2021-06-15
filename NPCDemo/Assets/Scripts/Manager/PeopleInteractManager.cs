@@ -12,7 +12,7 @@ public class PeopleInteractManager : CommonInstance<PeopleInteractManager>
     {
         //两人先交手一次
         SocializationManager.Instance.SocialAttack(main.protoData, beAsked.protoData);
-        //暂时50%同意 TODO引入数值
+        //由于是被要，好感度需求只要大于20则同意
         int val = RandomManager.Next(0, 100);
         if (val < 50)
         {
@@ -48,8 +48,8 @@ public class PeopleInteractManager : CommonInstance<PeopleInteractManager>
     /// <param name="p2"></param>
     public void AddedWetalk(People p1,People p2)
     {
-        p1.weTalkFriends.Add(p2);
-        p2.weTalkFriends.Add(p1);
+        p1.protoData.WetalkFriends.Add(p2.protoData.OnlyId);
+        p2.protoData.WetalkFriends.Add(p1.protoData.OnlyId);
         //有人和玩家加了微信 发信息到手机ui上
         if (p1.isPlayer)
         {

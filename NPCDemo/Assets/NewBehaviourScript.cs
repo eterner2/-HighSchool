@@ -626,7 +626,7 @@ public class People
     public List<string> recordList = new List<string>();
     public bool isPlayer = false;
 
-    public List<People> weTalkFriends = new List<People>();//wetalk的朋友
+    //public List<People> weTalkFriends = new List<People>();//wetalk的朋友
     public string verticalDrawName;//立绘图片 TODO后续改成配表
     /// <summary>
     /// TODO通过配表的Setting创建新People（PeopleData后续要改成PeopleSetting）

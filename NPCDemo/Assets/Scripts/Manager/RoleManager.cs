@@ -528,10 +528,10 @@ public class RoleManager
     /// <returns></returns>
     public bool CheckIfMyWetalkFriend(People other, People me)
     {
-        for (int i = 0; i < me.weTalkFriends.Count; i++)
+        for (int i = 0; i < me.protoData.WetalkFriends.Count; i++)
         {
-            People theFriend = me.weTalkFriends[i];
-            if (theFriend.protoData.OnlyId == other.protoData.OnlyId)
+            UInt64 theFriendOnlyId = me.protoData.WetalkFriends[i];
+            if (theFriendOnlyId == other.protoData.OnlyId)
             {
                 return true;
             }
