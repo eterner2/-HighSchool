@@ -847,6 +847,7 @@ public class People
         protoData.PlayerVocalRefusedMe = false;
         protoData.CurPlanWithPeople = 0;
         protoData.ContactedPeopleInSingleAction.Clear();
+        protoData.ThisActionSocialized = false;
     }
 
 

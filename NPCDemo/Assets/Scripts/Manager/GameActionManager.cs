@@ -76,7 +76,7 @@ public class GameActionManager : MonoInstance<GameActionManager>
                         DialogManager.Instance.CreateDialog(dialogList,()=> 
                         {
                             EventCenter.Broadcast(TheEventType.ActionPause, true);
-
+                            SocializationManager.Instance.OutSideSocial();
                         });
                         startMove = false;
 

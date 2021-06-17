@@ -24,6 +24,7 @@ public class ChoosePeopleInteractPanel : SelfAdaptionChoosePanel
         {
             selfAdaptionChooseBtnViewList.Add(PanelManager.Instance.OpenSingle<ChoosePeopleInteractionBtnView>(grid,this, people, PeopleInteractType.AddWeTalk));
         }
+        selfAdaptionChooseBtnViewList.Add(PanelManager.Instance.OpenSingle<ChoosePeopleInteractionBtnView>(grid, this, people, PeopleInteractType.Talk));
 
     }
 
@@ -43,4 +44,5 @@ public enum PeopleInteractType
 {
     None=0,
     AddWeTalk=1,//要求加微信
+    Talk=2,//闲聊
 }

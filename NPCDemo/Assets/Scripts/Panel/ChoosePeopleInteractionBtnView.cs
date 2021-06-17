@@ -25,6 +25,14 @@ public class ChoosePeopleInteractionBtnView : SelfAdaptionChooseBtnView
                     PanelManager.Instance.ClosePanel(parentPanel);
                 });
                 break;
+            case PeopleInteractType.Talk:
+                txt.SetText("闲聊");
+                addBtnListener(btn, () =>
+                {
+                    PeopleInteractManager.Instance.Chat(RoleManager.Instance.playerPeople, people);
+                    PanelManager.Instance.ClosePanel(parentPanel);
+                });
+                break;
         }
     }
 

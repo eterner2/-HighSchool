@@ -57,7 +57,7 @@ namespace RoleData {
             "bExldmVsGAwgASgFEhEKCWN1ckFydEV4cBgNIAEoBRIWCg5jdXJQaHlzaWNh",
             "bEV4cBgOIAEoBSJUChJTaW5nbGVQcm9wZXJ0eURhdGESEgoKcHJvcGVydHlJ",
             "ZBgBIAEoBRITCgtwcm9wZXJ0eU51bRgCIAEoAhIVCg1wcm9wZXJ0eUxpbWl0",
-            "GAMgASgCItYGCg9QZW9wbGVQcm90b0RhdGESDgoGb25seUlkGAEgASgEEiwK",
+            "GAMgASgCIvQGCg9QZW9wbGVQcm90b0RhdGESDgoGb25seUlkGAEgASgEEiwK",
             "DHByb3BlcnR5RGF0YRgCIAEoCzIWLlJvbGVEYXRhLlByb3BlcnR5RGF0YRIf",
             "ChdzZW5zZWRPdGhlclBlb3BsZUlkTGlzdBgDIAMoBBIrCiNmcmllbmRsaW5l",
             "c3NUb1NlbnNlZE90aGVyUGVvcGxlTGlzdBgEIAMoAhIOCgZnZW5kZXIYBSAB",
@@ -76,13 +76,13 @@ namespace RoleData {
             "dHRyYWN0UGFyYW1MaXN0GBYgAygFEh8KF3NvY2lhbGl6YXRpb25QcmVmZXJl",
             "bmNlGBcgASgFEhkKEWFkZFdlQ2hhdEludGVyZXN0GBggASgFEiUKHWNvbnRh",
             "Y3RlZFBlb3BsZUluU2luZ2xlQWN0aW9uGBkgAygEEhUKDXdldGFsa0ZyaWVu",
-            "ZHMYGiADKAQibwoNUGxhblByb3RvRGF0YRIlCgJwMRgBIAEoCzIZLlJvbGVE",
-            "YXRhLlBlb3BsZVByb3RvRGF0YRIlCgJwMhgCIAEoCzIZLlJvbGVEYXRhLlBl",
-            "b3BsZVByb3RvRGF0YRIQCghhY3Rpb25JZBgDIAEoBSI+ChFPdGhlckludml0",
-            "ZU1lRGF0YRIpCgZwZW9wbGUYASABKAsyGS5Sb2xlRGF0YS5QZW9wbGVQcm90",
-            "b0RhdGEiVAoWTWVJbnZpdGVPdGhlclByb3RvRGF0YRIpCgZwZW9wbGUYASAB",
-            "KAsyGS5Sb2xlRGF0YS5QZW9wbGVQcm90b0RhdGESDwoHcmVmdXNlZBgCIAEo",
-            "CGIGcHJvdG8z"));
+            "ZHMYGiADKAQSHAoUdGhpc0FjdGlvblNvY2lhbGl6ZWQYGyABKAgibwoNUGxh",
+            "blByb3RvRGF0YRIlCgJwMRgBIAEoCzIZLlJvbGVEYXRhLlBlb3BsZVByb3Rv",
+            "RGF0YRIlCgJwMhgCIAEoCzIZLlJvbGVEYXRhLlBlb3BsZVByb3RvRGF0YRIQ",
+            "CghhY3Rpb25JZBgDIAEoBSI+ChFPdGhlckludml0ZU1lRGF0YRIpCgZwZW9w",
+            "bGUYASABKAsyGS5Sb2xlRGF0YS5QZW9wbGVQcm90b0RhdGEiVAoWTWVJbnZp",
+            "dGVPdGhlclByb3RvRGF0YRIpCgZwZW9wbGUYASABKAsyGS5Sb2xlRGF0YS5Q",
+            "ZW9wbGVQcm90b0RhdGESDwoHcmVmdXNlZBgCIAEoCGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
@@ -96,7 +96,7 @@ namespace RoleData {
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.SinglePeopleChatData), global::RoleData.SinglePeopleChatData.Parser, new[]{ "Belong", "ChatDataList" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.PropertyData), global::RoleData.PropertyData.Parser, new[]{ "PropertyIdList", "PropertyDataList", "ExamPropertyIdList", "ExamPropertyDataList", "CurExamPropertyIdList", "CurExamPropertyDataList", "IsPlayer", "OnlyId", "Level", "CurExp", "ArtLevel", "PhysicalLevel", "CurArtExp", "CurPhysicalExp" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.SinglePropertyData), global::RoleData.SinglePropertyData.Parser, new[]{ "PropertyId", "PropertyNum", "PropertyLimit" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.PeopleProtoData), global::RoleData.PeopleProtoData.Parser, new[]{ "OnlyId", "PropertyData", "SensedOtherPeopleIdList", "FriendlinessToSensedOtherPeopleList", "Gender", "Name", "ActionId", "FinishInviteProcess", "MeInviteOtherList", "OtherInviteMeList", "RecordList", "ChatFriends", "IsPlayer", "ChoosedActionId", "AllSinglePeopleChatDataList", "ValidWithPeople", "PlayerVocalRefusedMe", "CurPlanWithPeople", "ExamBattleCurExp", "ExamBattleCurLevel", "Achievement", "BeAttractParamList", "SocializationPreference", "AddWeChatInterest", "ContactedPeopleInSingleAction", "WetalkFriends" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.PeopleProtoData), global::RoleData.PeopleProtoData.Parser, new[]{ "OnlyId", "PropertyData", "SensedOtherPeopleIdList", "FriendlinessToSensedOtherPeopleList", "Gender", "Name", "ActionId", "FinishInviteProcess", "MeInviteOtherList", "OtherInviteMeList", "RecordList", "ChatFriends", "IsPlayer", "ChoosedActionId", "AllSinglePeopleChatDataList", "ValidWithPeople", "PlayerVocalRefusedMe", "CurPlanWithPeople", "ExamBattleCurExp", "ExamBattleCurLevel", "Achievement", "BeAttractParamList", "SocializationPreference", "AddWeChatInterest", "ContactedPeopleInSingleAction", "WetalkFriends", "ThisActionSocialized" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.PlanProtoData), global::RoleData.PlanProtoData.Parser, new[]{ "P1", "P2", "ActionId" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.OtherInviteMeData), global::RoleData.OtherInviteMeData.Parser, new[]{ "People" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RoleData.MeInviteOtherProtoData), global::RoleData.MeInviteOtherProtoData.Parser, new[]{ "People", "Refused" }, null, null, null)
@@ -2730,6 +2730,7 @@ namespace RoleData {
       addWeChatInterest_ = other.addWeChatInterest_;
       contactedPeopleInSingleAction_ = other.contactedPeopleInSingleAction_.Clone();
       wetalkFriends_ = other.wetalkFriends_.Clone();
+      thisActionSocialized_ = other.thisActionSocialized_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -3091,6 +3092,20 @@ namespace RoleData {
       get { return wetalkFriends_; }
     }
 
+    /// <summary>Field number for the "thisActionSocialized" field.</summary>
+    public const int ThisActionSocializedFieldNumber = 27;
+    private bool thisActionSocialized_;
+    /// <summary>
+    ///这个行动已经社交过了
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool ThisActionSocialized {
+      get { return thisActionSocialized_; }
+      set {
+        thisActionSocialized_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as PeopleProtoData);
@@ -3130,6 +3145,7 @@ namespace RoleData {
       if (AddWeChatInterest != other.AddWeChatInterest) return false;
       if(!contactedPeopleInSingleAction_.Equals(other.contactedPeopleInSingleAction_)) return false;
       if(!wetalkFriends_.Equals(other.wetalkFriends_)) return false;
+      if (ThisActionSocialized != other.ThisActionSocialized) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -3162,6 +3178,7 @@ namespace RoleData {
       if (AddWeChatInterest != 0) hash ^= AddWeChatInterest.GetHashCode();
       hash ^= contactedPeopleInSingleAction_.GetHashCode();
       hash ^= wetalkFriends_.GetHashCode();
+      if (ThisActionSocialized != false) hash ^= ThisActionSocialized.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -3246,6 +3263,10 @@ namespace RoleData {
       }
       contactedPeopleInSingleAction_.WriteTo(output, _repeated_contactedPeopleInSingleAction_codec);
       wetalkFriends_.WriteTo(output, _repeated_wetalkFriends_codec);
+      if (ThisActionSocialized != false) {
+        output.WriteRawTag(216, 1);
+        output.WriteBool(ThisActionSocialized);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -3310,6 +3331,9 @@ namespace RoleData {
       }
       size += contactedPeopleInSingleAction_.CalculateSize(_repeated_contactedPeopleInSingleAction_codec);
       size += wetalkFriends_.CalculateSize(_repeated_wetalkFriends_codec);
+      if (ThisActionSocialized != false) {
+        size += 2 + 1;
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -3383,6 +3407,9 @@ namespace RoleData {
       }
       contactedPeopleInSingleAction_.Add(other.contactedPeopleInSingleAction_);
       wetalkFriends_.Add(other.wetalkFriends_);
+      if (other.ThisActionSocialized != false) {
+        ThisActionSocialized = other.ThisActionSocialized;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -3508,6 +3535,10 @@ namespace RoleData {
           case 210:
           case 208: {
             wetalkFriends_.AddEntriesFrom(input, _repeated_wetalkFriends_codec);
+            break;
+          }
+          case 216: {
+            ThisActionSocialized = input.ReadBool();
             break;
           }
         }

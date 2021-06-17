@@ -792,34 +792,42 @@ public class SocializationManager : MonoInstance<SocializationManager>
     }
 
     /// <summary>
-    /// 在一次行动中试图接触别人
+    /// 在一次行动中试图接触别人 只会在相同行动里面找
     /// </summary>
     public void TryContactOtherInSingleAction(People p0)
     {
         float desire = p0.protoData.SocializationPreference;
-        
+
         if (p0.protoData.CurPlanWithPeople != 0)
         {
             desire /= 2f;
         }
-        //会找人说说话
-        if (RandomManager.Next(0, 101) <= desire)
+        //没找过人说话，会找人说说话
+        if (RandomManager.Next(0, 101) <= desire&&!p0.protoData.ThisActionSocialized)
         {
+
+            List<Plan> thePlanList = action_planDic[p0.protoData.ChoosedActionId];
+            //找谁
+
             List<People> candidateList = new List<People>();
             List<int> weightList = new List<int>();
-            //找谁
-            for (int j = 0; j < planList.Count; j++)
+
+            for (int j = 0; j < thePlanList.Count; j++)
             {
-                Plan thePlan = planList[j];
+                Plan thePlan = thePlanList[j];
                 for (int m = 0; m < thePlan.peopleList.Count; m++)
                 {
                     People candidate = thePlan.peopleList[m];
-                    if (candidate.protoData.OnlyId != p0.protoData.OnlyId)
+                    //如果这个人没和别人交谈过
+
+                    if (candidate.protoData.OnlyId != p0.protoData.OnlyId
+                        &&!candidate.protoData.ThisActionSocialized)
                     {
                         candidateList.Add(candidate);
                         if (!p0.protoData.SensedOtherPeopleIdList.Contains(candidate.protoData.OnlyId))
                         {
                             p0.protoData.SensedOtherPeopleIdList.Add(candidate.protoData.OnlyId);
+                            p0.protoData.FriendlinessToSensedOtherPeopleList.Add(0);
                         }
                         int index = p0.protoData.SensedOtherPeopleIdList.IndexOf(candidate.protoData.OnlyId);
                         float interest = p0.protoData.FriendlinessToSensedOtherPeopleList[index];
@@ -828,19 +836,33 @@ public class SocializationManager : MonoInstance<SocializationManager>
                         weightList.Add(weight);
                     }
                 }
-            }
-            int choosedIndex = CommonUtil.GetIndexByWeight(weightList);
-            People choosedPeople = candidateList[choosedIndex];
 
-            //对对方好感度达30% 如果没有微信 则要微信 这个走配置
-            if (weightList[choosedIndex] > 30&&p0.protoData.WetalkFriends.Contains(choosedPeople.protoData.OnlyId))
-            {
-                PeopleInteractManager.Instance.AskForWetalkNum(p0, choosedPeople);
+
             }
-            else
+            if (!p0.protoData.IsPlayer)
             {
-                SocialAttack(p0.protoData, candidateList[choosedIndex].protoData);
+                int choosedIndex = CommonUtil.GetIndexByWeight(weightList);
+                if (choosedIndex > 0)
+                {
+                    People choosedPeople = candidateList[choosedIndex];
+
+
+                    //对对方好感度达30% 如果没有微信 则要微信 这个走配置
+                    if (weightList[choosedIndex] > 30 && p0.protoData.WetalkFriends.Contains(choosedPeople.protoData.OnlyId))
+                    {
+                        PeopleInteractManager.Instance.AskForWetalkNum(p0, choosedPeople);
+                    }
+                    else
+                    {
+                        PeopleInteractManager.Instance.Chat(p0, choosedPeople);
+                        //SocialAttack(p0.protoData, candidateList[choosedIndex].protoData);
+                    }
+                }
+       
             }
+
+
+
         }
     }
 
@@ -870,32 +892,46 @@ public class SocializationManager : MonoInstance<SocializationManager>
     }
 
     /// <summary>
-    /// 社交对A 如卡顿 则考虑加载存档的时候把中间变量计算后缓存导peopledata里面 （加一个表现稳定性）
+    /// 社交对A 如卡顿 则考虑加载存档的时候把中间变量计算后缓存导peopledata里面 （加一个表现稳定性）1找2聊天
     /// </summary>
     /// <param name="p1"></param>
     /// <param name="p2"></param>
-    public void SocialAttack(PeopleProtoData p1,PeopleProtoData p2)
+    public bool SocialAttack(PeopleProtoData p1,PeopleProtoData p2)
     {
+        //1对2的好感度 1喜欢/讨厌2多少
         float influenceTo1 = CalcSocialAttack(p1, p2);
 
 
         if (!p1.SensedOtherPeopleIdList.Contains(p2.OnlyId))
+        {
             p1.SensedOtherPeopleIdList.Add(p2.OnlyId);
+            p1.FriendlinessToSensedOtherPeopleList.Add(0);
+        }
         int index2 = p1.SensedOtherPeopleIdList.IndexOf(p2.OnlyId);
         p1.FriendlinessToSensedOtherPeopleList[index2] += influenceTo1;
         if (!p1.ContactedPeopleInSingleAction.Contains(p2.OnlyId))
             p1.ContactedPeopleInSingleAction.Add(p2.OnlyId);
 
+        //2对1的好感度 2喜欢/讨厌1多少
         float influenceTo2 = CalcSocialAttack(p2, p1);
 
         if (!p2.SensedOtherPeopleIdList.Contains(p1.OnlyId))
+        {
             p2.SensedOtherPeopleIdList.Add(p1.OnlyId);
+            p2.FriendlinessToSensedOtherPeopleList.Add(0);
+        }
         int index1 = p2.SensedOtherPeopleIdList.IndexOf(p1.OnlyId);
         p2.FriendlinessToSensedOtherPeopleList[index1] += influenceTo2;
         if (!p2.ContactedPeopleInSingleAction.Contains(p1.OnlyId))
             p2.ContactedPeopleInSingleAction.Add(p1.OnlyId);
 
+        p1.ThisActionSocialized = true;
+        p2.ThisActionSocialized = true;
 
+        if (influenceTo2 < 0)
+            return false;
+        else
+            return true;
     }
 
 

@@ -38,7 +38,7 @@ public class SelfAdaptionChooseBtnView : SingleViewBase
     /// </summary>
     public void Show()
     {
-        SetSize(new Vector2(txt.preferredWidth + rectXOffsetBg_TXT + rectXOffsetContent_BG, rect_bg.sizeDelta.y + rectYOffsetBg_TXT + rectYOffsetContent_BG));
+        SetSize(new Vector2(txt.preferredWidth + rectXOffsetBg_TXT + rectXOffsetContent_BG, txt.preferredHeight + rectYOffsetBg_TXT + rectYOffsetContent_BG));
 
     }
 

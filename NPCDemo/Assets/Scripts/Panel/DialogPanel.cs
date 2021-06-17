@@ -21,14 +21,63 @@ public class DialogPanel : PanelBase
     Action endCallBack;
     int curIndex = -1;
     People curSpeekPeople;
+
+    public DialogType dialogType;
+
+    public Transform trans_choose;//对话完后弹出选项
+    public Button btn1;//选项1
+    public Text txt_btn1;//选项1txt
+    public Button btn2;//选项2
+    public Text txt_btn2;//选项2txt
+
+    public Action btn1ChooseCallback;//选择了选项1
+    public Action btn2ChooseCallback;//选择了选项2
+
+
     public override void Init(params object[] args)
     {
         base.Init(args);
 
+        dialogType = (DialogType)args[0];
+        dialogList = args[1] as List<DialogData>;
 
-        dialogList = args[0] as List<DialogData>;
-        endCallBack = args[1] as Action;
-        
+        if (dialogType == DialogType.Common)
+        {
+            endCallBack = args[2] as Action;
+            trans_choose.gameObject.SetActive(false);
+        }
+        else
+        {
+            string btn1Str = (string)args[2];
+            btn1ChooseCallback = args[3] as Action;
+
+            string btn2Str = (string)args[4];
+            btn2ChooseCallback = args[5] as Action;
+
+            txt_btn1.SetText(btn1Str);
+            txt_btn2.SetText(btn2Str);
+
+            trans_choose.gameObject.SetActive(true);
+
+            addBtnListener(btn1, () =>
+            {
+                if (btn1ChooseCallback != null)
+                    btn1ChooseCallback();
+                PanelManager.Instance.ClosePanel(this);
+
+            });
+
+            addBtnListener(btn2, () =>
+            {
+                if (btn2ChooseCallback != null)
+                    btn2ChooseCallback();
+                PanelManager.Instance.ClosePanel(this);
+
+            });
+
+        }
+
+
 
         addBtnListener(btn_next, () =>
         {
@@ -44,9 +93,17 @@ public class DialogPanel : PanelBase
             //结束对话
             else
             {
-                if (endCallBack != null)
-                    endCallBack();
-                PanelManager.Instance.ClosePanel(this);
+                if (dialogType == DialogType.Common)
+                {
+                    if (endCallBack != null)
+                        endCallBack();
+                    PanelManager.Instance.ClosePanel(this);
+                }
+                else
+                {
+                    trans_choose.gameObject.SetActive(true);
+                }
+
             }
         });
     }
@@ -91,4 +148,14 @@ public class DialogPanel : PanelBase
         txt.SetText(dialogList[curIndex].content);
     }
 
+}
+
+/// <summary>
+/// 对话类型
+/// </summary>
+public enum DialogType
+{
+    None=0,
+    Common,
+    Choose,//有选项的对话
 }
